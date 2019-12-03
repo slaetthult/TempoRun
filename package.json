@@ -1,0 +1,24 @@
+{
+  "name": "nuxt-run",
+  "version": "1.0.0",
+  "description": "Starter kit for nuxt projects",
+  "author": "Marvin Schmidt",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "coffee-loader": "^0.9.0",
+    "coffeescript": "^2.4.1",
+    "node-sass": "^4.13.0",
+    "pug": "^2.0.3",
+    "pug-plain-loader": "^1.0.0",
+    "sass-loader": "^8.0.0"
+  }
+}

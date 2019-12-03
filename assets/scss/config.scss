@@ -1,0 +1,154 @@
+/* -------------------------------------------------------- */
+/*        CONFIG DATA . FONTS, GENERALS and VARIABLES       */
+/* -------------------------------------------------------- */
+
+
+/* -------------------------------------------------------- */
+/*                   SET UP VIEWPORTS                       */
+/* -------------------------------------------------------- */
+
+  $viewports: (
+          w: 0px,
+          sw: 480px,
+          mw: 768px,
+          lw: 1000px
+  );
+
+
+/* -------------------------------------------------------- */
+/*              GET THE VIEWPORTS AS STRING                 */
+/* -------------------------------------------------------- */
+
+  $viewportsString: "";
+
+  @each $current-viewport,  $current-viewportwidth in $viewports {
+    $viewportsString: $viewportsString + $current-viewport + ":" + $current-viewportwidth + ",";
+  }
+
+
+/* -------------------------------------------------------- */
+/*                    GENERATE GRIDS                        */
+/* -------------------------------------------------------- */
+
+  $grid:                        12;
+  $grid-absolute-box-margin:    5px;
+  $grid-absolute-site-width:	1008px;
+
+  $grid-margin:			        percentage($grid-absolute-box-margin/$grid-absolute-site-width);
+  $grid-absolute-box-width:     $grid-absolute-site-width / $grid - $grid-absolute-box-margin - $grid-absolute-box-margin;
+
+  @function grid-size($size) {
+    $qoutient: $size * 2 - 2;
+    @return percentage(($grid-absolute-box-width * $size + $grid-absolute-box-margin * $qoutient)/$grid-absolute-site-width) - 0.01%;
+  }
+
+
+/* -------------------------------------------------------- */
+/*                 COLORSCHEME, DO IT!                      */
+/* -------------------------------------------------------- */
+
+  // GENERAL COLORS
+  $color-white:                  #FFF;
+  $color-lightgrey:              #d9d9d9;
+  $color-grey:                   #989898;
+  $color-darkgrey:               #6d6d6d;
+  $color-black:                  #151515;
+
+  $color-ui-green:               #B0C717;
+  $color-ui-red:                 #C10D00;
+
+  // THEME COLORS
+  $color-theme-blue:             #1A222F;
+  $color-theme-green:            #008E74;
+  $color-theme-lemon:            #B2E097;
+  $color-theme-yellow:           #FFE9AD;
+  $color-theme-red:              #D24335;
+
+  // SOCIAL COLORS
+  $color-social-facebook:        #3b5999;
+  $color-social-twitter:         #55acee;
+  $color-social-gplus:           #dc4e41;
+  $color-social-pinterest:       #af0921;
+  $color-social-instagram:       #c6c6c6;
+
+  // SOCIAL COLORS ON HOVER
+  $color-social-facebook-hover:  #364d85;
+  $color-social-twitter-hover:   #5292be;
+  $color-social-gplus-hover:     #bc4537;
+
+  // BACKGROUND COLORS
+  $color-mainbackground:         #FFF;
+
+
+/* -------------------------------------------------------- */
+/*               GET FONT AND SET REM FUNCTION              */
+/* -------------------------------------------------------- */
+
+  $font-size-main:			    16px;
+
+  // GET REM FONTSIZE
+  @function rem($font-size) {
+    $remSize: $font-size / $font-size-main;
+    @return $remSize * 1rem;
+  }
+
+
+/* -------------------------------------------------------- */
+/*                      FONTCONFIGS                         */
+/* -------------------------------------------------------- */
+
+
+  $font-size-desktop:			rem(14px);
+  $font-size-mobile:			rem(13px);
+
+  $font-line-height-default:	1.6;
+  $font-letter-spacing:         0;
+
+  $font-size-h1-mobile:			rem(25px);
+  $font-size-h2-mobile:			rem(23px);
+  $font-size-h3-mobile:			rem(21px);
+  $font-size-h4-mobile:			rem(19px);
+  $font-size-h5-mobile:			rem(17px);
+  $font-size-h6-mobile:			rem(15px);
+
+  $font-size-h1:				rem(25px);
+  $font-size-h2:				rem(23px);
+  $font-size-h3:				rem(21px);
+  $font-size-h4:				rem(19px);
+  $font-size-h5:				rem(17px);
+  $font-size-h6:				rem(15px);
+
+  $font-weight-light:			400;
+  $font-weight-normal:			400;
+  $font-weight-bold:			700;
+
+  $font-family:			        'Lato', Arial, sans-serif;
+  $font-family-monospace:		Consolas, "Lucida Console", Monaco, monospace;
+
+  // FONT COLORS
+  $font-color:                  $color-black;
+
+  // LINK STYLES
+  $font-link-color:				$color-theme-green;
+  $font-link-color-hover:		$color-black;
+  $font-text-decoration:		none;
+
+  $transitionTime:              0.2s;
+
+
+/* -------------------------------------------------------- */
+/*                  Z-INDEX LEVEL RANKING                   */
+/* -------------------------------------------------------- */
+
+  $zLevel0:                     1;
+  $zLevel1:                     100;
+  $zLevel2:                     200;
+  $zLevel3:                     300;
+  $zLevel4:                     400;
+  $zLevel5:                     500;
+  $zLevel6:                     600;
+  $zLevel7:                     700;
+  $zLevel8:                     800;
+  $zLevel9:                     900;
+  $zLevel10:                    999;
+

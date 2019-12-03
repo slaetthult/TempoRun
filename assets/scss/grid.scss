@@ -1,0 +1,92 @@
+/* -------------------------------------------------------- */
+/*                 GRID BASEMENT CLASSES                    */
+/* -------------------------------------------------------- */
+
+.gridWrap {
+  position: relative;
+  @include flex();
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 0 20px 0;
+  width: 100%;
+  max-width: $grid-absolute-site-width;
+  min-height: 10px;
+  z-index: $zLevel1;
+
+  &.gridLeft {
+    justify-content: flex-start;
+  }
+
+  &.gridRight {
+    justify-content: flex-end;
+  }
+}
+
+@each $current-viewport,  $current-viewportwidth in $viewports {
+
+  @if $current-viewportwidth == 0px {
+    @for $i from 1 through $grid {
+      .#{$current-viewport}#{$i} {
+        flex-shrink: 0;
+        width: grid-size($i);
+        margin: 0 $grid-margin;
+      }
+
+      .#{$current-viewport}-left-#{$i} {
+        margin-left: grid-size($i) + (3 * $grid-margin);
+      }
+
+      .#{$current-viewport}-right-#{$i} {
+        margin-right: grid-size($i) + (3 * $grid-margin);
+      }
+
+    }
+
+    .#{$current-viewport}Full {
+      width: 100%;
+    }
+
+    .#{$current-viewport}Hidden {
+      display: none;
+    }
+
+  } @else {
+
+    @media screen and (min-width: $current-viewportwidth) {
+
+      @for $i from 1 through $grid {
+        .#{$current-viewport}#{$i} {
+          flex-shrink: 0;
+          width: grid-size($i);
+          margin: 0 $grid-margin;
+        }
+
+        .#{$current-viewport}-left-#{$i} {
+          margin-left: grid-size($i) + (3 * $grid-margin);
+        }
+
+        .#{$current-viewport}-right-#{$i} {
+          margin-right: grid-size($i) + (3 * $grid-margin);
+        }
+
+      }
+
+      .#{$current-viewport}Full {
+        width: 100%;
+
+      }
+
+      .#{$current-viewport}Hidden {
+        display: none;
+      }
+
+      .#{$current-viewport}Visible {
+        display: block;
+      }
+
+    }
+
+  }
+
+}

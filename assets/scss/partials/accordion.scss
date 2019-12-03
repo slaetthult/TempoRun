@@ -1,0 +1,18 @@
+.accordion {
+
+  &:not(.active) {
+    .accordion-content {
+      height: 0!important;
+    }
+  }
+
+  .accordion-trigger {
+
+  }
+
+  .accordion-content {
+    overflow: hidden;
+    transition: height linear 0.2s;
+  }
+
+}

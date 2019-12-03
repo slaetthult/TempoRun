@@ -1,0 +1,250 @@
+/* -------------------------------------------------------- */
+/*           BASE . THE BASEMENT OF YOUR STYLE              */
+/* -------------------------------------------------------- */
+
+body {
+  background: $color-mainbackground;
+  font-size: $font-size-mobile;
+
+  /* Hidden Element to transfer Mediaquerys in JS */
+  &::before {
+    display: none;
+    content:"" + $viewportsString;
+  }
+
+  /* Hidden Element to transfer Grid in JS */
+  &::after {
+    display: none;
+    content:"" + $grid;
+  }
+
+}
+
+/* -------------------------------------------------------- */
+/*                     FONT BASEMENT                        */
+/* -------------------------------------------------------- */
+
+html {
+  font-size: $font-size-main;
+  color: $font-color;
+  font-family: $font-family;
+  line-height: $font-line-height-default;
+  font-weight: $font-weight-normal;
+  letter-spacing: $font-letter-spacing;
+
+  /* Hidden Element for Old Browsers */
+  .oldBrowserWarning {
+    display: none;
+  }
+
+}
+
+h1,.h1,
+h2,.h2,
+h3,.h3,
+h4,.h4,
+h5,.h5,
+h6,.h6 {
+  display: block;
+  padding: 5px 0;
+}
+
+h1,.h1{
+  font-size: $font-size-h1-mobile;
+}
+h2,.h2{
+  font-size: $font-size-h2-mobile;
+}
+h3,.h3{
+  font-size: $font-size-h3-mobile;
+}
+h4,.h4{
+  font-size: $font-size-h4-mobile;
+}
+h5,.h5{
+  font-size: $font-size-h5-mobile;
+}
+h6,.h6{
+  font-size: $font-size-h6-mobile;
+}
+
+/* -------------------------------------------------------- */
+/*                  A-TAG / LINK BASEMENT                   */
+/* -------------------------------------------------------- */
+
+a, .link {
+  color: $font-link-color;
+  text-decoration: $font-text-decoration;
+  cursor: pointer;
+  transition: all $transitionTime ease;
+  &:hover, &:active {
+    color: $font-link-color-hover;
+  }
+}
+
+/* -------------------------------------------------------- */
+/*              BUTTON-TAG / BUTTON BASEMENT                */
+/* -------------------------------------------------------- */
+
+button, input[type="button"], input[type="submit"], .button {
+  display: inline-block;
+  background: $color-grey;
+  color: $color-white;
+  border: none;
+  cursor: pointer;
+  padding: 6px 12px;
+  margin: 0;
+  text-decoration: none;
+  transition: all $transitionTime ease;
+  border-radius: 0;
+  &:hover, &:active {
+    background: lighten($color-grey,5%);
+  }
+}
+
+/* -------------------------------------------------------- */
+/*              FORM-TAG / INPUT BASEMENT                */
+/* -------------------------------------------------------- */
+
+input[type="text"], input[type="password"], input[type="number"], input[type="email"], input[type="search"], input[type="tel"], input[type="url"], textarea {
+  display: inline-block;
+  width: 100%;
+  background: $color-white;
+  color: $color-black;
+  border: 1px solid $color-lightgrey;
+  padding: 6px 6px;
+  margin: 5px 0;
+  transition: all $transitionTime ease;
+  /* Error class for baseTemp Formvalidation */
+  &.error {
+    border: 1px solid $color-ui-red;
+  }
+  @include set-placeholdercolor($color-black);
+}
+
+textarea {
+  width: 100%;
+}
+
+
+/* -------------------------------------------------------- */
+/*                    ELEMENT BASEMENT                      */
+/* -------------------------------------------------------- */
+
+p {
+  display: block;
+  padding: 5px 0;
+}
+
+strong, b {
+  font-weight: $font-weight-bold;
+}
+
+sup {
+  font-size: .875rem;
+  vertical-align: super;
+  line-height: .875rem;
+}
+
+small {
+  font-size: .875rem;
+}
+
+strike, del {
+  text-decoration: line-through;
+}
+
+pre, code, kbd, samp {
+  font-family: $font-family-monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+blockquote {
+  font-style: italic;
+  padding:10px;
+}
+
+iframe {
+  max-width:100%;
+}
+
+hr {
+  border:0;
+  margin:5px 0;
+  padding:0;
+  height:1px;
+  display:block;
+  background-color:$color-grey;
+}
+
+ul {
+  display: block;
+  padding:5px 0;
+  li {
+    position: relative;
+    margin-left: 15px;
+  }
+}
+
+
+/* -------------------------------------------------------- */
+/*                    GENERALL CLASSES                      */
+/* -------------------------------------------------------- */
+
+.clear {
+  clear: both;
+}
+
+
+/* -------------------------------------------------------- */
+/*                  MARKERED TEXT STYLES                    */
+/* -------------------------------------------------------- */
+
+::selection {
+  background: $color-black;
+  color: $color-white;
+  opacity: 1;
+}
+::-moz-selection {
+  background: $color-black;
+  color: $color-white;
+  opacity: 1;
+}
+
+/* -------------------------------------------------------- */
+/*                BASE MEDIAQUERYS MEDIUM                   */
+/* -------------------------------------------------------- */
+
+@media screen and (min-width: map-get($viewports, mw)) {
+  html {
+
+    body {
+      font-size: $font-size-desktop;
+    }
+
+  }
+
+  h1,.h1{
+    font-size: $font-size-h1;
+  }
+  h2,.h2{
+    font-size: $font-size-h2;
+  }
+  h3,.h3{
+    font-size: $font-size-h3;
+  }
+  h4,.h4{
+    font-size: $font-size-h4;
+  }
+  h5,.h5{
+    font-size: $font-size-h5;
+  }
+  h6,.h6{
+    font-size: $font-size-h6;
+  }
+
+}
