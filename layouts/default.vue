@@ -1,7 +1,9 @@
 <template>
   <div>
-    <div class="sitemain">
-      <nuxt />
-    </div>
+    <siteheader/>
+    <main class="sitemain">
+      <nuxt/>
+    </main>
+    <sitefooter/>
   </div>
 </template>

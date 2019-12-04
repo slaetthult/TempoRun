@@ -1,0 +1,43 @@
+export default {
+    data (){
+        return {
+
+            currentActiveAccordionId: 0
+
+        }
+    },
+    mounted(){
+
+        let _this = this;
+
+        _this.calcAccordionHeight();
+
+        window.addEventListener("resize", () => {
+            _this.calcAccordionHeight();
+        });
+
+    },
+    methods:{
+
+        toggleAccordion(event, id){
+
+            this.currentActiveAccordionId = id === this.currentActiveAccordionId ? -1 : id;
+
+        },
+
+        calcAccordionHeight(){
+
+            let $accordions = this.$el.querySelectorAll('*[data-accordion]');
+
+            for (let $accordion of $accordions){
+
+                let $accordionContentWrapper = $accordion.querySelector('*[data-accordion-content]');
+
+                $accordionContentWrapper.style.height = '';
+                $accordionContentWrapper.style.height = $accordionContentWrapper.scrollHeight + 'px';
+
+            }
+
+        }
+    }
+};
