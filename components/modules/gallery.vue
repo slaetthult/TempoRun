@@ -2,9 +2,9 @@
   <div class="gallery">
       <div class="gridWrap">
           <div class="w12">
+
               <h2>Gallery Example</h2>
               <swiper :options="gallerySwiperOptions" ref="galleryswiper">
-                  <!-- slides -->
                   <swiper-slide>
                       <picture>
                           <source media="(min-width: 650px)" srcset="https://via.placeholder.com/1920x300">
@@ -26,12 +26,10 @@
                           <img src="https://via.placeholder.com/1920x300" alt="alt">
                       </picture>
                   </swiper-slide>
-                  <!-- Optional controls -->
                   <div class="swiper-pagination"  slot="pagination"></div>
                   <div class="swiper-button-prev" slot="button-prev"></div>
                   <div class="swiper-button-next" slot="button-next"></div>
               </swiper>
-
 
               <a href="javascript:void(0);" data-modalbox-trigger @click="showModalbox(0)">Modalbox Trigger</a>
               <portal to="portaldestination">
@@ -40,7 +38,6 @@
                       <a href="javascript:void(0);" @click="closeModalbox()">close Modalbox</a>
                   </div>
               </portal>
-
 
           </div>
       </div>
