@@ -34,7 +34,7 @@ export default {
                  },
                  pagination: {
                      el: '.swiper-pagination',
-                     type: 'bullets'
+                     type: 'bullets' /* 'fraction' if you want numbers instead */
                  }
              }
          }

@@ -1,6 +1,7 @@
 <template>
   <div class="faqaccordion">
       <div class="gridWrap">
+
           <div class="w12">
               <h1>Accordion-Modul</h1>
 
@@ -28,34 +29,33 @@
                       </div>
                   </div>
               </div>
-
           </div>
+
       </div>
   </div>
 </template>
 
 <script>
+    import accordion from "../../mixins/accordion";
 
-    import myMixin from "../../mixins/accordion";
-
-export default {
-     props: [],
-    mixins: [myMixin],
-    data(){
-         return {
-             gallerySwiperOptions: {
-                 navigation: {
-                     nextEl: '.swiper-button-next',
-                     prevEl: '.swiper-button-prev'
-                 },
-                 pagination: {
-                     el: '.swiper-pagination',
-                     type: 'bullets'
+    export default {
+        props: [],
+        mixins: [accordion],
+        data(){
+             return {
+                 gallerySwiperOptions: {
+                     navigation: {
+                         nextEl: '.swiper-button-next',
+                         prevEl: '.swiper-button-prev'
+                     },
+                     pagination: {
+                         el: '.swiper-pagination',
+                         type: 'bullets'
+                     }
                  }
              }
-         }
-    },
-     methods: {
+        },
+         methods: {
+        }
     }
-}
 </script>
