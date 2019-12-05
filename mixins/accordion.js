@@ -36,6 +36,13 @@ export default {
 
             let $accordions = this.$el.querySelectorAll('*[data-accordion]');
 
+            if($accordions.length === 0){
+
+                console.log("No accordions fond!");
+                return false;
+
+            }
+
             for (let $accordion of $accordions){
 
                 let $accordionContentWrapper = $accordion.querySelector('*[data-accordion-content]');
