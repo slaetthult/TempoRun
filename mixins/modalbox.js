@@ -9,7 +9,15 @@ export default {
 
             let $modalbox = document.querySelector(modalboxQuery);
 
-            $modalbox.classList.add('show');
+            if($modalbox){
+
+                $modalbox.classList.add('show');
+
+            } else {
+
+                console.log("Modalbox "+ modalboxQuery +"not found!");
+
+            }
 
         },
 
