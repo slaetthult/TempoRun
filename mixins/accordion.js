@@ -2,7 +2,7 @@ export default {
     data (){
         return {
 
-            currentActiveAccordionId: 0
+            currentActiveAccordionId: null
 
         }
     },
