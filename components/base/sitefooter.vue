@@ -2,7 +2,7 @@
   <header class="sitefooter">
       <div class="gridWrap">
           <div class="w12">
-              footer
+              <h2>Footer Area</h2>
           </div>
       </div>
   </header>

@@ -7,7 +7,7 @@
   }
 
   .accordion-trigger {
-
+    @include none-select();
   }
 
   .accordion-content {
