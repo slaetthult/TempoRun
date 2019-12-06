@@ -11,7 +11,7 @@ $ npm install
 For detailed explanation on how things work in nuxt, check out [Nuxt.js docs](https://nuxtjs.org).
 ```
 
-## Essential Features
+## Essential Elements
 ### The grid (flexbox)
 
 The grid class contains the shortname of the viewport and the amount of grids:<br>
@@ -38,7 +38,6 @@ export default {
     mixins: [accordion]
 }
 ```
-HTML:
 ``` bash
 <div class="accordion" data-accordion :class="{'active' : currentActiveAccordionId === 0}">
   <button class="accordion-trigger" @click="toggleAccordion($event, 0)">Accordion 1</button>
@@ -48,3 +47,57 @@ HTML:
       </div>
   </div>
 </div>
+```
+### Modalbox
+To use the modalbox import the mixin to the wished component.
+``` bash
+import modalbox from "../../mixins/modalbox";
+
+export default {
+    mixins: [modalbox]
+}
+```
+The content inside the modalbox will be moved the the end of the HTML-Body.<br>
+``` bash
+<a href="javascript:void(0);" data-modalbox-trigger @click="showModalbox(0)">Modalbox Trigger</a>
+<portal to="portaldestination">
+  <div class="modalbox" data-modalbox="0" v-click-outside="closeModalbox">
+      I am a modalbox!
+      <a href="javascript:void(0);" @click="closeModalbox()">close Modalbox</a>
+  </div>
+</portal>
+```
+### Swiper/Slider
+For detailed explaination (for example settings ect.), checkout https://github.com/surmon-china/vue-awesome-swiper
+``` bash
+<swiper :options="gallerySwiperOptions" ref="galleryswiper">
+  <swiper-slide>
+      <picture>
+          <source media="(min-width: 650px)" srcset="https://via.placeholder.com/1920x300">
+          <source media="(min-width: 465px)" srcset="https://via.placeholder.com/1920x300">
+          <img src="https://via.placeholder.com/1920x300" alt="alt">
+      </picture>
+  </swiper-slide>
+  <swiper-slide>
+      <picture>
+          <source media="(min-width: 650px)" srcset="https://via.placeholder.com/1920x300">
+          <source media="(min-width: 465px)" srcset="https://via.placeholder.com/1920x300">
+          <img src="https://via.placeholder.com/1920x300" alt="alt">
+      </picture>
+  </swiper-slide>
+</swiper>
+```
+### Usefull Methods
+#### Focus inputs
+This method also solves issues with focussing inputs on mobile devices!
+To use this import the mixin to the wished component.
+``` bash
+import focusInput from "../../mixins/focus-input";
+
+export default {
+    mixins: [focusInput]
+}
+```
+``` bash
+<button @click="focusInput('.siteheader-search')">Focus search input</button>
+```

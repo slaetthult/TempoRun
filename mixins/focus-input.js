@@ -1,5 +1,5 @@
 /**
- * The focusInput method solves issues with focussing inputs on mobile devices!
+ * The focusInput method also solves issues with focussing inputs on mobile devices!
  */
 
 export default {
