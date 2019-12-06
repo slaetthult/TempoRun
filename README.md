@@ -14,7 +14,7 @@ For detailed explanation on how things work in nuxt, check out [Nuxt.js docs](ht
 ## Essential Elements
 ### The grid (flexbox)
 
-The grid class contains the shortname of the viewport and the amount of grids:<br>
+The grid class contains the shortname of the viewport (defined in config.scss) and the amount of grids:<br>
 {viewport}{gridamount} -> "w12".<br>
 If you want to push or pull grid-elements, use "w-left-4".
 Grid-Elements are wrapped by the class "gridWrap".
@@ -57,7 +57,7 @@ export default {
     mixins: [modalbox]
 }
 ```
-The content inside the modalbox will be moved the the end of the HTML-Body.<br>
+The content inside the modalbox will be moved to the end of the HTML-Body.<br>
 ``` bash
 <a href="javascript:void(0);" data-modalbox-trigger @click="showModalbox(0)">Modalbox Trigger</a>
 <portal to="portaldestination">
