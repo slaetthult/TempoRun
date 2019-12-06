@@ -32,7 +32,8 @@ export default {
       '~/plugins/register-components.js',
       { src: '~/plugins/vue-awesome-swiper', mode: 'client' },
       { src: '~/plugins/vue-portal', mode: 'client' },
-      { src: '~/plugins/vue-click-outside' }
+      { src: '~/plugins/vue-click-outside' },
+      { src: '~/plugins/focus-input' }
   ],
   /*
   ** Nuxt.js dev-modules
