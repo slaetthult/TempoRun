@@ -5,7 +5,7 @@
           <div class="w12">
               <h2>Accordion Example</h2>
 
-              <div class="accordion" data-accordion :class="{'active' : currentActiveAccordionId === 0 || currentActiveAccordionId === null }">
+              <div class="accordion" data-accordion :class="{'active' : currentActiveAccordionId === 0}">
                   <button class="accordion-trigger" @click="toggleAccordion($event, 0)">Accordion 1</button>
                   <div class="accordion-content" data-accordion-content>
                       <div class="accordion-content-wrapper">
@@ -55,7 +55,13 @@
                  }
              }
         },
+        mounted(){
+            this.openCertainAccordion();
+        },
          methods: {
+            openCertainAccordion(){
+                this.currentActiveAccordionId = 0;
+            }
         }
     }
 </script>

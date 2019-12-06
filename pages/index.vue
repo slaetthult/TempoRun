@@ -7,8 +7,7 @@
         <div class="w12" style="background: lightgrey;margin-top:5px;">w12</div>
         <div class="w6" style="background: lightgrey;margin-top:5px;">w6</div>
         <div class="w6" style="background: lightgrey;margin-top:5px;">w6</div>
-        <div class="w4" style="background: lightgrey;margin-top:5px;">w4</div>
-        <div class="w4" style="background: lightgrey;margin-top:5px;">w4</div>
+        <div class="w4 w-left-4" style="background: lightgrey;margin-top:5px;">w4</div>
         <div class="w4" style="background: lightgrey;margin-top:5px;">w4</div>
       </div>
     </div>

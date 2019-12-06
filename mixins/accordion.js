@@ -21,13 +21,6 @@ export default {
 
         toggleAccordion(event, id = null){
 
-            if(id === null){
-
-                console.log("Accordion id is missing!");
-                return false;
-
-            }
-
             this.currentActiveAccordionId = id === this.currentActiveAccordionId ? -1 : id;
 
         },

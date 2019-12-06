@@ -1,22 +1,50 @@
-# nuxt-run
+# Nuxt Run
 
-> Starter kit for nuxt projects
+> Starter kit for nuxt projects with usefull features for fast development.
 
 ## Build Setup
 
 ``` bash
 # install dependencies
-$ npm run install
+$ npm install
 
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
+For detailed explanation on how things work in nuxt, check out [Nuxt.js docs](https://nuxtjs.org).
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## Essential Features
+### The grid (flexbox)
+
+The grid class contains the shortname of the viewport and the amount of grids:<br>
+{viewport}{gridamount} -> "w12".<br>
+If you want to push or pull grid-elements, use "w-left-4".
+Grid-Elements are wrapped by the class "gridWrap".
+``` bash
+<div class="gridWrap">
+    <h2 class="w12 mw8">Grid Example</h2>
+    <div class="w12" style="background: lightgrey;margin-top:5px;">w12</div>
+    <div class="w6" style="background: lightgrey;margin-top:5px;">w6</div>
+    <div class="w6" style="background: lightgrey;margin-top:5px;">w6</div>
+    <div class="w4 w-left-4" style="background: lightgrey;margin-top:5px;">w4</div>
+    <div class="w4" style="background: lightgrey;margin-top:5px;">w4</div>
+</div>
+```
+
+### Accordion
+To use accordions import the mixin to the wished component.
+
+```bash
+import accordion from "../../mixins/accordion";
+export default {
+    mixins: [accordion]
+}
+```
+HTML:
+``` bash
+<div class="accordion" data-accordion :class="{'active' : currentActiveAccordionId === 0}">
+  <button class="accordion-trigger" @click="toggleAccordion($event, 0)">Accordion 1</button>
+  <div class="accordion-content" data-accordion-content>
+      <div class="accordion-content-wrapper">
+          Accordion Text 1
+      </div>
+  </div>
+</div>
