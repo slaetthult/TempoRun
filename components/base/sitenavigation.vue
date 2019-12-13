@@ -2,10 +2,10 @@
   <nav class="siteheader-navigation">
     <ul>
       <li>
-        <nuxt-link :to="localePath('index')">Startseite</nuxt-link>
+        <nuxt-link :to="localePath('index')">Index</nuxt-link>
       </li>
       <li>
-        <nuxt-link :to="localePath('subpage')">Unterseite</nuxt-link>
+        <nuxt-link :to="localePath('subpage')">Subpage</nuxt-link>
       </li>
     </ul>
     <h2>Lang navigation</h2>

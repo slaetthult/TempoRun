@@ -1,5 +1,5 @@
-import Translation from './lang/translation';
-
+import textTranslation from './lang/text-translation';
+import urlTranslation from './lang/url-translation';
 
 export default {
   mode: 'universal',
@@ -54,8 +54,10 @@ export default {
         defaultLocale: 'en',
         vueI18n: {
             fallbackLocale: 'en',
-            messages: Translation
-        }
+            messages: textTranslation
+        },
+        parsePages: false,
+        pages: urlTranslation
     },
 
   /*
