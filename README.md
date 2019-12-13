@@ -87,17 +87,34 @@ For detailed explaination (for example settings ect.), checkout https://github.c
   </swiper-slide>
 </swiper>
 ```
-### Usefull Methods
-#### Focus inputs
-This method also solves issues with focussing inputs on mobile devices!
-To use this import the mixin to the wished component.
-``` bash
-import focusInput from "../../mixins/focus-input";
+### Multi language
+Nuxt-Run has integrated nuxt-i18n for multi language. <br>
+For detailed explaination, checkout https://github.com/nuxt-community/nuxt-i18n
 
-export default {
-    mixins: [focusInput]
-}
-```
+1. change/add/remove languages in nuxt.config.js
+2. place language vars into your components, for example {{ $t('siteheader.headline') }}
+3. define the translation in /lang/text-translation.js
+4. if you also want to translate the url paths, change it in /lang/url-translation.js
+
+#### Language Switcher
 ``` bash
-<button @click="focusInput('.siteheader-search')">Focus search input</button>
+<nuxt-link :to="switchLocalePath('en')">English</nuxt-link>
+<nuxt-link :to="switchLocalePath('de')">Deutsch</nuxt-link>
+```
+
+#### The Nuxt-Link
+If you decide to use nuxt-i18n, you have to modify the nuxt-link as shown here:
+``` bash
+<nuxt-link :to="localePath('subpage')">Subpage</nuxt-link>
+```
+instead of:
+``` bash
+<nuxt-link to="/subpage">Subpage</nuxt-link>
+```
+
+### Usefull Stuff
+#### Focus inputs
+This Vue Directive also solves issues with focussing inputs on mobile devices!
+``` bash
+<button v-focus-input="'.siteheader-search'">Focus search input</button>
 ```

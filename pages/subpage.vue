@@ -14,6 +14,17 @@
 
 
 export default {
-
+    head() {
+        return {
+            title: this.$t("headData.subpage.title"),
+            meta: [
+                {
+                    hid: "description",
+                    name: "description",
+                    content: this.$t("headData.subpage.description")
+                }
+            ]
+        }
+    }
 }
 </script>
