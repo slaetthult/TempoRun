@@ -2,12 +2,15 @@
   <nav class="siteheader-navigation">
     <ul>
       <li>
-        <nuxt-link to="/">Startseite</nuxt-link>
+        <nuxt-link :to="localePath('index')">Startseite</nuxt-link>
       </li>
       <li>
-        <nuxt-link to="/subpage">Unterseite</nuxt-link>
+        <nuxt-link :to="localePath('subpage')">Unterseite</nuxt-link>
       </li>
     </ul>
+    <h2>Lang navigation</h2>
+    <nuxt-link :to="switchLocalePath('en')">English</nuxt-link>
+    <nuxt-link :to="switchLocalePath('de')">Deutsch</nuxt-link>
   </nav>
 </template>
 

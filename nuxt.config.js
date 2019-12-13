@@ -1,3 +1,5 @@
+import Translation from './lang/translation';
+
 
 export default {
   mode: 'universal',
@@ -44,7 +46,18 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+      ['nuxt-i18n']
   ],
+
+    i18n: {
+        locales: ['en', 'de'],
+        defaultLocale: 'en',
+        vueI18n: {
+            fallbackLocale: 'en',
+            messages: Translation
+        }
+    },
+
   /*
   ** Build configuration
   */
@@ -56,3 +69,4 @@ export default {
     }
   }
 }
+
