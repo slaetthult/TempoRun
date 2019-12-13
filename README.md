@@ -118,3 +118,11 @@ This Vue Directive also solves issues with focussing inputs on mobile devices!
 ``` bash
 <button v-focus-input="'.siteheader-search'">Focus search input</button>
 ```
+
+### Browser Support
+**iOS** > 9  
+**Android** > 4.4  
+**IE** > 10  
+**Edge** > 12  
+**Firefox** > 50  
+**Chrome** > 55

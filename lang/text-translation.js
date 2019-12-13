@@ -14,7 +14,6 @@ export default {
             headline: "Header Area with Navigation"
         }
     },
-
     de: {
         headData: {
             index: {
