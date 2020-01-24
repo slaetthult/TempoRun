@@ -1,11 +1,11 @@
 <template>
-  <header class="sitefooter">
+  <footer class="sitefooter">
       <div class="gridWrap">
           <div class="w12">
               <h2>Footer Area</h2>
           </div>
       </div>
-  </header>
+  </footer>
 </template>
 
 <script>

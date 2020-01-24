@@ -50,7 +50,8 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-      ['nuxt-i18n']
+      ['nuxt-i18n'],
+      ['@nuxtjs/style-resources']
   ],
 
     i18n: {
@@ -62,6 +63,12 @@ export default {
         },
         parsePages: false,
         pages: urlTranslation
+    },
+    styleResources: {
+        scss: [
+            '~assets/scss/config.scss',
+            '~assets/scss/mixins.scss'
+        ]
     },
 
   /*
