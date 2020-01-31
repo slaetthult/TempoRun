@@ -35,11 +35,15 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+      { src: '~/plugins/polyfill-entries' },
+      { src: '~/plugins/polyfill-intersection-observer' },
+      { src: '~/plugins/polyfill-object-fit' },
       '~/plugins/register-components.js',
       { src: '~/plugins/vue-awesome-swiper', mode: 'client' },
       { src: '~/plugins/vue-portal', mode: 'client' },
       { src: '~/plugins/vue-click-outside' },
-      { src: '~/plugins/focus-input' }
+      { src: '~/plugins/focus-input' },
+      { src: '~/plugins/vue2-google-maps' },
   ],
   /*
   ** Nuxt.js dev-modules

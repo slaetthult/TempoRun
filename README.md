@@ -87,6 +87,23 @@ For detailed explaination (for example settings ect.), checkout https://github.c
   </swiper-slide>
 </swiper>
 ```
+### Google Maps
+For detailed explaination (for example settings ect.), checkout https://github.com/xkjyeah/vue-google-maps
+```
+<GmapMap :center="{lat: 53.582734, lng: 10.027333}" :zoom="16" :options="{styles: mapStyles, scrollwheel: false, disableDefaultUI: true}" map-type-id="roadmap">
+  <GmapMarker :position="{lat: 53.582734, lng: 10.027333}" :icon="markerStyles" @click="toggleInfoWindow(m,index)" />
+
+  <gmap-info-window
+          :options="infoOptions"
+          :position="infoWindowPos"
+          :opened="infoWinOpen"
+          @closeclick="infoWinOpen=false"
+  >
+      <div v-html="infoContent"></div>
+  </gmap-info-window>
+
+</GmapMap>
+```
 ### Multi language
 Nuxt-Run has integrated nuxt-i18n for multi language. <br>
 For detailed explaination, checkout https://github.com/nuxt-community/nuxt-i18n
@@ -119,6 +136,13 @@ This Vue Directive also solves issues with focussing inputs on mobile devices!
 <button v-focus-input="'.siteheader-search'">Focus search input</button>
 ```
 
+#### JS Polyfills
+
+Following polyfills are already integrated:<br><br>
+      polyfill-entries <br>
+      polyfill-intersection-observer<br>
+      polyfill-object-fit
+      
 ### Browser Support
 **iOS** > 9  
 **Android** > 4.4  

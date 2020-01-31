@@ -7,11 +7,11 @@
         </div>
       </div>
     </div>
+    <gmap/>
   </div>
 </template>
 
 <script>
-
 
 export default {
     head() {

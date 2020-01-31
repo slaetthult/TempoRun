@@ -1,0 +1,26 @@
+.gmap {
+  .vue-map-container {
+    width: 100%;
+    height: 300px;
+  }
+}
+
+@media screen and (min-width: map-get($viewports, mw)) {
+
+  .gmap {
+    .vue-map-container {
+      height: 400px;
+    }
+  }
+
+}
+
+@media screen and (min-width: map-get($viewports, lw)) {
+
+  .gmap {
+    .vue-map-container {
+      height: 543px;
+    }
+  }
+
+}
