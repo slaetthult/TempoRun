@@ -90,8 +90,8 @@ For detailed explaination (for example settings ect.), checkout https://github.c
 ### Google Maps
 For detailed explaination (for example settings ect.), checkout https://github.com/xkjyeah/vue-google-maps
 ```
-<GmapMap :center="{lat: 53.582734, lng: 10.027333}" :zoom="16" :options="{styles: mapStyles, scrollwheel: false, disableDefaultUI: true}" map-type-id="roadmap">
-  <GmapMarker :position="{lat: 53.582734, lng: 10.027333}" :icon="markerStyles" @click="toggleInfoWindow(m,index)" />
+<GmapMap :center="{lat: 50.582734, lng: 10.027333}" :zoom="16" :options="{styles: mapStyles, scrollwheel: false, disableDefaultUI: true}" map-type-id="roadmap">
+  <GmapMarker :position="{lat: 50.582734, lng: 10.027333}" :icon="markerStyles" @click="toggleInfoWindow(m,index)" />
 
   <gmap-info-window
           :options="infoOptions"
