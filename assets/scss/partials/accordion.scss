@@ -7,12 +7,13 @@
   }
 
   .accordion-trigger {
+    display: inline-block;
     @include none-select();
   }
 
   .accordion-content {
     overflow: hidden;
-    transition: height linear 0.2s;
+    transition: height linear $transitionTime;
   }
 
 }

@@ -31,7 +31,7 @@ export default {
 
             if($accordions.length === 0){
 
-                console.log("No accordions fond!");
+                console.log("No accordions found!");
                 return false;
 
             }
@@ -45,6 +45,11 @@ export default {
 
             }
 
+        },
+
+        openCertainAccordion(id){
+            this.currentActiveAccordionId = id;
         }
+
     }
 };

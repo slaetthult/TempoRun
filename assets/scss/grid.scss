@@ -4,9 +4,7 @@
 
 .gridWrap {
   position: relative;
-  @include flex();
-  flex-direction: row;
-  flex-wrap: wrap;
+  @include gridWrapFlexWrapper();
   margin: 0 auto;
   padding: 0 20px 0;
   width: 100%;

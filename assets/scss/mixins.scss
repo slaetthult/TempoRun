@@ -85,7 +85,15 @@
   }
 }
 
+// ADD FLEX POWER
 @mixin flex {
   display: flex;
   display: -webkit-flex;
+}
+
+@mixin gridWrapFlexWrapper {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }

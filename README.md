@@ -1,6 +1,6 @@
 # Nuxt Run
 
-> Starter kit for nuxt projects with usefull features for fast development.
+> Starter kit for nuxt projects with usefull features for fast development. IE11 is supported!
 
 ## Build Setup
 
@@ -143,10 +143,16 @@ Following polyfills are already integrated:<br><br>
       polyfill-intersection-observer<br>
       polyfill-object-fit
       
+To enable object-fit: cover on images for older browsers add
+``` bash
+data-object-fit="cover"
+```
+to the Image-HTML-Tag. Define it also in the CSS as usual for modern browsers.
+      
 ### Browser Support
 **iOS** > 9  
 **Android** > 4.4  
-**IE** > 10  
+**IE** = 11  
 **Edge** > 12  
 **Firefox** > 50  
 **Chrome** > 55
