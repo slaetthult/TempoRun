@@ -29,6 +29,15 @@
   transform: scale($horizontal,$vertical);
 }
 
+// TRANSFORM ALL
+@mixin transform($task) {
+  -webkit-transform: $task;
+  -o-transform: $task;
+  -moz-transform: $task;
+  -ms-transform: $task;
+  transform: $task;
+}
+
 // SET HYPHENS MODE
 @mixin hyphens($mode) {
   -webkit-hyphens: $mode;
