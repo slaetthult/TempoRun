@@ -135,6 +135,12 @@ This Vue Directive also solves issues with focussing inputs on mobile devices!
 ``` bash
 <button v-focus-input="'.siteheader-search'">Focus search input</button>
 ```
+#### Click Outside
+Vue Directive to call a method function if the user clicks outside that element.
+Append this to your wished HTML-element:
+``` bash
+v-click-outside="yourFunction"
+```
 
 #### JS Polyfills
 
