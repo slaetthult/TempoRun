@@ -87,13 +87,19 @@
 
 // ADD FLEX POWER
 @mixin flex {
-  display: flex;
   display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 @mixin gridWrapFlexWrapper {
-  display: flex;
   display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
