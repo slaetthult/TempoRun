@@ -130,6 +130,10 @@ instead of:
 ```
 
 ### Usefull Stuff
+#### Robots
+is integrated (https://www.npmjs.com/package/@nuxtjs/robots)
+#### Sitemap
+is integrated (https://www.npmjs.com/package/@nuxtjs/sitemap)
 #### Focus inputs
 This Vue Directive also solves issues with focussing inputs on mobile devices!
 ``` bash
