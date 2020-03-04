@@ -55,7 +55,8 @@ export default {
   */
   modules: [
       ['nuxt-i18n'],
-      ['@nuxtjs/style-resources']
+      ['@nuxtjs/style-resources'],
+      ['vue-scrollto/nuxt', { duration: 300 }]
   ],
 
     i18n: {

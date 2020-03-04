@@ -141,6 +141,22 @@ Append this to your wished HTML-element:
 ``` bash
 v-click-outside="yourFunction"
 ```
+#### Scroll To Element
+https://www.npmjs.com/package/vue-scrollto <br>
+Have a nice smooth scroll to any element you want.
+You can use it in your method functions:
+``` bash
+this.$scrollTo(this.$el);
+this.$scrollTo(document.querySelector('.sitefooter'));
+```
+or as clickable element for users:
+``` bash
+<a href="#" v-scroll-to="'#element'">Scroll to #element</a>
+ 
+<div id="element">
+    Hi. I'm #element.
+</div>
+```
 
 #### JS Polyfills
 
