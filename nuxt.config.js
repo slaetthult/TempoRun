@@ -1,6 +1,8 @@
 import textTranslation from './lang/text-translation';
 import urlTranslation from './lang/url-translation';
 
+const PAGE_DOMAIN = "https://www.nuxt-run.com";
+
 export default {
   mode: 'universal',
   /*
@@ -56,7 +58,9 @@ export default {
   modules: [
       ['nuxt-i18n'],
       ['@nuxtjs/style-resources'],
-      ['vue-scrollto/nuxt', { duration: 300 }]
+      ['vue-scrollto/nuxt', { duration: 300 }],
+      '@nuxtjs/robots',
+      '@nuxtjs/sitemap' /* has to be at the end of this array! */
   ],
 
     i18n: {
@@ -74,6 +78,24 @@ export default {
             '~assets/scss/config.scss',
             '~assets/scss/mixins.scss'
         ]
+    },
+
+    sitemap: {
+        path: "/sitemap.xml",
+        hostname: PAGE_DOMAIN,
+        filter ({ routes }) {
+            return routes.map(route => {
+                route.url = `${route.url}/`;
+                return route;
+            })
+        },
+        cacheTime: 1000 * 60 * 15,
+        gzip: true
+    },
+
+    robots: {
+        UserAgent: '*',
+        Disallow: ''
     },
 
   /*
