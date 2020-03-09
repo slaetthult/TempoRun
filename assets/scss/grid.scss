@@ -6,7 +6,7 @@
   position: relative;
   @include gridWrapFlexWrapper();
   margin: 0 auto;
-  padding: 0 20px 0;
+  padding: 0 $grid-wrapper-outer-margin 0;
   width: 100%;
   max-width: $grid-absolute-site-width;
   min-height: 10px;

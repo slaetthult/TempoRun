@@ -28,7 +28,7 @@ html {
   font-size: $font-size-main;
   color: $font-color;
   font-family: $font-family;
-  line-height: $font-line-height-default;
+  line-height: $font-line-height-default-mobile;
   font-weight: $font-weight-normal;
   letter-spacing: $font-letter-spacing;
 
@@ -46,7 +46,8 @@ h4,.h4,
 h5,.h5,
 h6,.h6 {
   display: block;
-  padding: 5px 0;
+  padding: $headline-margin 0;
+  line-height: $headline-line-height-mobile;
 }
 
 h1,.h1{
@@ -133,7 +134,7 @@ textarea {
 
 p {
   display: block;
-  padding: 5px 0;
+  padding: $text-paragraph-margin 0;
 }
 
 strong, b {
@@ -165,7 +166,7 @@ pre {
 
 blockquote {
   font-style: italic;
-  padding:10px;
+  padding: 10px;
 }
 
 iframe {
@@ -173,17 +174,17 @@ iframe {
 }
 
 hr {
-  border:0;
-  margin:5px 0;
-  padding:0;
-  height:1px;
-  display:block;
-  background-color:$color-grey;
+  border: 0;
+  margin: 5px 0;
+  padding: 0;
+  height: 1px;
+  display: block;
+  background: $color-grey;
 }
 
 ul {
   display: block;
-  padding:5px 0;
+  padding: $list-element-margin 0;
   li {
     position: relative;
     margin-left: 19px;
@@ -221,6 +222,51 @@ ul {
 
 @media screen and (min-width: map-get($viewports, mw)) {
   html {
+    line-height: $font-line-height-default-tablet;
+
+    body {
+      font-size: $font-size-tablet;
+    }
+
+  }
+
+  h1,.h1,
+  h2,.h2,
+  h3,.h3,
+  h4,.h4,
+  h5,.h5,
+  h6,.h6 {
+    line-height: $headline-line-height-tablet;
+  }
+
+  h1,.h1{
+    font-size: $font-size-h1-tablet;
+  }
+  h2,.h2{
+    font-size: $font-size-h2-tablet;
+  }
+  h3,.h3{
+    font-size: $font-size-h3-tablet;
+  }
+  h4,.h4{
+    font-size: $font-size-h4-tablet;
+  }
+  h5,.h5{
+    font-size: $font-size-h5-tablet;
+  }
+  h6,.h6{
+    font-size: $font-size-h6-tablet;
+  }
+
+}
+
+/* -------------------------------------------------------- */
+/*                BASE MEDIAQUERYS LARGE                    */
+/* -------------------------------------------------------- */
+
+@media screen and (min-width: map-get($viewports, lw)) {
+  html {
+    line-height: $font-line-height-default-desktop;
 
     body {
       font-size: $font-size-desktop;
@@ -228,23 +274,32 @@ ul {
 
   }
 
+  h1,.h1,
+  h2,.h2,
+  h3,.h3,
+  h4,.h4,
+  h5,.h5,
+  h6,.h6 {
+    line-height: $headline-line-height-desktop;
+  }
+
   h1,.h1{
-    font-size: $font-size-h1;
+    font-size: $font-size-h1-desktop;
   }
   h2,.h2{
-    font-size: $font-size-h2;
+    font-size: $font-size-h2-desktop;
   }
   h3,.h3{
-    font-size: $font-size-h3;
+    font-size: $font-size-h3-desktop;
   }
   h4,.h4{
-    font-size: $font-size-h4;
+    font-size: $font-size-h4-desktop;
   }
   h5,.h5{
-    font-size: $font-size-h5;
+    font-size: $font-size-h5-desktop;
   }
   h6,.h6{
-    font-size: $font-size-h6;
+    font-size: $font-size-h6-desktop;
   }
 
 }

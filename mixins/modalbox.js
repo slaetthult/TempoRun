@@ -6,7 +6,6 @@ export default {
             this.closeModalbox();
 
             let modalboxQuery = '*[data-modalbox="'+ id +'"]';
-
             let $modalbox = document.querySelector(modalboxQuery);
 
             if($modalbox){
@@ -23,7 +22,6 @@ export default {
 
         closeModalbox(event = null){
 
-
             if(event){
                 if(event.target.hasAttribute("data-modalbox-trigger")){
                     return false;
@@ -31,7 +29,6 @@ export default {
             }
 
             let modalboxQuery = '*[data-modalbox].show';
-
             let $modalbox = document.querySelector(modalboxQuery);
 
             if($modalbox){

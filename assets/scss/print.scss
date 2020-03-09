@@ -21,11 +21,22 @@
     font-size: 14pt;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     page-break-after: avoid;
   }
 
-  p, h1, h2, h3, h4, h5, h6 {
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     orphans: 3;
     widows: 3;
   }
@@ -40,12 +51,14 @@
     padding: 0 1em;
   }
 
-  a, a:visited {
+  a,
+  a:visited {
     color: $color-black !important;
-    text-decoration: none;
+    text-decoration: none !important;
   }
 
-  a[href="#"], a[href="javascript:"] {
+  a[href="#"],
+  a[href="javascript:"] {
     display: none;
   }
 
@@ -57,14 +70,17 @@
     display: table-header-group;
   }
 
-  img,tr {
+  img,
+  tr {
     page-break-inside: avoid;
   }
 
-  .navigation, iframe{
+  .navigation,
+  iframe,
+  .sitenavigation,
+  .sitefooter {
     display: none!important;
   }
-
 
 }
 
