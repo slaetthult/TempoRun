@@ -162,6 +162,12 @@ or as clickable element for users:
 </div>
 ```
 
+#### Set, delete or get value of cookie
+Just import the utils/cookie file. So you are can use the functions where ever you need it (plugin-files as well).
+``` bash
+import {getCookieValueOf, setCookie, deleteCookie} from '~/utils/cookies';
+```
+
 #### JS Polyfills
 
 Following polyfills are already integrated:<br><br>
