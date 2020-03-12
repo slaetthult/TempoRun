@@ -163,7 +163,7 @@ or as clickable element for users:
 ```
 
 #### Set, delete or get value of cookie
-Just import the utils/cookie file. So you are can use the functions where ever you need it (plugin-files as well).
+Just import the utils/cookie file. So you can use the functions where ever you need it (plugin-files as well).
 ``` bash
 import {getCookieValueOf, setCookie, deleteCookie} from '~/utils/cookies';
 ```
@@ -175,7 +175,7 @@ Following polyfills are already integrated:<br><br>
       polyfill-intersection-observer<br>
       polyfill-object-fit
       
-To enable object-fit: cover on images for older browsers add
+To enable object-fit: cover on images and videos for older browsers add
 ``` bash
 data-object-fit="cover"
 ```
