@@ -168,6 +168,13 @@ Just import the utils/cookie file. So you can use the functions where ever you n
 import {getCookieValueOf, setCookie, deleteCookie} from '~/utils/cookies';
 ```
 
+#### Format seconds to HHMMSS
+Just import the utils/toHHMMSS file. So you can use the functions where ever you need it (plugin-files as well).
+``` bash
+import {toHHMMSS} from '~/utils/toHHMMSS';
+console.log(toHHMMSS(300, true, true, true));
+```
+
 #### JS Polyfills
 
 Following polyfills are already integrated:<br><br>
