@@ -186,12 +186,13 @@ deleteCookie('yourCookieName');
 Just import the utils/toHHMMSS file. So you can use the functions where ever you need it (plugin-files as well).
 ``` bash
 import {toHHMMSS} from '~/utils/toHHMMSS';
+
 toHHMMSS(300, true, true, true);
 ```
 
 #### JS Polyfills
 
-Following polyfills are already integrated:<br><br>
+Following polyfills are already integrated (to support older browsers like IE11):<br><br>
       polyfill-entries <br>
       polyfill-intersection-observer<br>
       polyfill-object-fit (https://github.com/constancecchen/object-fit-polyfill)
@@ -200,7 +201,8 @@ To enable object-fit: cover on images and videos for older browsers add
 ``` bash
 data-object-fit="cover"
 ```
-to the Image-HTML-Tag. Define it also in the CSS as usual for modern browsers.
+to the Image-HTML-Tag. 
+! Define it also in the CSS as usual for modern browsers. !
       
 ### Browser Support
 **iOS** > 9  
