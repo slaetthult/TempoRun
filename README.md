@@ -176,13 +176,17 @@ or as clickable element for users:
 Just import the utils/cookie file. So you can use the functions where ever you need it (plugin-files as well).
 ``` bash
 import {getCookieValueOf, setCookie, deleteCookie} from '~/utils/cookies';
+
+getCookieValueOf('yourCookieName');
+setCookie('yourCookieName', 'true');
+deleteCookie('yourCookieName');
 ```
 
-#### Format seconds to HHMMSS
+#### Format seconds to HHMMSS (for example: 00:05:00)
 Just import the utils/toHHMMSS file. So you can use the functions where ever you need it (plugin-files as well).
 ``` bash
 import {toHHMMSS} from '~/utils/toHHMMSS';
-console.log(toHHMMSS(300, true, true, true));
+toHHMMSS(300, true, true, true);
 ```
 
 #### JS Polyfills
