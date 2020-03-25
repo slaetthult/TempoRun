@@ -104,6 +104,16 @@ For detailed explaination (for example settings ect.), checkout https://github.c
 
 </GmapMap>
 ```
+### Image Lazyload
+You can force images to be lazyloaded for an improved site performance.
+Just change srcset to data-srcset and scr to data-src and also add 'class="lazyload"'.
+```
+  <picture>
+      <source media="(min-width: 650px)" data-srcset="https://via.placeholder.com/1920x300">
+      <source media="(min-width: 465px)" data-srcset="https://via.placeholder.com/1920x300">
+      <img data-src="https://via.placeholder.com/1920x300" alt="alt" class="lazyload">
+  </picture>
+```
 ### Multi language
 Nuxt-Run has integrated nuxt-i18n for multi language. <br>
 For detailed explaination, checkout https://github.com/nuxt-community/nuxt-i18n
@@ -180,7 +190,7 @@ console.log(toHHMMSS(300, true, true, true));
 Following polyfills are already integrated:<br><br>
       polyfill-entries <br>
       polyfill-intersection-observer<br>
-      polyfill-object-fit
+      polyfill-object-fit (https://github.com/constancecchen/object-fit-polyfill)
       
 To enable object-fit: cover on images and videos for older browsers add
 ``` bash

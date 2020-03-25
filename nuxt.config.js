@@ -46,6 +46,7 @@ export default {
       { src: '~/plugins/vue-click-outside' },
       { src: '~/plugins/focus-input' },
       { src: '~/plugins/vue2-google-maps' },
+      { src: '~/plugins/lazysizes.js', mode: 'client' },
   ],
   /*
   ** Nuxt.js dev-modules

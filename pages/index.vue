@@ -14,12 +14,15 @@
 
     <gallery/>
 
+    <imageteaser/>
+
     <faqaccordion/>
 
   </div>
 </template>
 
 <script>
+
 export default {
     head() {
         return {
