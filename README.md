@@ -123,11 +123,11 @@ export default {
     mixins: [validation],
 }
 ```
-and apply the following on your wished form fields (with any eventTrigger you want):
+and apply the following to your wished form fields (with any eventTrigger you want):
 ``` bash
 @keyup="validate($event, {condition:'required', minLength:20})"
 ```
-possible conditions: "required", "email"
+possible conditions: "required", "email" <br>
 options: "minLength" (only for required-condition! It is optional)
 
 ### Multi language
@@ -135,8 +135,8 @@ Nuxt-Run has integrated nuxt-i18n for multi language. <br>
 For detailed explaination, checkout https://github.com/nuxt-community/nuxt-i18n
 
 1. change/add/remove languages in nuxt.config.js
-2. place language vars into your components, for example {{ $t('siteheader.headline') }}
-3. define the translation in /lang/text-translation.js
+2. define the translation in /lang/text-translation.js
+3. place language vars into your components, for example {{ $t('siteheader.headline') }}
 4. if you also want to translate the url paths, change it in /lang/url-translation.js
 
 #### Language Switcher
