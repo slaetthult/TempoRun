@@ -1,0 +1,13 @@
+.radiobox {
+  @extend .checkbox;
+  span {
+    border-radius: 50%;
+    &:before {
+      border-radius: 50%;
+    }
+    &:after {
+      border-radius: 50%;
+    }
+  }
+
+}

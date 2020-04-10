@@ -98,8 +98,13 @@ button, input[type="button"], input[type="submit"], .button {
   text-decoration: none;
   transition: all $transitionTime ease;
   border-radius: 0;
-  &:hover, &:active {
-    background: lighten($color-grey,5%);
+  &[disabled]{
+    opacity: 0.5;
+  }
+  &:not([disabled]){
+    &:hover, &:active {
+      background: lighten($color-grey,5%);
+    }
   }
 }
 
@@ -119,6 +124,9 @@ input[type="text"], input[type="password"], input[type="number"], input[type="em
   /* Error class for baseTemp Formvalidation */
   &.error {
     border: 1px solid $color-ui-red;
+  }
+  &.success {
+    border: 1px solid $color-ui-green;
   }
   @include set-placeholdercolor($color-black);
 }

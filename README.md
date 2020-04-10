@@ -108,12 +108,28 @@ For detailed explaination (for example settings ect.), checkout https://github.c
 You can force images to be lazyloaded for an improved site performance.
 Just change srcset to data-srcset and scr to data-src and also add 'class="lazyload"'.
 ```
-  <picture>
-      <source media="(min-width: 650px)" data-srcset="https://via.placeholder.com/1920x300">
-      <source media="(min-width: 465px)" data-srcset="https://via.placeholder.com/1920x300">
-      <img data-src="https://via.placeholder.com/1920x300" alt="alt" class="lazyload">
-  </picture>
+<picture>
+  <source media="(min-width: 650px)" data-srcset="https://via.placeholder.com/1920x300">
+  <source media="(min-width: 465px)" data-srcset="https://via.placeholder.com/1920x300">
+  <img data-src="https://via.placeholder.com/1920x300" alt="alt" class="lazyload">
+</picture>
 ```
+### Form Fields Validation
+You can check form fields. Just import the validations-mixin
+``` bash
+import validation from "~/mixins/validation";
+
+export default {
+    mixins: [validation],
+}
+```
+and apply the following on your wished form fields (with any eventTrigger you want):
+``` bash
+@keyup="validate($event, {condition:'required', minLength:20})"
+```
+possible conditions: "required", "email"
+options: "minLength" (only for required-condition! It is optional)
+
 ### Multi language
 Nuxt-Run has integrated nuxt-i18n for multi language. <br>
 For detailed explaination, checkout https://github.com/nuxt-community/nuxt-i18n

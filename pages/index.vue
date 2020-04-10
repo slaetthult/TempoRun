@@ -18,6 +18,8 @@
 
     <faqaccordion/>
 
+    <newsletter/>
+
   </div>
 </template>
 
