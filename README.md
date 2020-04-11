@@ -125,7 +125,7 @@ export default {
 ```
 and apply the following to your wished form fields (with any eventTrigger you want):
 ``` bash
-@keyup="validate($event, {condition:'required', minLength:20})"
+@keyup="validate($event, {condition:'required', minLength:20})" data-validate
 ```
 possible conditions: "required", "email" <br>
 options: "minLength" (only for required-condition! It is optional)
