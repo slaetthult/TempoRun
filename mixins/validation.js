@@ -10,7 +10,7 @@ export default {
 
     methods: {
 
-        validate(event, options){
+        validate(event, params){
 
             const formField = {};
             formField.condition = {};
@@ -19,8 +19,8 @@ export default {
             formField.type = formField.$element.type;
             formField.value = formField.$element.value;
             formField.classList = formField.$element.classList;
-            formField.condition.type = options.condition;
-            formField.condition.minLength = options.minLength ? parseInt(options.minLength) : 1;
+            formField.condition.type = params.condition;
+            formField.condition.minLength = params.minLength ? parseInt(params.minLength) : 1;
 
             this.handleValidation(formField);
             this.checkIfReadyForSubmit();
@@ -34,6 +34,10 @@ export default {
                 if(formField.type === 'checkbox' || formField.type === 'radiobox'){
 
                     this.checkRadioCheckbox(formField);
+
+                } else if(formField.type === 'select-one') {
+
+                    this.checkSelect(formField);
 
                 } else {
 
@@ -96,27 +100,41 @@ export default {
 
         },
 
+        checkSelect(formField){
+
+            if(!formField.value || formField.value === ''){
+
+                this.addCssErrorClass(formField);
+
+            } else {
+
+                this.addCssSuccessClass(formField);
+
+            }
+
+        },
+
         addCssSuccessClass(formField){
 
-            formField.classList.add(this.cssSuccessClass);
-            formField.classList.remove(this.cssErrorClass);
+            formField.$element.classList.add(this.cssSuccessClass);
+            formField.$element.classList.remove(this.cssErrorClass);
 
         },
 
         addCssErrorClass(formField){
 
-            formField.classList.add(this.cssErrorClass);
-            formField.classList.remove(this.cssSuccessClass);
+            formField.$element.classList.add(this.cssErrorClass);
+            formField.$element.classList.remove(this.cssSuccessClass);
 
         },
 
         checkIfReadyForSubmit(){
 
-            const formFields = this.$el.querySelectorAll("input:not([type=hidden])");
+            const $formFields = this.$el.querySelectorAll("[data-validate]");
 
-            for(const formField of formFields){
+            for(const $formField of $formFields){
 
-                if (!formField.classList.contains(this.cssSuccessClass)){
+                if (!$formField.classList.contains(this.cssSuccessClass)){
 
                     this.validationSuccessfully = false;
                     return false;
