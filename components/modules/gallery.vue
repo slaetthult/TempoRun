@@ -45,7 +45,7 @@
 </template>
 
 <script>
-    import modalbox from "../../mixins/modalbox";
+    import modalbox from "~/mixins/modalbox";
 
     export default {
         props: [],

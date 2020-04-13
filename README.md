@@ -33,7 +33,7 @@ Grid-Elements are wrapped by the class "gridWrap".
 To use accordions import the mixin to the wished component.
 
 ```bash
-import accordion from "../../mixins/accordion";
+import accordion from "~/mixins/accordion";
 export default {
     mixins: [accordion]
 }
@@ -51,7 +51,7 @@ export default {
 ### Modalbox
 To use the modalbox import the mixin to the wished component.
 ``` bash
-import modalbox from "../../mixins/modalbox";
+import modalbox from "~/mixins/modalbox";
 
 export default {
     mixins: [modalbox]

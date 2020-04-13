@@ -36,7 +36,7 @@
 </template>
 
 <script>
-    import accordion from "../../mixins/accordion";
+    import accordion from "~/mixins/accordion";
 
     export default {
         props: [],
