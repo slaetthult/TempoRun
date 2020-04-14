@@ -128,7 +128,7 @@ and apply the following data-attributes to you wished fom fields for example:
 <input type="password" v-model="newsletterData.password" data-validate data-validate-minlength="8">
 ```
 data-validate checks if form field is not empty and not unchecked <br>
-data-validate-minlength defines the required min length of the form field's value
+data-validate-minlength defines the required min length of the form field's value <br>
 <b>Note that the correct form field type is very important for the validation!</b>
 
 ``` bash
@@ -179,7 +179,7 @@ v-click-outside="yourFunction"
 ```
 #### Scroll To Element
 https://www.npmjs.com/package/vue-scrollto <br>
-Have a nice smooth scroll to any element you want.
+Have a nice smooth scroll to any element you want. <br>
 You can use it in your method functions:
 ``` bash
 this.$scrollTo(this.$el);
