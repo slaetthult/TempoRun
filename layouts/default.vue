@@ -5,7 +5,11 @@
       <nuxt/>
     </main>
     <sitefooter/>
-    <portal-target name="portaldestination" class="siteportaldestination"></portal-target>
+
+    <client-only>
+      <portal-target name="portaldestination" class="siteportaldestination"></portal-target>
+    </client-only>
+
   </div>
 </template>
 <script>

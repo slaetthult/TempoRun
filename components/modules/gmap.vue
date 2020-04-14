@@ -4,6 +4,7 @@
 
           <div class="gmap w12 mw12 lw12">
 
+              <client-only>
               <GmapMap :center="{lat: 50.582734, lng: 10.027333}" :zoom="16" :options="{styles: mapStyles, scrollwheel: false, disableDefaultUI: true}" map-type-id="roadmap">
                   <GmapMarker :position="{lat: 50.582734, lng: 10.027333}" :icon="markerStyles" @click="toggleInfoWindow(m,index)" />
 
@@ -17,6 +18,7 @@
                   </gmap-info-window>
 
               </GmapMap>
+              </client-only>
 
           </div>
 
