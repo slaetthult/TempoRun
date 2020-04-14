@@ -115,7 +115,7 @@ Just change srcset to data-srcset and scr to data-src and also add 'class="lazyl
 </picture>
 ```
 ### Form Fields Validation
-You can check form fields. Just import the validations-mixin
+This validation checks the form field values while typing. Just import the validations-mixin.
 ``` bash
 import validation from "~/mixins/validation";
 
@@ -123,12 +123,17 @@ export default {
     mixins: [validation],
 }
 ```
-and apply the following to your wished form fields (with any eventTrigger you want):
+and apply the following data-attributes to you wished fom fields for example:
 ``` bash
-@keyup="validate($event, {condition:'required', minLength:20})" data-validate
+<input type="password" v-model="newsletterData.password" data-validate data-validate-minlength="8">
 ```
-possible conditions: "required", "email" <br>
-options: "minLength" (only for required-condition! It is optional)
+data-validate checks if form field is not empty and not unchecked <br>
+data-validate-minlength defines the required min length of the form field's value
+
+``` bash
+this.validationSuccessfully
+```
+returns true in your component, if the validation is successfully
 
 ### Multi language
 Nuxt-Run has integrated nuxt-i18n for multi language. <br>

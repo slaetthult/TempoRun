@@ -7,8 +7,8 @@
               <h2>Validation Example</h2>
 
               <div class="select">
-                  <select class="selectbox" @change="validate($event, {condition: 'required'})" data-validate>
-                      <option disabled selected>Choose gender</option>
+                  <select class="selectbox" data-validate>
+                      <option disabled selected value="">Choose gender</option>
                       <option>male</option>
                       <option>female</option>
                   </select>
@@ -17,7 +17,7 @@
               <div class="input">
                   Name:
                   <label>
-                      <input type="text" v-model="newsletterData.name" @keyup="validate($event, {condition: 'required'})" data-validate>
+                      <input type="text" v-model="newsletterData.name" data-validate>
                   </label>
               </div>
 
@@ -29,27 +29,41 @@
               </div>
 
               <div class="input">
+                  Password:
+                  <label>
+                      <input type="password" v-model="newsletterData.password" data-validate data-validate-minlength="8">
+                  </label>
+              </div>
+
+              <div class="input">
+                  Confirm password:
+                  <label>
+                      <input type="password" data-validate data-validate-minlength="8">
+                  </label>
+              </div>
+
+              <div class="input">
                   E-Mail:
                   <label>
-                      <input type="email" v-model="newsletterData.email" @keyup="validate($event, {condition: 'email'})" data-validate>
+                      <input type="email" v-model="newsletterData.email" data-validate>
                   </label>
               </div>
 
               <div class="textarea">
                   <label>
                       Message:
-                      <textarea v-model="newsletterData.message" @keyup="validate($event, {condition:'required', minLength:20})" data-validate></textarea>
+                      <textarea v-model="newsletterData.message" data-validate data-validate-minlength="20"></textarea>
                   </label>
               </div>
 
               <div class="checkbox">
                   <label>
-                      <input type="checkbox" v-model="newsletterData.privacyPolicy" @change="validate($event, {condition: 'required'})" data-validate>
+                      <input type="checkbox" v-model="newsletterData.privacyPolicy" data-validate>
                       <span>A beautiful checkbox with a <nuxt-link to="/">link</nuxt-link></span>
                   </label>
               </div>
 
-              <button :disabled="!validationSuccessfully">Submit</button>
+              <button @click="checkFormFields()">Submit</button>
 
           </div>
 

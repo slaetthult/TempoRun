@@ -8,48 +8,74 @@ export default {
         }
     },
 
+    mounted(){
+
+        this.validationEventTrigger();
+
+    },
+
     methods: {
 
-        validate(event, params){
+        validationEventTrigger(){
+
+            const _this = this;
+            const $component = _this.$el;
+
+            $component.addEventListener("keyup", (event) =>{
+
+                _this.handleValidation(_this.getFormFieldData(event.target))
+
+            });
+
+            $component.addEventListener("change", (event) =>{
+
+                _this.handleValidation(_this.getFormFieldData(event.target))
+
+            });
+
+        },
+
+        getFormFieldData($element){
 
             const formField = {};
-            formField.condition = {};
 
-            formField.$element = event.currentTarget;
+            formField.$element = $element;
             formField.type = formField.$element.type;
             formField.value = formField.$element.value;
-            formField.classList = formField.$element.classList;
-            formField.condition.type = params.condition;
-            formField.condition.minLength = params.minLength ? parseInt(params.minLength) : 1;
+            formField.minLength = formField.$element.getAttribute("data-validate-minlength") ? parseInt(formField.$element.getAttribute("data-validate-minlength")) : 1;
 
-            this.handleValidation(formField);
-            this.checkIfReadyForSubmit();
+            return formField;
 
         },
 
         handleValidation(formField){
 
-            if(formField.condition.type === 'required'){
+            const formFieldType = formField.type;
 
-                if(formField.type === 'checkbox' || formField.type === 'radiobox'){
-
-                    this.checkRadioCheckbox(formField);
-
-                } else if(formField.type === 'select-one') {
-
-                    this.checkSelect(formField);
-
-                } else {
-
-                    this.checkNotEmpty(formField);
-
-                }
-
-            } else if(formField.condition.type === 'email'){
+            if(formFieldType === 'email'){
 
                 this.checkEmail(formField);
 
+            } else if(formFieldType === 'select-one'){
+
+                this.checkSelect(formField);
+
+            } else if(formFieldType === 'checkbox' || formFieldType === 'radiobox'){
+
+                this.checkRadioCheckbox(formField);
+
+            } else if(formFieldType === 'text' || formFieldType === 'textarea'){
+
+                this.checkNotEmpty(formField);
+
+            } else if(formFieldType === 'password'){
+
+                this.checkNotEmpty(formField);
+
+                this.checkConfirmedPassword();
+
             }
+
 
         },
 
@@ -74,7 +100,7 @@ export default {
 
             const formFieldValue = formField.value.trim();
 
-            if(formFieldValue.length < formField.condition.minLength){
+            if(formFieldValue.length < formField.minLength){
 
                 this.addCssErrorClass(formField);
 
@@ -114,6 +140,32 @@ export default {
 
         },
 
+        checkConfirmedPassword(){
+
+            const formField = {};
+            const $formFieldPassword = this.$el.querySelectorAll("*[type=password]")[0];
+            const $formFieldPasswordConfirm = this.$el.querySelectorAll("*[type=password]")[1];
+
+            if($formFieldPassword && $formFieldPasswordConfirm){
+
+                formField.$element = $formFieldPasswordConfirm;
+                const formFieldPasswordValue = $formFieldPassword.value;
+                const formFieldPasswordConfirmValue = $formFieldPasswordConfirm.value;
+
+                if(formFieldPasswordValue !== formFieldPasswordConfirmValue || formFieldPasswordConfirmValue === ''){
+
+                   this.addCssErrorClass(formField);
+
+                } else {
+
+                    this.addCssSuccessClass(formField);
+
+                }
+
+            }
+
+        },
+
         addCssSuccessClass(formField){
 
             formField.$element.classList.add(this.cssSuccessClass);
@@ -128,22 +180,22 @@ export default {
 
         },
 
-        checkIfReadyForSubmit(){
+        checkFormFields(){
 
             const $formFields = this.$el.querySelectorAll("[data-validate]");
+            let error = false;
 
             for(const $formField of $formFields){
 
-                if (!$formField.classList.contains(this.cssSuccessClass)){
+                this.handleValidation(this.getFormFieldData($formField));
 
-                    this.validationSuccessfully = false;
-                    return false;
-
+                if($formField.classList.contains(this.cssErrorClass)){
+                    error = true;
                 }
 
             }
 
-            this.validationSuccessfully = true;
+            this.validationSuccessfully = !error;
 
         }
 
