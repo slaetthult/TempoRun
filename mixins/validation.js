@@ -23,13 +23,25 @@ export default {
 
             $component.addEventListener("keyup", (event) =>{
 
-                _this.handleValidation(_this.getFormFieldData(event.target))
+                const $element = event.target;
+
+                if($element.getAttribute("data-validate") !== null){
+
+                    _this.handleValidation(_this.getFormFieldData($element));
+
+                }
 
             });
 
             $component.addEventListener("change", (event) =>{
 
-                _this.handleValidation(_this.getFormFieldData(event.target))
+                const $element = event.target;
+
+                if($element.getAttribute("data-validate") !== null){
+
+                    _this.handleValidation(_this.getFormFieldData($element));
+
+                }
 
             });
 
@@ -60,9 +72,13 @@ export default {
 
                 this.checkSelect(formField);
 
-            } else if(formFieldType === 'checkbox' || formFieldType === 'radiobox'){
+            } else if(formFieldType === 'checkbox'){
 
-                this.checkRadioCheckbox(formField);
+                this.checkCheckbox(formField);
+
+            } else if(formFieldType === 'radio'){
+
+                this.checkRadiobox(formField);
 
             } else if(formFieldType === 'text' || formFieldType === 'textarea'){
 
@@ -112,7 +128,7 @@ export default {
 
         },
 
-        checkRadioCheckbox(formField){
+        checkCheckbox(formField){
 
             if(!formField.$element.checked){
 
@@ -125,6 +141,47 @@ export default {
             }
 
         },
+
+        checkRadiobox(formField){
+
+            const radioGroupName = formField.$element.getAttribute("name");
+            const $radioGroupFormFields = this.$el.querySelectorAll("input[type=radio][name="+ radioGroupName +"]");
+            let error = true;
+
+            for(const $radioGroupFormField of $radioGroupFormFields){
+
+                if($radioGroupFormField.checked){
+
+                    error = false;
+
+                }
+
+            }
+
+            for(const $radioGroupFormField of $radioGroupFormFields){
+
+                formField.$element = $radioGroupFormField;
+
+                if(error){
+
+                    this.addCssErrorClass(formField);
+
+                } else {
+
+                    this.removeCssValidationClasses(formField);
+
+                    if($radioGroupFormField.checked){
+
+                        this.addCssSuccessClass(formField);
+
+                    }
+
+                }
+
+            }
+
+        },
+
 
         checkSelect(formField){
 
@@ -176,6 +233,13 @@ export default {
         addCssErrorClass(formField){
 
             formField.$element.classList.add(this.cssErrorClass);
+            formField.$element.classList.remove(this.cssSuccessClass);
+
+        },
+
+        removeCssValidationClasses(formField){
+
+            formField.$element.classList.remove(this.cssErrorClass);
             formField.$element.classList.remove(this.cssSuccessClass);
 
         },
