@@ -32,11 +32,11 @@
       }
 
       .#{$current-viewport}-left-#{$i} {
-        margin-left: grid-size($i) + (3 * $grid-margin);
+        margin-left: grid-size($i) + (3 * $grid-margin)!important;
       }
 
       .#{$current-viewport}-right-#{$i} {
-        margin-right: grid-size($i) + (3 * $grid-margin);
+        margin-right: grid-size($i) + (3 * $grid-margin)!important;
       }
 
     }
@@ -61,11 +61,11 @@
         }
 
         .#{$current-viewport}-left-#{$i} {
-          margin-left: grid-size($i) + (3 * $grid-margin);
+          margin-left: grid-size($i) + (3 * $grid-margin)!important;
         }
 
         .#{$current-viewport}-right-#{$i} {
-          margin-right: grid-size($i) + (3 * $grid-margin);
+          margin-right: grid-size($i) + (3 * $grid-margin)!important;
         }
 
       }
