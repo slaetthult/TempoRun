@@ -5,8 +5,8 @@
 @import "general";
 @import "grid";
 
-@import "modules/gallery";
-@import "modules/gmap";
+@import "base/siteheader";
+@import "base/sitefooter";
 
 @import "partials/accordion";
 @import "partials/slider";
@@ -14,5 +14,9 @@
 @import "partials/checkbox";
 @import "partials/radiobox";
 @import "partials/selectbox";
+
+@import "modules/gallery";
+@import "modules/gmap";
+
 
 @import "print";

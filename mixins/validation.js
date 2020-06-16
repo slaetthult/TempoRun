@@ -92,7 +92,6 @@ export default {
 
             }
 
-
         },
 
         checkEmail(formField){
@@ -181,7 +180,6 @@ export default {
             }
 
         },
-
 
         checkSelect(formField){
 

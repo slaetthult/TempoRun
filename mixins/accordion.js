@@ -1,11 +1,15 @@
 export default {
+
     data (){
+
         return {
 
             currentActiveAccordionId: null
 
         }
+
     },
+
     mounted(){
 
         let _this = this;
@@ -13,10 +17,13 @@ export default {
         _this.calcAccordionHeight();
 
         window.addEventListener("resize", () => {
+
             _this.calcAccordionHeight();
+
         });
 
     },
+
     methods:{
 
         toggleAccordion(event, id = null){
@@ -48,8 +55,11 @@ export default {
         },
 
         openCertainAccordion(id){
+
             this.currentActiveAccordionId = id;
+
         }
 
     }
+
 };
