@@ -1,4 +1,5 @@
 export default {
+
     methods:{
 
         showModalbox(id){
@@ -23,9 +24,13 @@ export default {
         closeModalbox(event = null){
 
             if(event){
+
                 if(event.target.hasAttribute("data-modalbox-trigger")){
+
                     return false;
+
                 }
+
             }
 
             let modalboxQuery = '*[data-modalbox].show';
@@ -40,4 +45,5 @@ export default {
         }
 
     }
+
 };

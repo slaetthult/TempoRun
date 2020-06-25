@@ -18,7 +18,7 @@
 
     <faqaccordion/>
 
-    <newsletter/>
+    <formexample/>
 
   </div>
 </template>
