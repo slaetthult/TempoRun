@@ -80,7 +80,7 @@ export default {
 
                 this.checkRadiobox(formField);
 
-            } else if(formFieldType === 'text' || formFieldType === 'textarea'){
+            } else if(formFieldType === 'text' || formFieldType === 'textarea' || formFieldType === 'search'){
 
                 this.checkNotEmpty(formField);
 

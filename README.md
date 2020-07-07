@@ -136,6 +136,14 @@ this.validationSuccessfully
 ```
 returns true in your component, if the validation is successfully
 
+You can trigger the form validation manually, if you call this method:
+``` bash
+<button @click="checkFormFields()">Submit</button>
+```
+or
+``` bash
+this.checkFormFields();
+```
 ### Multi language
 Nuxt-Run has integrated nuxt-i18n for multi language. <br>
 For detailed explaination, checkout https://github.com/nuxt-community/nuxt-i18n
