@@ -45,6 +45,14 @@
       width: 100%;
     }
 
+    .#{$current-viewport}-left-0 {
+      margin-left: $grid-margin!important;
+    }
+
+    .#{$current-viewport}-right-0 {
+      margin-left: $grid-margin!important;
+    }
+
     .#{$current-viewport}Hidden {
       display: none;
     }
@@ -73,6 +81,14 @@
       .#{$current-viewport}Full {
         width: 100%;
 
+      }
+
+      .#{$current-viewport}-left-0 {
+        margin-left: $grid-margin!important;
+      }
+
+      .#{$current-viewport}-right-0 {
+        margin-left: $grid-margin!important;
       }
 
       .#{$current-viewport}Hidden {
