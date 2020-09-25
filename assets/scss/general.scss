@@ -48,6 +48,15 @@ h6,.h6 {
   display: block;
   padding: $headline-margin 0;
   line-height: $headline-line-height-mobile;
+
+  a {
+    display: inline;
+    position: static;
+    color: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    font-size: inherit;
+  }
 }
 
 h1,.h1{
