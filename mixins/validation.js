@@ -4,7 +4,8 @@ export default {
         return {
             validationSuccessfully: false,
             cssErrorClass: 'error',
-            cssSuccessClass: 'success'
+            cssSuccessClass: 'success',
+            scrollToErrorFormFieldOffset: -220
         }
     },
 
@@ -245,19 +246,28 @@ export default {
         checkFormFields(){
 
             const $formFields = this.$el.querySelectorAll("[data-validate]");
-            let error = false;
+            let $formFieldsError = [];
 
             for(const $formField of $formFields){
 
                 this.handleValidation(this.getFormFieldData($formField));
 
                 if($formField.classList.contains(this.cssErrorClass)){
-                    error = true;
+
+                    $formFieldsError.push($formField);
+
                 }
 
             }
 
-            this.validationSuccessfully = !error;
+            if($formFieldsError.length > 0){
+
+                const $errorFormElement = ($formFieldsError[0].type && ($formFieldsError[0].type === 'checkbox' || $formFieldsError[0].type === 'radio')) ? $formFieldsError[0].closest("div") : $formFieldsError[0];
+                this.$scrollTo($errorFormElement, {offset: this.scrollToErrorFormFieldOffset});
+
+            }
+
+            this.validationSuccessfully = $formFieldsError.length === 0;
 
         }
 
