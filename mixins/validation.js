@@ -246,28 +246,28 @@ export default {
         checkFormFields(){
 
             const $formFields = this.$el.querySelectorAll("[data-validate]");
-            let $formFieldsError = [];
+            let $firstFormFieldError = null;
 
             for(const $formField of $formFields){
 
                 this.handleValidation(this.getFormFieldData($formField));
 
-                if($formField.classList.contains(this.cssErrorClass)){
+                if($formField.classList.contains(this.cssErrorClass) && !$firstFormFieldError){
 
-                    $formFieldsError.push($formField);
+                  $firstFormFieldError = $formField;
 
                 }
 
             }
 
-            if($formFieldsError.length > 0){
+            if($firstFormFieldError){
 
-                const $errorFormElement = ($formFieldsError[0].type && ($formFieldsError[0].type === 'checkbox' || $formFieldsError[0].type === 'radio')) ? $formFieldsError[0].closest("div") : $formFieldsError[0];
+                const $errorFormElement = ($firstFormFieldError.type && ($firstFormFieldError.type === 'checkbox' || $firstFormFieldError.type === 'radio')) ? $firstFormFieldError.closest("div") : $firstFormFieldError;
                 this.$scrollTo($errorFormElement, {offset: this.scrollToErrorFormFieldOffset});
 
             }
 
-            this.validationSuccessfully = $formFieldsError.length === 0;
+            this.validationSuccessfully = !$firstFormFieldError;
 
         }
 
