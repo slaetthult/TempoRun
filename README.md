@@ -129,8 +129,8 @@ and apply the following data-attributes to you wished fom fields for example:
 ```
 <b>data-validate</b> checks if the form field is not empty and not unchecked <br>
 <b>data-validate-minlength</b> defines the required min length of the form field's value <br>
-<b>data-validate-maxlength</b> defines the max length of the form field's value 
-<b>data-validate-not-required</b> validates the form field only if it is not empty
+<b>data-validate-maxlength</b> defines the max length of the form field's value <br>
+<b>data-validate-not-required</b> validates the form field only if it is not empty <br><br>
 <b>Note that the correct form field type is very important for the validation!</b>
 
 ``` bash
@@ -140,11 +140,11 @@ returns true in your component, if the validation is successfully
 
 You can trigger the form validation manually, if you call this method:
 ``` bash
-<button @click="checkFormFields()">Submit</button>
+<button @click="validateFormFields()">Submit</button>
 ```
 or
 ``` bash
-this.checkFormFields();
+this.validateFormFields();
 ```
 ### Multi language
 Nuxt-Run has integrated nuxt-i18n for multi language. <br>
