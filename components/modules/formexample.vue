@@ -43,6 +43,13 @@
               </div>
 
               <div class="input">
+                  ZIP:
+                  <label>
+                      <input type="text" v-model="formData.zip" data-validate data-validate-not-required data-validate-minlength="5" data-validate-maxlength="5">
+                  </label>
+              </div>
+
+              <div class="input">
                   Password:
                   <label>
                       <input type="password" v-model="formData.password" data-validate data-validate-minlength="8">
@@ -83,7 +90,7 @@
                   </label>
               </div>
 
-              <button @click="checkFormFields()">Submit</button>
+              <button @click="submitForm()">Submit</button>
 
           </div>
 
@@ -109,8 +116,25 @@ import validation from "~/mixins/validation";
                      password: '',
                      gender: '',
                      gender2: false,
+                    zip: ''
                  }
              }
+        },
+
+        methods: {
+
+            submitForm(){
+
+                this.validateFormFields();
+
+                if(this.validationSuccessfully){
+
+                    alert("Validation is successfull!");
+
+                }
+
+            }
+
         }
     }
 </script>

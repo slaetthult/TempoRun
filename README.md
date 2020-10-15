@@ -125,10 +125,12 @@ export default {
 ```
 and apply the following data-attributes to you wished fom fields for example:
 ``` bash
-<input type="password" v-model="newsletterData.password" data-validate data-validate-minlength="8">
+<input type="password" v-model="newsletterData.password" data-validate data-validate-minlength="8" data-validate-minlength="30">
 ```
-data-validate checks if form field is not empty and not unchecked <br>
-data-validate-minlength defines the required min length of the form field's value <br>
+<b>data-validate</b> checks if the form field is not empty and not unchecked <br>
+<b>data-validate-minlength</b> defines the required min length of the form field's value <br>
+<b>data-validate-maxlength</b> defines the max length of the form field's value 
+<b>data-validate-not-required</b> validates the form field only if it is not empty
 <b>Note that the correct form field type is very important for the validation!</b>
 
 ``` bash

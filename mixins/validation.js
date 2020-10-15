@@ -3,6 +3,7 @@ export default {
     data(){
         return {
             validationSuccessfully: false,
+            validationIndicatorAttribute: "data-validate",
             cssErrorClass: 'error',
             cssSuccessClass: 'success',
             scrollToErrorFormFieldOffset: -220
@@ -20,31 +21,23 @@ export default {
         validationEventTrigger(){
 
             const _this = this;
-            const $component = _this.$el;
+            const $component = this.$el;
 
-            $component.addEventListener("keyup", (event) =>{
+            ['keyup', 'change'].forEach( eventName =>
 
-                const $element = event.target;
+                $component.addEventListener(eventName, (event)=>{
 
-                if($element.getAttribute("data-validate") !== null){
+                    const $element = event.target;
 
-                    _this.handleValidation(_this.getFormFieldData($element));
+                    if($element.getAttribute(_this.validationIndicatorAttribute) !== null){
 
-                }
+                        _this.handleValidation(_this.getFormFieldData($element));
 
-            });
+                    }
 
-            $component.addEventListener("change", (event) =>{
+                })
 
-                const $element = event.target;
-
-                if($element.getAttribute("data-validate") !== null){
-
-                    _this.handleValidation(_this.getFormFieldData($element));
-
-                }
-
-            });
+            );
 
         },
 
@@ -56,6 +49,8 @@ export default {
             formField.type = formField.$element.type;
             formField.value = formField.$element.value;
             formField.minLength = formField.$element.getAttribute("data-validate-minlength") ? parseInt(formField.$element.getAttribute("data-validate-minlength")) : 1;
+            formField.maxLength = formField.$element.getAttribute("data-validate-maxlength") ? parseInt(formField.$element.getAttribute("data-validate-maxlength")) : -1;
+            formField.isNotRequired = formField.$element.getAttribute("data-validate-not-required") !== null ? true : false;
 
             return formField;
 
@@ -81,7 +76,7 @@ export default {
 
                 this.checkRadiobox(formField);
 
-            } else if(formFieldType === 'text' || formFieldType === 'textarea' || formFieldType === 'search' || formFieldType === 'number'){
+            } else if(formFieldType === 'text' || formFieldType === 'textarea' || formFieldType === 'search' || formFieldType === 'number' || formFieldType === 'tel' || formFieldType === 'url'){
 
                 this.checkNotEmpty(formField);
 
@@ -116,7 +111,15 @@ export default {
 
             const formFieldValue = formField.value.trim();
 
-            if(formFieldValue.length < formField.minLength){
+            if(formField.isNotRequired && formFieldValue.length === 0){
+
+                this.removeCssValidationClasses(formField);
+
+            }else if(formFieldValue.length < formField.minLength){
+
+                this.addCssErrorClass(formField);
+
+            } else if(formField.maxLength !== -1 && formFieldValue.length > formField.maxLength){
 
                 this.addCssErrorClass(formField);
 
@@ -243,7 +246,7 @@ export default {
 
         },
 
-        checkFormFields(){
+        validateFormFields(){
 
             const $formFields = this.$el.querySelectorAll("[data-validate]");
             let $firstFormFieldError = null;
