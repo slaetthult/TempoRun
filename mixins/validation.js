@@ -76,7 +76,7 @@ export default {
 
                 this.checkRadiobox(formField);
 
-            } else if(formFieldType === 'text' || formFieldType === 'textarea' || formFieldType === 'search' || formFieldType === 'number' || formFieldType === 'tel' || formFieldType === 'url'){
+            } else if(formFieldType === 'text' || formFieldType === 'textarea' || formFieldType === 'search' || formFieldType === 'number' || formFieldType === 'tel' || formFieldType === 'url' || formFieldType === 'file'){
 
                 this.checkNotEmpty(formField);
 
