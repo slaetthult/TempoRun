@@ -246,7 +246,7 @@ export default {
 
         },
 
-        validateFormFields(){
+        validateFormFields(event = null){
 
             const $formFields = this.$el.querySelectorAll("[data-validate]");
             let $firstFormFieldError = null;
@@ -267,6 +267,12 @@ export default {
 
                 const $errorFormElement = ($firstFormFieldError.type && ($firstFormFieldError.type === 'checkbox' || $firstFormFieldError.type === 'radio')) ? $firstFormFieldError.closest("div") : $firstFormFieldError;
                 this.$scrollTo($errorFormElement, {offset: this.scrollToErrorFormFieldOffset});
+
+                if(event){
+
+                    event.preventDefault();
+
+                }
 
             }
 
