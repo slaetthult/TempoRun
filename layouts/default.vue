@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div onclick="void(0);">
     <siteheader/>
     <main class="sitemain">
       <nuxt/>
