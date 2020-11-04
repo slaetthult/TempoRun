@@ -131,10 +131,10 @@ input[type="text"], input[type="password"], input[type="number"], input[type="em
   margin: 5px 0;
   transition: all $transitionTime ease;
   /* Error class for baseTemp Formvalidation */
-  &.error {
+  &.validation-error {
     border: 1px solid $color-ui-red;
   }
-  &.success {
+  &.validation-success {
     border: 1px solid $color-ui-green;
   }
   @include set-placeholdercolor($color-black);

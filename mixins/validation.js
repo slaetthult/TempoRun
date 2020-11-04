@@ -4,8 +4,8 @@ export default {
         return {
             validationSuccessfully: false,
             validationIndicatorAttribute: "data-validate",
-            cssErrorClass: 'error',
-            cssSuccessClass: 'success',
+            cssErrorClass: 'validation-error',
+            cssSuccessClass: 'validation-success',
             scrollToErrorFormFieldOffset: -220
         }
     },
