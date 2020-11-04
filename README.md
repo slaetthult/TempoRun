@@ -11,6 +11,10 @@ $ npm install
 For detailed explanation on how things work in nuxt, check out [Nuxt.js docs](https://nuxtjs.org).
 ```
 
+## Demo
+
+https://nifty-curie-944faf.netlify.app/
+
 ## Essential Elements
 ### The grid (flexbox)
 
