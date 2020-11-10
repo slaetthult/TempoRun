@@ -208,6 +208,16 @@ ul {
   }
 }
 
+img {
+  transition: opacity ease $transitionTime;
+  &.v-lazy-image {
+    opacity: 0;
+  }
+  &.v-lazy-image-loaded {
+    opacity: 1;
+  }
+}
+
 
 /* -------------------------------------------------------- */
 /*                    GENERALL CLASSES                      */

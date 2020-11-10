@@ -110,14 +110,17 @@ For detailed explaination (for example settings ect.), checkout https://github.c
 ```
 ### Image Lazyload
 You can force images to be lazyloaded for an improved site performance.
-Just change srcset to data-srcset and scr to data-src and also add 'class="lazyload"'.
 ```
-<picture>
-  <source media="(min-width: 650px)" data-srcset="https://via.placeholder.com/1920x300">
-  <source media="(min-width: 465px)" data-srcset="https://via.placeholder.com/1920x300">
-  <img data-src="https://via.placeholder.com/1920x300" alt="alt" class="lazyload">
-</picture>
+<v-lazy-image
+  src="https://via.placeholder.com/1920x300"
+  alt="Fallback"
+  use-picture
+>
+  <source media="(min-width: 1000px)" srcset="https://via.placeholder.com/1920x300" />
+  <source srcset="https://via.placeholder.com/1000x300" />
+</v-lazy-image>
 ```
+For more information: https://github.com/alexjoverm/v-lazy-image
 ### Form Fields Validation
 This validation checks the form field values while typing. Just import the validations-mixin.
 ``` bash

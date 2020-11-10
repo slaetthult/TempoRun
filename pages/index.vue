@@ -14,11 +14,11 @@
 
     <gallery/>
 
-    <imageteaser/>
-
     <faqaccordion/>
 
     <formexample/>
+
+    <imageteaser/>
 
   </div>
 </template>

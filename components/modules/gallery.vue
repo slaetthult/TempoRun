@@ -10,23 +10,23 @@
                   <swiper :options="gallerySwiperOptions" ref="galleryswiper">
                       <swiper-slide>
                           <picture>
-                              <source media="(min-width: 650px)" srcset="https://via.placeholder.com/1920x300">
-                              <source media="(min-width: 465px)" srcset="https://via.placeholder.com/1920x300">
-                              <img src="https://via.placeholder.com/1920x300" alt="alt">
+                              <source media="(min-width: 650px)" srcset="https://via.placeholder.com/1000x300">
+                              <source media="(min-width: 465px)" srcset="https://via.placeholder.com/1000x300">
+                              <img src="https://via.placeholder.com/1000x300" alt="alt">
                           </picture>
                       </swiper-slide>
                       <swiper-slide>
                           <picture>
-                              <source media="(min-width: 650px)" srcset="https://via.placeholder.com/1920x300">
-                              <source media="(min-width: 465px)" srcset="https://via.placeholder.com/1920x300">
-                              <img src="https://via.placeholder.com/1920x300" alt="alt">
+                              <source media="(min-width: 650px)" srcset="https://via.placeholder.com/1000x300">
+                              <source media="(min-width: 465px)" srcset="https://via.placeholder.com/1000x300">
+                              <img src="https://via.placeholder.com/1000x300" alt="alt">
                           </picture>
                       </swiper-slide>
                       <swiper-slide>
                           <picture>
-                              <source media="(min-width: 650px)" srcset="https://via.placeholder.com/1920x300">
-                              <source media="(min-width: 465px)" srcset="https://via.placeholder.com/1920x300">
-                              <img src="https://via.placeholder.com/1920x300" alt="alt">
+                              <source media="(min-width: 650px)" srcset="https://via.placeholder.com/1000x300">
+                              <source media="(min-width: 465px)" srcset="https://via.placeholder.com/1000x300">
+                              <img src="https://via.placeholder.com/1000x300" alt="alt">
                           </picture>
                       </swiper-slide>
                       <div class="swiper-pagination"  slot="pagination"></div>

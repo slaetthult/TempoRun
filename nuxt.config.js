@@ -45,7 +45,7 @@ export default {
       { src: '~/plugins/vue-click-outside' },
       { src: '~/plugins/focus-input' },
       { src: '~/plugins/vue2-google-maps' },
-      { src: '~/plugins/lazysizes.js', mode: 'client' },
+      { src: '~/plugins/vue-lazy-load.js', mode: 'client' },
   ],
   components: true,
   /*
