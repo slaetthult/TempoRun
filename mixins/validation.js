@@ -50,7 +50,7 @@ export default {
             formField.value = formField.$element.value;
             formField.minLength = formField.$element.getAttribute("data-validate-minlength") ? parseInt(formField.$element.getAttribute("data-validate-minlength")) : 1;
             formField.maxLength = formField.$element.getAttribute("data-validate-maxlength") ? parseInt(formField.$element.getAttribute("data-validate-maxlength")) : -1;
-            formField.isNotRequired = formField.$element.getAttribute("data-validate-not-required") !== null ? true : false;
+            formField.isOptional = formField.$element.getAttribute("data-validate-optional") !== null ? true : false;
 
             return formField;
 
@@ -111,7 +111,7 @@ export default {
 
             const formFieldValue = formField.value.trim();
 
-            if(formField.isNotRequired && formFieldValue.length === 0){
+            if(formField.isOptional && formFieldValue.length === 0){
 
                 this.removeCssValidationClasses(formField);
 

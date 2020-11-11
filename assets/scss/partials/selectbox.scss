@@ -62,10 +62,10 @@
 }
 
 .selectbox {
-  &.success {
+  &.validation-success {
     border: 1px solid $color-ui-green;
   }
-  &.error {
+  &.validation-error {
     border: 1px solid $color-ui-red;
   }
 }

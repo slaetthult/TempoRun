@@ -6,11 +6,11 @@
   input {
     display: none;
 
-    &.error + span:before{
+    &.validation-error + span:before{
       border: 1px solid $color-ui-red;
     }
 
-    &.success + span:before{
+    &.validation-success + span:before{
       border: 1px solid $color-ui-green;
     }
 

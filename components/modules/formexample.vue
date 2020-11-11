@@ -45,7 +45,7 @@
               <div class="input">
                   ZIP:
                   <label>
-                      <input type="text" v-model="formData.zip" data-validate data-validate-not-required data-validate-minlength="5" data-validate-maxlength="5">
+                      <input type="text" v-model="formData.zip" data-validate data-validate-optional data-validate-minlength="5" data-validate-maxlength="5">
                   </label>
               </div>
 

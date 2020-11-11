@@ -137,7 +137,7 @@ and apply the following data-attributes to you wished fom fields for example:
 <b>data-validate</b> checks if the form field is not empty and not unchecked <br>
 <b>data-validate-minlength</b> defines the required min length of the form field's value <br>
 <b>data-validate-maxlength</b> defines the max length of the form field's value <br>
-<b>data-validate-not-required</b> validates the form field only if it is not empty <br><br>
+<b>data-validate-optional</b> validates the form field only if it is not empty <br><br>
 <b>Note that the correct form field type is very important for the validation!</b>
 
 ``` bash
