@@ -4,7 +4,6 @@ import urlTranslation from './lang/url-translation';
 const PAGE_DOMAIN = "https://www.nuxt-run.com";
 
 export default {
-  mode: 'universal',
   /*
   ** Headers of the page
   */
@@ -44,7 +43,7 @@ export default {
       { src: '~/plugins/vue-portal', mode: 'client' },
       { src: '~/plugins/vue-click-outside' },
       { src: '~/plugins/focus-input' },
-      { src: '~/plugins/vue2-google-maps' },
+      { src: '~/plugins/vue2-google-maps', mode: 'client' },
       { src: '~/plugins/vue-lazy-load.js', mode: 'client' },
   ],
   components: true,

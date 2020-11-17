@@ -6,6 +6,8 @@
     </main>
     <sitefooter/>
 
+    <cookiebanner/>
+
     <client-only>
       <portal-target name="portaldestination" class="siteportaldestination"></portal-target>
     </client-only>
@@ -13,8 +15,9 @@
   </div>
 </template>
 <script>
+
 export default {
-    head() {
+  head() {
         return {
             htmlAttrs: {
                 lang: this.$i18n.locale
