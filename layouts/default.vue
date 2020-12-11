@@ -9,7 +9,7 @@
     <cookiebanner/>
 
     <client-only>
-      <portal-target name="portaldestination" class="siteportaldestination"></portal-target>
+      <portal-target name="portaldestination" class="siteportaldestination" multiple></portal-target>
     </client-only>
 
   </div>
