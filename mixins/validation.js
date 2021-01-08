@@ -60,6 +60,13 @@ export default {
 
             const formFieldType = formField.type;
 
+            if(formField.isOptional && formField.value.trim().length === 0){
+
+              this.removeCssValidationClasses(formField);
+              return false;
+
+            }
+
             if(formFieldType === 'email'){
 
                 this.checkEmail(formField);
@@ -111,11 +118,7 @@ export default {
 
             const formFieldValue = formField.value.trim();
 
-            if(formField.isOptional && formFieldValue.length === 0){
-
-                this.removeCssValidationClasses(formField);
-
-            }else if(formFieldValue.length < formField.minLength){
+            if(formFieldValue.length < formField.minLength){
 
                 this.addCssErrorClass(formField);
 

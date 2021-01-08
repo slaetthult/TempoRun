@@ -14,10 +14,10 @@
     "@nuxtjs/robots": "^2.4.2",
     "@nuxtjs/sitemap": "^2.4.0",
     "npm-check-updates": "^9.2.4",
-    "nuxt": "^2.14.7",
-    "nuxt-i18n": "^6.15.4",
+    "nuxt": "^2.14.12",
+    "nuxt-i18n": "^6.17.0",
     "portal-vue": "^2.1.7",
-    "swiper": "^6.3.5",
+    "swiper": "^6.4.5",
     "v-lazy-image": "^1.4.0",
     "vue-awesome-swiper": "^4.1.1",
     "vue-scrollto": "^2.20.0",
@@ -29,7 +29,7 @@
     "coffeescript": "^2.5.1",
     "node-sass": "^4.14.1",
     "pug": "^3.0.0",
-    "pug-plain-loader": "^1.0.0",
+    "pug-plain-loader": "^1.1.0",
     "sass-loader": "^10.1.0"
   }
 }

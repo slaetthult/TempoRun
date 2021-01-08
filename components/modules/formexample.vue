@@ -116,7 +116,7 @@ import validation from "~/mixins/validation";
                      password: '',
                      gender: '',
                      gender2: false,
-                    zip: ''
+                     zip: ''
                  }
              }
         },
