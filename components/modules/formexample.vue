@@ -7,11 +7,13 @@
               <h2>Validation Example</h2>
 
               <div class="select">
+                <label>
                   <select class="selectbox" v-model="formData.gender" data-validate>
-                      <option disabled selected value="">Choose gender</option>
-                      <option>male</option>
-                      <option>female</option>
+                    <option disabled selected value="">Choose gender</option>
+                    <option>male</option>
+                    <option>female</option>
                   </select>
+                </label>
               </div>
 
               <div class="radiobox">
