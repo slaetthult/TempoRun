@@ -121,6 +121,21 @@ You can force images to be lazyloaded for an improved site performance.
 </v-lazy-image>
 ```
 For more information: https://github.com/alexjoverm/v-lazy-image
+
+### Notification Messages
+If you want to show messages to the user (for example for a login or form validation) use Toast:
+```
+if(this.validationSuccessfully){
+
+    this.$toast.success('Validation is successfull!');
+
+} else {
+
+    this.$toast.error('Validation error!');
+
+}
+```
+
 ### Form Fields Validation
 This validation checks the form field values while typing. Just import the validations-mixin.
 ``` bash

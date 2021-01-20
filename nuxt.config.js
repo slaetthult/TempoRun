@@ -59,6 +59,7 @@ export default {
       ['nuxt-i18n'],
       ['@nuxtjs/style-resources'],
       ['vue-scrollto/nuxt', { duration: 300 }],
+      '@nuxtjs/toast',
       '@nuxtjs/robots',
       '@nuxtjs/sitemap' /* has to be at the end of this array! */
   ],
@@ -73,6 +74,13 @@ export default {
         parsePages: false,
         pages: urlTranslation
     },
+
+    toast: {
+        position: 'bottom-right',
+        duration: 4000,
+        className: 'notification-message'
+    },
+
     styleResources: {
         scss: [
             '~assets/scss/config.scss',

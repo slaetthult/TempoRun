@@ -129,7 +129,11 @@ import validation from "~/mixins/validation";
 
                 if(this.validationSuccessfully){
 
-                    alert("Validation is successfull!");
+                    this.$toast.success('Validation is successfull!');
+
+                } else {
+
+                    this.$toast.error('Validation error!');
 
                 }
 

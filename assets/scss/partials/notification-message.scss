@@ -1,0 +1,8 @@
+.notification-message {
+  &.error {
+    background: $color-ui-red!important;
+  }
+  &.success {
+    background: $color-ui-green!important;
+  }
+}
