@@ -17,6 +17,11 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
+        rel: 'preload',
+        href: '/fonts/fonts.css',
+        as: 'style'
+      },
+      {
         rel: 'stylesheet',
         href: '/fonts/fonts.css'
       }

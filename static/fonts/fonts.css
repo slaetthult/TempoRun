@@ -1,5 +1,6 @@
 /* barlow-regular - latin */
 @font-face {
+  font-display: swap;
   font-family: 'Barlow';
   font-style: normal;
   font-weight: 400;
@@ -13,6 +14,7 @@
 }
 /* barlow-500 - latin */
 @font-face {
+  font-display: swap;
   font-family: 'Barlow';
   font-style: normal;
   font-weight: 500;
@@ -26,6 +28,7 @@
 }
 /* barlow-700 - latin */
 @font-face {
+  font-display: swap;
   font-family: 'Barlow';
   font-style: normal;
   font-weight: 700;
