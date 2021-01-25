@@ -134,22 +134,22 @@
   $font-size-h5-desktop:		        rem(17px);
   $font-size-h6-desktop:		        rem(15px);
 
-  $font-weight-light:			        300;
+  $font-weight-light:			          300;
   $font-weight-normal:			        400;
-  $font-weight-medium:		            500;
+  $font-weight-medium:		          500;
   $font-weight-semibold:		        600;
-  $font-weight-bold:			        700;
+  $font-weight-bold:			          700;
 
-  $font-family:			                'Barlow', serif;
+  $font-family:			                'Barlow', Arial, sans-serif;
   $font-family-monospace:		        Consolas, "Lucida Console", Monaco, monospace;
 
   // FONT COLORS
   $font-color:                          $color-black;
 
   // LINK STYLES
-  $font-link-color:				        $color-theme-green;
-  $font-link-color-hover:		        $color-black;
-  $font-text-decoration:		        none;
+  $font-link-color:				              $color-theme-green;
+  $font-link-color-hover:		            $color-black;
+  $font-text-decoration:		            none;
 
   $transitionTime:                      0.3s;
 
