@@ -12,13 +12,13 @@
       </div>
     </div>
 
-    <gallery/>
+    <LazyGallery/>
 
-    <faqaccordion/>
+    <LazyFaqaccordion/>
 
-    <formexample/>
+    <LazyFormexample/>
 
-    <imageteaser/>
+    <LazyImageteaser/>
 
   </div>
 </template>
