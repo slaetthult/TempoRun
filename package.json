@@ -18,7 +18,7 @@
     "nuxt": "^2.14.12",
     "nuxt-i18n": "^6.18.0",
     "portal-vue": "^2.1.7",
-    "swiper": "^6.4.6",
+    "swiper": "^6.4.8",
     "v-lazy-image": "^1.4.0",
     "vue-awesome-swiper": "^4.1.1",
     "vue-scrollto": "^2.20.0",
