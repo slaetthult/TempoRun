@@ -8,12 +8,12 @@
 
               <figure>
                 <v-lazy-image
-                  src="https://via.placeholder.com/1920x300"
+                  src="https://via.placeholder.com/960x150"
                   alt="Fallback"
                   use-picture
                 >
-                  <source media="(min-width: 1000px)" srcset="https://via.placeholder.com/1920x300" />
-                  <source srcset="https://via.placeholder.com/1000x300" />
+                  <source media="(min-width: 1000px)" srcset="https://via.placeholder.com/960x150" />
+                  <source srcset="https://via.placeholder.com/480x100" />
                 </v-lazy-image>
               </figure>
 
