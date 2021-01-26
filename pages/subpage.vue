@@ -1,4 +1,5 @@
 <template>
+
   <div>
 
     <div class="text">
@@ -12,6 +13,7 @@
     <LazyGmap/>
 
   </div>
+
 </template>
 
 <script>

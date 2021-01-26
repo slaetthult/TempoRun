@@ -1,18 +1,23 @@
 <template>
+
   <div onclick="void(0);">
+
     <siteheader/>
+
     <main class="sitemain">
       <nuxt/>
     </main>
-    <sitefooter/>
 
-    <cookiebanner/>
+    <LazySitefooter/>
+
+    <LazyCookiebanner/>
 
     <client-only>
       <portal-target name="portaldestination" class="siteportaldestination" multiple></portal-target>
     </client-only>
 
   </div>
+
 </template>
 <script>
 

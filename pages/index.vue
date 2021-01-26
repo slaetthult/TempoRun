@@ -1,4 +1,5 @@
 <template>
+
   <div>
 
     <div class="grid-example">
@@ -21,6 +22,7 @@
     <LazyImageteaser/>
 
   </div>
+
 </template>
 
 <script>
