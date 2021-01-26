@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <div class="text">
       <div class="gridWrap">
         <div class="w12">
@@ -7,7 +8,9 @@
         </div>
       </div>
     </div>
-    <gmap/>
+
+    <LazyGmap/>
+
   </div>
 </template>
 
