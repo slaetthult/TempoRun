@@ -1,59 +1,59 @@
 export default {
 
-  methods:{
+    methods:{
 
-    showModalbox(id){
+        showModalbox(id){
 
-      this.closeModalbox();
+            this.closeModalbox();
 
-      let modalboxQuery = '*[data-modalbox="'+ id +'"]';
-      let $modalbox = document.querySelector(modalboxQuery);
+            const modalboxQuery = '*[data-modalbox="'+ id +'"]';
+            const $modalbox = document.querySelector(modalboxQuery);
 
-      if($modalbox && !$modalbox.classList.contains('show')){
+            if($modalbox && !$modalbox.classList.contains('show')){
 
-        setTimeout(()=>{
+                setTimeout(()=>{
 
-          $modalbox.classList.add('show');
+                    $modalbox.classList.add('show');
 
-        }, 10);
+                }, 10);
 
-      } else if(!$modalbox) {
+            } else if(!$modalbox) {
 
-        console.log("Modalbox "+ modalboxQuery +"not found!");
+                console.log("Modalbox "+ modalboxQuery +"not found!");
 
-      }
+            }
 
-    },
+        },
 
-    closeModalbox(event = null){
+        closeModalbox(event = null){
 
-      if(event){
+            if(event){
 
-        if(event.target.hasAttribute("data-modalbox-trigger")){
+                if(event.target.hasAttribute("data-modalbox-trigger")){
 
-          return false;
+                    return false;
+
+                }
+
+            }
+
+            const modalboxQuery = '*[data-modalbox].show';
+            const $modalbox = document.querySelector(modalboxQuery);
+
+            if($modalbox){
+
+                if(event && !event.target.hasAttribute("data-modalbox-trigger") && event.target.closest(".modalbox")){
+
+                    return false;
+
+                }
+
+                $modalbox.classList.remove('show');
+
+            }
 
         }
-
-      }
-
-      let modalboxQuery = '*[data-modalbox].show';
-      let $modalbox = document.querySelector(modalboxQuery);
-
-      if($modalbox){
-
-        if(event && !event.target.hasAttribute("data-modalbox-trigger") && event.target.closest(".modalbox")){
-
-          return false;
-
-        }
-
-        $modalbox.classList.remove('show');
-
-      }
 
     }
-
-  }
 
 };
