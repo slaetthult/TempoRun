@@ -12,26 +12,45 @@ export default {
 
     mounted(){
 
-        const _this = this;
-
-        _this.calcAccordionHeight();
-
-        window.addEventListener("resize", () => {
-
-            _this.calcAccordionHeight();
-
-        });
-
-        this.$nextTick(() => {
-
-            _this.openAccordionByAnchor();
-            _this.calcAccordionHeight();
-
-        });
+        this.accordionEventTrigger();
 
     },
 
     methods:{
+
+        accordionEventTrigger(){
+
+            const _this = this;
+
+            _this.calcAccordionHeight();
+
+            window.addEventListener("resize", () => {
+
+                _this.calcAccordionHeight();
+
+            });
+
+            this.$nextTick(() => {
+
+                _this.openAccordionByAnchor();
+
+            });
+
+            const targetNode = this.$el;
+            const config = { attributes: true, childList: true, subtree: true };
+
+            const callback = function(mutationsList, observer) {
+                for(const mutation of mutationsList) {
+                    if (mutation.type === 'childList') {
+                        _this.calcAccordionHeight();
+                    }
+                }
+            };
+
+            const observer = new MutationObserver(callback);
+            observer.observe(targetNode, config);
+
+        },
 
         toggleAccordion(event, id = null){
 
