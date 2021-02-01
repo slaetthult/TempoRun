@@ -47,6 +47,7 @@
         },
         mounted(){
             this.openCertainAccordion(0);
+            this.listenToDOMChanges = false;
         }
     }
 </script>

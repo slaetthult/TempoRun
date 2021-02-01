@@ -4,7 +4,8 @@ export default {
 
         return {
 
-            currentActiveAccordionId: null
+            currentActiveAccordionId: null,
+            listenToDOMChanges: false
 
         }
 
@@ -34,21 +35,25 @@ export default {
 
                 _this.openAccordionByAnchor();
 
-            });
+                if(_this.listenToDOMChanges){
 
-            const targetNode = this.$el;
-            const config = { attributes: false, childList: true, subtree: true };
+                  const targetNode = _this.$el;
+                  const config = { attributes: false, childList: true, subtree: true };
 
-            const callback = function(mutationsList, observer) {
-                for(const mutation of mutationsList) {
-                    if (mutation.type === 'childList') {
+                  const callback = function(mutationsList, observer) {
+                    for(const mutation of mutationsList) {
+                      if (mutation.type === 'childList') {
                         _this.calcAccordionHeight();
+                      }
                     }
-                }
-            };
+                  };
 
-            const observer = new MutationObserver(callback);
-            observer.observe(targetNode, config);
+                  const observer = new MutationObserver(callback);
+                  observer.observe(targetNode, config);
+
+                }
+
+            });
 
         },
 
