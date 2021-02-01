@@ -37,7 +37,7 @@ export default {
             });
 
             const targetNode = this.$el;
-            const config = { attributes: true, childList: true, subtree: true };
+            const config = { attributes: false, childList: true, subtree: true };
 
             const callback = function(mutationsList, observer) {
                 for(const mutation of mutationsList) {
