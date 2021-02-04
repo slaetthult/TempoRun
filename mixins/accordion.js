@@ -5,7 +5,7 @@ export default {
         return {
 
             currentActiveAccordionId: null,
-            listenToDOMChanges: false
+            listenToAccordionDOMChanges: false
 
         }
 
