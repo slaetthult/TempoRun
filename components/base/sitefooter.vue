@@ -2,7 +2,7 @@
   <footer class="sitefooter">
       <div class="gridWrap">
           <div class="w12">
-              <h2>Footer Area</h2>
+              <h2>Footer Area © {{ new Date().getFullYear() }}</h2>
           </div>
       </div>
   </footer>
