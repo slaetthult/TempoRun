@@ -68,12 +68,14 @@ export default {
 The content inside the modalbox will be moved to the end of the HTML-Body.<br>
 ``` bash
 <a href="javascript:void(0);" data-modalbox-trigger @click="showModalbox(0)">Modalbox Trigger</a>
-<portal to="portaldestination">
-  <div class="modalbox" data-modalbox="0" v-click-outside="closeModalbox">
-      I am a modalbox!
-      <a href="javascript:void(0);" @click="closeModalbox()">close Modalbox</a>
-  </div>
-</portal>
+<client-only>
+    <portal to="portaldestination">
+          <div class="modalbox" data-modalbox="0" v-click-outside="closeModalbox">
+               I am a modalbox!
+               <a href="javascript:void(0);" @click="closeModalbox()">close Modalbox</a>
+          </div>
+    </portal>
+</client-only>
 ```
 ### Swiper/Slider
 For detailed explaination (for example settings ect.), checkout https://github.com/surmon-china/vue-awesome-swiper

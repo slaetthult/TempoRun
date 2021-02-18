@@ -35,12 +35,15 @@
                   </swiper>
 
                   <a href="javascript:void(0);" data-modalbox-trigger @click="showModalbox(0)">Modalbox Trigger</a>
-                  <portal to="portaldestination">
-                      <div class="modalbox" data-modalbox="0" v-click-outside="closeModalbox">
-                          I am a modalbox!
-                          <a href="javascript:void(0);" @click="closeModalbox()">close Modalbox</a>
-                      </div>
-                  </portal>
+
+                  <client-only>
+                      <portal to="portaldestination">
+                          <div class="modalbox" data-modalbox="0" v-click-outside="closeModalbox">
+                              I am a modalbox!
+                              <a href="javascript:void(0);" @click="closeModalbox()">close Modalbox</a>
+                          </div>
+                      </portal>
+                  </client-only>
 
               </client-only>
 
