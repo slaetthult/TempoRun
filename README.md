@@ -77,6 +77,10 @@ The content inside the modalbox will be moved to the end of the HTML-Body.<br>
     </portal>
 </client-only>
 ```
+If you want to close a specific modalbox via id (fo example a modalbox with the id "0"), use this:
+``` bash
+this.closeModalbox(null,0);
+```
 ### Swiper/Slider
 For detailed explaination (for example settings ect.), checkout https://github.com/surmon-china/vue-awesome-swiper
 ``` bash

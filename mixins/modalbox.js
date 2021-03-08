@@ -25,7 +25,7 @@ export default {
 
         },
 
-        closeModalbox(event = null){
+        closeModalbox(event = null, id = null){
 
             if(event){
 
@@ -37,7 +37,14 @@ export default {
 
             }
 
-            const modalboxQuery = '*[data-modalbox].show';
+            let modalboxQuery = '*[data-modalbox].show';
+
+            if(id){
+
+                modalboxQuery = '*[data-modalbox="'+ id +'"].show';
+
+            }
+
             const $modalbox = document.querySelector(modalboxQuery);
 
             if($modalbox){
