@@ -69,7 +69,11 @@ export default {
       { src: '~/plugins/vue2-google-maps', mode: 'client' },
       { src: '~/plugins/vue-lazy-load.js', mode: 'client' },
   ],
-  components: true,
+  components: [
+    '~/components/base',
+    '~/components/modules',
+    '~/components/partials'
+  ],
   /*
   ** Nuxt.js dev-modules
   */
