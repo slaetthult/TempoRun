@@ -1,6 +1,6 @@
 <template>
-  <div class="formexample">
-      <div class="gridWrap">
+  <div class="form-example">
+      <div class="grid-wrap">
 
           <div class="w12">
 
@@ -31,43 +31,43 @@
               </div>
 
               <div class="input">
-                  Name:
                   <label>
+                      Name:
                       <input type="text" v-model="formData.name" data-validate>
                   </label>
               </div>
 
               <div class="input">
-                  2. Name:
                   <label>
+                      2. Name:
                       <input type="text" v-model="formData.name2">
                   </label>
               </div>
 
               <div class="input">
-                  ZIP:
                   <label>
+                      ZIP:
                       <input type="text" v-model="formData.zip" data-validate data-validate-optional data-validate-minlength="5" data-validate-maxlength="5">
                   </label>
               </div>
 
               <div class="input">
-                  Password:
                   <label>
+                      Password:
                       <input type="password" v-model="formData.password" data-validate data-validate-minlength="8">
                   </label>
               </div>
 
               <div class="input">
-                  Confirm password:
                   <label>
+                      Confirm password:
                       <input type="password" data-validate data-validate-minlength="8">
                   </label>
               </div>
 
               <div class="input">
-                  E-Mail:
                   <label>
+                      E-Mail:
                       <input type="email" v-model="formData.email" data-validate>
                   </label>
               </div>

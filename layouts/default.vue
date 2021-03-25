@@ -2,18 +2,20 @@
 
   <div onclick="void(0);">
 
-    <siteheader/>
+    <SiteHeader/>
 
-    <main class="sitemain">
+    <main class="site-main">
+
       <nuxt/>
+
     </main>
 
-    <LazySitefooter/>
+    <LazySiteFooter/>
 
-    <LazyCookiebanner/>
+    <LazyCookieBanner/>
 
     <client-only>
-      <portal-target name="portaldestination" class="siteportaldestination" multiple></portal-target>
+      <portal-target name="portal-destination" class="site-portal-destination" multiple></portal-target>
     </client-only>
 
   </div>

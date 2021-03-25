@@ -1,6 +1,6 @@
 <template>
-  <footer class="sitefooter">
-      <div class="gridWrap">
+  <footer class="site-footer">
+      <div class="grid-wrap">
           <div class="w12">
               <h2>Footer Area © {{ new Date().getFullYear() }}</h2>
           </div>

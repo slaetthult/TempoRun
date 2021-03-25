@@ -98,12 +98,12 @@ a, .link {
 
 button, input[type="button"], input[type="submit"], .button {
   display: inline-block;
+  padding: 6px 12px;
+  margin: 0;
   background: $color-grey;
   color: $color-white;
   border: none;
   cursor: pointer;
-  padding: 6px 12px;
-  margin: 0;
   text-decoration: none;
   transition: all $transitionTime ease;
   border-radius: 0;
@@ -124,11 +124,11 @@ button, input[type="button"], input[type="submit"], .button {
 input[type="text"], input[type="password"], input[type="number"], input[type="email"], input[type="search"], input[type="tel"], input[type="url"], textarea {
   display: inline-block;
   width: 100%;
+  padding: 6px 6px;
+  margin: 5px 0;
   background: $color-white;
   color: $color-black;
   border: 1px solid $color-lightgrey;
-  padding: 6px 6px;
-  margin: 5px 0;
   transition: all $transitionTime ease;
   /* Error class for baseTemp Formvalidation */
   &.validation-error {
@@ -182,8 +182,8 @@ pre {
 }
 
 blockquote {
-  font-style: italic;
   padding: 10px;
+  font-style: italic;
 }
 
 iframe {
@@ -191,11 +191,11 @@ iframe {
 }
 
 hr {
-  border: 0;
+  display: block;
+  height: 1px;
   margin: 5px 0;
   padding: 0;
-  height: 1px;
-  display: block;
+  border: 0;
   background: $color-grey;
 }
 

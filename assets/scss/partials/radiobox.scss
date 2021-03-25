@@ -2,10 +2,10 @@
   @extend .checkbox;
   span {
     border-radius: 50%;
-    &:before {
+    &::before {
       border-radius: 50%;
     }
-    &:after {
+    &::after {
       border-radius: 50%;
     }
   }

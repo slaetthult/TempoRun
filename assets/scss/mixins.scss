@@ -86,20 +86,43 @@
 }
 
 // ADD FLEX POWER
-@mixin flex {
+@mixin flex($direction: row, $wrap: nowrap) {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-}
 
-@mixin gridWrapFlexWrapper {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  @if $direction == row-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: horizontal;
+    -moz-box-direction: reverse;
+    -moz-box-orient: horizontal;
+  } @else if $direction == column {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-box-direction: normal;
+    -moz-box-orient: vertical;
+  } @else if $direction == column-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: vertical;
+    -moz-box-direction: reverse;
+    -moz-box-orient: vertical;
+  } @else {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-direction: normal;
+    -moz-box-orient: horizontal;
+  }
+
+  -webkit-flex-direction: $direction;
+  -ms-flex-direction: $direction;
+  flex-direction: $direction;
+
+  -webkit-flex-wrap: $wrap;
+  @if $wrap == nowrap {
+    -ms-flex-wrap: none;
+  } @else {
+    -ms-flex-wrap: $wrap;
+  }
+  flex-wrap: $wrap;
+
 }

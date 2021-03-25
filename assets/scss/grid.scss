@@ -2,21 +2,21 @@
 /*                 GRID BASEMENT CLASSES                    */
 /* -------------------------------------------------------- */
 
-.gridWrap {
+.grid-wrap {
   position: relative;
-  @include gridWrapFlexWrapper();
+  @include flex(row, wrap);
   margin: 0 auto;
   padding: 0 $grid-wrapper-outer-margin 0;
   width: 100%;
   max-width: $grid-absolute-site-width;
   min-height: 10px;
-  z-index: $zLevel1;
+  z-index: $z-index-1;
 
-  &.gridLeft {
+  &.grid-wrap--left {
     justify-content: flex-start;
   }
 
-  &.gridRight {
+  &.grid-wrap--right {
     justify-content: flex-end;
   }
 }

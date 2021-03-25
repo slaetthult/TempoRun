@@ -1,6 +1,6 @@
 <template>
   <div class="gmap">
-      <div class="gridWrap">
+      <div class="grid-wrap">
 
           <div class="gmap w12 mw12 lw12">
 

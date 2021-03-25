@@ -6,7 +6,7 @@
   @include transform-translate(-50%, -50%);
   background: rgba(0,0,0,0.5);
   color: $color-white;
-  z-index: $zLevel10;
+  z-index: $z-index-10;
   box-shadow: 0 0 2000px 2000px rgba(0,0,0,0.3);
 
   &.show {

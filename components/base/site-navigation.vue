@@ -1,5 +1,5 @@
 <template>
-  <nav class="sitenavigation">
+  <nav class="site-navigation">
     <ul>
       <li>
         <nuxt-link :to="localePath('index')">Index</nuxt-link>

@@ -5,8 +5,8 @@
 @import "general";
 @import "grid";
 
-@import "base/siteheader";
-@import "base/sitefooter";
+@import "base/site-header";
+@import "base/site-footer";
 
 @import "partials/accordion";
 @import "partials/slider";
@@ -18,6 +18,5 @@
 
 @import "modules/gallery";
 @import "modules/gmap";
-
 
 @import "print";

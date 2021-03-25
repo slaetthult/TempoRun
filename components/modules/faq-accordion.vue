@@ -1,6 +1,6 @@
 <template>
-  <div class="faqaccordion">
-      <div class="gridWrap">
+  <div class="faq-accordion">
+      <div class="grid-wrap">
 
           <div class="w12">
               <h2>Accordion Example</h2>

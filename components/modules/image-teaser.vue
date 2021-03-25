@@ -1,6 +1,6 @@
 <template>
-  <div class="imageteaser">
-      <div class="gridWrap">
+  <div class="image-teaser">
+      <div class="grid-wrap">
 
           <div class="w12 mw12 lw12">
 

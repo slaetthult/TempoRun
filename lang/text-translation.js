@@ -10,7 +10,7 @@ export default {
                 description: 'This is a subpage'
             }
         },
-        siteheader: {
+        siteHeader: {
             headline: "Header Area with Navigation"
         }
     },
@@ -25,7 +25,7 @@ export default {
                 description: 'Das ist eine Uterseite'
             }
         },
-        siteheader: {
+        siteHeader: {
             headline: "Header-Bereich mit Navigation"
         }
     }

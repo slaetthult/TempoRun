@@ -23,7 +23,8 @@
     padding-top: 2px;
     cursor: pointer;
     @include none-select();
-    &:before {
+
+    &::before {
       display: block;
       position: absolute;
       left: 0;
@@ -32,10 +33,11 @@
       width: 20px;
       border: 1px solid $color-grey;
       cursor: pointer;
-      content: "";
       border-radius: 3px;
+      content: "";
     }
-    &:after {
+
+    &::after {
       display: block;
       position: absolute;
       left: 3px;
@@ -44,12 +46,13 @@
       width: 14px;
       cursor: pointer;
       background: transparent;
-      content: "";
       border-radius: 3px;
+      content: "";
     }
+
   }
 
-  input:checked + span:after {
+  input:checked + span::after {
     background: $color-grey;
   }
 

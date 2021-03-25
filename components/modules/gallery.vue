@@ -1,6 +1,6 @@
 <template>
   <div class="gallery">
-      <div class="gridWrap">
+      <div class="grid-wrap">
           <div class="w12">
 
               <h2>Gallery Example</h2>
@@ -37,7 +37,7 @@
                   <a href="javascript:void(0);" data-modalbox-trigger @click="showModalbox(0)">Modalbox Trigger</a>
 
                   <client-only>
-                      <portal to="portaldestination">
+                      <portal to="portal-destination">
                           <div class="modalbox" data-modalbox="0" v-click-outside="closeModalbox">
                               I am a modalbox!
                               <a href="javascript:void(0);" @click="closeModalbox()">close Modalbox</a>
