@@ -5,7 +5,7 @@
 
 @media print {
 
-  html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, input, svg, blockquote, main, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, form, fieldset, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, menu, nav, section, summary, time, mark, audio, video {
+  html, body, div, a, span, object, iframe, h1, h2, h3, h4, h5, h6, p, input, svg, blockquote, main, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, form, fieldset, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, menu, nav, section, summary, time, mark, audio, video {
     background: transparent !important;
     color: $color-black!important;
     text-shadow: none !important;
@@ -17,8 +17,8 @@
     width:100% !important;
     margin:0 !important;
     padding:0 !important;
-    line-height: 1.45!important;
-    font-size: 14pt;
+    line-height: 1.35!important;
+    font-size: 13pt;
   }
 
   h1,
@@ -39,6 +39,20 @@
   h6 {
     orphans: 3;
     widows: 3;
+  }
+
+  h1 {
+    font-size: 24pt;
+  }
+
+  h2, h3, h4 {
+    font-size: 16pt;
+    margin-top: 25px;
+  }
+
+  h5, h6 {
+    font-size: 14pt;
+    margin-top: 25px;
   }
 
   ul {
@@ -62,6 +76,10 @@
     display: none;
   }
 
+  a[href^=http]:after {
+    content:" <" attr(href) "> ";
+  }
+
   table {
     margin: 1px;
   }
@@ -77,13 +95,36 @@
 
   .navigation,
   iframe,
-  .sitenavigation,
-  .sitefooter {
+  .site-navigation,
+  .site-footer {
     display: none!important;
+  }
+
+  .accordion {
+    .accordion-content {
+      height: auto!important;
+      overflow: auto!important;
+    }
+    &:not(.active) .accordion-content {
+      height: auto!important;
+      overflow: auto!important;
+    }
+  }
+
+  input[type=search] {
+    display: none!important;
+  }
+
+  img {
+    &.v-lazy-image {
+      &:not(.v-lazy-image-loaded) {
+        display: none!important;
+      }
+    }
   }
 
 }
 
 @page {
-  margin: 10pt;
+  margin: 2cm;
 }

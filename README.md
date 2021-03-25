@@ -21,9 +21,9 @@ https://nifty-curie-944faf.netlify.app/
 The grid class contains the shortname of the viewport (defined in config.scss) and the amount of grids:<br>
 {viewport}{gridamount} -> "w12".<br>
 If you want to push or pull grid-elements, use "w-left-4".
-Grid-Elements are wrapped by the class "gridWrap".
+Grid-Elements are wrapped by the class "grid-wrap".
 ``` bash
-<div class="gridWrap">
+<div class="grid-wrap">
     <h2 class="w12 mw8">Grid Example</h2>
     <div class="w12" style="background: lightgrey;margin-top:5px;">w12</div>
     <div class="w6" style="background: lightgrey;margin-top:5px;">w6</div>
