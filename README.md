@@ -53,7 +53,6 @@ export default {
 </div>
 ```
 <b>Additional settings:</b><br>
-set ``` this.listenToAccordionDOMChanges = true; ``` (in mounted()) to let the accordion listen to DOM Changes.
 set ``` this.openCertainAccordion(2); ``` (in mounted()) to open a certain accordion by index-id.
 
 ### Modalbox
