@@ -6,12 +6,12 @@
     }
   }
 
-  .accordion-trigger {
+  .accordion__trigger {
     display: inline-block;
     @include none-select();
   }
 
-  .accordion-content {
+  .accordion__content {
     overflow: hidden;
     transition: height linear $transitionTime;
   }
