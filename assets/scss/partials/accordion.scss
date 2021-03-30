@@ -1,7 +1,7 @@
 .accordion {
 
   &:not(.active) {
-    .accordion-content {
+    .accordion__content {
       height: 0!important;
     }
   }
