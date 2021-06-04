@@ -12,12 +12,6 @@ body {
     content:"" + $viewportsString;
   }
 
-  /* Hidden Element to transfer Grid in JS */
-  &::after {
-    display: none;
-    content:"" + $grid;
-  }
-
 }
 
 /* -------------------------------------------------------- */
@@ -46,7 +40,7 @@ h4,.h4,
 h5,.h5,
 h6,.h6 {
   display: block;
-  padding: $headline-margin 0;
+  padding: $headline-padding 0;
   line-height: $headline-line-height-mobile;
 
   a {
@@ -151,7 +145,7 @@ textarea {
 
 p {
   display: block;
-  padding: $text-paragraph-margin 0;
+  padding: $text-paragraph-padding 0;
 }
 
 strong, b {
@@ -201,7 +195,7 @@ hr {
 
 ul {
   display: block;
-  padding: $list-element-margin 0;
+  padding: $list-element-padding 0;
   li {
     position: relative;
     margin-left: 19px;
@@ -247,7 +241,7 @@ img {
 /*                BASE MEDIAQUERYS MEDIUM                   */
 /* -------------------------------------------------------- */
 
-@media screen and (min-width: map-get($viewports, mw)) {
+@include viewport(mw){
   html {
     line-height: $font-line-height-default-tablet;
 
@@ -291,7 +285,7 @@ img {
 /*                BASE MEDIAQUERYS LARGE                    */
 /* -------------------------------------------------------- */
 
-@media screen and (min-width: map-get($viewports, lw)) {
+@include viewport(lw){
   html {
     line-height: $font-line-height-default-desktop;
 

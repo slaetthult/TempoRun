@@ -54,10 +54,12 @@
 
 <script>
     import modalbox from "~/mixins/modalbox";
+    import mediaQueries from "~/mixins/mediaQueries";
+
 
     export default {
         props: [],
-        mixins: [modalbox],
+        mixins: [modalbox, mediaQueries],
         data(){
              return {
                  gallerySwiperOptions: {
@@ -81,6 +83,9 @@
                      }
                  }
              }
-        }
+        },
+      mounted(){
+          console.log(this.mediaQueries['lw']);
+      }
     }
 </script>

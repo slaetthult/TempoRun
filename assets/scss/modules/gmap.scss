@@ -5,7 +5,7 @@
   }
 }
 
-@media screen and (min-width: map-get($viewports, mw)) {
+@include viewport(mw){
 
   .gmap {
     .vue-map-container {
@@ -15,7 +15,7 @@
 
 }
 
-@media screen and (min-width: map-get($viewports, lw)) {
+@include viewport(lw){
 
   .gmap {
     .vue-map-container {

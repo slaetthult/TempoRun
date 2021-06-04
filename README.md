@@ -245,6 +245,19 @@ setCookie('yourCookieName', 'your value');
 deleteCookie('yourCookieName');
 ```
 
+#### Get CSS Viewport information via JS
+You can get the CSS Viewport information in Javascript. For example, if you want to trigger a method function only if 
+the browser window is wider than a certain defined viewport.
+``` bash
+import mediaQueries from "~/mixins/mediaQueries";
+
+export default {
+    mixins: [mediaQueries],
+}
+
+console.log(this.mediaQueries['lw'])
+```
+
 #### Format seconds to HHMMSS (for example: 00:05:00)
 Just import the utils/toHHMMSS file. So you can use the functions wherever you need it (plugin-files as well).
 ``` bash
