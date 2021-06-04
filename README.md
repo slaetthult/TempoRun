@@ -1,6 +1,6 @@
 # Nuxt Run
 
-> Starter kit for nuxt projects with usefull features for fast development. IE11 is supported!
+> Starter kit for nuxt projects with usefull features for fast development.
 
 ## Build Setup
 
@@ -281,9 +281,10 @@ to the Image-HTML-Tag.
 ! Define it also in the CSS as usual for modern browsers. !
       
 ### Browser Support
-**iOS** > 9  
-**Android** > 4.4  
-**IE** = 11  
-**Edge** > 12  
-**Firefox** > 50  
-**Chrome** > 55
+**iOS** 10 and higher  
+**Android** 5 and higher  
+**Safari** 10 and higher   
+**IE** Not supported anymore (browser gets retired)   
+**Edge** 13 and higher  
+**Firefox** 51 and higher  
+**Chrome** 56 and higher
