@@ -44,9 +44,9 @@ export default {
 ```
 ``` bash
 <div class="accordion" data-accordion :class="{'active' : currentActiveAccordionId === 0}">
-  <button class="accordion-trigger" @click="toggleAccordion($event, 0)">Accordion 1</button>
-  <div class="accordion-content" data-accordion-content>
-      <div class="accordion-content-wrapper">
+  <button class="accordion__trigger" @click="toggleAccordion($event, 0)">Accordion 1</button>
+  <div class="accordion__content" data-accordion-content>
+      <div class="accordion__content__wrapper">
           Accordion Text 1
       </div>
   </div>
