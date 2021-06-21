@@ -55,6 +55,7 @@
                   <label>
                       Password:
                       <input type="password" v-model="formData.password" data-validate data-validate-minlength="8">
+                      <span class="validation-error-message">Please choose a password with at least 8 characters!</span>
                   </label>
               </div>
 
@@ -62,6 +63,7 @@
                   <label>
                       Confirm password:
                       <input type="password" data-validate data-validate-minlength="8">
+                      <span class="validation-error-message">Passwords are different!</span>
                   </label>
               </div>
 

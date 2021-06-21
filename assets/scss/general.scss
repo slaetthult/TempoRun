@@ -124,12 +124,21 @@ input[type="text"], input[type="password"], input[type="number"], input[type="em
   color: $color-black;
   border: 1px solid $color-lightgrey;
   transition: all $transitionTime ease;
-  /* Error class for baseTemp Formvalidation */
+  /* Error class for the form validation */
   &.validation-error {
     border: 1px solid $color-ui-red;
+    & ~ .validation-error-message {
+      display: block;
+    }
   }
+  /* Success class for the form validation */
   &.validation-success {
     border: 1px solid $color-ui-green;
+  }
+  /* Error message class for the form validation */
+  & ~ .validation-error-message {
+    display: none;
+    color: $color-ui-red;
   }
   @include set-placeholdercolor($color-black);
 }
