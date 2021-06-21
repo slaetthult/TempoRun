@@ -67,5 +67,13 @@
   }
   &.validation-error {
     border: 1px solid $color-ui-red;
+
+    & ~ .validation-error-message {
+      display: block;
+    }
+  }
+  & ~ .validation-error-message {
+    display: none;
+    color: $color-ui-red;
   }
 }

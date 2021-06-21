@@ -6,12 +6,29 @@
   input {
     display: none;
 
-    &.validation-error + span:before{
-      border: 1px solid $color-ui-red;
+    &.validation-error {
+
+      & + span::before {
+        border: 1px solid $color-ui-red;
+      }
+
+      & ~ .validation-error-message {
+        display: block;
+      }
+
     }
 
-    &.validation-success + span:before{
-      border: 1px solid $color-ui-green;
+    &.validation-success {
+
+      + span::before{
+        border: 1px solid $color-ui-green;
+      }
+
+    }
+
+    & ~ .validation-error-message {
+      display: none;
+      color: $color-ui-red;
     }
 
   }

@@ -13,6 +13,7 @@
                     <option>male</option>
                     <option>female</option>
                   </select>
+                  <small class="validation-error-message">Pflichtfeld!</small>
                 </label>
               </div>
 
@@ -27,6 +28,7 @@
                   <label>
                       <input type="radio" v-model="formData.gender2" name="gender" value="female" data-validate>
                       <span>Female</span>
+                      <small class="validation-error-message">Pflichtfeld!</small>
                   </label>
               </div>
 
@@ -55,7 +57,7 @@
                   <label>
                       Password:
                       <input type="password" v-model="formData.password" data-validate data-validate-minlength="8">
-                      <span class="validation-error-message">Please choose a password with at least 8 characters!</span>
+                      <small class="validation-error-message">Please choose a password with at least 8 characters!</small>
                   </label>
               </div>
 
@@ -63,7 +65,7 @@
                   <label>
                       Confirm password:
                       <input type="password" data-validate data-validate-minlength="8">
-                      <span class="validation-error-message">Passwords are different!</span>
+                      <small class="validation-error-message">Passwords are different!</small>
                   </label>
               </div>
 
@@ -85,6 +87,7 @@
                   <label>
                       <input type="checkbox" v-model="formData.privacyPolicy" value="checkbox1" data-validate>
                       <span>A beautiful checkbox with a <nuxt-link to="/">link</nuxt-link></span>
+                      <small class="validation-error-message">Pflichtfeld!</small>
                   </label>
               </div>
               <div class="checkbox">
