@@ -56,7 +56,6 @@
     import modalbox from "~/mixins/modalbox";
     import mediaQueries from "~/mixins/mediaQueries";
 
-
     export default {
         props: [],
         mixins: [modalbox, mediaQueries],

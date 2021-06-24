@@ -14,13 +14,11 @@
       </div>
     </div>
 
-    <LazyFaqAccordion/>
+    <faqAccordion/>
 
-    <LazyFormExample/>
+    <formExample/>
 
-    <LazyImageTeaser/>
-
-    <LazyGallery/>
+    <gallery/>
 
   </div>
 

@@ -66,8 +66,7 @@ export default {
       { src: '~/plugins/vue-portal', mode: 'client' },
       { src: '~/plugins/vue-click-outside' },
       { src: '~/plugins/focus-input' },
-      { src: '~/plugins/vue2-google-maps', mode: 'client' },
-      { src: '~/plugins/vue-lazy-load.js', mode: 'client' },
+      { src: '~/plugins/vue2-google-maps', mode: 'client' }
   ],
   components: [
     '~/components/base',

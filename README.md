@@ -117,19 +117,6 @@ For detailed explaination (for example settings ect.), checkout https://github.c
 
 </GmapMap>
 ```
-### Image Lazyload
-You can force images to be lazyloaded for an improved site performance.
-```
-<v-lazy-image
-  src="https://via.placeholder.com/1920x300"
-  alt="Fallback"
-  use-picture
->
-  <source media="(min-width: 1000px)" srcset="https://via.placeholder.com/1920x300" />
-  <source srcset="https://via.placeholder.com/1000x300" />
-</v-lazy-image>
-```
-For more information: https://github.com/alexjoverm/v-lazy-image
 
 ### Notification Messages
 If you want to show messages to the user (for example for a login or form validation) use Toast:
@@ -163,7 +150,7 @@ and apply the following data-attributes to you wished fom fields for example:
 <b>data-validate-minlength</b> defines the required min length of the form field's value <br>
 <b>data-validate-maxlength</b> defines the max length of the form field's value <br>
 <b>data-validate-optional</b> validates the form field only if it is not empty <br>
-<b>class="validation-error-message"</b> shows your defined error message<br><br>
+<b>class="validation-error-message"</b> shows your defined error message. Just place it after the specific form field<br><br>
 <b>Note that the correct form field type is very important for the validation!</b><br>
 
 ``` bash
