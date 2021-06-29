@@ -10,7 +10,7 @@
       </div>
     </div>
 
-    <LazyGmap/>
+    <gmap/>
 
   </div>
 

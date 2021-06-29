@@ -9,9 +9,16 @@ body {
   /* Hidden Element to transfer Mediaquerys in JS */
   &::before {
     display: none;
-    content:"" + $viewportsString;
+    content: "" + $viewportsString;
   }
 
+}
+
+.page-enter-active, .page-leave-active {
+  transition: opacity $transitionTime;
+}
+.page-enter, .page-leave-to {
+  opacity: 0;
 }
 
 /* -------------------------------------------------------- */
