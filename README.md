@@ -230,7 +230,7 @@ Just import the utils/cookie file. So you can use the functions wherever you nee
 import {getCookieValueOf, setCookie, deleteCookie} from '~/utils/cookies';
 
 getCookieValueOf('yourCookieName');
-setCookie('yourCookieName', 'your value');
+setCookie('yourCookieName', 'your value', days);
 deleteCookie('yourCookieName');
 ```
 
