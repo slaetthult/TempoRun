@@ -18,7 +18,7 @@
     "nuxt": "^2.15.6",
     "nuxt-i18n": "^6.27.0",
     "portal-vue": "^2.1.7",
-    "swiper": "^5.4.5",
+    "swiper": "^6.5.1",
     "vue-awesome-swiper": "^4.1.1",
     "vue-scrollto": "^2.20.0",
     "vue2-google-maps": "^0.10.7"
