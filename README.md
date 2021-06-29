@@ -199,7 +199,7 @@ is integrated (https://www.npmjs.com/package/@nuxtjs/sitemap)
 #### Focus inputs
 This Vue Directive also solves issues with focussing inputs on mobile devices!
 ``` bash
-<button v-focus-input="'.siteheader-search'">Focus search input</button>
+<button v-focus-input="'.site-header__search'">Focus search input</button>
 ```
 #### Click Outside
 Vue Directive to call a method function if the user clicks outside that element.
