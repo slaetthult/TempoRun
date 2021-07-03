@@ -9,6 +9,12 @@
   }
 }
 
+@mixin manual-viewport($minWidth) {
+  @media screen and (min-width: $minWidth) {
+    @content;
+  }
+}
+
 // SET HYPHENS MODE
 @mixin hyphens($mode) {
   -webkit-hyphens:      $mode;
@@ -46,12 +52,12 @@
 
 // NORMAL CLEARFIX FOR DESTROY FLOATS
 @mixin clearfix {
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     content: "";
     display: table;
   }
-  &:after {
+  &::after {
     clear: both;
   }
 }
