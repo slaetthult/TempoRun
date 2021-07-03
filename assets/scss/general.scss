@@ -209,12 +209,12 @@ hr {
   background: $color-grey;
 }
 
-ul {
+ul, ol {
   display: block;
   padding: $list-element-padding 0;
   li {
     position: relative;
-    margin-left: 19px;
+    margin-left: 20px;
   }
 }
 

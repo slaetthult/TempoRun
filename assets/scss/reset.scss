@@ -170,9 +170,14 @@ ol {
   list-style: decimal outside;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 figure {
   img {
-    display: block;
     width: 100%;
     image-rendering: pixelated;
   }

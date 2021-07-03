@@ -14,7 +14,6 @@
     "@nuxtjs/robots": "^2.5.0",
     "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/toast": "^3.3.1",
-    "npm-check-updates": "^11.6.0",
     "nuxt": "^2.15.6",
     "nuxt-i18n": "^6.27.0",
     "portal-vue": "^2.1.7",
@@ -25,8 +24,6 @@
   },
   "devDependencies": {
     "@nuxtjs/style-resources": "^1.1.0",
-    "coffee-loader": "^3.0.0",
-    "coffeescript": "^2.5.1",
     "node-sass": "^6.0.0",
     "pug": "^3.0.2",
     "pug-plain-loader": "^1.1.0",
