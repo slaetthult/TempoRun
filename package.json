@@ -14,8 +14,8 @@
     "@nuxtjs/robots": "^2.5.0",
     "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/toast": "^3.3.1",
-    "nuxt": "^2.15.6",
-    "nuxt-i18n": "^6.27.0",
+    "nuxt": "^2.15.7",
+    "nuxt-i18n": "^6.27.3",
     "portal-vue": "^2.1.7",
     "swiper": "^5.4.5",
     "vue-awesome-swiper": "^4.1.1",
@@ -23,10 +23,8 @@
     "vue2-google-maps": "^0.10.7"
   },
   "devDependencies": {
-    "@nuxtjs/style-resources": "^1.1.0",
-    "node-sass": "^6.0.0",
-    "pug": "^3.0.2",
-    "pug-plain-loader": "^1.1.0",
+    "@nuxtjs/style-resources": "^1.2.0",
+    "node-sass": "^6.0.1",
     "sass-loader": "^10.1.1"
   }
 }

@@ -59,9 +59,6 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-      { src: '~/plugins/polyfill-entries' },
-      { src: '~/plugins/polyfill-intersection-observer' },
-      { src: '~/plugins/polyfill-object-fit' },
       { src: '~/plugins/vue-awesome-swiper', mode: 'client' },
       { src: '~/plugins/vue-portal', mode: 'client' },
       { src: '~/plugins/vue-click-outside' },
@@ -141,7 +138,12 @@ export default {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
-    }
+    },
+    /* Slider/Swiper Fix for IE11 */
+    transpile: [
+      'swiper',
+      'dom7'
+    ]
   }
 }
 

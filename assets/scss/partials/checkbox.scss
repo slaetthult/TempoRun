@@ -39,7 +39,7 @@
     min-height: 20px;
     padding-top: 2px;
     cursor: pointer;
-    @include none-select();
+    user-select: none;
 
     &::before {
       display: block;

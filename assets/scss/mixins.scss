@@ -21,33 +21,11 @@
   -moz-hyphens:         $mode;
   -ms-hyphens:          $mode;
   hyphens:              $mode;
-}
 
-// SET PlACEHOLDER COLOR
-@mixin set-placeholdercolor($color){
-  &::-webkit-input-placeholder {
-    color:              $color;
+  @if $mode == auto {
+    word-break: break-word;
   }
-  &:-moz-placeholder {
-    color:              $color;
-    opacity:            1;
-  }
-  &::-moz-placeholder {
-    color:              $color;
-    opacity:            1;
-  }
-  &:-ms-input-placeholder {
-    color:              $color;
-  }
-}
 
-// NO TEXT-MARKER-SELECTION
-@mixin none-select() {
-  -webkit-touch-callout:  none;
-  -webkit-user-select:    none;
-  -moz-user-select:       none;
-  -ms-user-select:        none;
-  user-select:            none;
 }
 
 // NORMAL CLEARFIX FOR DESTROY FLOATS

@@ -3,13 +3,13 @@
 /* -------------------------------------------------------- */
 
 .grid-wrap {
-  position: relative;
   @include flex(row, wrap);
-  margin: 0 auto;
-  padding: 0 $grid-wrapper-outer-margin 0;
+  position: relative;
   width: 100%;
   max-width: $grid-absolute-site-width;
   min-height: 10px;
+  margin: 0 auto;
+  padding: 0 $grid-wrapper-outer-margin 0;
   z-index: $z-index-1;
 
   &.grid-wrap--left {
@@ -26,9 +26,9 @@
   @if $current-viewportwidth == 0px {
     @for $i from 1 through $grid {
       .#{$current-viewport}#{$i} {
-        flex-shrink: 0;
         width: grid-size($i);
         margin: 0 $grid-margin;
+        flex-shrink: 0;
       }
 
       .#{$current-viewport}-left-#{$i} {
@@ -63,9 +63,9 @@
 
       @for $i from 1 through $grid {
         .#{$current-viewport}#{$i} {
-          flex-shrink: 0;
           width: grid-size($i);
           margin: 0 $grid-margin;
+          flex-shrink: 0;
         }
 
         .#{$current-viewport}-left-#{$i} {

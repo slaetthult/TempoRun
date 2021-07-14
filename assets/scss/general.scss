@@ -50,7 +50,8 @@ h6,.h6 {
   padding: $headline-padding 0;
   line-height: $headline-line-height-mobile;
 
-  a {
+  a,
+  strong {
     display: inline;
     position: static;
     color: inherit;
@@ -131,6 +132,12 @@ input[type="text"], input[type="password"], input[type="number"], input[type="em
   color: $color-black;
   border: 1px solid $color-lightgrey;
   transition: all $transitionTime ease;
+
+  &::placeholder {
+    color: $font-color;
+    opacity: 1;
+  }
+
   /* Error class for the form validation */
   &.validation-error {
     border: 1px solid $color-ui-red;
@@ -138,16 +145,18 @@ input[type="text"], input[type="password"], input[type="number"], input[type="em
       display: block;
     }
   }
+
   /* Success class for the form validation */
   &.validation-success {
     border: 1px solid $color-ui-green;
   }
+
   /* Error message class for the form validation */
   & ~ .validation-error-message {
     display: none;
     color: $color-ui-red;
   }
-  @include set-placeholdercolor($color-black);
+
 }
 
 textarea {
@@ -230,11 +239,6 @@ ul, ol {
 /* -------------------------------------------------------- */
 
 ::selection {
-  background: $color-black;
-  color: $color-white;
-  opacity: 1;
-}
-::-moz-selection {
   background: $color-black;
   color: $color-white;
   opacity: 1;

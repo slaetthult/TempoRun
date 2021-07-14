@@ -254,26 +254,12 @@ import {toHHMMSS} from '~/utils/toHHMMSS';
 
 toHHMMSS(300, true, true, true);
 ```
-
-#### JS Polyfills
-
-Following polyfills are already integrated (to support older browsers like IE11):<br><br>
-      polyfill-entries <br>
-      polyfill-intersection-observer<br>
-      polyfill-object-fit (https://github.com/constancecchen/object-fit-polyfill)
-      
-To enable object-fit: cover on images and videos for older browsers add
-``` bash
-data-object-fit="cover"
-```
-to the Image-HTML-Tag. 
-! Define it also in the CSS as usual for modern browsers. !
-      
+ 
 ### Browser Support
-**iOS** 10 and higher  
+**iOS** 10.1 and higher  
 **Android** 5 and higher  
 **Safari** 10 and higher   
-**IE** Not supported anymore (browser gets retired)   
+**IE** 11    
 **Edge** 13 and higher  
 **Firefox** 51 and higher  
 **Chrome** 56 and higher

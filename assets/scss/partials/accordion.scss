@@ -8,7 +8,7 @@
 
   .accordion__trigger {
     display: inline-block;
-    @include none-select();
+    user-select: none;
   }
 
   .accordion__content {
