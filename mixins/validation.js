@@ -83,7 +83,11 @@ export default {
 
                 this.checkRadiobox(formField);
 
-            } else if(formFieldType === 'text' || formFieldType === 'textarea' || formFieldType === 'search' || formFieldType === 'number' || formFieldType === 'tel' || formFieldType === 'url' || formFieldType === 'file'){
+            } else if(formFieldType === 'url'){
+
+                this.checkUrl(formField);
+
+            } else if(formFieldType === 'text' || formFieldType === 'textarea' || formFieldType === 'search' || formFieldType === 'number' || formFieldType === 'tel' || formFieldType === 'file'){
 
                 this.checkNotEmpty(formField);
 
@@ -223,6 +227,36 @@ export default {
                     this.addCssSuccessClass(formField);
 
                 }
+
+            }
+
+        },
+
+        checkUrl(formField){
+
+            let url;
+            let correctUrl = false;
+
+            try {
+
+                url = new URL(formField.value);
+                console.log(url);
+                correctUrl =  url.protocol === "http:" || url.protocol === "https:";
+
+                if(correctUrl){
+
+                    this.addCssSuccessClass(formField);
+
+                } else {
+
+                    this.addCssErrorClass(formField);
+
+                }
+
+            } catch (_) {
+
+                this.addCssErrorClass(formField);
+                return false;
 
             }
 

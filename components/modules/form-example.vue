@@ -76,6 +76,14 @@
                   </label>
               </div>
 
+              <div class="input">
+                  <label>
+                      Your Website:
+                      <input type="url" v-model="formData.website" data-validate data-validate-optional>
+                      <small class="validation-error-message">Should look like this: https://www.yourwebsite.com/</small>
+                  </label>
+              </div>
+
               <div class="textarea">
                   <label>
                       Message:
@@ -123,7 +131,8 @@ import validation from "~/mixins/validation";
                      password: '',
                      gender: '',
                      gender2: false,
-                     zip: ''
+                     zip: '',
+                     website: ''
                  }
              }
         },
