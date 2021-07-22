@@ -18,6 +18,8 @@
       <portal-target name="portal-destination" class="site-portal-destination" multiple></portal-target>
     </client-only>
 
+    <script v-html="jsonld" type="application/ld+json"></script>
+
   </div>
 
 </template>
@@ -30,6 +32,17 @@ export default {
                 lang: this.$i18n.locale
             }
         }
+    },
+  data () {
+    const jsonld = {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Nuxt Run",
+      "legalName" : "Nuxt Run"
     }
+    return {
+      jsonld
+    }
+  }
 }
 </script>

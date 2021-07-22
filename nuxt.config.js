@@ -40,9 +40,7 @@ export default {
     ],
       htmlAttrs: {
           lang: 'en-US',
-          dir: 'ltr',
-        itemscope: '',
-        itemtype: 'http://schema.org/Organization'
+          dir: 'ltr'
       }
   },
   /*
