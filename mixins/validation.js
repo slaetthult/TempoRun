@@ -240,7 +240,6 @@ export default {
             try {
 
                 url = new URL(formField.value);
-                console.log(url);
                 correctUrl =  url.protocol === "http:" || url.protocol === "https:";
 
                 if(correctUrl){
