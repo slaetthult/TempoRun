@@ -26,6 +26,10 @@ export default {
       { hid:'twitter:description', name: 'twitter:description', content: 'Starter kit for nuxt projects with usefull features for fast development. IE11 is supported!' },
       { hid:'twitter:image', name: 'twitter:image', content: 'https://via.placeholder.com/504x252' }
     ],
+    htmlAttrs: {
+      lang: 'en-US',
+      dir: 'ltr'
+    },
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
@@ -38,10 +42,16 @@ export default {
         href: '/fonts/fonts.css'
       }
     ],
-      htmlAttrs: {
-          lang: 'en-US',
-          dir: 'ltr'
+    script: [
+      {
+        type: 'application/ld+json',
+        json: {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Nuxt Run"
+        }
       }
+      ]
   },
   /*
   ** Customize the progress-bar color
