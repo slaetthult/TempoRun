@@ -9,7 +9,7 @@
   max-width: $grid-absolute-site-width;
   min-height: 10px;
   margin: 0 auto;
-  padding: 0 $grid-wrapper-outer-margin 0;
+  padding: 0 $grid-wrapper-outer-padding 0;
   z-index: $z-index-1;
 
   &.grid-wrap--left {

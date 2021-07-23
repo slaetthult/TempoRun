@@ -30,10 +30,10 @@
 /*                    GENERATE GRIDS                        */
 /* -------------------------------------------------------- */
 
-  $grid:                        12;
-  $grid-absolute-box-margin:    5px;
-  $grid-wrapper-outer-margin:   20px;
-  $grid-absolute-site-width:	1008px;
+  $grid:                          12;
+  $grid-absolute-box-margin:      5px;
+  $grid-wrapper-outer-padding:    20px;
+  $grid-absolute-site-width:	    1008px;
 
   $grid-margin:			        percentage($grid-absolute-box-margin/$grid-absolute-site-width);
   $grid-absolute-box-width:     $grid-absolute-site-width / $grid - $grid-absolute-box-margin - $grid-absolute-box-margin;
