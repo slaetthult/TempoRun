@@ -40,7 +40,7 @@
 
   @function grid-size($size) {
     $qoutient: $size * 2 - 2;
-    @return percentage(($grid-absolute-box-width * $size + $grid-absolute-box-margin * $qoutient)/$grid-absolute-site-width) - 0.01%;
+    @return percentage(($grid-absolute-box-width * $size + $grid-absolute-box-margin * $qoutient)/$grid-absolute-site-width);
   }
 
 
