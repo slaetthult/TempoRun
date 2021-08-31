@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Starter kit for nuxt projects",
   "author": "Marvin Schmidt",
-  "private": false,
+  "private": true,
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
@@ -26,25 +26,5 @@
     "@nuxtjs/style-resources": "^1.2.0",
     "node-sass": "^6.0.1",
     "sass-loader": "^10.1.1"
-  },
-  "main": "nuxt.config.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/slaetthult/Nuxt-Run.git"
-  },
-  "keywords": [
-    "Starter",
-    "kit",
-    "for",
-    "fast",
-    "development",
-    "for",
-    "Nuxt",
-    "projects"
-  ],
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/slaetthult/Nuxt-Run/issues"
-  },
-  "homepage": "https://github.com/slaetthult/Nuxt-Run#readme"
+  }
 }
