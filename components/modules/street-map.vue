@@ -2,6 +2,7 @@
   <div class="street-map">
     <div class="grid-wrap">
       <div class="w12">
+        <h2>Street Map</h2>
         <client-only>
           <vl-map :load-tiles-while-animating="true" :load-tiles-while-interacting="true"
                   data-projection="EPSG:4326">
