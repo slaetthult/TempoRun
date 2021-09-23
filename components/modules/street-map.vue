@@ -2,43 +2,45 @@
   <div class="street-map">
     <div class="grid-wrap">
       <div class="w12">
-        <vl-map :load-tiles-while-animating="true" :load-tiles-while-interacting="true"
-                data-projection="EPSG:4326">
-          <vl-view :zoom.sync="zoom" :center.sync="center" :rotation.sync="rotation"></vl-view>
+        <client-only>
+          <vl-map :load-tiles-while-animating="true" :load-tiles-while-interacting="true"
+                  data-projection="EPSG:4326">
+            <vl-view :zoom.sync="zoom" :center.sync="center" :rotation.sync="rotation"></vl-view>
 
-          <vl-geoloc :tracking="false">
-            <template slot-scope="geoloc">
-              <vl-feature>
-                <vl-geom-point :coordinates="markerPositions[0]"></vl-geom-point>
-                <vl-style-box>
-                  <vl-style-icon
-                    src="/icons/map-marker.png"
-                    :scale="1"
-                    :anchor="[0.5, 1]"
-                  ></vl-style-icon>
-                </vl-style-box>
-              </vl-feature>
-              <vl-feature>
-                <vl-geom-point :coordinates="markerPositions[1]"></vl-geom-point>
-                <vl-style-box>
-                  <vl-style-icon
-                    src="/icons/map-marker.png"
-                    :scale="1"
-                    :anchor="[0.5, 1]"
-                  ></vl-style-icon>
-                </vl-style-box>
-              </vl-feature>
-            </template>
-          </vl-geoloc>
+            <vl-geoloc :tracking="false">
+              <template slot-scope="geoloc">
+                <vl-feature>
+                  <vl-geom-point :coordinates="markerPositions[0]"></vl-geom-point>
+                  <vl-style-box>
+                    <vl-style-icon
+                      src="/icons/map-marker.png"
+                      :scale="1"
+                      :anchor="[0.5, 1]"
+                    ></vl-style-icon>
+                  </vl-style-box>
+                </vl-feature>
+                <vl-feature>
+                  <vl-geom-point :coordinates="markerPositions[1]"></vl-geom-point>
+                  <vl-style-box>
+                    <vl-style-icon
+                      src="/icons/map-marker.png"
+                      :scale="1"
+                      :anchor="[0.5, 1]"
+                    ></vl-style-icon>
+                  </vl-style-box>
+                </vl-feature>
+              </template>
+            </vl-geoloc>
 
 
-          <vl-layer-tile>
-            <vl-source-xyz
-              url="http://basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"
-            >
-            </vl-source-xyz>
-          </vl-layer-tile>
-        </vl-map>
+            <vl-layer-tile>
+              <vl-source-xyz
+                url="http://basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"
+              >
+              </vl-source-xyz>
+            </vl-layer-tile>
+          </vl-map>
+        </client-only>
       </div>
     </div>
   </div>
