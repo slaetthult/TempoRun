@@ -148,7 +148,12 @@ export default {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
-    }
+    },
+    /* Slider/Swiper Fix for IE11 */
+    transpile: [
+      'swiper',
+      'dom7'
+    ]
   }
 }
 
