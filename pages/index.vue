@@ -20,8 +20,6 @@
 
     <gallery/>
 
-    <lazy-street-map/>
-
   </div>
 
 </template>

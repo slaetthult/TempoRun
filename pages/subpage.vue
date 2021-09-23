@@ -12,6 +12,8 @@
 
     <gmap/>
 
+    <lazy-street-map/>
+
   </div>
 
 </template>
