@@ -4,7 +4,7 @@ import urlTranslation from './lang/url-translation';
 const PAGE_DOMAIN = "https://www.nuxt-run.com";
 
 export default {
-  target: 'static',
+  //target: 'static',
   /*
   ** Headers of the page
   */

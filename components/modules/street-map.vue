@@ -36,7 +36,7 @@
 
             <vl-layer-tile>
               <vl-source-xyz
-                url="http://basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"
+                url="http://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}"
               >
               </vl-source-xyz>
             </vl-layer-tile>
