@@ -20,22 +20,15 @@
 
     <gallery/>
 
-    <LazyHydrate when-visible>
-      <StreetMap/>
-    </LazyHydrate>
+    <lazy-street-map/>
 
   </div>
 
 </template>
 
 <script>
-import LazyHydrate from 'vue-lazy-hydration';
 
 export default {
-  components: {
-    LazyHydrate,
-    StreetMap: () => import('@/components/modules/street-map.vue'),
-  },
     head() {
         return {
             title: this.$t("headData.index.title"),

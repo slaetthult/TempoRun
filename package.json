@@ -19,7 +19,6 @@
     "portal-vue": "^2.1.7",
     "swiper": "^5.4.5",
     "vue-awesome-swiper": "^4.1.1",
-    "vue-lazy-hydration": "^2.0.0-beta.4",
     "vue-scrollto": "^2.20.0",
     "vue2-google-maps": "^0.10.7",
     "vuelayers": "^0.11.36"
