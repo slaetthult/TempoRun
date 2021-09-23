@@ -3,7 +3,7 @@
   <div>
 
     <div class="text">
-      <div class="gridWrap">
+      <div class="grid-wrap">
         <div class="w12">
           <h1>Unterseite</h1>
         </div>

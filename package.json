@@ -27,9 +27,5 @@
     "@nuxtjs/style-resources": "^1.2.1",
     "node-sass": "^6.0.1",
     "sass-loader": "^10.1.1"
-  },
-  "optionalDependencies": {
-    "iltorb": "~2.4.3",
-    "node-zopfli-es": "~1.0.3"
   }
 }
