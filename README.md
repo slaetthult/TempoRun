@@ -121,11 +121,13 @@ For detailed explaination (for example settings ect.), checkout https://github.c
 ### In case you don't want to use Google Maps: Open Street Maps
 For detailed explaination (for example settings ect.), checkout https://vuelayers.github.io/#/?id=vuelayers
 If you want to change the map style check out this page http://alexurquhart.github.io/free-tiles/ and
-define it in the <vl-source-xyz>-Tag like this:
+define it like this:
+```
             <vl-source-xyz
               url="http://basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"
             >
             </vl-source-xyz>
+```
 ```
 <template>
         <vl-map :load-tiles-while-animating="true" :load-tiles-while-interacting="true"
