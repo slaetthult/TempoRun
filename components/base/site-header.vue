@@ -3,7 +3,9 @@
       <div class="grid-wrap">
           <div class="w12">
               <span class="h2">{{ $t('siteHeader.headline') }}</span>
-              <input class="site-header__search" type="search">
+              <label>
+                <input class="site-header__search" type="search">
+              </label>
               <button v-focus-input="'.site-header__search'">Focus search input</button>
               <site-navigation/>
           </div>

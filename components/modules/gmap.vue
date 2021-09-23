@@ -125,7 +125,7 @@
             },
             markerStyles () {
                 return  {
-                    url: require('~/static/icons/gmapsmarker.png'),
+                    url: require('static/icons/map-marker.png'),
                     scale: 1
                 };
             }

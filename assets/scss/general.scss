@@ -100,7 +100,7 @@ a, .link {
 
 button, input[type="button"], input[type="submit"], .button {
   display: inline-block;
-  padding: 6px 12px;
+  padding: 12px 24px;
   margin: 0;
   background: $color-grey;
   color: $color-white;
@@ -109,6 +109,7 @@ button, input[type="button"], input[type="submit"], .button {
   text-decoration: none;
   transition: all $transitionTime ease;
   border-radius: 0;
+
   &[disabled]{
     opacity: 0.5;
   }

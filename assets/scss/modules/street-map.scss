@@ -1,0 +1,46 @@
+.street-map {
+  margin-top: 40px;
+
+  .vl-map {
+    width: 100%;
+    height: 300px;
+  }
+
+  .ol-control {
+    padding: 0;
+
+    button {
+      width: 45px;
+      height: 45px;
+      background: $color-grey;
+      font-size: rem(28px);
+      line-height: 45px;
+      font-weight: $font-weight-normal;
+      border-radius: 0;
+
+      &:hover {
+        background: $font-link-color;
+      }
+    }
+  }
+}
+
+@include viewport(mw){
+
+  .street-map {
+    .vl-map {
+      height: 400px;
+    }
+  }
+
+}
+
+@include viewport(lw){
+
+  .street-map {
+    .vl-map {
+      height: 543px;
+    }
+  }
+
+}

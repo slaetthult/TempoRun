@@ -20,6 +20,8 @@
 
     <gallery/>
 
+    <street-map/>
+
   </div>
 
 </template>
