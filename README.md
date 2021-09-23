@@ -124,7 +124,7 @@ If you want to change the map style check out this page http://alexurquhart.gith
 define it like this:
 ```
             <vl-source-xyz
-              url="http://basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"
+              url="http://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}"
             >
             </vl-source-xyz>
 ```
