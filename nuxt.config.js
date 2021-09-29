@@ -21,7 +21,7 @@ export default {
       { hid:'og:description', property: 'og:description', content: 'Starter kit for nuxt projects with usefull features for fast development. IE11 is supported!' },
       { hid:'og:url', property: 'og:url', content: PAGE_DOMAIN },
 
-      { name: 'twitter:card', content: 'website' },
+      { name: 'twitter:card', content: 'summary' },
       { hid:'twitter:site', name: 'twitter:site', content: PAGE_DOMAIN },
       { hid:'twitter:title', name: 'twitter:title', content: 'Nuxt Run' },
       { hid:'twitter:description', name: 'twitter:description', content: 'Starter kit for nuxt projects with usefull features for fast development. IE11 is supported!' },
