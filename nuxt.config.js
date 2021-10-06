@@ -9,30 +9,37 @@ export default {
   ** Headers of the page
   */
   head: {
+    htmlAttrs: {
+      lang: 'en-US',
+      dir: 'ltr'
+    },
     title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
 
-      { hid:'og:title', property: 'og:title', content: 'Nuxt Run' },
+      { hid:'og:title', property: 'og:title', content: 'Nuxt Run - Nuxt Starter Kit' },
       { hid:'og:type', property: 'og:type', content: 'website' },
       { hid:'og:image', property: 'og:image', content: 'https://via.placeholder.com/1200x628' },
       { hid:'og:description', property: 'og:description', content: 'Starter kit for nuxt projects with usefull features for fast development. IE11 is supported!' },
       { hid:'og:url', property: 'og:url', content: PAGE_DOMAIN },
 
-      { hid:'twitter:card', name: 'twitter:card', content: 'summary' },
+      { hid:'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
       { hid:'twitter:site', name: 'twitter:site', content: PAGE_DOMAIN },
       { hid:'twitter:title', name: 'twitter:title', content: 'Nuxt Run' },
       { hid:'twitter:description', name: 'twitter:description', content: 'Starter kit for nuxt projects with usefull features for fast development. IE11 is supported!' },
-      { hid:'twitter:image', name: 'twitter:image', content: 'https://via.placeholder.com/1200x628' }
+      { hid:'twitter:image', name: 'twitter:image', content: 'https://via.placeholder.com/1200x628' },
+
+      { hid:'msapplication-TileColor', name: 'msapplication-TileColor', content: '#da532c' },
+      { hid:'theme-color', name: 'theme-color', content: '#ffffff' }
+
     ],
-    htmlAttrs: {
-      lang: 'en-US',
-      dir: 'ltr'
-    },
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', sizes: '196x196', href: 'https://via.placeholder.com/196x196' },
+      { rel: 'icon', sizes: '512x512', href: 'https://via.placeholder.com/512x512' },
+      { rel: 'apple-touch-icon', sizes: '180x180', href: 'https://via.placeholder.com/180x180' },
       {
         rel: 'preload',
         href: '/fonts/fonts.css',
