@@ -13,7 +13,7 @@ For detailed explanation on how things work in nuxt, check out [Nuxt.js docs](ht
 
 ## Demo
 
-https://nifty-curie-944faf.netlify.app/
+https://nuxt-run.netlify.app/
 
 ## Essential Elements
 ### The grid (flexbox)
