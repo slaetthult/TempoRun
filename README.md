@@ -21,7 +21,7 @@ https://nuxt-run.netlify.app/
 The grid class contains the shortname of the viewport (defined in config.scss) and the amount of grids:<br>
 {viewport}{gridamount} -> "w12".<br>
 If you want to push or pull grid-elements, use "w-left-4" {viewport}-{direction}-{gridamount}.
-Grid-Elements are wrapped by the class "grid-wrap".
+Grid-Elements are directly wrapped by the class "grid-wrap".
 ``` bash
 <div class="grid-wrap">
     <h2 class="w12">Grid Example</h2>
@@ -43,13 +43,15 @@ export default {
 }
 ```
 ``` bash
-<div class="accordion" data-accordion :class="{'active' : currentActiveAccordionId === 0}">
-  <button class="accordion__trigger" @click="toggleAccordion($event, 0)">Accordion 1</button>
-  <div class="accordion__content" data-accordion-content>
-      <div class="accordion__content__wrapper">
-          Accordion Text 1
-      </div>
-  </div>
+<div class="accordion" data-accordion :class="{'active' : currentActiveAccordionId === 0}" id="anchor1">
+    <button class="accordion__trigger" @click="toggleAccordion($event, 0)">
+        Accordion 1
+    </button>
+    <div class="accordion__content" data-accordion-content>
+        <div class="accordion__content__wrapper">
+            Accordion Text 1
+        </div>
+    </div>
 </div>
 ```
 <b>Additional settings:</b><br>
