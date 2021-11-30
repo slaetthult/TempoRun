@@ -6,7 +6,8 @@ export default {
             validationIndicatorAttribute: "data-validate",
             cssErrorClass: 'validation-error',
             cssSuccessClass: 'validation-success',
-            scrollToErrorFormFieldOffset: -220
+            scrollToErrorFormFieldOffset: -220,
+            validationEvents: ['keyup', 'change', 'input']
         }
     },
 
@@ -23,7 +24,7 @@ export default {
             const _this = this;
             const $component = this.$el;
 
-            ['keyup', 'change'].forEach( eventName =>
+            _this.validationEvents.forEach( eventName =>
 
                 $component.addEventListener(eventName, (event)=>{
 
