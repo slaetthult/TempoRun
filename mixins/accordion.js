@@ -25,6 +25,14 @@ export default {
 
             _this.calcAccordionHeight();
 
+            if(document.fonts){
+
+                document.fonts.ready.then(() => {
+                    _this.calcAccordionHeight();
+                });
+
+            }
+
             window.addEventListener("resize", () => {
 
                 _this.calcAccordionHeight();
