@@ -6,7 +6,7 @@
         <client-only>
           <vl-map :load-tiles-while-animating="true" :load-tiles-while-interacting="true"
                   data-projection="EPSG:4326">
-            <vl-view :zoom.sync="zoom" :center.sync="center" :rotation.sync="rotation"></vl-view>
+            <vl-view :maxZoom="maxZoom" :zoom.sync="zoom" :center.sync="center" :rotation.sync="rotation"></vl-view>
 
             <vl-geoloc :tracking="false">
               <template slot-scope="geoloc">
@@ -52,6 +52,7 @@ export default {
   data () {
     return {
       zoom: 15,
+      maxZoom: 16,
       center: [	6.783333, 51.233334],
       rotation: 0,
       markerPositions: {
