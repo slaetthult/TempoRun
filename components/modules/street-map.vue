@@ -36,7 +36,7 @@
 
             <vl-layer-tile>
               <vl-source-xyz
-                url="http://a.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
+                url="https://a.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
               >
               </vl-source-xyz>
             </vl-layer-tile>
