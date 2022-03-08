@@ -36,7 +36,7 @@
 
             <vl-layer-tile>
               <vl-source-xyz
-                url="http://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}"
+                url="http://a.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
               >
               </vl-source-xyz>
             </vl-layer-tile>
@@ -52,7 +52,7 @@ export default {
   data () {
     return {
       zoom: 15,
-      maxZoom: 16,
+      maxZoom: 19,
       center: [	6.783333, 51.233334],
       rotation: 0,
       markerPositions: {
