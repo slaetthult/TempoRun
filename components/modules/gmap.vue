@@ -7,7 +7,7 @@
             <h2>Google Maps Example</h2>
 
               <client-only>
-              <GmapMap :center="{lat: 50.582734, lng: 10.027333}" :zoom="16" :options="{styles: mapStyles, scrollwheel: false, disableDefaultUI: true}" map-type-id="roadmap">
+              <GmapMap :center="{lat: 50.582734, lng: 10.027333}" :zoom="zoom" :options="{styles: mapStyles, streetViewControl:true, fullscreenControl: true, zoomControl: true, scrollwheel: false, disableDefaultUI: true}" map-type-id="roadmap">
                   <GmapMarker :position="{lat: 50.582734, lng: 10.027333}" :icon="markerStyles" @click="toggleInfoWindow(m,index)" />
 
                   <gmap-info-window
@@ -38,6 +38,7 @@
                      lat: 0,
                      lng: 0
                  },
+                 zoom: 16,
                  infoWinOpen: false,
                  currentMidx: null,
                  infoOptions: {
