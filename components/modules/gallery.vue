@@ -4,7 +4,6 @@
           <div class="w12">
 
               <h2>Gallery Example</h2>
-
               <client-only>
 
                   <swiper :options="gallerySwiperOptions" ref="galleryswiper">
