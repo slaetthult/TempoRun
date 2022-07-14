@@ -25,9 +25,8 @@
         grid-column-end: span $i;
       }
 
-      .#{$current-viewport}-push-#{$i} {
-        $push-grids: $i + 1;
-        grid-column-start: $push-grids;
+      .#{$current-viewport}-start-#{$i} {
+        grid-column-start: $i;
       }
 
     }
@@ -36,7 +35,7 @@
       grid-column: span map-get(map-get($grid, #{$current-viewport}), columns);
     }
 
-    .#{$current-viewport}-push-0 {
+    .#{$current-viewport}-start-auto {
       grid-column-start: auto;
     }
 
@@ -60,9 +59,8 @@
           grid-column-end: span $i;
         }
 
-        .#{$current-viewport}-push-#{$i} {
-          $push-grids: $i + 1;
-          grid-column-start: $push-grids;
+        .#{$current-viewport}-start-#{$i} {
+          grid-column-start: $i;
         }
 
       }
@@ -71,7 +69,7 @@
         grid-column: span map-get(map-get($grid, #{$current-viewport}), columns);
       }
 
-      .#{$current-viewport}-push-0 {
+      .#{$current-viewport}-start-auto {
         grid-column-start: auto;
       }
 

@@ -21,7 +21,8 @@ https://nuxt-run.netlify.app/
 
 The grid class contains the shortname of the viewport (defined in config.scss) and the amount of grids:<br>
 {viewport}{gridamount} -> "w12".<br>
-If you want to push grid-elements, use "w-push-4" {viewport}-push-{gridamount}.
+If you want to move certain grid-elements, use "w-start-4" {viewport}-start-{gridamount}. In this case
+the element will be positioned at the fourth column.
 Grid-Elements are directly wrapped by the class "grid-wrap".
 ``` bash
 <div class="grid-wrap">
@@ -29,9 +30,9 @@ Grid-Elements are directly wrapped by the class "grid-wrap".
     <h2 class="w12">Grid Example</h2>
     <div class="w12" style="background: lightgrey;">w12</div>
     <div class="w4" style="background: lightgrey;">w4</div>
-    <div class="w8" style="background: lightgrey;">w8</div>
-    <div class="w4 w-push-4 lw8" style="background: lightgrey;">w4 w-push-4 lw8</div>
-    <div class="w4 w-push-4 lw-push-0" style="background: lightgrey;">w4 w-push-4 lw-push-0</div>
+    <div class="w6 w-start-7" style="background: lightgrey;">w6 w-start-7</div>
+    <div class="w4 w-start-5 lw8" style="background: lightgrey;">w4 w-start-5 lw8</div>
+    <div class="w4 w-start-5 lw-start-auto" style="background: lightgrey;">w4 w-start-5 lw-start-auto</div>
     <div class="w4" style="background: lightgrey;">w4</div>
 </div>
 ```
