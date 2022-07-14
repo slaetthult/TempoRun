@@ -331,8 +331,8 @@ toHHMMSS(300, true, true, true);
  
 ### Browser Support
 **iOS** 10 and higher  
-**Android** 5 and higher  
-**Safari** 10.3 and higher   
+**Android** 6 and higher  
+**Safari** 11 and higher   
 **IE** Not supported    
 **Edge** 16 and higher  
 **Firefox** 52 and higher  
