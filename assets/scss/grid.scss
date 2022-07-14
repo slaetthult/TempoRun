@@ -20,13 +20,13 @@
       padding: 0 map-get(map-get($grid, #{$current-viewport}), wrap-outer-padding);
     }
 
-    @for $i from 1 through map-get(map-get($grid, #{$current-viewport}), columns) {
-      .#{$current-viewport}#{$i} {
-        grid-column-end: span $i;
+    @for $column from 1 through map-get(map-get($grid, #{$current-viewport}), columns) {
+      .#{$current-viewport}#{$column} {
+        grid-column-end: span $column;
       }
 
-      .#{$current-viewport}-start-#{$i} {
-        grid-column-start: $i;
+      .#{$current-viewport}-start-#{$column} {
+        grid-column-start: $column;
       }
 
     }
@@ -54,13 +54,13 @@
         padding: 0 map-get(map-get($grid, #{$current-viewport}), wrap-outer-padding);
       }
 
-      @for $i from 1 through map-get(map-get($grid, #{$current-viewport}), columns) {
-        .#{$current-viewport}#{$i} {
-          grid-column-end: span $i;
+      @for $column from 1 through map-get(map-get($grid, #{$current-viewport}), columns) {
+        .#{$current-viewport}#{$column} {
+          grid-column-end: span $column;
         }
 
-        .#{$current-viewport}-start-#{$i} {
-          grid-column-start: $i;
+        .#{$current-viewport}-start-#{$column} {
+          grid-column-start: $column;
         }
 
       }
