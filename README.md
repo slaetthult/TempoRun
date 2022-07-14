@@ -1,5 +1,6 @@
-# Nuxt Run
+# Nuxt Run v2
 
+> Still under construction for Nuxt 3. Don't use this v2-branch yet.  
 > Starter kit for nuxt projects with usefull features for fast development.
 
 ## Build Setup
