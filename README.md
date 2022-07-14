@@ -16,20 +16,22 @@ For detailed explanation on how things work in nuxt, check out [Nuxt.js docs](ht
 https://nuxt-run.netlify.app/
 
 ## Essential Elements
-### The grid (flexbox)
+### The grid (css-grid)
 
 The grid class contains the shortname of the viewport (defined in config.scss) and the amount of grids:<br>
 {viewport}{gridamount} -> "w12".<br>
-If you want to push or pull grid-elements, use "w-left-4" {viewport}-{direction}-{gridamount}.
+If you want to push grid-elements, use "w-push-4" {viewport}-push-{gridamount}.
 Grid-Elements are directly wrapped by the class "grid-wrap".
 ``` bash
 <div class="grid-wrap">
+    <h1 class="w12">Start your projects with Nuxt Run!</h1>
     <h2 class="w12">Grid Example</h2>
-    <div class="w12" style="background: lightgrey;margin-top:5px;">w12</div>
-    <div class="w4" style="background: lightgrey;margin-top:5px;">w4</div>
-    <div class="w8" style="background: lightgrey;margin-top:5px;">w8</div>
-    <div class="w4 w-left-4" style="background: lightgrey;margin-top:5px;">w4 w-left-4</div>
-    <div class="w4" style="background: lightgrey;margin-top:5px;">w4</div>
+    <div class="w12" style="background: lightgrey;">w12</div>
+    <div class="w4" style="background: lightgrey;">w4</div>
+    <div class="w8" style="background: lightgrey;">w8</div>
+    <div class="w4 w-push-4 lw8" style="background: lightgrey;">w4 w-push-4 lw8</div>
+    <div class="w4 w-push-4 lw-push-0" style="background: lightgrey;">w4 w-push-4 lw-push-0</div>
+    <div class="w4" style="background: lightgrey;">w4</div>
 </div>
 ```
 
@@ -328,8 +330,8 @@ toHHMMSS(300, true, true, true);
 ### Browser Support
 **iOS** 10 and higher  
 **Android** 5 and higher  
-**Safari** 10.1 and higher   
-**IE** 11    
-**Edge** 13 and higher  
-**Firefox** 51 and higher  
-**Chrome** 56 and higher
+**Safari** 10.3 and higher   
+**IE** Not supported    
+**Edge** 16 and higher  
+**Firefox** 52 and higher  
+**Chrome** 57 and higher

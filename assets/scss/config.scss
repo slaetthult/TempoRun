@@ -8,10 +8,10 @@
 /* -------------------------------------------------------- */
 
   $viewports: (
-          w: 0px,
-          sw: 480px,
-          mw: 768px,
-          lw: 1024px
+      w:  0px,
+      sw: 480px,
+      mw: 768px,
+      lw: 1024px
   );
 
 
@@ -27,22 +27,37 @@
 
 
 /* -------------------------------------------------------- */
-/*                    GENERATE GRIDS                        */
+/*                     DEFINE GRIDS                         */
 /* -------------------------------------------------------- */
 
-  $grid:                          12;
-  $grid-absolute-box-margin:      5px;
-  $grid-wrapper-outer-padding:    20px;
-  $grid-absolute-site-width:	    1008px;
+$grid: (
+    w: (
+        columns:                  12,
+        column-gap:               10px,
+        row-gap:                  10px,
+        wrap-outer-padding:       15px,
+    ),
+    sw: (
+        columns:                  12,
+        column-gap:               10px,
+        row-gap:                  10px,
+        wrap-outer-padding:       15px,
+    ),
+    mw: (
+        columns:                  12,
+        column-gap:               10px,
+        row-gap:                  10px,
+        wrap-outer-padding:       15px,
+    ),
+    lw: (
+        columns:                  12,
+        column-gap:               10px,
+        row-gap:                  10px,
+        wrap-outer-padding:       15px,
+    )
+);
 
-  $grid-margin:			        percentage($grid-absolute-box-margin/$grid-absolute-site-width);
-  $grid-absolute-box-width:     $grid-absolute-site-width / $grid - $grid-absolute-box-margin - $grid-absolute-box-margin;
-
-  @function grid-size($size) {
-    $qoutient: $size * 2 - 2;
-    @return percentage(($grid-absolute-box-width * $size + $grid-absolute-box-margin * $qoutient)/$grid-absolute-site-width);
-  }
-
+  $grid-wrap-max-width:           1038px;
 
 /* -------------------------------------------------------- */
 /*                 COLORSCHEME, DO IT!                      */
@@ -95,7 +110,7 @@
 
 
 /* -------------------------------------------------------- */
-/*                      FONTCONFIGS                         */
+/*                     FONT CONFIGS                         */
 /* -------------------------------------------------------- */
 
 
