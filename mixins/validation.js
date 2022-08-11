@@ -235,29 +235,13 @@ export default {
 
         checkUrl(formField){
 
-            let url;
-            let correctUrl = false;
+            const regex = /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$/;
+            const correctUrl = regex.test(String(formField.value));
 
-            try {
-
-                url = new URL(formField.value);
-                correctUrl =  url.protocol === "http:" || url.protocol === "https:";
-
-                if(correctUrl){
-
-                    this.addCssSuccessClass(formField);
-
-                } else {
-
-                    this.addCssErrorClass(formField);
-
-                }
-
-            } catch (_) {
-
+            if (!correctUrl) {
                 this.addCssErrorClass(formField);
-                return false;
-
+            } else {
+                this.addCssSuccessClass(formField);
             }
 
         },
