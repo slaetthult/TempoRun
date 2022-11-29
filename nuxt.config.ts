@@ -34,18 +34,18 @@ export default defineNuxtConfig({
             meta: [
                 { name: 'viewport', content: 'width=device-width, initial-scale=1' },
 
-                { hid: 'description', name: 'description', content: '*static* Centro Derm Description' },
+                { hid: 'description', name: 'description', content: '*static* Description' },
 
                 { hid:'og:title', property: 'og:title', content: 'Page title' },
                 { hid:'og:type', property: 'og:type', content: 'website' },
                 { hid:'og:image', property: 'og:image', content: 'nuxt-run.de' + '/share-image_1200x628.jpg' },
-                { hid:'og:description', property: 'og:description', content: '*static* Centro Derm Description' },
+                { hid:'og:description', property: 'og:description', content: '*static* Description' },
                 { hid:'og:url', property: 'og:url', content: 'nuxt-run.de' },
 
                 { hid:'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
                 { hid:'twitter:site', name: 'twitter:site', content: 'google.de' },
                 { hid:'twitter:title', name: 'twitter:title', content: 'title' },
-                { hid:'twitter:description', name: 'twitter:description', content: '*static* Centro Derm Description' },
+                { hid:'twitter:description', name: 'twitter:description', content: '*static* Description' },
                 { hid:'twitter:image', name: 'twitter:image', content: 'nuxt-run.de' + '/share-image_1200x628.jpg' },
             ],
             link: [
