@@ -1,0 +1,42 @@
+/* barlow-300 - latin */
+@font-face {
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 300;
+    src: url('/fonts/barlow-v12-latin/barlow-v12-latin-300.eot');
+    src: local(''),
+    url('/fonts/barlow-v12-latin/barlow-v12-latin-300.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/barlow-v12-latin/barlow-v12-latin-300.woff2') format('woff2'),
+    url('/fonts/barlow-v12-latin/barlow-v12-latin-300.woff') format('woff'),
+    url('/fonts/barlow-v12-latin/barlow-v12-latin-300.ttf') format('truetype'),
+    url('/fonts/barlow-v12-latin/barlow-v12-latin-300.svg#Barlow') format('svg');
+    font-display: swap;
+}
+/* barlow-regular - latin */
+@font-face {
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/barlow-v12-latin/barlow-v12-latin-regular.eot');
+    src: local(''),
+    url('/fonts/barlow-v12-latin/barlow-v12-latin-regular.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/barlow-v12-latin/barlow-v12-latin-regular.woff2') format('woff2'),
+    url('/fonts/barlow-v12-latin/barlow-v12-latin-regular.woff') format('woff'),
+    url('/fonts/barlow-v12-latin/barlow-v12-latin-regular.ttf') format('truetype'),
+    url('/fonts/barlow-v12-latin/barlow-v12-latin-regular.svg#Barlow') format('svg');
+    font-display: swap;
+}
+/* barlow-700 - latin */
+@font-face {
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/barlow-v12-latin/barlow-v12-latin-700.eot');
+    src: local(''),
+    url('/fonts/barlow-v12-latin/barlow-v12-latin-700.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/barlow-v12-latin/barlow-v12-latin-700.woff2') format('woff2'),
+    url('/fonts/barlow-v12-latin/barlow-v12-latin-700.woff') format('woff'),
+    url('/fonts/barlow-v12-latin/barlow-v12-latin-700.ttf') format('truetype'),
+    url('/fonts/barlow-v12-latin/barlow-v12-latin-700.svg#Barlow') format('svg');
+    font-display: swap;
+}

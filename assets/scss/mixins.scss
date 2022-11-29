@@ -81,3 +81,173 @@
   flex-wrap: $wrap;
 
 }
+
+@mixin ul-list-style() {
+
+  li {
+    position: relative;
+    margin-left: 25px;
+    list-style: none;
+
+    & + li {
+      margin-top: 10px;
+    }
+
+    &::before {
+      position: absolute;
+      top: 4px;
+      left: -26px;
+      width: 15px;
+      height: 15px;
+      background-image: url(/img/bulletpoint.svg);
+      background-size: cover;
+      content: "";
+    }
+
+    p {
+      display: inline;
+    }
+  }
+
+  @include viewport(mw){
+
+    li {
+      margin-left: 30px;
+
+      & + li {
+        margin-top: 19px;
+      }
+
+      &::before {
+        top: 8px;
+        left: -31px;
+      }
+    }
+
+  }
+}
+
+@mixin module-spacing($padding: with-padding){
+  @if $padding == with-padding {
+    &[style*="background"]{
+      padding: 35px 0;
+    }
+  }
+  margin-bottom: 50px;
+
+  &[style*="background"]{
+    & + [style*="background"],
+    & + .anchor-element + [style*="background"]{
+      margin-top: -50px;
+    }
+  }
+
+  &[style*="background:rgb(249, 249, 249)"]{
+    & + [style*="background:rgb(249, 249, 249)"],
+    & + .anchor-element + [style*="background:rgb(249, 249, 249)"]{
+      margin-top: -100px;
+    }
+  }
+  &[style*="background: rgb(249, 249, 249)"]{
+    & + [style*="background: rgb(249, 249, 249)"],
+    & + .anchor-element + [style*="background: rgb(249, 249, 249)"]{
+      margin-top: -100px;
+    }
+  }
+  &[style*="background:rgb(233, 228, 226)"]{
+    & + [style*="background:rgb(233, 228, 226)"],
+    & + .anchor-element + [style*="background:rgb(233, 228, 226)"]{
+      margin-top: -100px;
+    }
+  }
+  &[style*="background: rgb(233, 228, 226)"]{
+    & + [style*="background: rgb(233, 228, 226)"],
+    & + .anchor-element + [style*="background: rgb(233, 228, 226)"]{
+      margin-top: -100px;
+    }
+  }
+
+  @include viewport(mw){
+    @if $padding == with-padding {
+      &[style*="background"]{
+        padding: 50px 0;
+      }
+    }
+    margin-bottom: 70px;
+
+    &[style*="background"]{
+      & + [style*="background"],
+      & + .anchor-element + [style*="background"]{
+        margin-top: -70px;
+      }
+    }
+
+    &[style*="background:rgb(249, 249, 249)"]{
+      & + [style*="background:rgb(249, 249, 249)"],
+      & + .anchor-element + [style*="background:rgb(249, 249, 249)"]{
+        margin-top: -135px;
+      }
+    }
+    &[style*="background: rgb(249, 249, 249)"]{
+      & + [style*="background: rgb(249, 249, 249)"],
+      & + .anchor-element + [style*="background: rgb(249, 249, 249)"]{
+        margin-top: -135px;
+      }
+    }
+    &[style*="background:rgb(233, 228, 226)"]{
+      & + [style*="background:rgb(233, 228, 226)"],
+      & + .anchor-element + [style*="background:rgb(233, 228, 226)"]{
+        margin-top: -135px;
+      }
+    }
+    &[style*="background: rgb(233, 228, 226)"]{
+      & + [style*="background: rgb(233, 228, 226)"],
+      & + .anchor-element + [style*="background: rgb(233, 228, 226)"]{
+        margin-top: -135px;
+      }
+    }
+
+  }
+
+  @include viewport(lw){
+    @if $padding == with-padding {
+      &[style*="background"]{
+        padding: 80px 0;
+      }
+    }
+    margin-bottom: 100px;
+
+    &[style*="background"]{
+      & + [style*="background"],
+      & + .anchor-element + [style*="background"]{
+        margin-top: -100px;
+      }
+    }
+
+    &[style*="background:rgb(249, 249, 249)"]{
+      & + [style*="background:rgb(249, 249, 249)"],
+      & + .anchor-element + [style*="background:rgb(249, 249, 249)"]{
+        margin-top: -180px;
+      }
+    }
+    &[style*="background: rgb(249, 249, 249)"]{
+      & + [style*="background: rgb(249, 249, 249)"],
+      & + .anchor-element + [style*="background: rgb(249, 249, 249)"]{
+        margin-top: -180px;
+      }
+    }
+    &[style*="background:rgb(233, 228, 226)"]{
+      & + [style*="background:rgb(233, 228, 226)"],
+      & + .anchor-element + [style*="background:rgb(233, 228, 226)"]{
+        margin-top: -180px;
+      }
+    }
+    &[style*="background: rgb(233, 228, 226)"]{
+      & + [style*="background: rgb(233, 228, 226)"],
+      & + .anchor-element + [style*="background: rgb(233, 228, 226)"]{
+        margin-top: -180px;
+      }
+    }
+
+  }
+}

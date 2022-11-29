@@ -14,8 +14,6 @@
 /*                        BASIS                             */
 /* -------------------------------------------------------- */
 
-@import "base/site-header";
-@import "base/site-footer";
 
 /* -------------------------------------------------------- */
 /*                       PARTIALS                           */
@@ -23,19 +21,14 @@
 
 @import "partials/accordion";
 @import "partials/slider";
-@import "partials/modalbox";
 @import "partials/checkbox";
 @import "partials/radiobox";
 @import "partials/selectbox";
-@import "partials/notification-message";
 
 /* -------------------------------------------------------- */
 /*                     MODULES/SLICES                       */
 /* -------------------------------------------------------- */
 
-@import "modules/gallery";
-@import "modules/gmap";
-@import "modules/street-map";
 
 /* -------------------------------------------------------- */
 /*                     SPECIAL MEDIA                        */

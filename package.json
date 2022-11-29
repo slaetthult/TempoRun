@@ -1,31 +1,25 @@
 {
-  "name": "nuxt-run",
-  "version": "1.0.0",
-  "description": "Starter kit for nuxt projects",
-  "author": "Marvin Schmidt",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate --modern"
-  },
-  "dependencies": {
-    "@nuxtjs/robots": "^2.5.0",
-    "@nuxtjs/sitemap": "^2.4.0",
-    "@nuxtjs/toast": "^3.3.1",
-    "nuxt": "^2.15.8",
-    "nuxt-i18n": "^6.27.3",
-    "portal-vue": "^2.1.7",
-    "swiper": "^5.4.5",
-    "vue-awesome-swiper": "^4.1.1",
-    "vue-scrollto": "^2.20.0",
-    "vue2-google-maps": "^0.10.7",
-    "vuelayers": "^0.11.36"
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxtjs/style-resources": "^1.2.1",
-    "sass-loader": "^10.1.1",
-    "sass": "~1.32.12"
+    "nuxt": "3.0.0",
+    "sass": "^1.56.1"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.4.4",
+    "@storyblok/nuxt": "^4.5.0",
+    "@swoga/vue-collapsible-panel": "^0.3.0",
+    "click-outside-vue3": "^4.0.1",
+    "vue3-google-map": "^0.15.0",
+    "nuxt-jsonld": "^2.0.7",
+    "pinia": "^2.0.24",
+    "swiper": "^8.4.4",
+    "vue-scrollto": "^2.20.0"
   }
 }

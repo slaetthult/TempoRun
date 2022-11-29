@@ -7,6 +7,10 @@
   max-width: $grid-wrap-max-width;
   margin: 0 auto;
   z-index: $z-index-1;
+
+  &.grid-wrap--dense {
+    grid-auto-flow: dense;
+  }
 }
 
 @each $current-viewport,  $current-viewportwidth in $viewports {

@@ -1,19 +1,9 @@
-.accordion {
-
-  &:not(.active) {
-    .accordion__content {
-      height: 0!important;
-    }
+.vcp {
+  overflow: hidden;
+  .vcp__header {
+    cursor: pointer;
   }
-
-  .accordion__trigger {
-    display: inline-block;
-    user-select: none;
+  .vcp__body {
+    transition: all linear $transitionTime;
   }
-
-  .accordion__content {
-    overflow: hidden;
-    transition: height linear $transitionTime;
-  }
-
 }
