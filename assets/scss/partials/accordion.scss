@@ -1,7 +1,14 @@
 .vcp {
   overflow: hidden;
   .vcp__header {
+    position: relative;
     cursor: pointer;
+
+    .vcp__header-icon {
+      position: absolute;
+      top: 4px;
+      right: 0;
+    }
   }
   .vcp__body {
     transition: all linear $transitionTime;

@@ -4,7 +4,8 @@
 
 <template>
   <div>
-    <ContentText/>
-	  <Gallery/>
+	  <LazyContentText/>
+	  <LazyFaqAccordion/>
+	  <LazyGallery/>
   </div>
 </template>

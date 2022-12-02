@@ -44,7 +44,7 @@ const modules = [Navigation, Pagination];
 									<picture>
 										<source media="(min-width: 768px)" srcset="https://via.placeholder.com/480x144">
 										<source srcset="https://via.placeholder.com/480x144">
-										<img src="https://via.placeholder.com/480x144" alt="alt">
+										<img src="https://via.placeholder.com/480x144" alt="alt" loading="lazy">
 									</picture>
 								</figure>
 								<h3>Headline</h3>
@@ -60,7 +60,7 @@ const modules = [Navigation, Pagination];
 									<picture>
 										<source media="(min-width: 768px)" srcset="https://via.placeholder.com/480x144">
 										<source srcset="https://via.placeholder.com/480x144">
-										<img src="https://via.placeholder.com/480x144" alt="alt">
+										<img src="https://via.placeholder.com/480x144" alt="alt" loading="lazy">
 									</picture>
 								</figure>
 								<h3>Headline</h3>
@@ -76,7 +76,7 @@ const modules = [Navigation, Pagination];
 									<picture>
 										<source media="(min-width: 768px)" srcset="https://via.placeholder.com/480x144">
 										<source srcset="https://via.placeholder.com/480x144">
-										<img src="https://via.placeholder.com/480x144" alt="alt">
+										<img src="https://via.placeholder.com/480x144" alt="alt" loading="lazy">
 									</picture>
 								</figure>
 								<h3>Headline</h3>
@@ -92,7 +92,7 @@ const modules = [Navigation, Pagination];
 									<picture>
 										<source media="(min-width: 768px)" srcset="https://via.placeholder.com/480x144">
 										<source srcset="https://via.placeholder.com/480x144">
-										<img src="https://via.placeholder.com/480x144" alt="alt">
+										<img src="https://via.placeholder.com/480x144" alt="alt" loading="lazy">
 									</picture>
 								</figure>
 								<h3>Headline</h3>

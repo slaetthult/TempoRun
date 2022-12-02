@@ -12,14 +12,13 @@
     "sass": "^1.56.1"
   },
   "dependencies": {
-    "@pinia/nuxt": "^0.4.4",
-    "@storyblok/nuxt": "^4.5.0",
+    "@pinia/nuxt": "^0.4.6",
     "@swoga/vue-collapsible-panel": "^0.3.0",
     "click-outside-vue3": "^4.0.1",
     "vue3-google-map": "^0.15.0",
     "nuxt-jsonld": "^2.0.7",
-    "pinia": "^2.0.24",
-    "swiper": "^8.4.4",
+    "pinia": "^2.0.27",
+    "swiper": "^8.4.5",
     "vue-scrollto": "^2.20.0"
   }
 }
