@@ -5,6 +5,7 @@
 <template>
   <div>
 	  <LazyContentText/>
+	  <ContentForm/>
 	  <LazyFaqAccordion/>
 	  <LazyGallery/>
   </div>
