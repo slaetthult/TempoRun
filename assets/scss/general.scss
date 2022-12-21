@@ -131,31 +131,12 @@ input[type="text"], input[type="password"], input[type="number"], input[type="em
   margin: 5px 0;
   background: $color-white;
   color: $color-black;
-  border: 1px solid $color-lightgrey;
+  border: 1px solid $color-grey;
   transition: all $transitionTime ease;
 
   &::placeholder {
     color: $font-color;
     opacity: 1;
-  }
-
-  /* Error class for the form validation */
-  &.validation-error {
-    border: 1px solid $color-ui-red;
-    & ~ .validation-error-message {
-      display: block;
-    }
-  }
-
-  /* Success class for the form validation */
-  &.validation-success {
-    border: 1px solid $color-ui-green;
-  }
-
-  /* Error message class for the form validation */
-  & ~ .validation-error-message {
-    display: none;
-    color: $color-ui-red;
   }
 
 }

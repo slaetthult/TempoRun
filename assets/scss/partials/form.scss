@@ -1,6 +1,14 @@
 .form {
 
-  .error {
+  &.grid-wrap {
+    row-gap: 10px;
+  }
+
+  .form__w-start-new-row {
+    grid-column-start: 1;
+  }
+
+  .form__error {
     small {
       display: block;
     }
@@ -8,5 +16,16 @@
 
   small {
     display: none;
+    color: $color-ui-red;
+  }
+}
+
+@include viewport(mw){
+  .form {
+
+    .form__mw-start-new-row {
+      grid-column-start: 1;
+    }
+
   }
 }

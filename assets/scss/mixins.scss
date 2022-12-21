@@ -127,127 +127,16 @@
   }
 }
 
-@mixin module-spacing($padding: with-padding){
-  @if $padding == with-padding {
-    &[style*="background"]{
-      padding: 35px 0;
-    }
-  }
-  margin-bottom: 50px;
+@mixin smooth-fading-effect($transitionStyle: ease-in-out){
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity $transitionTime $transitionStyle;
+  transition-delay: $transitionTime, 0s;
 
-  &[style*="background"]{
-    & + [style*="background"],
-    & + .anchor-element + [style*="background"]{
-      margin-top: -50px;
-    }
-  }
-
-  &[style*="background:rgb(249, 249, 249)"]{
-    & + [style*="background:rgb(249, 249, 249)"],
-    & + .anchor-element + [style*="background:rgb(249, 249, 249)"]{
-      margin-top: -100px;
-    }
-  }
-  &[style*="background: rgb(249, 249, 249)"]{
-    & + [style*="background: rgb(249, 249, 249)"],
-    & + .anchor-element + [style*="background: rgb(249, 249, 249)"]{
-      margin-top: -100px;
-    }
-  }
-  &[style*="background:rgb(233, 228, 226)"]{
-    & + [style*="background:rgb(233, 228, 226)"],
-    & + .anchor-element + [style*="background:rgb(233, 228, 226)"]{
-      margin-top: -100px;
-    }
-  }
-  &[style*="background: rgb(233, 228, 226)"]{
-    & + [style*="background: rgb(233, 228, 226)"],
-    & + .anchor-element + [style*="background: rgb(233, 228, 226)"]{
-      margin-top: -100px;
-    }
-  }
-
-  @include viewport(mw){
-    @if $padding == with-padding {
-      &[style*="background"]{
-        padding: 50px 0;
-      }
-    }
-    margin-bottom: 70px;
-
-    &[style*="background"]{
-      & + [style*="background"],
-      & + .anchor-element + [style*="background"]{
-        margin-top: -70px;
-      }
-    }
-
-    &[style*="background:rgb(249, 249, 249)"]{
-      & + [style*="background:rgb(249, 249, 249)"],
-      & + .anchor-element + [style*="background:rgb(249, 249, 249)"]{
-        margin-top: -135px;
-      }
-    }
-    &[style*="background: rgb(249, 249, 249)"]{
-      & + [style*="background: rgb(249, 249, 249)"],
-      & + .anchor-element + [style*="background: rgb(249, 249, 249)"]{
-        margin-top: -135px;
-      }
-    }
-    &[style*="background:rgb(233, 228, 226)"]{
-      & + [style*="background:rgb(233, 228, 226)"],
-      & + .anchor-element + [style*="background:rgb(233, 228, 226)"]{
-        margin-top: -135px;
-      }
-    }
-    &[style*="background: rgb(233, 228, 226)"]{
-      & + [style*="background: rgb(233, 228, 226)"],
-      & + .anchor-element + [style*="background: rgb(233, 228, 226)"]{
-        margin-top: -135px;
-      }
-    }
-
-  }
-
-  @include viewport(lw){
-    @if $padding == with-padding {
-      &[style*="background"]{
-        padding: 80px 0;
-      }
-    }
-    margin-bottom: 100px;
-
-    &[style*="background"]{
-      & + [style*="background"],
-      & + .anchor-element + [style*="background"]{
-        margin-top: -100px;
-      }
-    }
-
-    &[style*="background:rgb(249, 249, 249)"]{
-      & + [style*="background:rgb(249, 249, 249)"],
-      & + .anchor-element + [style*="background:rgb(249, 249, 249)"]{
-        margin-top: -180px;
-      }
-    }
-    &[style*="background: rgb(249, 249, 249)"]{
-      & + [style*="background: rgb(249, 249, 249)"],
-      & + .anchor-element + [style*="background: rgb(249, 249, 249)"]{
-        margin-top: -180px;
-      }
-    }
-    &[style*="background:rgb(233, 228, 226)"]{
-      & + [style*="background:rgb(233, 228, 226)"],
-      & + .anchor-element + [style*="background:rgb(233, 228, 226)"]{
-        margin-top: -180px;
-      }
-    }
-    &[style*="background: rgb(233, 228, 226)"]{
-      & + [style*="background: rgb(233, 228, 226)"],
-      & + .anchor-element + [style*="background: rgb(233, 228, 226)"]{
-        margin-top: -180px;
-      }
-    }
-
+  &.show {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s, 0s;
   }
 }

@@ -11,6 +11,12 @@
   &.grid-wrap--dense {
     grid-auto-flow: dense;
   }
+
+  .grid-wrap {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 @each $current-viewport,  $current-viewportwidth in $viewports {
