@@ -61,7 +61,8 @@ export default defineNuxtConfig({
                     rel: 'stylesheet',
                     href: '/fonts/fonts.css'
                 }
-            ]
+            ],
+            title: 'Nuxt-Run 2'
         }
     }
 

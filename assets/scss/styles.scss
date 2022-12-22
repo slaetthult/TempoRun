@@ -6,9 +6,9 @@
 /*                      PREPARATION                         */
 /* -------------------------------------------------------- */
 
-@import "reset";
-@import "general";
-@import "grid";
+  @import "reset";
+  @import "general";
+  @import "grid";
 
 /* -------------------------------------------------------- */
 /*                        BASIS                             */
@@ -19,12 +19,13 @@
 /*                       PARTIALS                           */
 /* -------------------------------------------------------- */
 
-@import "partials/accordion";
-@import "partials/slider";
-@import "partials/checkbox";
-@import "partials/radiobox";
-@import "partials/selectbox";
-@import "partials/form";
+  @import "partials/accordion";
+  @import "partials/slider";
+  @import "partials/checkbox";
+  @import "partials/radiobox";
+  @import "partials/selectbox";
+  @import "partials/form";
+  @import "partials/modalbox";
 
 /* -------------------------------------------------------- */
 /*                     MODULES/SLICES                       */
@@ -35,4 +36,4 @@
 /*                     SPECIAL MEDIA                        */
 /* -------------------------------------------------------- */
 
-@import "print";
+  @import "print";

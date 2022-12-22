@@ -15,7 +15,7 @@ const modules = [Navigation, Pagination];
 </script>
 
 <template>
-	<div class="topic-slider">
+	<div class="gallery-slider">
 		<div class="grid-wrap">
 			<div class="w12 lw24">
 				<h2>Swiper Example</h2>
@@ -39,7 +39,7 @@ const modules = [Navigation, Pagination];
 						}"
 					>
 						<swiper-slide>
-							<div class="topic-slider__element">
+							<div class="gallery-slider__element">
 								<figure>
 									<picture>
 										<source media="(min-width: 768px)" srcset="https://via.placeholder.com/480x144">
@@ -55,7 +55,7 @@ const modules = [Navigation, Pagination];
 							</div>
 						</swiper-slide>
 						<swiper-slide>
-							<div class="topic-slider__element">
+							<div class="gallery-slider__element">
 								<figure>
 									<picture>
 										<source media="(min-width: 768px)" srcset="https://via.placeholder.com/480x144">
@@ -71,7 +71,7 @@ const modules = [Navigation, Pagination];
 							</div>
 						</swiper-slide>
 						<swiper-slide>
-							<div class="topic-slider__element">
+							<div class="gallery-slider__element">
 								<figure>
 									<picture>
 										<source media="(min-width: 768px)" srcset="https://via.placeholder.com/480x144">
@@ -87,7 +87,7 @@ const modules = [Navigation, Pagination];
 							</div>
 						</swiper-slide>
 						<swiper-slide>
-							<div class="topic-slider__element">
+							<div class="gallery-slider__element">
 								<figure>
 									<picture>
 										<source media="(min-width: 768px)" srcset="https://via.placeholder.com/480x144">

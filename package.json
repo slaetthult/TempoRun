@@ -22,6 +22,7 @@
     "pinia": "^2.0.27",
     "swiper": "^8.4.5",
     "vue-scrollto": "^2.20.0",
-    "vue3-google-map": "^0.15.0"
+    "vue3-google-map": "^0.15.0",
+    "vue3-portal": "^1.0.3"
   }
 }

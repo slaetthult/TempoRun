@@ -12,4 +12,5 @@
     <slot />
   </main>
   <SiteFooter/>
+	<PortalTarget name="portal-target" />
 </template>

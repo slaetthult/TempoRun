@@ -1,0 +1,17 @@
+.modalbox {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.5);
+  color: $color-white;
+  z-index: $z-index-10;
+  box-shadow: 0 0 2000px 2000px rgba(0,0,0,0.3);
+  @include smooth-fading-effect();
+
+  &.show {
+    display: block;
+  }
+
+}
