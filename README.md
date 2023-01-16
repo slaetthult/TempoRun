@@ -286,8 +286,9 @@ https://www.npmjs.com/package/vue-scrollto <br>
 Have a nice smooth scroll to any element you want. <br>
 You can use it in your method functions:
 ``` bash
-this.$scrollTo(this.$el);
-this.$scrollTo(document.querySelector('.sitefooter'));
+
+import * as VueScrollTo from "vue-scrollto";
+VueScrollTo.scrollTo('.site-footer', {offset:-70});
 ```
 or as clickable element for users:
 ``` bash
