@@ -38,7 +38,7 @@ export default defineNuxtConfig({
 
                 { hid:'og:title', property: 'og:title', content: 'Page title' },
                 { hid:'og:type', property: 'og:type', content: 'website' },
-                { hid:'og:image', property: 'og:image', content: 'nuxt-run.de' + '/share-image_1200x628.jpg' },
+                { hid:'og:image', property: 'og:image', content: 'nuxt-run.de' + '/share-image_1200x628.png' },
                 { hid:'og:description', property: 'og:description', content: '*static* Description' },
                 { hid:'og:url', property: 'og:url', content: 'nuxt-run.de' },
 

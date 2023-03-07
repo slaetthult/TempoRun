@@ -1,6 +1,5 @@
-# Nuxt Run v2
-
-> Still under construction for Nuxt 3. Don't use this v2-branch yet.  
+# Nuxt Run vue3
+  
 > Starter kit for nuxt projects with usefull features for fast development.
 
 ## Build Setup
@@ -38,54 +37,60 @@ Grid-Elements are directly wrapped by the class "grid-wrap".
 ```
 
 ### Accordion
-To use accordions import the mixin to the wished component.
+You can use the accordioans right away.
+For more information: https://github.com/dafcoe/vue-collapsible-panel
 
-```bash
-import accordion from "~/mixins/accordion";
-export default {
-    mixins: [accordion]
-}
 ```
-``` bash
-<div class="accordion" data-accordion :class="{'active' : currentActiveAccordionId === 0}" id="anchor1">
-    <button class="accordion__trigger" @click="toggleAccordion($event, 0)">
-        Accordion 1
-    </button>
-    <div class="accordion__content" data-accordion-content>
-        <div class="accordion__content__wrapper">
-            Accordion Text 1
-        </div>
-    </div>
-</div>
+<vue-collapsible-panel-group accordion>
+    <vue-collapsible-panel :expanded="false">
+        <template #title>
+            Accordion title 1
+        </template>
+        <template #content>
+            <div>
+                Accordion text 1
+            </div>
+        </template>
+    </vue-collapsible-panel>
+    <vue-collapsible-panel :expanded="false">
+        <template #title>
+            Accordion title 1
+        </template>
+        <template #content>
+            <div>
+                Accordion text 1
+            </div>
+        </template>
+    </vue-collapsible-panel>
+    <vue-collapsible-panel :expanded="false">
+        <template #title>
+            Accordion title 1
+        </template>
+        <template #content>
+            <div>
+                Accordion text 1
+            </div>
+        </template>
+    </vue-collapsible-panel>
+</vue-collapsible-panel-group>
 ```
-<b>Additional settings:</b><br>
-set ``` this.openCertainAccordion(2); ``` (in mounted()) to open a certain accordion by index-id.
-
 ### Modalbox
-To use the modalbox import the mixin to the wished component.
+You can use the modal function right away. It works with portal function and the modalbox composable.
+The content inside the modalbox will be moved to the end of the HTML-Body.
 ``` bash
-import modalbox from "~/mixins/modalbox";
+  <a href="javascript:void(0);" data-modalbox-trigger @click="showModalbox(0)">Modalbox 1 Trigger</a><br>
+  <a href="javascript:void(0);" data-modalbox-trigger @click="showModalbox(1)">Modalbox 2 Trigger</a>
+  <Portal to="portal-target">
+      <Modalbox id="0">
+          Modalbox 1 content
+      </Modalbox>
+      <Modalbox id="1">
+          Modalbox 2 content
+      </Modalbox>
+  </Portal>
+```
 
-export default {
-    mixins: [modalbox]
-}
-```
-The content inside the modalbox will be moved to the end of the HTML-Body.<br>
-``` bash
-<a href="javascript:void(0);" data-modalbox-trigger @click="showModalbox(0)">Modalbox Trigger</a>
-<client-only>
-    <portal to="portaldestination">
-          <div class="modalbox" data-modalbox="0" v-click-outside="closeModalbox">
-               I am a modalbox!
-               <a href="javascript:void(0);" @click="closeModalbox()">close Modalbox</a>
-          </div>
-    </portal>
-</client-only>
-```
-If you want to close a specific modalbox via id (fo example a modalbox with the id "0"), use this:
-``` bash
-this.closeModalbox(null,0);
-```
+
 ### Swiper/Slider
 For detailed explaination (for example settings ect.), checkout https://github.com/surmon-china/vue-awesome-swiper
 ``` bash
@@ -335,6 +340,6 @@ toHHMMSS(300, true, true, true);
 **Android** 6 and higher  
 **Safari** 11 and higher   
 **IE** Not supported    
-**Edge** 16 and higher  
+**Edge** 79 and higher  
 **Firefox** 52 and higher  
 **Chrome** 57 and higher
