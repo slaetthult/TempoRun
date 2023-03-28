@@ -164,39 +164,139 @@ if(formValidation.value.$error){
 # Old documentation following:
 
 ### Form Fields Validation
-This validation checks the form field values while typing. Just import the validations-mixin.
+This validation checks the form field values while typing. For more information: https://vuelidate-next.netlify.app/validators.html .
+Example:
 ``` bash
-import validation from "~/mixins/validation";
+<script setup>
+	import { useVuelidate } from '@vuelidate/core';
+	import { required, email, minLength, sameAs } from '@vuelidate/validators';
 
-export default {
-    mixins: [validation],
-}
-```
-and apply the following data-attributes to you wished fom fields for example:
-``` bash
-<input type="password" v-model="newsletterData.password" data-validate data-validate-minlength="8" data-validate-maxlength="30">
-<small class="validation-error-message">Please enter a password with 8 to 30 characters!</small>
-```
-<b>data-validate</b> checks if the form field is not empty and not unchecked <br>
-<b>data-validate-minlength</b> defines the required min length of the form field's value <br>
-<b>data-validate-maxlength</b> defines the max length of the form field's value <br>
-<b>data-validate-optional</b> validates the form field only if it is not empty <br>
-<b>class="validation-error-message"</b> shows your defined error message. Just place it after the specific form field<br><br>
-<b>Note that the correct form field type is very important for the validation!</b><br>
+	const state = ref({
+		country: '',
+		gender: '',
+		firstName: '',
+		lastName: '',
+		email: '',
+		message: '',
+		password: '',
+		confirmPassword: '',
+		privacyPolicy: ''
+	});
 
-``` bash
-this.validationSuccessfully
-```
-returns true in your component, if the validation is successfully
+	const rules = {
+		country: { required },
+		gender: { required },
+		firstName: { required },
+		lastName: { required },
+		email: { required, email },
+		message: { minLength: minLength(20) },
+		password: { required, minLength: minLength(6) },
+		confirmPassword: {
+			required,
+			sameAs : sameAs( computed(() => state.value.password) )
+		},
+		privacyPolicy: { sameAs: sameAs(true) },
+	};
 
-You can trigger the form validation manually, if you call this method:
-``` bash
-<button @click="validateFormFields()">Submit</button>
+	const formValidation = useVuelidate(rules, state);
+
+	async function handleSubmit(){
+
+		await formValidation.value.$touch();
+
+		if(formValidation.value.$error){
+			useNuxtApp().$toast.error('fill all required fields!');
+		} else {
+			useNuxtApp().$toast.success('form successfully send!');
+		}
+
+	}
+
+</script>
+
+<template>
+
+    <div class="select w12 lw24" :class="{ 'form__error': formValidation.country.$errors.length }">
+        <label>
+            <select class="selectbox" name="country" v-model="state.country" @change="formValidation.country.$touch">
+                <option disabled selected value="">Choose country</option>
+                <option value="england">England</option>
+                <option value="germany">Germany</option>
+            </select>
+            <small>Pflichtfeld!</small>
+        </label>
+    </div>
+
+    <div class="radiobox w12 lw24" :class="{ 'form__error': formValidation.gender.$errors.length }">
+        <label>
+            <input type="radio" name="gender" value="male" v-model="state.gender" @input="formValidation.gender.$touch">
+            <span>Male</span>
+        </label>
+    </div>
+    <div class="radiobox w12 lw24" :class="{ 'form__error': formValidation.gender.$errors.length }">
+        <label>
+            <input type="radio" name="gender" value="female" v-model="state.gender" @input="formValidation.gender.$touch">
+            <span>Female</span>
+            <small>Required</small>
+        </label>
+    </div>
+    <div class="input w12" :class="{ 'form__error': formValidation.firstName.$errors.length }">
+        <label>
+            First Name:
+            <input type="text" v-model="state.firstName" @input="formValidation.firstName.$touch">
+            <small>Required</small>
+        </label>
+    </div>
+    <div class="input w12" :class="{ 'form__error': formValidation.lastName.$errors.length }">
+        <label>
+            Last name:
+            <input type="text" v-model="state.lastName" @input="formValidation.lastName.$touch">
+            <small>Required</small>
+        </label>
+    </div>
+    <div class="input w12 lw8" :class="{ 'form__error': formValidation.email.$errors.length }">
+        <label>
+            Email:
+            <input type="email" v-model="state.email" @input="formValidation.email.$touch">
+            <small>Required</small>
+        </label>
+    </div>
+    <div class="textarea w12 form__w-start-new-row" :class="{ 'form__error': formValidation.message.$errors.length }">
+        <label>
+            Message:
+            <textarea v-model="state.message" @input="formValidation.message.$touch"></textarea>
+            <small>Required</small>
+        </label>
+    </div>
+    <div class="input w12 form__w-start-new-row" :class="{ 'form__error': formValidation.password.$errors.length }">
+        <label>
+            Password:
+            <input type="password" v-model="state.password" @input="formValidation.password.$touch">
+            <small>Required</small>
+        </label>
+    </div>
+    <div class="input w12" :class="{ 'form__error': formValidation.confirmPassword.$errors.length }">
+        <label>
+            Confirm password:
+            <input type="password" v-model="state.confirmPassword" @input="formValidation.confirmPassword.$touch">
+            <small>Required</small>
+        </label>
+    </div>
+    <div class="checkbox w12 lw24" :class="{ 'form__error': formValidation.privacyPolicy.$errors.length }">
+        <label>
+            <input type="checkbox" v-model="state.privacyPolicy" @input="formValidation.privacyPolicy.$touch">
+            <span>A beautiful checkbox with a <nuxt-link to="/">link</nuxt-link></span>
+            <small>Pflichtfeld!</small>
+        </label>
+    </div>
+    <div class="w12 lw24">
+        <button @click="handleSubmit">Send</button>
+    </div>
+
+</template>
+
 ```
-or
-``` bash
-this.validateFormFields();
-```
+
 ### Multi language
 Nuxt-Run has integrated nuxt-i18n for multi language. <br>
 For detailed explaination, checkout https://github.com/nuxt-community/nuxt-i18n
