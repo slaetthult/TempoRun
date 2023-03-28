@@ -161,8 +161,6 @@ if(formValidation.value.$error){
 }
 ```
 
-# Old documentation following:
-
 ### Form Fields Validation
 This validation checks the form field values while typing. For more information: https://vuelidate-next.netlify.app/validators.html .
 Example:
@@ -296,6 +294,8 @@ Example:
 </template>
 
 ```
+
+# Old documentation following:
 
 ### Multi language
 Nuxt-Run has integrated nuxt-i18n for multi language. <br>
