@@ -2,13 +2,17 @@
   
 > Starter kit for nuxt projects with usefull features for fast development.
 
+## Requirements
+node at least v16.19.1 and npm v8.19.3
+
+
 ## Build Setup
 
 ``` bash
 # install dependencies
 $ npm install
 
-For detailed explanation on how things work in nuxt, check out [Nuxt.js docs](https://nuxtjs.org).
+For detailed explanation on how things work in nuxt, check out [Nuxt.js docs](https://nuxt.com/docs).
 ```
 
 ## Demo
@@ -92,24 +96,39 @@ The content inside the modalbox will be moved to the end of the HTML-Body.
 
 
 ### Swiper/Slider
-For detailed explaination (for example settings ect.), checkout https://github.com/surmon-china/vue-awesome-swiper
+For detailed explaination (for example settings ect.), checkout https://swiperjs.com/vue
 ``` bash
-<swiper :options="gallerySwiperOptions" ref="galleryswiper">
-  <swiper-slide>
-      <picture>
-          <source media="(min-width: 650px)" srcset="https://via.placeholder.com/1920x300">
-          <source media="(min-width: 465px)" srcset="https://via.placeholder.com/1920x300">
-          <img src="https://via.placeholder.com/1920x300" alt="alt">
-      </picture>
-  </swiper-slide>
-  <swiper-slide>
-      <picture>
-          <source media="(min-width: 650px)" srcset="https://via.placeholder.com/1920x300">
-          <source media="(min-width: 465px)" srcset="https://via.placeholder.com/1920x300">
-          <img src="https://via.placeholder.com/1920x300" alt="alt">
-      </picture>
-  </swiper-slide>
-</swiper>
+<ClientOnly>
+    <swiper
+            :class="'swiper'"
+            :slides-per-view="1"
+            :space-between="0"
+            :modules="modules"
+            :navigation="true"
+            :pagination="{clickable:true}"
+            :breakpoints="{
+          '768': {
+            slidesPerView: 2,
+            spaceBetween: 30
+          },
+          '1440': {
+            slidesPerView: 3,
+            spaceBetween: 88
+          }
+        }"
+    >
+        <swiper-slide>
+            <div class="gallery-slider__element">
+                Text
+            </div>
+        </swiper-slide>
+        <swiper-slide>
+            <div class="gallery-slider__element">
+                Text
+            </div>
+        </swiper-slide>
+    </swiper>
+</ClientOnly>
 ```
 ### Google Maps
 For detailed explaination (for example settings ect.), checkout https://github.com/xkjyeah/vue-google-maps
@@ -129,87 +148,20 @@ For detailed explaination (for example settings ect.), checkout https://github.c
 </GmapMap>
 ```
 
-### In case you don't want to use Google Maps: Open Street Maps
-For detailed explaination (for example settings ect.), checkout https://vuelayers.github.io/#/?id=vuelayers
-If you want to change the map style check out this page http://alexurquhart.github.io/free-tiles/ and
-define it like this:
-```
-            <vl-source-xyz
-              url="http://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}"
-            >
-            </vl-source-xyz>
-```
-```
-<template>
-        <vl-map :load-tiles-while-animating="true" :load-tiles-while-interacting="true"
-                data-projection="EPSG:4326">
-          <vl-view :zoom.sync="zoom" :center.sync="center" :rotation.sync="rotation"></vl-view>
-
-          <vl-geoloc :tracking="false">
-            <template slot-scope="geoloc">
-              <vl-feature>
-                <vl-geom-point :coordinates="markerPositions[0]"></vl-geom-point>
-                <vl-style-box>
-                  <vl-style-icon
-                    src="/icons/map-marker.png"
-                    :scale="1"
-                    :anchor="[0.5, 1]"
-                  ></vl-style-icon>
-                </vl-style-box>
-              </vl-feature>
-              <vl-feature>
-                <vl-geom-point :coordinates="markerPositions[1]"></vl-geom-point>
-                <vl-style-box>
-                  <vl-style-icon
-                    src="/icons/map-marker.png"
-                    :scale="1"
-                    :anchor="[0.5, 1]"
-                  ></vl-style-icon>
-                </vl-style-box>
-              </vl-feature>
-            </template>
-          </vl-geoloc>
-
-
-          <vl-layer-tile>
-            <vl-source-xyz
-              url="http://basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"
-            >
-            </vl-source-xyz>
-          </vl-layer-tile>
-        </vl-map>
-</template>
-
-<script>
-export default {
-  data () {
-    return {
-      zoom: 15,
-      center: [	6.783333, 51.233334],
-      rotation: 0,
-      markerPositions: {
-        0: [	6.783333, 51.233334],
-        1: [	6.883333, 51.333334]
-      }
-    }
-  },
-}
-</script>
-```
-
 ### Notification Messages
 If you want to show messages to the user (for example for a login or form validation) use Toast:
+For more information: https://vue3-toastify.js-bridge.com/get-started/introduction.html
 ```
-if(this.validationSuccessfully){
+await formValidation.value.$touch();
 
-    this.$toast.success('Validation is successfull!');
-
+if(formValidation.value.$error){
+    useNuxtApp().$toast.error('fill all required fields!');
 } else {
-
-    this.$toast.error('Validation error!');
-
+    useNuxtApp().$toast.success('form successfully send!');
 }
 ```
+
+# Old documentation following:
 
 ### Form Fields Validation
 This validation checks the form field values while typing. Just import the validations-mixin.

@@ -24,13 +24,10 @@ function checkIfModuleIsInViewport(){
 <template>
 	<div ref="$thisModule" class="gmap" id="map">
 		<div class="grid-wrap">
-
 			<div v-if="showGMap" class="w12 lw24 gmap__map-wrap">
-
 				<ClientOnly>
 					<GoogleMap api-key="AIzaSyDaUcHTIc9OtETTNev_lW1hEVnZvTmVeSk" style="height:310px;" :styles="mapStyles" :center="center" :zoom="13" :mapTypeControl="false">
 
-						<!-- Centroderm -->
 						<CustomMarker :options="{ position: center, anchorPoint: 'BOTTOM_CENTER' }">
 							<div>
 								<img src="/img/icons/map-marker.png" alt="Marker">
@@ -39,7 +36,6 @@ function checkIfModuleIsInViewport(){
 
 					</GoogleMap>
 				</ClientOnly>
-
 			</div>
 		</div>
 	</div>

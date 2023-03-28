@@ -31,6 +31,18 @@
 
 	const formValidation = useVuelidate(rules, state);
 
+	async function handleSubmit(){
+
+		await formValidation.value.$touch();
+
+		if(formValidation.value.$error){
+			useNuxtApp().$toast.error('fill all required fields!');
+		} else {
+			useNuxtApp().$toast.success('form successfully send!');
+		}
+
+	}
+
 </script>
 
 <template>
@@ -114,7 +126,7 @@
 						</label>
 					</div>
 					<div class="w12 lw24">
-						<button @click="formValidation.$touch">Send</button>
+						<button @click="handleSubmit">Send</button>
 					</div>
 				</div>
 			</div>

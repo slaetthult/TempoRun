@@ -23,6 +23,7 @@
     "swiper": "^9.1.1",
     "vue-scrollto": "^2.20.0",
     "vue3-google-map": "^0.15.0",
-    "vue3-portal": "^1.0.3"
+    "vue3-portal": "^1.0.3",
+    "vue3-toastify": "^0.1.6"
   }
 }
