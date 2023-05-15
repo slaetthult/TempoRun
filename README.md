@@ -294,52 +294,17 @@ Example:
 </template>
 
 ```
-
-# Old documentation following:
-
-### Multi language
-Nuxt-Run has integrated nuxt-i18n for multi language. <br>
-For detailed explaination, checkout https://github.com/nuxt-community/nuxt-i18n
-
-1. change/add/remove languages in nuxt.config.js
-2. define the translation in /lang/text-translation.js
-3. place language vars into your components, for example {{ $t('siteheader.headline') }}
-4. if you also want to translate the url paths, change it in /lang/url-translation.js
-
-#### Language Switcher
-``` bash
-<nuxt-link :to="switchLocalePath('en')">English</nuxt-link>
-<nuxt-link :to="switchLocalePath('de')">Deutsch</nuxt-link>
-```
-
-#### The Nuxt-Link
-If you decide to use nuxt-i18n, you have to modify the nuxt-link as shown here:
-``` bash
-<nuxt-link :to="localePath('subpage')">Subpage</nuxt-link>
-```
-instead of:
-``` bash
-<nuxt-link to="/subpage">Subpage</nuxt-link>
-```
-
 ### Usefull Stuff
-#### Robots
-is integrated (https://www.npmjs.com/package/@nuxtjs/robots)
-#### Sitemap
-is integrated (https://www.npmjs.com/package/@nuxtjs/sitemap)
-#### Focus inputs
-This Vue Directive also solves issues with focussing inputs on mobile devices!
-``` bash
-<button v-focus-input="'.site-header__search'">Focus search input</button>
-```
+
 #### Click Outside
 Vue Directive to call a method function if the user clicks outside that element.
-Append this to your wished HTML-element:
+Append this to your wished HTML-element: (For more information: https://www.npmjs.com/package/click-outside-vue3)
 ``` bash
 v-click-outside="yourFunction"
 ```
+
 #### Scroll To Element
-https://www.npmjs.com/package/vue-scrollto <br>
+https://github.com/rigor789/vue-scrollto <br>
 Have a nice smooth scroll to any element you want. <br>
 You can use it in your method functions:
 ``` bash
@@ -357,36 +322,8 @@ or as clickable element for users:
 ```
 
 #### Set, delete or get value of cookie
-Just import the utils/cookie file. So you can use the functions wherever you need it (plugin-files as well).
-``` bash
-import {getCookieValueOf, setCookie, deleteCookie} from '~/utils/cookies';
+Check out: https://nuxt.com/docs/api/composables/use-cookie
 
-getCookieValueOf('yourCookieName');
-setCookie('yourCookieName', 'your value', days);
-deleteCookie('yourCookieName');
-```
-
-#### Get CSS Viewport information via JS
-You can get the CSS Viewport information in Javascript. For example, if you want to trigger a method function only if 
-the browser window is wider than a certain defined viewport.
-``` bash
-import mediaQueries from "~/mixins/mediaQueries";
-
-export default {
-    mixins: [mediaQueries],
-}
-
-console.log(this.mediaQueries['lw'])
-```
-
-#### Format seconds to HHMMSS (for example: 00:05:00)
-Just import the utils/toHHMMSS file. So you can use the functions wherever you need it (plugin-files as well).
-``` bash
-import {toHHMMSS} from '~/utils/toHHMMSS';
-
-toHHMMSS(300, true, true, true);
-```
- 
 ### Browser Support
 **iOS** 10 and higher  
 **Android** 6 and higher  
@@ -395,3 +332,9 @@ toHHMMSS(300, true, true, true);
 **Edge** 79 and higher  
 **Firefox** 52 and higher  
 **Chrome** 57 and higher
+
+# Open Do-To's:
+
+#### Robots
+#### Sitemap
+#### Focus inputs
