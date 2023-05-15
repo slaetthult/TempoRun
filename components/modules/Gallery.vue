@@ -26,6 +26,7 @@ const modules = [Navigation, Pagination];
 							:space-between="0"
 							:modules="modules"
 							:navigation="true"
+							:threshold="5"
 							:pagination="{clickable:true}"
 							:breakpoints="{
 						  '768': {
