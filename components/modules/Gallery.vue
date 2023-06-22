@@ -42,6 +42,7 @@ const modules = [Navigation, Pagination];
 						<swiper-slide>
 							<div class="gallery-slider__element">
 								<figure>
+									<!-- if you don't want to use the Nuxt-Picture-Component -->
 									<picture>
 										<source media="(min-width: 768px)" srcset="https://via.placeholder.com/480x144">
 										<source srcset="https://via.placeholder.com/480x144">
@@ -58,11 +59,19 @@ const modules = [Navigation, Pagination];
 						<swiper-slide>
 							<div class="gallery-slider__element">
 								<figure>
-									<picture>
-										<source media="(min-width: 768px)" srcset="https://via.placeholder.com/480x144">
-										<source srcset="https://via.placeholder.com/480x144">
-										<img src="https://via.placeholder.com/480x144" alt="alt" loading="lazy">
-									</picture>
+									<NuxtPicture src="https://via.placeholder.com/482x144" sizes="sw:10px mw:100 lw:650px" loading="lazy" />
+								</figure>
+								<h3>Headline Ä</h3>
+								<p>
+									Text
+								</p>
+								<NuxtLink to="/" class="button outlined">Read more</NuxtLink>
+							</div>
+						</swiper-slide>
+						<swiper-slide>
+							<div class="gallery-slider__element">
+								<figure>
+									<NuxtPicture src="https://via.placeholder.com/482x144" sizes="sw:10px mw:100 lw:650px" loading="lazy" />
 								</figure>
 								<h3>Headline</h3>
 								<p>
@@ -74,27 +83,7 @@ const modules = [Navigation, Pagination];
 						<swiper-slide>
 							<div class="gallery-slider__element">
 								<figure>
-									<picture>
-										<source media="(min-width: 768px)" srcset="https://via.placeholder.com/480x144">
-										<source srcset="https://via.placeholder.com/480x144">
-										<img src="https://via.placeholder.com/480x144" alt="alt" loading="lazy">
-									</picture>
-								</figure>
-								<h3>Headline</h3>
-								<p>
-									Text
-								</p>
-								<NuxtLink to="/" class="button outlined">Read more</NuxtLink>
-							</div>
-						</swiper-slide>
-						<swiper-slide>
-							<div class="gallery-slider__element">
-								<figure>
-									<picture>
-										<source media="(min-width: 768px)" srcset="https://via.placeholder.com/480x144">
-										<source srcset="https://via.placeholder.com/480x144">
-										<img src="https://via.placeholder.com/480x144" alt="alt" loading="lazy">
-									</picture>
+									<NuxtPicture src="https://via.placeholder.com/482x144" sizes="sw:10px mw:100 lw:650px" loading="lazy" />
 								</figure>
 								<h3>Headline</h3>
 								<p>

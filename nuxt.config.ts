@@ -9,7 +9,8 @@ export default defineNuxtConfig({
                 ],
             }
         ],
-        ['nuxt-jsonld']
+        ['nuxt-jsonld'],
+        ['@nuxt/image']
     ],
     css: ["@/assets/scss/styles.scss"],
     vite: {
@@ -63,6 +64,25 @@ export default defineNuxtConfig({
                 }
             ],
             title: 'Nuxt-Run 2'
+        }
+    },
+    image: {
+        provider: 'cloudinary',
+        cloudinary: {
+            baseURL: 'https://res.cloudinary.com/qristianwolf/image/fetch/',
+            modifiers: {
+                c: 'fill',
+                gravity: 'auto'
+            }
+        },
+        format: ['avif', 'webp'],
+        /* note that these viewports are calculated via max-width, not min-width */
+        screens: {
+            s: 320,
+            sw: 480,
+            mw: 768,
+            lw: 1280,
+            xlw: 1440
         }
     }
 
