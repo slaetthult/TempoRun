@@ -1,31 +1,15 @@
 {
-  "name": "nuxt-run",
-  "version": "1.0.0",
-  "description": "Starter kit for nuxt projects",
-  "author": "Marvin Schmidt",
-  "private": true,
+  "name": "Astro-Run",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate --modern"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@nuxtjs/robots": "^2.5.0",
-    "@nuxtjs/sitemap": "^2.4.0",
-    "@nuxtjs/toast": "^3.3.1",
-    "nuxt": "^2.16.3",
-    "nuxt-i18n": "^6.27.3",
-    "portal-vue": "^2.1.7",
-    "swiper": "^5.4.5",
-    "vue-awesome-swiper": "^4.1.1",
-    "vue-scrollto": "^2.20.0",
-    "vue2-google-maps": "^0.10.7",
-    "vuelayers": "^0.11.36"
-  },
-  "devDependencies": {
-    "@nuxtjs/style-resources": "^1.2.1",
-    "sass-loader": "^10.1.1",
-    "sass": "~1.32.12"
+    "astro": "^3.0.8"
   }
 }
