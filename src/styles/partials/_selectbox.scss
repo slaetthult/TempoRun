@@ -1,0 +1,82 @@
+@use '../abstracts' as *;
+
+/* class applies to select element itself, not a wrapper element */
+.selectbox {
+  display: block;
+    padding: 12px 40px 12px 14px;
+  width: 100%;
+  max-width: 100%; /* useful when width is set to anything other than 100% */
+  box-sizing: border-box;
+  margin: 0;
+  border: 1px solid $color-grey;
+  border-radius: 0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  background-color: #fff;
+  /* note: bg image below uses 2 urls. The first is an svg data uri for the arrow icon, and the second is the gradient.
+      for the icon, if you want to change the color, be sure to use `%23` instead of `#`, since it's a url. You can also swap in a different svg icon or an external image reference
+
+  */
+    background-image: url(/img/icons/chevron-compact-down.svg);
+    background-repeat: no-repeat, repeat;
+    /* arrow icon position (1em from the right, 50% vertical) , then gradient position*/
+    background-position: right .7em top 50%, 0 0;
+    /* icon size, then gradient */
+    background-size: 20px 20px;
+}
+/* Hide arrow icon in IE browsers */
+.selectbox::-ms-expand {
+  display: none;
+}
+/* Hover style */
+.selectbox:hover {
+  border-color: #888;
+}
+/* Focus style */
+.selectbox:focus {
+  border-color: #aaa;
+  /* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
+  box-shadow: none;
+  color: #222;
+  outline: none;
+}
+
+/* Set options to normal weight */
+.selectbox option {
+  font-weight:normal;
+}
+
+/* Support for rtl text, explicit support for Arabic and Hebrew */
+*[dir="rtl"] .selectbox, :root:lang(ar) .selectbox, :root:lang(iw) .selectbox {
+  background-position: left .7em top 50%, 0 0;
+  padding: .6em .8em .5em 1.4em;
+}
+
+/* Disabled styles */
+.selectbox:disabled, .selectbox[aria-disabled=true] {
+  color: graytext;
+
+}
+
+.selectbox:disabled:hover, .selectbox[aria-disabled=true] {
+  border-color: #aaa;
+}
+
+.selectbox {
+  &.validation-success {
+    border: 1px solid $color-ui-green;
+  }
+  &.validation-error {
+    border: 1px solid $color-ui-red;
+
+    & ~ .validation-error-message {
+      display: block;
+    }
+  }
+  & ~ .validation-error-message {
+    display: none;
+    color: $color-ui-red;
+  }
+}

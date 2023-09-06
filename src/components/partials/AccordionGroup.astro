@@ -1,0 +1,59 @@
+---
+import 'accordion-js/dist/accordion.min.css';
+import '../../styles/partials/_accordion.scss';
+
+const {openFirstAccordionInitially = false} = Astro.props;
+---
+
+<div class="accordion-group accordion-container w12" data-accordion-group data-open-first-accordion-initially={openFirstAccordionInitially}>
+
+    <slot />
+
+</div>
+
+<script>
+    import Accordion from 'accordion-js';
+
+    const accordionGroup = {
+
+        vars: {
+
+            moduleQuery:                                '*[data-accordion-group]',
+
+            openFirstAccordionInitiallyAttribute:       'openFirstAccordionInitially',
+
+            options: {
+                duration:                               400,
+                showMultiple:                           false
+            }
+
+        },
+
+        init(){
+
+            accordionGroup.startScript();
+
+        },
+
+        startScript(){
+
+            const $accordionGroups = document.querySelectorAll(accordionGroup.vars.moduleQuery);
+
+            for(const $accordionGroup of $accordionGroups){
+
+                const openFirstAccordionInitiallyAttribute = $accordionGroup.dataset[accordionGroup.vars.openFirstAccordionInitiallyAttribute];
+                const theAccordionGroup = new Accordion($accordionGroup, accordionGroup.vars.options);
+
+                if(openFirstAccordionInitiallyAttribute){
+                    theAccordionGroup.open(0);
+                }
+
+
+            }
+
+        }
+    }
+
+    accordionGroup.init();
+
+</script>

@@ -1,0 +1,180 @@
+/* -------------------------------------------------------- */
+/*        CONFIG DATA . FONTS, GENERALS and VARIABLES       */
+/* -------------------------------------------------------- */
+
+@use "sass:list";
+@use "sass:math";
+
+/* -------------------------------------------------------- */
+/*                   SET UP VIEWPORTS                       */
+/* -------------------------------------------------------- */
+
+$viewports: (
+        w: 0px,
+        sw: 480px,
+        mw: 768px,
+        lw: 1008px
+);
+
+
+/* -------------------------------------------------------- */
+/*              GET THE VIEWPORTS AS STRING                 */
+/* -------------------------------------------------------- */
+
+$viewportsString: "";
+
+@each $current-viewport,  $current-viewportwidth in $viewports {
+    $viewportsString: $viewportsString + $current-viewport + ":" + $current-viewportwidth + ",";
+}
+
+
+/* -------------------------------------------------------- */
+/*                    GENERATE GRIDS                        */
+/* -------------------------------------------------------- */
+
+$grid:                          12;
+$grid-absolute-box-margin:      5px;
+$grid-wrapper-outer-padding:    10px;
+$grid-absolute-site-width:	    1008px;
+
+$grid-margin:			        percentage(math.div($grid-absolute-box-margin,$grid-absolute-site-width));
+$grid-absolute-box-width:     math.div($grid-absolute-site-width,$grid) - $grid-absolute-box-margin - $grid-absolute-box-margin;
+
+@function grid-size($size) {
+    $qoutient: $size * 2 - 2;
+    @return percentage(math.div(($grid-absolute-box-width * $size + $grid-absolute-box-margin * $qoutient),$grid-absolute-site-width));
+}
+
+
+/* -------------------------------------------------------- */
+/*                 COLORSCHEME, DO IT!                      */
+/* -------------------------------------------------------- */
+
+// GENERAL COLORS
+$color-white:                  #FFF;
+$color-lightgrey:              #e7e7e7;
+$color-bordergrey:             #cecece;
+$color-grey:                   #959697;
+$color-darkgrey:               #6d6d6d;
+$color-black:                  #000000;
+
+$color-orange:                 #f7933a;
+$color-green:                  #5da904;
+
+$color-ui-green:               #B0C717;
+$color-ui-red:                 #C10D00;
+
+// THEME COLORS
+$color-theme-red:              #dc0030;
+
+// SOCIAL COLORS
+$color-social-facebook:        #3b5999;
+$color-social-twitter:         #55acee;
+$color-social-gplus:           #dc4e41;
+$color-social-pinterest:       #af0921;
+$color-social-instagram:       #c6c6c6;
+
+// SOCIAL COLORS ON HOVER
+$color-social-facebook-hover:  #364d85;
+$color-social-twitter-hover:   #5292be;
+$color-social-gplus-hover:     #bc4537;
+
+// BACKGROUND COLORS
+$color-mainbackground:         #ffffff;
+
+
+/* -------------------------------------------------------- */
+/*               GET FONT AND SET REM FUNCTION              */
+/* -------------------------------------------------------- */
+
+$font-size-main:			    16px;
+
+// GET REM FONTSIZE
+@function get-rem($font-size) {
+    $remSize: math.div($font-size, $font-size-main);
+    @return $remSize * 1rem;
+}
+
+
+/* -------------------------------------------------------- */
+/*                      FONTCONFIGS                         */
+/* -------------------------------------------------------- */
+
+
+$font-size-desktop:			                get-rem(17px);
+$font-size-tablet:			                get-rem(17px);
+$font-size-mobile:			                get-rem(17px);
+
+$font-line-height-default-mobile:	        1.5;
+$font-line-height-default-tablet:	        1.5;
+$font-line-height-default-desktop:	        1.5;
+
+$font-letter-spacing:                       0;
+
+$headline-line-height-mobile:               1;
+$headline-line-height-tablet:               1;
+$headline-line-height-desktop:              1;
+
+$font-size-h1-mobile:			            get-rem(70px);
+$font-size-h2-mobile:			            get-rem(44px);
+$font-size-h3-mobile:			            get-rem(30px);
+$font-size-h4-mobile:			            get-rem(22px);
+$font-size-h5-mobile:			            get-rem(17px);
+$font-size-h6-mobile:			            get-rem(15px);
+
+$font-size-h1-tablet:			            get-rem(70px);
+$font-size-h2-tablet:			            get-rem(44px);
+$font-size-h3-tablet:			            get-rem(30px);
+$font-size-h4-tablet:			            get-rem(22px);
+$font-size-h5-tablet:			            get-rem(17px);
+$font-size-h6-tablet:			            get-rem(15px);
+
+$font-size-h1-desktop:		                get-rem(70px);
+$font-size-h2-desktop:		                get-rem(44px);
+$font-size-h3-desktop:		                get-rem(30px);
+$font-size-h4-desktop:		                get-rem(22px);
+$font-size-h5-desktop:		                get-rem(17px);
+$font-size-h6-desktop:		                get-rem(15px);
+
+$font-weight-light:			                300;
+$font-weight-normal:			            400;
+$font-weight-medium:		                500;
+$font-weight-semibold:		                600;
+$font-weight-bold:			                700;
+
+$font-family:			                    'Open Sans', Arial, sans-serif;
+$font-family-secondary:			            'Open Sans Condensed', serif, sans-serif;
+
+
+$font-family-monospace:		                Consolas, "Lucida Console", Monaco, monospace;
+
+// FONT COLORS
+$font-color:                                $color-black;
+
+// LINK STYLES
+$font-link-color:				            $color-theme-red;
+$font-link-color-hover:		                $color-black;
+$font-text-decoration:		                none;
+
+$transitionTime:                            0.4s;
+
+$text-paragraph-padding:                    5px;
+$list-element-padding:                      5px;
+$headline-padding:                          5px;
+
+
+/* -------------------------------------------------------- */
+/*                  Z-INDEX LEVEL RANKING                   */
+/* -------------------------------------------------------- */
+
+$z-index-0:                                 1;
+$z-index-1:                                 100;
+$z-index-2:                                 200;
+$z-index-3:                                 300;
+$z-index-4:                                 400;
+$z-index-5:                                 500;
+$z-index-6:                                 600;
+$z-index-7:                                 700;
+$z-index-8:                                 800;
+$z-index-9:                                 900;
+$z-index-10:                                999;

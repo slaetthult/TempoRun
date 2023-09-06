@@ -1,0 +1,14 @@
+@use '../abstracts' as *;
+
+.accordion {
+
+    &__header {
+        font-size: get-rem(20px);
+        &__trigger {
+            font-size: inherit!important;
+        }
+    }
+
+
+}
+

@@ -1,0 +1,28 @@
+---
+import '../../styles/modules/_content-accordion.scss';
+import Accordion from "../partials/Accordion.astro";
+import AccordionGroup from "../partials/AccordionGroup.astro";
+---
+
+<div class="content-accordion">
+    <div class="grid-wrap">
+        <AccordionGroup openFirstAccordionInitially="true">
+            <Accordion title="1. Title">
+                <p>
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </p>
+                <figure>
+                    <picture>
+                        <source srcset="https://placehold.co/320x160">
+                        <img src="https://placehold.co/320x160" alt="alt">
+                    </picture>
+                </figure>
+            </Accordion>
+            <Accordion title="2. Title">
+                <p>
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </p>
+            </Accordion>
+        </AccordionGroup>
+    </div>
+</div>

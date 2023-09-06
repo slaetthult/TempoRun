@@ -1,0 +1,353 @@
+@use '../abstracts' as *;
+
+/* -------------------------------------------------------- */
+/*           BASE . THE BASEMENT OF YOUR STYLE              */
+/* -------------------------------------------------------- */
+
+body {
+    background: $color-mainbackground;
+    font-size: $font-size-mobile;
+
+    /* Hidden Element to transfer Mediaquerys in JS */
+    &::before {
+        display: none;
+        content: "" + $viewportsString;
+    }
+}
+
+.page-enter-active, .page-leave-active {
+    transition: opacity $transitionTime;
+}
+.page-enter, .page-leave-to {
+    opacity: 0;
+}
+
+/* -------------------------------------------------------- */
+/*                     FONT BASEMENT                        */
+/* -------------------------------------------------------- */
+
+html {
+    font-size: $font-size-main;
+    color: $font-color;
+    font-family: $font-family;
+    line-height: $font-line-height-default-mobile;
+    font-weight: $font-weight-normal;
+    letter-spacing: $font-letter-spacing;
+
+    /* Hidden Element for Old Browsers */
+    .oldBrowserWarning {
+        display: none;
+    }
+
+}
+
+h1,.h1,
+h2,.h2,
+h3,.h3,
+h4,.h4,
+h5,.h5,
+h6,.h6 {
+    display: block;
+    padding: $headline-padding 0;
+    line-height: $headline-line-height-mobile;
+    font-family: $font-family-secondary;
+    font-weight: $font-weight-bold;
+
+    a,
+    strong {
+        display: inline;
+        position: static;
+        color: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+        font-size: inherit;
+    }
+}
+
+h1,.h1{
+    font-size: $font-size-h1-mobile;
+}
+h2,.h2{
+    font-size: $font-size-h2-mobile;
+}
+h3,.h3{
+    font-size: $font-size-h3-mobile;
+}
+h4,.h4{
+    font-size: $font-size-h4-mobile;
+}
+h5,.h5{
+    font-size: $font-size-h5-mobile;
+}
+h6,.h6{
+    font-size: $font-size-h6-mobile;
+}
+
+/* -------------------------------------------------------- */
+/*                  A-TAG / LINK BASEMENT                   */
+/* -------------------------------------------------------- */
+
+a, .link {
+    color: $font-link-color;
+    text-decoration: $font-text-decoration;
+    cursor: pointer;
+    transition: all $transitionTime ease;
+    &:hover, &:active {
+        color: $font-link-color-hover;
+    }
+}
+
+/* -------------------------------------------------------- */
+/*              BUTTON-TAG / BUTTON BASEMENT                */
+/* -------------------------------------------------------- */
+
+button, .button {
+    display: inline-block;
+    padding: 8px 24px;
+    margin: 0;
+    background: $color-grey;
+    color: $color-white;
+    font-family: $font-family-secondary;
+    font-size: getRem(20px);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all $transitionTime ease;
+    border-radius: 0;
+    font-weight: $font-weight-bold;
+
+    &[disabled]{
+        opacity: 0.5;
+    }
+
+    &--outlined {
+        border: 2px solid $color-black;
+        color: $font-color;
+        background: transparent;
+
+        &:not([disabled]){
+            &:hover, &:active {
+                background: $color-black;
+                color: $color-white;
+            }
+        }
+    }
+}
+
+/* -------------------------------------------------------- */
+/*              FORM-TAG / INPUT BASEMENT                */
+/* -------------------------------------------------------- */
+
+input[type="text"], input[type="password"], input[type="number"], input[type="email"], input[type="search"], input[type="tel"], input[type="url"], textarea {
+    display: inline-block;
+    width: 100%;
+    padding: 6px 6px;
+    margin: 5px 0;
+    background: $color-white;
+    color: $color-black;
+    border: 1px solid $color-lightgrey;
+    transition: all $transitionTime ease;
+
+    &::placeholder {
+        color: $font-color;
+        opacity: 1;
+    }
+
+    /* Error class for the form validation */
+    &.validation-error {
+        border: 1px solid $color-ui-red;
+        & ~ .validation-error-message {
+            display: block;
+        }
+    }
+
+    /* Success class for the form validation */
+    &.validation-success {
+        border: 1px solid $color-ui-green;
+    }
+
+    /* Error message class for the form validation */
+    & ~ .validation-error-message {
+        display: none;
+        color: $color-ui-red;
+    }
+
+}
+
+textarea {
+    width: 100%;
+}
+
+/* -------------------------------------------------------- */
+/*                    ELEMENT BASEMENT                      */
+/* -------------------------------------------------------- */
+
+p {
+    display: block;
+    padding: $text-paragraph-padding 0;
+}
+
+strong, b {
+    font-weight: $font-weight-bold;
+}
+
+sup {
+    font-size: .875rem;
+    vertical-align: super;
+    line-height: .875rem;
+}
+
+small {
+    font-size: .875rem;
+}
+
+strike, del {
+    text-decoration: line-through;
+}
+
+pre, code, kbd, samp {
+    font-family: $font-family-monospace;
+}
+
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+blockquote {
+    padding: 10px;
+    font-style: italic;
+}
+
+iframe {
+    max-width:100%;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    margin: 5px 0;
+    padding: 0;
+    border: 0;
+    background: $color-grey;
+}
+
+ul, ol {
+    display: block;
+    padding: $list-element-padding 0;
+    li {
+        position: relative;
+        margin-left: 20px;
+    }
+}
+
+/* -------------------------------------------------------- */
+/*                    GENERALL CLASSES                      */
+/* -------------------------------------------------------- */
+
+.clear {
+    clear: both;
+}
+
+/* -------------------------------------------------------- */
+/*                  MARKERED TEXT STYLES                    */
+/* -------------------------------------------------------- */
+
+::selection {
+    background: $color-black;
+    color: $color-white;
+    opacity: 1;
+}
+
+/* -------------------------------------------------------- */
+/*                BASE MEDIAQUERYS MEDIUM                   */
+/* -------------------------------------------------------- */
+
+@include viewport(mw){
+    html {
+        line-height: $font-line-height-default-tablet;
+
+        body {
+            font-size: $font-size-tablet;
+        }
+
+    }
+
+    .site-main {
+        margin-top: 105px;
+    }
+
+    h1,.h1,
+    h2,.h2,
+    h3,.h3,
+    h4,.h4,
+    h5,.h5,
+    h6,.h6 {
+        line-height: $headline-line-height-tablet;
+        font-family: $font-family-secondary;
+    }
+
+    h1,.h1{
+        font-size: $font-size-h1-tablet;
+    }
+    h2,.h2{
+        font-size: $font-size-h2-tablet;
+    }
+    h3,.h3{
+        font-size: $font-size-h3-tablet;
+    }
+    h4,.h4{
+        font-size: $font-size-h4-tablet;
+    }
+    h5,.h5{
+        font-size: $font-size-h5-tablet;
+    }
+    h6,.h6{
+        font-size: $font-size-h6-tablet;
+    }
+
+}
+
+/* -------------------------------------------------------- */
+/*                BASE MEDIAQUERYS LARGE                    */
+/* -------------------------------------------------------- */
+
+@include viewport(lw){
+    html {
+        line-height: $font-line-height-default-desktop;
+
+        body {
+            font-size: $font-size-desktop;
+        }
+
+    }
+
+    h1,.h1,
+    h2,.h2,
+    h3,.h3,
+    h4,.h4,
+    h5,.h5,
+    h6,.h6 {
+        line-height: $headline-line-height-desktop;
+    }
+
+    h1,.h1{
+        font-size: $font-size-h1-desktop;
+    }
+    h2,.h2{
+        font-size: $font-size-h2-desktop;
+    }
+    h3,.h3{
+        font-size: $font-size-h3-desktop;
+    }
+    h4,.h4{
+        font-size: $font-size-h4-desktop;
+    }
+    h5,.h5{
+        font-size: $font-size-h5-desktop;
+    }
+    h6,.h6{
+        font-size: $font-size-h6-desktop;
+    }
+
+}

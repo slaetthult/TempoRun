@@ -1,0 +1,17 @@
+---
+const {title = '', dataAcTriggerValue = ''} = Astro.props;
+---
+
+<div class="accordion ac" >
+    <div class="accordion__header ac-header">
+        <button type="button" class="accordion__header__trigger ac-trigger" data-ac-trigger-value={dataAcTriggerValue}>{ title }</button>
+    </div>
+    <div class="accordion__content ac-panel">
+        <div>
+            <slot />
+        </div>
+    </div>
+</div>
+
+
+
