@@ -25,6 +25,10 @@ Any static assets, like images, can be placed in the `public/` directory.
 
 #### For more info about Astro checkout https://docs.astro.build/en/getting-started/
 
+## Developing Requirements
+
+#### node at least v18.15.0 (npm v9.5.0)
+
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
