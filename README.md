@@ -69,3 +69,15 @@ https://swiperjs.com/swiper-api
 ### Accordion
 
 https://github.com/michu2k/Accordion
+
+## Browser Support
+
+| Browser | Version         |
+|:--------|:----------------|
+| IE      | Not supported   |
+| Edge    | 80 and higher   |
+| Firefox | 65 and higher   |
+| Safari  | 13.1 and higher |
+| Chrome  | 70 and higher   |
+| iOS     | 13 and higher   |
+| Android | 8 and higher    |
