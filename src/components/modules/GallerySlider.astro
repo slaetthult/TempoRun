@@ -1,0 +1,105 @@
+---
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import '../../styles/modules/_gallery-slider.scss';
+---
+
+<div class="gallery-slider">
+    <div class="grid-wrap">
+        <div class="w12">
+
+            <div class="swiper" data-js="gallery-slider">
+
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <figure>
+                            <picture>
+                                <source srcset="https://placehold.co/978x489">
+                                <img src="https://placehold.co/978x489" alt="alt" loading="lazy">
+                            </picture>
+                        </figure>
+                    </div>
+                    <div class="swiper-slide">
+                        <figure>
+                            <picture>
+                                <source srcset="https://placehold.co/978x489">
+                                <img src="https://placehold.co/978x489" alt="alt" loading="lazy">
+                            </picture>
+                        </figure>
+                    </div>
+                    <div class="swiper-slide">
+                        <figure>
+                            <picture>
+                                <source srcset="https://placehold.co/978x489">
+                                <img src="https://placehold.co/978x489" alt="alt" loading="lazy">
+                            </picture>
+                        </figure>
+                    </div>
+
+                </div>
+                <div class="swiper-pagination"></div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    import Swiper from 'swiper';
+    import { Navigation, Pagination, Autoplay, Scrollbar } from 'swiper/modules';
+
+    const introSlider = {
+
+        vars: {
+
+            swiperQuery:            '*[data-js=gallery-slider]',
+
+        },
+
+        init(){
+
+            introSlider.startScript();
+
+        },
+
+        startScript(){
+
+            const $gallerySliders = document.querySelectorAll(introSlider.vars.swiperQuery);
+
+            for(const $gallerySlider of $gallerySliders){
+
+                const swiper = new Swiper($gallerySlider, {
+                    modules: [Navigation, Pagination, Autoplay, Scrollbar],
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    scrollbar: {
+                        el: '.swiper-scrollbar',
+                        enabled: true
+                    },
+                    loop: true,
+                    speed: 500,
+                    autoplay: {
+                        delay: 6000
+                    }
+                });
+
+            }
+
+        }
+
+    }
+
+    introSlider.init();
+</script>

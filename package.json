@@ -12,6 +12,7 @@
   "dependencies": {
     "accordion-js": "^3.3.4",
     "astro": "^3.0.8",
-    "sass": "^1.66.1"
+    "sass": "^1.66.1",
+    "swiper": "^10.2.0"
   }
 }
