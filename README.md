@@ -1,16 +1,4 @@
-# Astro Starter Kit: Basics
-
-```
-npm create astro@latest -- --template basics
-```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+# Astro Starter Kit: TempoRun
 
 ## 🚀 Project Structure
 
@@ -22,7 +10,6 @@ Inside of your Astro project, you'll see the following folders and files:
 │   └── favicon.svg
 ├── src/
 │   ├── components/
-│   │   └── Card.astro
 │   ├── layouts/
 │   │   └── Layout.astro
 │   └── pages/
@@ -49,6 +36,34 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## TempoRun Basics:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Grid (Flexbox)
+
+The grid class contains the shortname of the viewport (defined in config.scss) and the amount of grids:
+{viewport}{gridamount} -> "w12".
+If you want to push or pull grid-elements, use "w-left-4" {viewport}-{direction}-{gridamount}. Grid-Elements are directly wrapped by the class "grid-wrap".
+
+```
+<div class="grid-wrap">
+    <div class="w12">
+        <h2>Grid example</h2>
+    </div>
+    <div class="w12 mw12">w12 mw12</div>
+    <div class="w12 mw6">w12 mw6</div>
+    <div class="w12 mw6 mw-left-6">w12 mw6 mw-left-6</div>
+    <div class="w6 mw4">w6 mw4</div>
+    <div class="w6 mw4">w6 mw4</div>
+    <div class="w6 mw4">w6 mw4</div>
+</div>
+```
+
+## Used libraries:
+
+### Swiper
+
+https://swiperjs.com/swiper-api
+
+### Accordion
+
+https://github.com/michu2k/Accordion

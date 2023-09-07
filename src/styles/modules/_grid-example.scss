@@ -1,0 +1,14 @@
+@use '../abstracts' as *;
+
+.grid-example {
+    margin-bottom: 60px;
+
+    .grid-wrap {
+        div {
+            border: 1px solid $color-bordergrey;
+            &:first-child {
+                border: 0;
+            }
+        }
+    }
+}

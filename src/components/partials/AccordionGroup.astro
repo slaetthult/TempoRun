@@ -5,7 +5,7 @@ import '../../styles/partials/_accordion.scss';
 const {openFirstAccordionInitially = false} = Astro.props;
 ---
 
-<div class="accordion-group accordion-container w12" data-accordion-group data-open-first-accordion-initially={openFirstAccordionInitially}>
+<div class="accordion-group accordion-container w12" data-js="accordion-group" data-open-first-accordion-initially={openFirstAccordionInitially}>
 
     <slot />
 
@@ -18,7 +18,7 @@ const {openFirstAccordionInitially = false} = Astro.props;
 
         vars: {
 
-            moduleQuery:                                '*[data-accordion-group]',
+            moduleQuery:                                '*[data-js=accordion-group]',
 
             openFirstAccordionInitiallyAttribute:       'openFirstAccordionInitially',
 
