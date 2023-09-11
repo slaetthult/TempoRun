@@ -4,10 +4,11 @@ export const formValidation = {
 
     vars: {
 
-        formQuery:              '*[data-js=form-validation]',
-        requiredAttribute:      'data-validation-required',
+        formQuery:                          '*[data-js=form-validation]',
 
-        validationEvents:       ['keyup', 'change', 'input']
+        validationRequiredAttribute:        'data-validation-required',
+
+        validationEvents:                   ['keyup', 'change', 'input']
 
     },
 
@@ -24,9 +25,9 @@ export const formValidation = {
         for(const $form of $forms){
 
             const $formFields = new Set([
-                ...$form.querySelectorAll("input"),
-                ...$form.querySelectorAll("select"),
-                ...$form.querySelectorAll("textarea")
+                ...$form.querySelectorAll('input'),
+                ...$form.querySelectorAll('select'),
+                ...$form.querySelectorAll('textarea')
             ]);
 
             for(const $formField of $formFields){
@@ -43,7 +44,7 @@ export const formValidation = {
 
             }
 
-            $form.addEventListener("submit", (event) => {
+            $form.addEventListener('submit', (event) => {
 
                 for(const $formField of $formFields){
 
@@ -65,9 +66,9 @@ export const formValidation = {
 
     addEventHandler($formField){
 
-        if($formField.hasAttribute(formValidation.vars.requiredAttribute)){
+        if($formField.hasAttribute(formValidation.vars.validationRequiredAttribute)){
 
-            $formField.setAttribute('required', "");
+            $formField.setAttribute('required', '');
 
         }
 
