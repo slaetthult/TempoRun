@@ -70,8 +70,9 @@ If you want to push or pull grid-elements, use "w-left-4" {viewport}-{direction}
 Please note: <br>
 Inputs need the empty <b>value</b>-attribute.
 Inputs type checkbox and radiobox and textareas need the emtpy <b>data-value</b>-attribute.<br>
-Otherwise the form validation won't work properly.
-
+Otherwise the form validation won't work properly.<br>
+Set <b>data-validation-required</b> on form fields if they are required.
+If you just need optional validation, just leave it away.
 
 ```
 ---
