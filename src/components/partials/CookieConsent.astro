@@ -1,0 +1,98 @@
+---
+import '../../styles/partials/_cookie-consent.scss';
+---
+
+<h1>Hallo</h1>
+<div class="cookie-consent" data-js="cookie-consent" style="display: none;">
+    <div class="grid-wrap">
+        <div class="cookie-consent__wrapper w12">
+            Cookie
+
+            <button data-cookie-consent-accept-all>Accept all cookies</button>
+            <button data-cookie-consent-accept-technical>Accept technical cookies</button>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    import { getCookieValueOf, setCookie, deleteCookie } from "../../utils/cookies";
+
+    const cookieConsent = {
+        vars: {
+
+            parentQuery:                    '*[data-js=cookie-consent]',
+            acceptAllQuery:                 '*[data-cookie-consent-accept-all]',
+            acceptTechnicalQuery:           '*[data-cookie-consent-accept-technical]',
+
+            acceptAllCookieName:            'cookiesAcceptedAll',
+            acceptTechnicalCookieName:      'cookiesAcceptedTechnical',
+
+            showClass:                      'show'
+
+        },
+
+        init(){
+
+            cookieConsent.addEventTrigger();
+            cookieConsent.toggleLayer();
+
+        },
+
+        toggleLayer(){
+
+            const $cookieLayer = document.querySelector(cookieConsent.vars.parentQuery);
+
+            if(!getCookieValueOf('cookiesAcceptedAll') && !getCookieValueOf('cookiesAcceptedTechnical')){
+
+                $cookieLayer.classList.add(cookieConsent.vars.showClass);
+
+            } else {
+
+                $cookieLayer.classList.remove(cookieConsent.vars.showClass);
+
+            }
+
+        },
+
+        addEventTrigger(){
+
+            const $acceptAllButton = document.querySelector(cookieConsent.vars.acceptAllQuery);
+            const $acceptTechnicalButton = document.querySelector(cookieConsent.vars.acceptTechnicalQuery);
+
+            $acceptAllButton.addEventListener('click', (event) => {
+
+                cookieConsent.acceptAll();
+
+            });
+
+            $acceptTechnicalButton.addEventListener('click', (event) => {
+
+                cookieConsent.acceptTechnical();
+
+            });
+
+        },
+
+        acceptAll(){
+
+            deleteCookie(cookieConsent.vars.acceptTechnicalCookieName);
+            setCookie(cookieConsent.vars.acceptAllCookieName, 'true');
+            cookieConsent.toggleLayer();
+            document.location.reload();
+
+        },
+
+        acceptTechnical(){
+
+            deleteCookie(cookieConsent.vars.acceptAllCookieName);
+            setCookie(cookieConsent.vars.acceptTechnicalCookieName, 'true');
+            cookieConsent.toggleLayer();
+            document.location.reload();
+
+        }
+    }
+
+    cookieConsent.init();
+
+</script>

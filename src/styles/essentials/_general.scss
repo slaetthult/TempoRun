@@ -50,7 +50,6 @@ h6,.h6 {
     display: block;
     padding: $headline-padding 0;
     line-height: $headline-line-height-mobile;
-    font-family: $font-family-secondary;
     font-weight: $font-weight-bold;
 
     a,
@@ -107,7 +106,6 @@ button, .button {
     margin: 0;
     background: $color-grey;
     color: $color-white;
-    font-family: $font-family-secondary;
     font-size: get-rem(20px);
     border: none;
     cursor: pointer;
@@ -284,7 +282,6 @@ ul, ol {
     h5,.h5,
     h6,.h6 {
         line-height: $headline-line-height-tablet;
-        font-family: $font-family-secondary;
     }
 
     h1,.h1{
