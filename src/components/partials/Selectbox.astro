@@ -1,0 +1,67 @@
+---
+import 'tom-select/dist/css/tom-select.css';
+interface Props {
+    maxSelectable: number;
+    classes: string;
+}
+
+const { maxSelectable = 1, classes = '' } = Astro.props;
+
+const classNames = `selectbox ${classes}`;
+---
+
+<div class={classNames} data-js="selectbox" data-select-max-selectable={maxSelectable}>
+    <label>
+        <select data-validation-required autocomplete="off">
+            <slot />
+        </select>
+        <small class="validation-error-message">Pflichtfeld!</small>
+    </label>
+</div>
+
+<script>
+    import TomSelect from "tom-select";
+
+    const selectbox = {
+
+        vars: {
+            wrapperQuery:           '*[data-js=selectbox]',
+            selectQuery:            'select',
+
+            maxSelectableAttribute: 'data-select-max-selectable',
+
+            config: {
+                                    maxItems: 1
+            }
+        },
+
+        init(){
+
+            selectbox.findSelects();
+
+        },
+
+        findSelects(){
+
+            const $selects = document.querySelectorAll(selectbox.vars.wrapperQuery);
+
+            for(const $select of $selects){
+
+                selectbox.vars.config.maxItems = parseInt($select.getAttribute(selectbox.vars.maxSelectableAttribute));
+
+                selectbox.bind($select.querySelector(selectbox.vars.selectQuery));
+
+            }
+
+        },
+
+        bind($select){
+
+            new TomSelect($select, selectbox.vars.config);
+
+        }
+    }
+
+    selectbox.init();
+
+</script>

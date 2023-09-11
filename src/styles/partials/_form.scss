@@ -1,0 +1,110 @@
+@use '../abstracts' as *;
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% + 2*$grid-margin);
+    margin-left: -$grid-margin;
+
+    .input {
+
+        input {
+            &:invalid {
+                border: 1px solid $color-ui-red;
+                & ~ small {
+                    display: block;
+                }
+            }
+            &:not([value=""]){
+                &:valid {
+                    border: 1px solid $color-ui-green;
+                }
+            }
+        }
+        small {
+            display: none;
+            color: $color-ui-red;
+        }
+    }
+    .checkbox,
+    .radiobox {
+
+        input {
+            &:invalid {
+                border: 1px solid $color-ui-red;
+
+                & + span::before {
+                    border: 1px solid $color-ui-red;
+                }
+
+                & ~ small {
+                    display: block;
+                }
+            }
+            &[data-value]{
+                &:valid {
+
+                    & + span::before {
+                        border: 1px solid $color-ui-green;
+                    }
+
+                    border: 1px solid $color-ui-green;
+                }
+            }
+        }
+        small {
+            display: none;
+            color: $color-ui-red;
+        }
+    }
+    .textarea {
+
+        textarea {
+            &:invalid {
+                border: 1px solid $color-ui-red;
+                & ~ small {
+                    display: block;
+                }
+            }
+            &:not([data-value=""]){
+                &:valid {
+                    border: 1px solid $color-ui-green;
+                }
+            }
+        }
+        small {
+            display: none;
+            color: $color-ui-red;
+        }
+    }
+    .selectbox {
+
+        select {
+            &:invalid {
+                & + .ts-wrapper {
+                    border: 1px solid $color-ui-red;
+                }
+                & ~ small {
+                    display: block;
+                }
+            }
+            &[required]{
+                &:valid {
+                    & + .ts-wrapper {
+                        border: 1px solid $color-ui-green;
+                    }
+                }
+            }
+        }
+        small {
+            display: none;
+            color: $color-ui-red;
+        }
+    }
+
+    .button,
+    button {
+        margin-left: $grid-margin;
+    }
+
+}

@@ -1,0 +1,72 @@
+---
+import '../../styles/modules/_form-example.scss';
+import Selectbox from "../partials/Selectbox.astro";
+
+if (Astro.request.method === "POST") {
+    try {
+        console.error("form sent");
+    } catch (error) {
+        if (error instanceof Error) {
+            console.error("form not sent");
+        }
+    }
+}
+---
+
+<div class="form-example">
+    <div class="grid-wrap">
+        <div class="w12">
+
+            <h2>Form example</h2>
+
+            <form method="POST" class="form" data-js="form-validation">
+
+                <Selectbox maxSelectable="2" classes="w12">
+                    <option value="">Select a person...</option>
+                    <option value="4">Thomas Edison</option>
+                    <option value="1">Nikola</option>
+                    <option value="3">Nikola Tesla</option>
+                    <option value="5">Arnold Schwarzenegger</option>
+                </Selectbox>
+
+                <div class="input w6">
+                    <label>
+                        First Name:
+                        <input type="text" value="" data-validation-required minlength="4">
+                        <small>Required</small>
+                    </label>
+                </div>
+                <div class="input w6">
+                    <label>
+                        Last Name:
+                        <input type="text" value="" minlength="4">
+                        <small>Required</small>
+                    </label>
+                </div>
+                <div class="textarea w12">
+                    <label>
+                        Message:
+                        <textarea data-value="" minlength="4" maxlength="10"></textarea>
+                        <small>Required</small>
+                    </label>
+                </div>
+                <div class="checkbox w12">
+                    <label>
+                        <input type="checkbox" name="tos" value="checkbox2" data-validation-required>
+                        <span>I accept</span>
+                        <small>Required</small>
+                    </label>
+                </div>
+                <button type="submit">Submit</button>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    import { formValidation } from "../../utils/formValidation";
+
+    formValidation.init();
+</script>

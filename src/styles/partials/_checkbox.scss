@@ -1,78 +1,53 @@
 @use '../abstracts' as *;
 
 .checkbox {
-  position: relative;
-  display: inline-block;
-  width: 100%;
+    position: relative;
+    display: inline-block;
+    width: 100%;
 
-  input {
-    display: none;
+    input {
+        position: absolute;
+        opacity: 0;
+    }
 
-    &.validation-error {
-
-      & + span::before {
-        border: 1px solid $color-ui-red;
-      }
-
-      & ~ .validation-error-message {
+    span {
         display: block;
-      }
+        margin-left: 25px;
+        min-height: 20px;
+        padding-top: 2px;
+        cursor: pointer;
+        user-select: none;
+
+        &::before {
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 4px;
+            height: 20px;
+            width: 20px;
+            border: 1px solid $color-grey;
+            cursor: pointer;
+            border-radius: 3px;
+            content: "";
+        }
+
+        &::after {
+            display: block;
+            position: absolute;
+            left: 3px;
+            top: 7px;
+            height: 14px;
+            width: 14px;
+            cursor: pointer;
+            background: transparent;
+            border-radius: 3px;
+            content: "";
+        }
 
     }
 
-    &.validation-success {
-
-      + span::before{
-        border: 1px solid $color-ui-green;
-      }
-
+    input:checked + span::after {
+        background: $color-grey;
     }
-
-    & ~ .validation-error-message {
-      display: none;
-      color: $color-ui-red;
-    }
-
-  }
-
-  span {
-    display: block;
-    margin-left: 25px;
-    min-height: 20px;
-    padding-top: 2px;
-    cursor: pointer;
-    user-select: none;
-
-    &::before {
-      display: block;
-      position: absolute;
-      left: 0;
-      top: 4px;
-      height: 20px;
-      width: 20px;
-      border: 1px solid $color-grey;
-      cursor: pointer;
-      border-radius: 3px;
-      content: "";
-    }
-
-    &::after {
-      display: block;
-      position: absolute;
-      left: 3px;
-      top: 7px;
-      height: 14px;
-      width: 14px;
-      cursor: pointer;
-      background: transparent;
-      border-radius: 3px;
-      content: "";
-    }
-
-  }
-
-  input:checked + span::after {
-    background: $color-grey;
-  }
 
 }

@@ -108,7 +108,7 @@ button, .button {
     background: $color-grey;
     color: $color-white;
     font-family: $font-family-secondary;
-    font-size: getRem(20px);
+    font-size: get-rem(20px);
     border: none;
     cursor: pointer;
     text-decoration: none;
@@ -145,7 +145,7 @@ input[type="text"], input[type="password"], input[type="number"], input[type="em
     margin: 5px 0;
     background: $color-white;
     color: $color-black;
-    border: 1px solid $color-lightgrey;
+    border: 1px solid $color-bordergrey;
     transition: all $transitionTime ease;
 
     &::placeholder {

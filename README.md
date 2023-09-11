@@ -62,6 +62,78 @@ If you want to push or pull grid-elements, use "w-left-4" {viewport}-{direction}
     <div class="w6 mw4">w6 mw4</div>
     <div class="w6 mw4">w6 mw4</div>
 </div>
+
+```
+
+### Form and validation
+
+Please note: <br>
+Inputs need the empty <b>value</b>-attribute.
+Inputs type checkbox and radiobox and textareas need the emtpy <b>data-value</b>-attribute.<br>
+Otherwise the form validation won't work properly.
+
+
+```
+---
+import Selectbox from "../partials/Selectbox.astro";
+
+if (Astro.request.method === "POST") {
+    try {
+        console.error("form sent");
+    } catch (error) {
+        if (error instanceof Error) {
+            console.error("form not sent");
+        }
+    }
+}
+---
+
+<form method="POST" class="form" data-js="form-validation">
+
+    <Selectbox maxSelectable="2" classes="w12">
+        <option value="">Select a person...</option>
+        <option value="4">Thomas Edison</option>
+        <option value="1">Nikola</option>
+        <option value="3">Nikola Tesla</option>
+        <option value="5">Arnold Schwarzenegger</option>
+    </Selectbox>
+
+    <div class="input w6">
+        <label>
+            First Name:
+            <input type="text" value="" data-validation-required minlength="4">
+            <small>Required</small>
+        </label>
+    </div>
+    <div class="input w6">
+        <label>
+            Last Name:
+            <input type="text" value="" minlength="4">
+            <small>Required</small>
+        </label>
+    </div>
+    <div class="textarea w12">
+        <label>
+            Message:
+            <textarea data-value="" minlength="4" maxlength="10"></textarea>
+            <small>Required</small>
+        </label>
+    </div>
+    <div class="checkbox w12">
+        <label>
+            <input type="checkbox" name="tos" value="checkbox2" data-validation-required>
+            <span>I accept</span>
+            <small>Required</small>
+        </label>
+    </div>
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    import { formValidation } from "../../utils/formValidation";
+
+    formValidation.init();
+</script>
 ```
 
 ## Used libraries:
@@ -73,6 +145,10 @@ https://swiperjs.com/swiper-api
 ### Accordion
 
 https://github.com/michu2k/Accordion
+
+### Select
+
+https://tom-select.js.org/
 
 ## Browser Support
 
