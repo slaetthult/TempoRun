@@ -20,6 +20,7 @@ const {sliderSettings = ''} = Astro.props;
     <div class="swiper-button-next"></div>
 
     <div class="swiper-scrollbar"></div>
+    
 </div>
 
 <script>
@@ -32,48 +33,54 @@ const {sliderSettings = ''} = Astro.props;
 
             swiperQuery:            '*[data-js=slider]',
 
-            settingsAttribute:      'data-slider-settings'
+            settingsAttribute:      'data-slider-settings',
+
+            mainOptions: {
+                modules: [Navigation, Pagination, Autoplay, Scrollbar],
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                    enabled: true,
+                    draggable: true
+                }
+            }
 
         },
 
         init(){
 
-            slider.startScript();
+            slider.find();
 
         },
 
-        startScript(){
+        find(){
 
             const $sliders = document.querySelectorAll(slider.vars.swiperQuery);
 
             for(const $slider of $sliders){
 
-                let additionalOptions = $slider.getAttribute(slider.vars.settingsAttribute);
-
-                additionalOptions = additionalOptions && additionalOptions.length > 0 ? JSON.parse(additionalOptions) : null;
-
-                const options = {
-                    modules: [Navigation, Pagination, Autoplay, Scrollbar],
-                    pagination: {
-                        el: '.swiper-pagination',
-                        clickable: true
-                    },
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev',
-                    },
-                    scrollbar: {
-                        el: '.swiper-scrollbar',
-                        enabled: true,
-                        draggable: true
-                    }
-                }
-
-                Object.assign(options, additionalOptions);
-
-                const swiper = new Swiper($slider, options);
+                slider.bind($slider);
 
             }
+
+        },
+
+        bind($slider){
+
+            let additionalOptions = $slider.getAttribute(slider.vars.settingsAttribute);
+            additionalOptions = additionalOptions && additionalOptions.length > 0 ? JSON.parse(additionalOptions) : null;
+            const options = slider.vars.mainOptions;
+
+            Object.assign(options, additionalOptions);
+
+            const swiper = new Swiper($slider, options);
 
         }
 
