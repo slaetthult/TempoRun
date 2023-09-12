@@ -83,3 +83,17 @@
     flex-wrap: $wrap;
 
 }
+
+@mixin smooth-fading-effect($transitionStyle: ease-in-out){
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity $transitionTime $transitionStyle;
+    transition-delay: $transitionTime, 0s;
+
+    &.show {
+        visibility: visible;
+        opacity: 1;
+        transition-delay: 0s, 0s;
+    }
+}

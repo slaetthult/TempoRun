@@ -139,6 +139,30 @@ if (Astro.request.method === "POST") {
     formValidation.init();
 </script>
 ```
+### Modalboxes
+
+Just import the Modalbox component. Modalbox ids have to be unique. <br>
+You can use as many closing buttons as you like inside a Modalbox. <br>
+All Modalboxes are moved to HTML-Body to prevent any styling issues.
+
+```
+---
+import Modalbox from "../partials/Modalbox.astro";
+---
+
+<button data-open-modal="test1">1</button>
+<Modalbox id="test1" classes="my-modal">
+    <h1>Ich bins 1</h1>
+    <button data-close-modal>close it</button>
+</Modalbox>
+<button data-open-modal="test2" classes="my-modal">2</button>
+<Modalbox id="test2">
+    <h1>Ich bins 2</h1>
+    <button data-close-modal>close it</button>
+</Modalbox>
+
+
+```
 
 ## Used libraries:
 

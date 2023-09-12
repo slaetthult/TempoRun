@@ -1,6 +1,7 @@
 ---
 import '../../styles/modules/_form-example.scss';
 import Selectbox from "../partials/Selectbox.astro";
+import Modalbox from "../partials/Modalbox.astro";
 
 if (Astro.request.method === "POST") {
     try {
@@ -75,6 +76,16 @@ if (Astro.request.method === "POST") {
 
             </form>
 
+            <button data-open-modal="test1">1</button>
+            <Modalbox id="test1" classes="my-modal">
+                <h1>Ich bins 1</h1>
+                <button data-close-modal>close it</button>
+            </Modalbox>
+            <button data-open-modal="test2" classes="my-modal">2</button>
+            <Modalbox id="test2">
+                <h1>Ich bins 2</h1>
+                <button data-close-modal>close it</button>
+            </Modalbox>
         </div>
     </div>
 </div>
