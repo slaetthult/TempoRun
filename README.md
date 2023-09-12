@@ -157,6 +157,7 @@ import Modalbox from "../partials/Modalbox.astro";
     <h1>I am Modalbox 1</h1>
     <button data-close-modal>close it</button>
 </Modalbox>
+
 <button data-open-modal="test2" classes="my-modal">Modalbox 2</button>
 <Modalbox id="test2">
     <h1>Modalbox 2</h1>
@@ -193,6 +194,62 @@ import AccordionGroup from '../partials/AccordionGroup.astro';
         </p>
     </Accordion>
 </AccordionGroup>
+
+```
+
+### Slider/Swiper
+
+Just import the Slider component. <br>
+In order to adjust specific slider/swiper settings, just change the sliderSettings object.
+
+```
+---
+import Slider from "../partials/Slider.astro";
+
+const sliderSettings = {
+    loop: true,
+    speed: 500,
+    slidesPerView: 1,
+    autoplay: {
+        delay: 6000
+    },
+    breakpoints: {
+        // when window width is >= 768px
+        768: {
+            slidesPerView: 2
+        }
+    }
+}
+
+const sliderSettingsJSON = JSON.stringify(sliderSettings);
+---
+
+<Slider sliderSettings={sliderSettingsJSON}>
+    <div class="swiper-slide">
+        <figure>
+            <picture>
+                <source srcset="https://placehold.co/978x489">
+                <img src="https://placehold.co/978x489" alt="alt" loading="lazy">
+            </picture>
+        </figure>
+    </div>
+    <div class="swiper-slide">
+        <figure>
+            <picture>
+                <source srcset="https://placehold.co/978x489">
+                <img src="https://placehold.co/978x489" alt="alt" loading="lazy">
+            </picture>
+        </figure>
+    </div>
+    <div class="swiper-slide">
+        <figure>
+            <picture>
+                <source srcset="https://placehold.co/978x489">
+                <img src="https://placehold.co/978x489" alt="alt" loading="lazy">
+            </picture>
+        </figure>
+    </div>
+</Slider>
 
 ```
 

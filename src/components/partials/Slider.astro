@@ -1,0 +1,83 @@
+---
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
+const {sliderSettings = ''} = Astro.props;
+---
+<div class="swiper" data-js="slider" data-slider-settings={sliderSettings}>
+
+    <div class="swiper-wrapper">
+
+        <slot />
+
+    </div>
+
+    <div class="swiper-pagination"></div>
+
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <div class="swiper-scrollbar"></div>
+</div>
+
+<script>
+    import Swiper from 'swiper';
+    import { Navigation, Pagination, Autoplay, Scrollbar } from 'swiper/modules';
+
+    const slider = {
+
+        vars: {
+
+            swiperQuery:            '*[data-js=slider]',
+
+            settingsAttribute:      'data-slider-settings'
+
+        },
+
+        init(){
+
+            slider.startScript();
+
+        },
+
+        startScript(){
+
+            const $sliders = document.querySelectorAll(slider.vars.swiperQuery);
+
+            for(const $slider of $sliders){
+
+                let additionalOptions = $slider.getAttribute(slider.vars.settingsAttribute);
+
+                additionalOptions = additionalOptions && additionalOptions.length > 0 ? JSON.parse(additionalOptions) : null;
+
+                const options = {
+                    modules: [Navigation, Pagination, Autoplay, Scrollbar],
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    scrollbar: {
+                        el: '.swiper-scrollbar',
+                        enabled: true,
+                        draggable: true
+                    }
+                }
+
+                Object.assign(options, additionalOptions);
+
+                const swiper = new Swiper($slider, options);
+
+            }
+
+        }
+
+    }
+
+    slider.init();
+</script>
