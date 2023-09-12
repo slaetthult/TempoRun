@@ -44,6 +44,8 @@ All commands are run from the root of the project, from a terminal:
 
 ## TempoRun Basics:
 
+<b>The fastest performing starter template with high Google Pagespeed score!</b>
+
 ### Demo:
 https://tempo-run-astro3.netlify.app/
 
