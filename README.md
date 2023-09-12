@@ -165,6 +165,37 @@ import Modalbox from "../partials/Modalbox.astro";
 
 ```
 
+### Accordions
+
+Just import the accordions components.<br>
+If you want the first accordion of be open, set openFirstAccordionInitially to "true".
+```
+---
+import Accordion from '../partials/Accordion.astro';
+import AccordionGroup from '../partials/AccordionGroup.astro';
+---
+
+<AccordionGroup openFirstAccordionInitially="true">
+    <Accordion title="1. Title">
+        <p>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        </p>
+        <figure>
+            <picture>
+                <source srcset="https://placehold.co/978x489">
+                <img src="https://placehold.co/978x489" alt="alt" loading="lazy">
+            </picture>
+        </figure>
+    </Accordion>
+    <Accordion title="2. Title">
+        <p>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        </p>
+    </Accordion>
+</AccordionGroup>
+
+```
+
 ## Used libraries:
 
 ### Swiper
