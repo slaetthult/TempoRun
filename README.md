@@ -150,17 +150,16 @@ All Modalboxes are moved to HTML-Body to prevent any styling issues.
 import Modalbox from "../partials/Modalbox.astro";
 ---
 
-<button data-open-modal="test1">1</button>
+<button data-open-modal="test1">Modalbox 1</button>
 <Modalbox id="test1" classes="my-modal">
-    <h1>Ich bins 1</h1>
+    <h1>I am Modalbox 1</h1>
     <button data-close-modal>close it</button>
 </Modalbox>
-<button data-open-modal="test2" classes="my-modal">2</button>
+<button data-open-modal="test2" classes="my-modal">Modalbox 2</button>
 <Modalbox id="test2">
-    <h1>Ich bins 2</h1>
+    <h1>Modalbox 2</h1>
     <button data-close-modal>close it</button>
 </Modalbox>
-
 
 ```
 

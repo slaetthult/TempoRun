@@ -4,6 +4,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import '../../styles/modules/_gallery-slider.scss';
+import Modalbox from "../partials/Modalbox.astro";
 ---
 
 <div class="gallery-slider">
@@ -47,6 +48,18 @@ import '../../styles/modules/_gallery-slider.scss';
 
                 <div class="swiper-scrollbar"></div>
             </div>
+
+            <button data-open-modal="test1">Modalbox 1</button>
+            <Modalbox id="test1" classes="my-modal">
+                <h1>I am Modalbox 1</h1>
+                <button data-close-modal>close it</button>
+            </Modalbox>
+            <button data-open-modal="test2" classes="my-modal">Modalbox 2</button>
+            <Modalbox id="test2">
+                <h1>Modalbox 2</h1>
+                <button data-close-modal>close it</button>
+            </Modalbox>
+
         </div>
     </div>
 </div>
