@@ -267,6 +267,10 @@ https://github.com/michu2k/Accordion
 
 https://tom-select.js.org/
 
+### Google Maps
+
+https://developers.google.com/maps/documentation/javascript/overview
+
 ## Browser Support
 
 | Browser | Version         |
