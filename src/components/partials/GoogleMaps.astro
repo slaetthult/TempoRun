@@ -1,0 +1,82 @@
+---
+import '../../styles/partials/_google-maps.scss';
+---
+
+<div class="google-maps" data-js="google-maps" style="display: none;"></div>
+
+<script>
+    import { getCookieValueOf } from "../../utils/cookies";
+
+    const googleMaps = {
+
+        vars: {
+
+            moduleQuery:            '*[data-js=google-maps]',
+
+            key:                    'AIzaSyDaUcHTIc9OtETTNev_lW1hEVnZvTmVeSk', // use your own individual key!
+
+            options: {
+                center: {
+                    lat: -34.397, lng: 150.644
+                },
+                zoom: 8,
+            },
+
+            neededCookieName:       'cookiesAcceptedAll',
+
+            showClass:              'show'
+
+        },
+
+        init(){
+
+            googleMaps.startScript();
+            googleMaps.find();
+
+        },
+
+        startScript() {
+
+            (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+            ({key: googleMaps.vars.key, v: "weekly"});
+
+        },
+
+        find(){
+
+            const $maps = document.querySelectorAll(googleMaps.vars.moduleQuery);
+
+            for(const $map of $maps){
+
+                googleMaps.bind($map);
+
+            }
+
+        },
+
+        bind($map){
+
+            $map.classList.add(googleMaps.vars.showClass);
+
+            let map;
+
+            async function initMap() {
+                //@ts-ignore
+                const { Map } = await google.maps.importLibrary("maps");
+
+                map = new Map($map, googleMaps.vars.options);
+            }
+
+            initMap();
+
+        }
+    }
+
+    if(getCookieValueOf(googleMaps.vars.neededCookieName)){
+
+        googleMaps.init();
+
+    }
+
+
+</script>
