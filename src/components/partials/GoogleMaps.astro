@@ -13,7 +13,7 @@ import '../../styles/partials/_google-maps.scss';
 
             moduleQuery:            '*[data-js=google-maps]',
 
-            key:                    'your_key', // use your own individual key!
+            key:                    'your_api_key',
 
             options: {
                 center: {
@@ -21,6 +21,21 @@ import '../../styles/partials/_google-maps.scss';
                 },
                 zoom: 8,
             },
+
+            markers: [
+                {
+                    title: 'Aksa Beach',
+                    lat: -34.397,
+                    lng: 150.644,
+                    description: 'Aksa Beach is a popular beach and a vacation spot in Aksa village at Malad, Mumbai.'
+                },
+                {
+                    title: 'Juhu Beach',
+                    lat: -34.397,
+                    lng: 145.644,
+                    description: 'Juhu Beach is one of favourite tourist attractions situated in Mumbai.'
+                }
+            ],
 
             neededCookieName:       'cookiesAcceptedAll',
 
@@ -65,9 +80,36 @@ import '../../styles/partials/_google-maps.scss';
                 const { Map } = await google.maps.importLibrary("maps");
 
                 map = new Map($map, googleMaps.vars.options);
+
+                googleMaps.setMarkers(map);
+
             }
 
             initMap();
+
+        },
+
+        setMarkers(map){
+
+            const infoWindow = new google.maps.InfoWindow();
+
+            for(const markerData of googleMaps.vars.markers){
+
+                const latlng = new google.maps.LatLng(markerData.lat, markerData.lng);
+                const marker = new google.maps.Marker({
+                    position: latlng,
+                    map: map,
+                    title: markerData.title
+                });
+
+                ( (marker, data) => {
+                    google.maps.event.addListener(marker, 'click',  (event) => {
+                        infoWindow.setContent('<div style = "width:200px;min-height:40px">' + data.description + '</div>');
+                        infoWindow.open(map, marker);
+                    });
+                })(marker, markerData);
+
+            }
 
         }
     }
