@@ -13,7 +13,7 @@ import '../../styles/partials/_google-maps.scss';
 
             moduleQuery:            '*[data-js=google-maps]',
 
-            key:                    'your_api_key',
+            key:                    'AIzaSyDEsMBNxLLZBPfXTIpq-0tu3gIXQqzbBEw',
 
             options: {
                 center: {
@@ -32,7 +32,7 @@ import '../../styles/partials/_google-maps.scss';
                 {
                     title: 'Juhu Beach',
                     lat: -34.397,
-                    lng: 145.644,
+                    lng: 147.644,
                     description: 'Juhu Beach is one of favourite tourist attractions situated in Mumbai.'
                 }
             ],
@@ -96,15 +96,15 @@ import '../../styles/partials/_google-maps.scss';
             for(const markerData of googleMaps.vars.markers){
 
                 const latlng = new google.maps.LatLng(markerData.lat, markerData.lng);
-                const marker = new google.maps.Marker({
+                let marker = new google.maps.Marker({
                     position: latlng,
                     map: map,
                     title: markerData.title
                 });
 
-                ( (marker, data) => {
+                ( (marker, markerData) => {
                     google.maps.event.addListener(marker, 'click',  (event) => {
-                        infoWindow.setContent('<div style = "width:200px;min-height:40px">' + data.description + '</div>');
+                        infoWindow.setContent('<div style = "width:200px;min-height:40px">' + markerData.description + '</div>');
                         infoWindow.open(map, marker);
                     });
                 })(marker, markerData);
