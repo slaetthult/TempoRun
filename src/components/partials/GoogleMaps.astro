@@ -37,7 +37,7 @@ import '../../styles/partials/_google-maps.scss';
                 }
             ],
 
-            neededCookieName:       'cookiesAcceptedAll',
+            requiredCookieName:       'cookiesAcceptedAll',
 
             showClass:              'show'
 
@@ -114,7 +114,7 @@ import '../../styles/partials/_google-maps.scss';
         }
     }
 
-    if(getCookieValueOf(googleMaps.vars.neededCookieName)){
+    if(getCookieValueOf(googleMaps.vars.requiredCookieName)){
 
         googleMaps.init();
 
