@@ -23,6 +23,7 @@ import '../../styles/partials/_cookie-consent.scss';
             parentQuery:                    '*[data-js=cookie-consent]',
             acceptAllQuery:                 '*[data-cookie-consent-accept-all]',
             acceptTechnicalQuery:           '*[data-cookie-consent-accept-technical]',
+            rejectSettingsQuery:            '*[data-reject-cookie-settings]',
 
             acceptAllCookieName:            'cookiesAcceptedAll',
             acceptTechnicalCookieName:      'cookiesAcceptedTechnical',
@@ -58,6 +59,7 @@ import '../../styles/partials/_cookie-consent.scss';
 
             const $acceptAllButton = document.querySelector(cookieConsent.vars.acceptAllQuery);
             const $acceptTechnicalButton = document.querySelector(cookieConsent.vars.acceptTechnicalQuery);
+            const $rejectSettingsButtons = document.querySelectorAll(cookieConsent.vars.rejectSettingsQuery);
 
             $acceptAllButton.addEventListener('click', (event) => {
 
@@ -70,6 +72,16 @@ import '../../styles/partials/_cookie-consent.scss';
                 cookieConsent.acceptTechnical();
 
             });
+
+            for(const $rejectSettingsButton of $rejectSettingsButtons){
+
+                $rejectSettingsButton.addEventListener('click', (event) => {
+
+                    cookieConsent.reset();
+
+                });
+
+            }
 
         },
 
@@ -89,7 +101,16 @@ import '../../styles/partials/_cookie-consent.scss';
             cookieConsent.toggleLayer();
             document.location.reload();
 
+        },
+
+        reset(){
+
+            deleteCookie(cookieConsent.vars.acceptAllCookieName);
+            deleteCookie(cookieConsent.vars.acceptTechnicalCookieName);
+            cookieConsent.toggleLayer();
+
         }
+
     }
 
     cookieConsent.init();
