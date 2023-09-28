@@ -1,5 +1,3 @@
-import TomSelect from "tom-select";
-
 export const formValidation = {
 
     vars: {
