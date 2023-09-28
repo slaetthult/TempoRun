@@ -1,5 +1,5 @@
 ---
-import '../../styles/partials/_cookie-consent.scss';
+import '@styles/partials/_cookie-consent.scss';
 ---
 
 <div class="cookie-consent" data-js="cookie-consent" style="display: none;">
@@ -15,7 +15,7 @@ import '../../styles/partials/_cookie-consent.scss';
 </div>
 
 <script>
-    import { getCookieValueOf, setCookie, deleteCookie } from "../../utils/cookies";
+    import { getCookieValueOf, setCookie, deleteCookie } from "@utils/cookies";
 
     const cookieConsent = {
         vars: {

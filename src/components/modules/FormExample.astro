@@ -1,6 +1,6 @@
 ---
-import '../../styles/modules/_form-example.scss';
-import Selectbox from "../partials/Selectbox.astro";
+import '@styles/modules/_form-example.scss';
+import Selectbox from "@components/partials/Selectbox.astro";
 
 if (Astro.request.method === "POST") {
     try {
@@ -80,7 +80,7 @@ if (Astro.request.method === "POST") {
 </div>
 
 <script>
-    import { formValidation } from "../../utils/formValidation";
+    import { formValidation } from "@utils/formValidation";
 
     formValidation.init();
 </script>
