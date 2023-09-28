@@ -11,9 +11,9 @@
   },
   "dependencies": {
     "accordion-js": "^3.3.4",
-    "astro": "^3.0.8",
-    "sass": "^1.66.1",
-    "swiper": "^10.2.0",
+    "astro": "^3.1.4",
+    "sass": "^1.68.0",
+    "swiper": "^10.3.1",
     "tom-select": "^2.2.2"
   }
 }
