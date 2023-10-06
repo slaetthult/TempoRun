@@ -5,16 +5,22 @@ interface Props {
     classes: string;
 }
 
-const { maxSelectable = 1, classes = '' } = Astro.props;
+const { maxSelectable = 1, classes = '', dataValidationRequired = false } = Astro.props;
 
 const classNames = `selectbox ${classes}`;
 ---
 
 <div class={classNames} data-js="selectbox" data-select-max-selectable={maxSelectable}>
     <label>
-        <select data-validation-required autocomplete="off">
-            <slot />
-        </select>
+        {dataValidationRequired ?
+                <select data-validation-required autocomplete="off">
+                    <slot />
+                </select>
+        :
+                <select autocomplete="off">
+                    <slot />
+                </select>
+        }
         <small class="validation-error-message">Pflichtfeld!</small>
     </label>
 </div>
@@ -31,7 +37,7 @@ const classNames = `selectbox ${classes}`;
             maxSelectableAttribute: 'data-select-max-selectable',
 
             config: {
-                                    maxItems: 1
+                maxItems: 1
             }
         },
 

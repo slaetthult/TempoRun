@@ -21,7 +21,7 @@ if (Astro.request.method === "POST") {
 
             <form method="POST" class="form" data-js="form-validation">
 
-                <Selectbox maxSelectable="2" classes="w12">
+                <Selectbox maxSelectable="2" dataValidationRequired classes="w12">
                     <option value="">Select a person...</option>
                     <option value="4">Thomas Edison</option>
                     <option value="1">Nikola</option>
@@ -57,11 +57,19 @@ if (Astro.request.method === "POST") {
                         <small>Required</small>
                     </label>
                 </div>
+                <div class="input w12">
+                    <label>
+                        Password:
+                        <input type="password" value="" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" data-validation-required>
+                        <small>Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters</small>
+                    </label>
+                </div>
+
                 <div class="textarea w12">
                     <label>
                         Message:
                         <textarea data-value="" minlength="4" maxlength="10"></textarea>
-                        <small>Required</small>
+                        <small>Please type in at least 4 and maximum 10 letters</small>
                     </label>
                 </div>
                 <div class="checkbox w12">
