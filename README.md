@@ -81,7 +81,7 @@ If you just need optional validation, just leave it away.
 
 ```
 ---
-import Selectbox from "../partials/Selectbox.astro";
+import Selectbox from "@components/partials/Selectbox.astro";
 
 if (Astro.request.method === "POST") {
     try {
@@ -136,7 +136,7 @@ if (Astro.request.method === "POST") {
 </form>
 
 <script>
-    import { formValidation } from "../../utils/formValidation";
+    import { formValidation } from "@utils/formValidation";
 
     formValidation.init();
 </script>
@@ -149,7 +149,7 @@ All Modalboxes are moved to HTML-Body to prevent any styling issues.
 
 ```
 ---
-import Modalbox from "../partials/Modalbox.astro";
+import Modalbox from "@components/partials/Modalbox.astro";
 ---
 
 <button data-open-modal="test1">Modalbox 1</button>
@@ -172,8 +172,8 @@ Just import the accordions components.<br>
 If you want the first accordion of be open, set openFirstAccordionInitially to "true".
 ```
 ---
-import Accordion from '../partials/Accordion.astro';
-import AccordionGroup from '../partials/AccordionGroup.astro';
+import Accordion from '@components/partials/Accordion.astro';
+import AccordionGroup from '@components/partials/AccordionGroup.astro';
 ---
 
 <AccordionGroup openFirstAccordionInitially="true">
@@ -204,7 +204,7 @@ In order to adjust specific slider/swiper settings, just change the sliderSettin
 
 ```
 ---
-import Slider from "../partials/Slider.astro";
+import Slider from "@components/partials/Slider.astro";
 
 const sliderSettings = {
     loop: true,
