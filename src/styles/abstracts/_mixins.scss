@@ -85,7 +85,7 @@
 }
 
 @mixin smooth-fading-effect($transitionStyle: ease-in-out){
-    display: block;
+    display: block!important;
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity $transitionTime $transitionStyle;
