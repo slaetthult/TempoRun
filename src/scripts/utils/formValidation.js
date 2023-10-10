@@ -102,12 +102,10 @@ export const formValidation = {
 
             if($password.value !== $passwordConfirm.value){
 
-                $password.setCustomValidity(formValidation.vars.passwordErrorText);
                 $passwordConfirm.setCustomValidity(formValidation.vars.passwordErrorText);
 
             } else {
 
-                $password.setCustomValidity('');
                 $passwordConfirm.setCustomValidity('');
 
             }
