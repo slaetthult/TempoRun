@@ -60,11 +60,16 @@ if (Astro.request.method === "POST") {
                 <div class="input w12">
                     <label>
                         Password:
-                        <input type="password" value="" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" data-validation-required>
-                        <small>Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters</small>
+                        <input type="password" value="" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,8}$" data-validation-required>
+                        <small>Must contain at least one number and one letter, and at least 8 or more characters</small>
                     </label>
                 </div>
-
+                <div class="input w12">
+                    <label>
+                        Confirm password:
+                        <input type="password" value="" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,8}$" data-validation-required>
+                    </label>
+                </div>
                 <div class="textarea w12">
                     <label>
                         Message:
