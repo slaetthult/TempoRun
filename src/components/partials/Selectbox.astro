@@ -21,7 +21,7 @@ const classNames = `selectbox ${classes}`;
                     <slot />
                 </select>
         }
-        <small class="validation-error-message">Pflichtfeld!</small>
+        <small class="validation-error-message">Required</small>
     </label>
 </div>
 
@@ -43,11 +43,11 @@ const classNames = `selectbox ${classes}`;
 
         init(){
 
-            selectbox.findSelects();
+            selectbox.find();
 
         },
 
-        findSelects(){
+        find(){
 
             const $selects = document.querySelectorAll(selectbox.vars.wrapperQuery);
 
