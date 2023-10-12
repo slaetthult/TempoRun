@@ -1,7 +1,9 @@
 {
-  "name": "TempoRun",
+  "name": "tempo-run-astro",
+  "description": "Starter Kit for Astro",
+  "main": "README.md",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -15,5 +17,21 @@
     "sass": "^1.69.0",
     "swiper": "^10.3.1",
     "tom-select": "^2.2.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/slaetthult/TempoRun.git"
+  },
+  "keywords": [
+    "Astro",
+    "Starter",
+    "Kit",
+    "Template"
+  ],
+  "author": "Marvin Schmidt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/slaetthult/TempoRun/issues"
+  },
+  "homepage": "https://github.com/slaetthult/TempoRun#readme"
 }
