@@ -94,7 +94,7 @@ if (Astro.request.method === "POST") {
 }
 ---
 
-<form method="POST" class="form" data-js="form-validation">
+<form method="POST" id="form-example" class="form" data-js="form-validation">
 
     <Selectbox maxSelectable="2" dataValidationRequired classes="w12">
         <option value="">Select a person...</option>
@@ -167,6 +167,24 @@ if (Astro.request.method === "POST") {
     import { formValidation } from "@utils/formValidation";
 
     formValidation.init();
+    
+    /**
+     The following code is only required, if you want to submit the form via js without page reload. 
+     In this case remove Astro.request.method part inside 
+     --- 
+     
+     ---
+    */
+    
+    const $form = document.querySelector('#form-example');
+
+    const submitHandler = () => {
+
+        alert('Your form submit function via js!');
+
+    }
+
+    formValidation.manualSubmit($form, submitHandler);
 </script>
 ```
 ### Modalboxes

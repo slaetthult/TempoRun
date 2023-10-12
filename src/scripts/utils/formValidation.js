@@ -6,6 +6,9 @@ export const formValidation = {
         passwordQuery:                      '*[type=password]',
 
         validationRequiredAttribute:        'data-validation-required',
+        submitMessageAttribute:             'data-validation-submit-message',
+
+        submitMessageClass:                 'form__submit-message w12',
 
         validationEvents:                   ['keyup', 'change', 'input'],
         submitEvent:                        'submit',
@@ -60,6 +63,10 @@ export const formValidation = {
 
                     event.preventDefault();
 
+                } else {
+
+                    formValidation.showSubmitMessage($form);
+
                 }
 
             });
@@ -111,6 +118,31 @@ export const formValidation = {
             }
 
         }
+
+    },
+
+    showSubmitMessage($form){
+
+        const submitMessage = $form.getAttribute(formValidation.vars.submitMessageAttribute);
+
+        $form.innerHTML = `<p class="${formValidation.vars.submitMessageClass}">${submitMessage}</p>`;
+        $form.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+
+    },
+
+    manualSubmit($form, submitHandler){
+
+        $form.addEventListener(formValidation.vars.submitEvent, (event) => {
+
+            if($form.checkValidity()){
+
+                submitHandler();
+
+            }
+
+            event.preventDefault();
+
+        });
 
     }
 
