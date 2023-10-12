@@ -3,7 +3,7 @@
   "description": "Starter Kit for Astro",
   "main": "README.md",
   "type": "module",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -22,14 +22,6 @@
     "type": "git",
     "url": "https://github.com/slaetthult/TempoRun.git"
   },
-  "files":  [
-    "public",
-    "src",
-    ".gitignore",
-    "astro.config.mjs",
-    "README.md",
-    "tsconfig.json"
-  ],
   "keywords": [
     "Astro",
     "Starter",
