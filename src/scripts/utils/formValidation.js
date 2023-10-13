@@ -136,7 +136,7 @@ export const formValidation = {
 
             if($form.checkValidity()){
 
-                submitHandler();
+                submitHandler(event);
 
             }
 
