@@ -317,6 +317,10 @@ https://tom-select.js.org/
 
 https://developers.google.com/maps/documentation/javascript/overview
 
+### AlpineJs
+
+https://alpinejs.dev/
+
 ## Browser Support
 
 | Browser | Version         |

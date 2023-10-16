@@ -11,16 +11,13 @@ if (Astro.request.method === "POST") {
         }
     }
 }
-const open = false;
 ---
 
-<div class="form-example" x-data=`{open: ${open}}`>
+<div class="form-example">
     <div class="grid-wrap">
         <div class="w12">
 
-            <template x-if="open">
-                <h2>Form example</h2>
-            </template>
+            <h2>Form example</h2>
 
             <form method="POST" id="form-example" class="form" data-js="form-validation" data-validation-submit-message="Form submitted!">
 
