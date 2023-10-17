@@ -27,6 +27,10 @@ export const formValidation = {
 
         const $forms = document.querySelectorAll(formValidation.vars.formQuery);
 
+        if($forms.length === 0){
+            return false;
+        }
+
         for(const $form of $forms){
 
             const $formFields = new Set([
@@ -131,6 +135,10 @@ export const formValidation = {
     },
 
     manualSubmit($form, submitHandler){
+
+        if(!$form){
+            return false;
+        }
 
         $form.addEventListener(formValidation.vars.submitEvent, (event) => {
 

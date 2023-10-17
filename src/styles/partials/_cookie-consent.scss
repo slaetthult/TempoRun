@@ -12,11 +12,8 @@
     border-top: 1px solid $color-bordergrey;
     z-index: $z-index-10;
 
-    &--show & {
+    &--show {
         display: block!important;
-        &__wrapper {
-            background: red;
-        }
     }
 
     &__wrapper {
