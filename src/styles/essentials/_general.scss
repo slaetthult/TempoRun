@@ -104,7 +104,7 @@ button, .button {
     display: inline-block;
     padding: 8px 24px;
     margin: 0;
-    background: $color-grey;
+    background: $color-black;
     color: $color-white;
     font-size: get-rem(20px);
     border: none;
@@ -118,16 +118,10 @@ button, .button {
         opacity: 0.5;
     }
 
-    &--outlined {
-        border: 2px solid $color-black;
-        color: $font-color;
-        background: transparent;
-
-        &:not([disabled]){
-            &:hover, &:active {
-                background: $color-black;
-                color: $color-white;
-            }
+    &:not([disabled]){
+        &:hover, &:active {
+            background: $color-darkgrey;
+            color: $color-white;
         }
     }
 }
