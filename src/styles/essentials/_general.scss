@@ -5,7 +5,7 @@
 /* -------------------------------------------------------- */
 
 body {
-    background: $color-mainbackground;
+    background: var(--color-mainbackground);
     font-size: $font-size-mobile;
 
     /* Hidden Element to transfer Mediaquerys in JS */
@@ -28,7 +28,7 @@ body {
 
 html {
     font-size: $font-size-main;
-    color: $font-color;
+    color: var(--font-color);
     font-family: $font-family;
     line-height: $font-line-height-default-mobile;
     font-weight: $font-weight-normal;
@@ -87,12 +87,12 @@ h6,.h6{
 /* -------------------------------------------------------- */
 
 a, .link {
-    color: $font-link-color;
+    color: var(--font-link-color);
     text-decoration: $font-text-decoration;
     cursor: pointer;
     transition: all $transitionTime ease;
     &:hover, &:active {
-        color: $font-link-color-hover;
+        color: var(--font-link-color-hover);
     }
 }
 
@@ -104,8 +104,8 @@ button, .button {
     display: inline-block;
     padding: 8px 24px;
     margin: 0;
-    background: $color-black;
-    color: $color-white;
+    background: var(--color-black);
+    color: var(--color-white);
     font-size: get-rem(20px);
     border: none;
     cursor: pointer;
@@ -120,8 +120,8 @@ button, .button {
 
     &:not([disabled]){
         &:hover, &:active {
-            background: $color-darkgrey;
-            color: $color-white;
+            background: var(--color-darkgrey);
+            color: var(--color-white);
         }
     }
 }
@@ -135,19 +135,19 @@ input[type="text"], input[type="password"], input[type="number"], input[type="em
     width: 100%;
     padding: 6px 6px;
     margin: 5px 0;
-    background: $color-white;
-    color: $color-black;
-    border: 1px solid $color-bordergrey;
+    background: var(--color-white);
+    color: var(--color-black);
+    border: 1px solid var(--color-bordergrey);
     transition: all $transitionTime ease;
 
     &::placeholder {
-        color: $font-color;
+        color: var(--font-color);
         opacity: 1;
     }
 
     /* Error class for the form validation */
     &.validation-error {
-        border: 1px solid $color-ui-red;
+        border: 1px solid var(--color-ui-red);
         & ~ .validation-error-message {
             display: block;
         }
@@ -155,13 +155,13 @@ input[type="text"], input[type="password"], input[type="number"], input[type="em
 
     /* Success class for the form validation */
     &.validation-success {
-        border: 1px solid $color-ui-green;
+        border: 1px solid var(--color-ui-green);
     }
 
     /* Error message class for the form validation */
     & ~ .validation-error-message {
         display: none;
-        color: $color-ui-red;
+        color: var(--color-ui-red);
     }
 
 }
@@ -221,7 +221,7 @@ hr {
     margin: 5px 0;
     padding: 0;
     border: 0;
-    background: $color-grey;
+    background: var(--color-grey);
 }
 
 ul, ol {
@@ -246,8 +246,8 @@ ul, ol {
 /* -------------------------------------------------------- */
 
 ::selection {
-    background: $color-black;
-    color: $color-white;
+    background: var(--color-black);
+    color: var(--color-white);
     opacity: 1;
 }
 

@@ -10,20 +10,20 @@
 
         input {
             &:invalid {
-                border: 1px solid $color-ui-red;
+                border: 1px solid var(--color-ui-red);
                 & ~ small {
                     display: block;
                 }
             }
             &:not([value=""]){
                 &:valid {
-                    border: 1px solid $color-ui-green;
+                    border: 1px solid var(--color-ui-green);
                 }
             }
         }
         small {
             display: none;
-            color: $color-ui-red;
+            color: var(--color-ui-red);
         }
     }
     .checkbox,
@@ -31,10 +31,10 @@
 
         input {
             &:invalid {
-                border: 1px solid $color-ui-red;
+                border: 1px solid var(--color-ui-red);
 
                 & + span::before {
-                    border: 1px solid $color-ui-red;
+                    border: 1px solid var(--color-ui-red);
                 }
 
                 & ~ small {
@@ -45,36 +45,36 @@
                 &:valid {
 
                     & + span::before {
-                        border: 1px solid $color-ui-green;
+                        border: 1px solid var(--color-ui-green);
                     }
 
-                    border: 1px solid $color-ui-green;
+                    border: 1px solid var(--color-ui-green);
                 }
             }
         }
         small {
             display: none;
-            color: $color-ui-red;
+            color: var(--color-ui-red);
         }
     }
     .textarea {
 
         textarea {
             &:invalid {
-                border: 1px solid $color-ui-red;
+                border: 1px solid var(--color-ui-red);
                 & ~ small {
                     display: block;
                 }
             }
             &:not([data-value=""]){
                 &:valid {
-                    border: 1px solid $color-ui-green;
+                    border: 1px solid var(--color-ui-green);
                 }
             }
         }
         small {
             display: none;
-            color: $color-ui-red;
+            color: var(--color-ui-red);
         }
     }
     .selectbox {
@@ -83,7 +83,7 @@
             &:invalid {
                 & + .ts-wrapper {
                     .ts-control {
-                        border: 1px solid $color-ui-red;
+                        border: 1px solid var(--color-ui-red);
                     }
                 }
                 & ~ small {
@@ -94,7 +94,7 @@
                 &:valid {
                     & + .ts-wrapper {
                         .ts-control {
-                            border: 1px solid $color-ui-green;
+                            border: 1px solid var(--color-ui-green);
                         }
                     }
                 }
@@ -102,7 +102,7 @@
         }
         small {
             display: none;
-            color: $color-ui-red;
+            color: var(--color-ui-red);
         }
     }
 

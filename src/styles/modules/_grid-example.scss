@@ -5,7 +5,7 @@
 
     .grid-wrap {
         div {
-            border: 1px solid $color-bordergrey;
+            border: 1px solid var(--color-bordergrey);
             &:first-child {
                 border: 0;
             }

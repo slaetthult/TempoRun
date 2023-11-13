@@ -25,7 +25,7 @@
             top: 4px;
             height: 20px;
             width: 20px;
-            border: 1px solid $color-grey;
+            border: 1px solid var(--color-grey);
             cursor: pointer;
             border-radius: 3px;
             content: "";
@@ -47,7 +47,7 @@
     }
 
     input:checked + span::after {
-        background: $color-grey;
+        background: var(--color-grey);
     }
 
 }

@@ -50,38 +50,59 @@ $grid-absolute-box-width:     math.div($grid-absolute-site-width,$grid) - $grid-
 /*                 COLORSCHEME, DO IT!                      */
 /* -------------------------------------------------------- */
 
-// GENERAL COLORS
-$color-white:                  #FFF;
-$color-lightgrey:              #e7e7e7;
-$color-bordergrey:             #cecece;
-$color-grey:                   #959697;
-$color-darkgrey:               #6d6d6d;
-$color-black:                  #000000;
+:root {
 
-$color-orange:                 #f7933a;
-$color-green:                  #5da904;
+    --color-white:                  #FFF;
+    --color-lightgrey:              #e7e7e7;
+    --color-bordergrey:             #cecece;
+    --color-grey:                   #959697;
+    --color-darkgrey:               #6d6d6d;
+    --color-black:                  #000000;
 
-$color-ui-green:               #B0C717;
-$color-ui-red:                 #C10D00;
+    --color-orange:                 #f7933a;
+    --color-green:                  #5da904;
 
-// THEME COLORS
-$color-theme-red:              #dc0030;
+    --color-ui-green:               #B0C717;
+    --color-ui-red:                 #C10D00;
 
-// SOCIAL COLORS
-$color-social-facebook:        #3b5999;
-$color-social-twitter:         #55acee;
-$color-social-gplus:           #dc4e41;
-$color-social-pinterest:       #af0921;
-$color-social-instagram:       #c6c6c6;
+    --color-theme-red:              #dc0030;
 
-// SOCIAL COLORS ON HOVER
-$color-social-facebook-hover:  #364d85;
-$color-social-twitter-hover:   #5292be;
-$color-social-gplus-hover:     #bc4537;
+    --color-mainbackground:         #ffffff;
 
-// BACKGROUND COLORS
-$color-mainbackground:         #ffffff;
+    --font-color:                   var(--color-black);
+    --font-link-color:				var(--color-theme-red);
+    --font-link-color-hover:		var(--color-black);
 
+}
+
+@media (prefers-color-scheme: dark) {
+
+    :root {
+
+        --color-white:                  #000000;
+        --color-lightgrey:              #6d6d6d;
+        --color-bordergrey:             #959697;
+        --color-grey:                   #cecece;
+        --color-darkgrey:               #e7e7e7;
+        --color-black:                  #ffffff;
+
+        --color-orange:                 #f7933a;
+        --color-green:                  #5da904;
+
+        --color-ui-green:               #B0C717;
+        --color-ui-red:                 #C10D00;
+
+        --color-theme-red:              #dc0030;
+
+        --color-mainbackground:         red;
+
+        --font-color:                   var(--color-black);
+        --font-link-color:				var(--color-theme-red);
+        --font-link-color-hover:		var(--color-black);
+
+    }
+
+}
 
 /* -------------------------------------------------------- */
 /*               GET FONT AND SET REM FUNCTION              */
@@ -145,13 +166,12 @@ $font-weight-bold:			                700;
 $font-family:			                    'Barlow', Arial, sans-serif;
 $font-family-monospace:		                Consolas, "Lucida Console", Monaco, monospace;
 
-// FONT COLORS
-$font-color:                                $color-black;
-
-// LINK STYLES
-$font-link-color:				            $color-theme-red;
-$font-link-color-hover:		                $color-black;
 $font-text-decoration:		                none;
+
+
+/* -------------------------------------------------------- */
+/*                ANIMATION AND SPACINGS                    */
+/* -------------------------------------------------------- */
 
 $transitionTime:                            0.4s;
 
