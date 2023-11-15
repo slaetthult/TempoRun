@@ -47,7 +47,7 @@ $grid-absolute-box-width:     math.div($grid-absolute-site-width,$grid) - $grid-
 
 
 /* -------------------------------------------------------- */
-/*                 COLORSCHEME, DO IT!                      */
+/*                     COLORSCHEME                          */
 /* -------------------------------------------------------- */
 
 :root {
@@ -94,7 +94,7 @@ $grid-absolute-box-width:     math.div($grid-absolute-site-width,$grid) - $grid-
 
         --color-theme-red:              #dc0030;
 
-        --color-mainbackground:         red;
+        --color-mainbackground:         #000000;
 
         --font-color:                   var(--color-black);
         --font-link-color:				var(--color-theme-red);

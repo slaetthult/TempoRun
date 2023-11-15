@@ -14,7 +14,7 @@
   "dependencies": {
     "@astrojs/alpinejs": "^0.3.1",
     "accordion-js": "^3.3.4",
-    "astro": "^3.5.1",
+    "astro": "^3.5.4",
     "sass": "^1.69.5",
     "swiper": "^11.0.4",
     "tom-select": "^2.3.1"
