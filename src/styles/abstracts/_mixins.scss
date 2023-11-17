@@ -97,3 +97,8 @@
         transition-delay: 0s, 0s;
     }
 }
+
+@mixin height-svh($height){
+    height: #{$height}vh;
+    height: #{$height}svh;
+}
