@@ -1,5 +1,4 @@
-@use '../abstracts/_config' as *;
-
+@use '@styles/utils/_config' as *;
 /* -------------------------------------------------------- */
 /*                PLUG AND PLAY STYLE MIXINS                */
 /* -------------------------------------------------------- */
@@ -84,12 +83,12 @@
 
 }
 
-@mixin smooth-fading-effect($transitionStyle: ease-in-out){
+@mixin smooth-fading-effect($transition-style: ease-in-out){
     display: block!important;
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s, opacity $transitionTime $transitionStyle;
-    transition-delay: $transitionTime, 0s;
+    transition: visibility 0s, opacity $transition-time $transition-style;
+    transition-delay: $transition-time, 0s;
 
     &.show {
         visibility: visible;

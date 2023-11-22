@@ -21,10 +21,10 @@ $viewports: (
 /*              GET THE VIEWPORTS AS STRING                 */
 /* -------------------------------------------------------- */
 
-$viewportsString: "";
+$viewports-string: "";
 
 @each $current-viewport,  $current-viewportwidth in $viewports {
-    $viewportsString: $viewportsString + $current-viewport + ":" + $current-viewportwidth + ",";
+    $viewports-string: $viewports-string + $current-viewport + ":" + $current-viewportwidth + ",";
 }
 
 
@@ -53,8 +53,8 @@ $font-size-main:			    16px;
 
 // GET REM FONTSIZE
 @function get-rem($font-size) {
-    $remSize: math.div($font-size, $font-size-main);
-    @return $remSize * 1rem;
+    $rem-size: math.div($font-size, $font-size-main);
+    @return $rem-size * 1rem;
 }
 
 
@@ -114,7 +114,7 @@ $font-text-decoration:		                none;
 /*                ANIMATION AND SPACINGS                    */
 /* -------------------------------------------------------- */
 
-$transitionTime:                            0.4s;
+$transition-time:                            0.4s;
 
 $text-paragraph-padding:                    5px;
 $list-element-padding:                      5px;
