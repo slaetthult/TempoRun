@@ -1,11 +1,22 @@
 @use '@styles/utils' as *;
 
 .accordion {
+    background: transparent;
 
     &__header {
         font-size: get-rem(20px);
+
         &__trigger {
             font-size: inherit!important;
+            color: inherit!important;
+
+            &:not([disabled]){
+                &:hover,
+                &:active {
+                    background: inherit!important;
+                    color: inherit!important;
+                }
+            }
         }
     }
 
