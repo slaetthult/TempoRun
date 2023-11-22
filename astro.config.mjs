@@ -4,12 +4,5 @@ import partytown from '@astrojs/partytown';
 
 // https://astro.build/config
 export default defineConfig({
-    integrations: [alpine(), partytown()],
-    css: {
-        preprocessorOptions: {
-            scss: {
-                // path to your styles variables
-            }
-        }
-    }
+    integrations: [alpine(), partytown()]
 });
