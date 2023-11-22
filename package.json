@@ -3,7 +3,7 @@
   "description": "Starter Kit for Astro",
   "main": "README.md",
   "type": "module",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -13,10 +13,11 @@
   },
   "dependencies": {
     "@astrojs/alpinejs": "^0.3.1",
+    "@astrojs/partytown": "^2.0.2",
     "accordion-js": "^3.3.4",
-    "astro": "^3.5.5",
+    "astro": "^3.5.7",
     "sass": "^1.69.5",
-    "swiper": "^11.0.4",
+    "swiper": "^11.0.5",
     "tom-select": "^2.3.1"
   },
   "keywords": [
