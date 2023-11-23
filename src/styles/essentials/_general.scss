@@ -5,7 +5,7 @@
 /* -------------------------------------------------------- */
 
 body {
-    background: var(--color-mainbackground);
+    background: var(--color-main-background);
     font-size: $font-size-mobile;
 
     /* Hidden Element to transfer Mediaquerys in JS */
@@ -28,7 +28,7 @@ body {
 
 html {
     font-size: $font-size-main;
-    color: var(--font-color);
+    color: var(--color-font);
     font-family: $font-family;
     line-height: $font-line-height-default-mobile;
     font-weight: $font-weight-normal;
@@ -87,7 +87,7 @@ h6,.h6{
 /* -------------------------------------------------------- */
 
 a, .link {
-    color: var(--font-link-color);
+    color: var(--color-links);
     text-decoration: $font-text-decoration;
     cursor: pointer;
     transition: all $transition-time ease;
@@ -120,7 +120,7 @@ button, .button {
 
     &:not([disabled]){
         &:hover, &:active {
-            background: var(--color-darkgrey);
+            background: var(--color-dark-grey);
             color: var(--color-white);
         }
     }
@@ -137,11 +137,11 @@ input[type="text"], input[type="password"], input[type="number"], input[type="em
     margin: 5px 0;
     background: var(--color-white);
     color: var(--color-black);
-    border: 1px solid var(--color-bordergrey);
+    border: 1px solid var(--color-border-grey);
     transition: all $transition-time ease;
 
     &::placeholder {
-        color: var(--font-color);
+        color: var(--color-font);
         opacity: 1;
     }
 

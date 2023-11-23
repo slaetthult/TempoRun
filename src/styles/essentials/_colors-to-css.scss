@@ -1,0 +1,19 @@
+@use '@styles/utils' as *;
+
+/***
+    TRANSLATE SCSS VARIABLES TO CSS VARIABLES
+ ***/
+
+:root {
+    @each $current-color, $current-color-value in map-get($colors, "light") {
+        --color-#{$current-color}: #{$current-color-value};
+    }
+}
+
+@media (prefers-color-scheme: dark){
+    :root {
+        @each $current-color, $current-color-value in map-get($colors, "dark") {
+            --color-#{$current-color}: #{$current-color-value};
+        }
+    }
+}

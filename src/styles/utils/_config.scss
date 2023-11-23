@@ -57,6 +57,70 @@ $font-size-main:			    16px;
     @return $rem-size * 1rem;
 }
 
+/* -------------------------------------------------------- */
+/*                     COLORSCHEME                          */
+/* -------------------------------------------------------- */
+
+/*
+    THESE SCSS VARIABLES WILL BE EXPORTED TO CSS VARIABLES.
+    USE CSS VARIABLES FOR COLORS IN SCSS FILES.
+*/
+
+$colors: (
+        "light":(
+                "white":              #FFF,
+
+                "light-grey":         #e7e7e7,
+                "border-grey":        #cecece,
+                "grey":               #959697,
+                "dark-grey":          #6d6d6d,
+
+                "black":              #000,
+
+                "orange":             #f7933a,
+                "green":              #5da904,
+
+                "ui-green":           #B0C717,
+                "ui-red":             #C10D00,
+
+                "theme-red":          #dc0030,
+
+                "main-background":    #ffffff,
+
+                "font":               var(--color-black),
+                "links":              var(--color-theme-red),
+                "link-hover":         var(--color-black)
+        ),
+        "dark": (
+                "white":              #000,
+
+                "light-grey":         #6d6d6d,
+                "border-grey":        #959697,
+                "grey":               #cecece,
+                "dark-grey":          #e7e7e7,
+
+                "black":              #fff,
+
+                "orange":             #f7933a,
+                "green":              #5da904,
+
+                "ui-green":           #B0C717,
+                "ui-red":             #C10D00,
+
+                "theme-red":          #dc0030,
+
+                "main-background":    #000,
+
+                "font":               var(--color-black),
+                "links":              var(--color-theme-red),
+                "link-hover":         var(--color-black)
+        )
+);
+
+@function color($mode: "light", $color) {
+    @return map-get(map-get($colors, $mode), $color);
+}
+
 
 /* -------------------------------------------------------- */
 /*                      FONTCONFIGS                         */
