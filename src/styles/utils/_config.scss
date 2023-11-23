@@ -11,9 +11,9 @@
 
 $viewports: (
         w: 0px,
-        sw: 480px,
+        sw: 450px,
         mw: 768px,
-        lw: 1008px
+        lw: 1280px
 );
 
 
@@ -63,7 +63,7 @@ $font-size-main:			    16px;
 
 /*
     THESE SCSS COLOR VARIABLES WILL BE EXPORTED TO CSS VARIABLES.
-    USE CSS VARIABLES FOR COLORS IN SCSS FILES.
+    USE CSS VARIABLES FOR COLORS IN SCSS FILES FOR EXAMPLE var(--color-white);
 */
 
 $colors: (
@@ -87,9 +87,9 @@ $colors: (
 
                 "main-background":    #ffffff,
 
-                "font":               var(--color-black),
-                "links":              var(--color-theme-red),
-                "link-hover":         var(--color-black)
+                "font":               #000,
+                "links":              #dc0030,
+                "link-hover":         #000
         ),
         "dark": (
                 "white":              #000,
@@ -111,9 +111,9 @@ $colors: (
 
                 "main-background":    #000,
 
-                "font":               var(--color-black),
-                "links":              var(--color-theme-red),
-                "link-hover":         var(--color-black)
+                "font":               #fff,
+                "links":              #dc0030,
+                "link-hover":         #fff
         )
 );
 
@@ -178,7 +178,7 @@ $font-text-decoration:		                none;
 /*                ANIMATION AND SPACINGS                    */
 /* -------------------------------------------------------- */
 
-$transition-time:                            0.4s;
+$transition-time:                           0.4s;
 
 $text-paragraph-padding:                    5px;
 $list-element-padding:                      5px;
