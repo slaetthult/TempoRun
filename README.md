@@ -302,15 +302,15 @@ const sliderSettingsJSON = JSON.stringify(sliderSettings);
 ## Used libraries:
 
 ### Swiper
-
+The Most Modern Mobile Touch Slider.<br>
 https://swiperjs.com/swiper-api
 
 ### Accordion
-
+With the module you can create accordion on your website, useful especially for creating FAQ lists. <br>
 https://github.com/michu2k/Accordion
 
 ### Select
-
+Tom Select is a dynamic, framework agnostic, and lightweight (~16kb gzipped) select UI control.<br>
 https://tom-select.js.org/
 
 ### Google Maps
@@ -318,8 +318,12 @@ https://tom-select.js.org/
 https://developers.google.com/maps/documentation/javascript/overview
 
 ### AlpineJs
-
+Alpine is a rugged, minimal tool for composing behavior directly in your markup. <br>
 https://alpinejs.dev/
+
+### Partytown
+If you’re using third-party scripts for things like analytics or ads, Partytown is a great way to make sure that they don’t slow down your site. <br>
+https://docs.astro.build/de/guides/integrations-guide/partytown/
 
 ## Browser Support
 
