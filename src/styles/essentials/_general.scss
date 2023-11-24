@@ -51,6 +51,7 @@ h6,.h6 {
     padding: $headline-padding 0;
     line-height: $headline-line-height-mobile;
     font-weight: $font-weight-bold;
+    text-wrap: balance;
 
     a,
     strong {
@@ -177,6 +178,7 @@ textarea {
 p {
     display: block;
     padding: $text-paragraph-padding 0;
+    text-wrap: pretty;
 }
 
 strong, b {
