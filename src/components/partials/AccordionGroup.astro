@@ -2,10 +2,10 @@
 import 'accordion-js/dist/accordion.min.css';
 import '@styles/partials/_accordion.scss';
 
-const {openFirstAccordionInitially = false} = Astro.props;
+const {accordionSettings = ''} = Astro.props;
 ---
 
-<div class="accordion-group accordion-container w12" data-js="accordion-group" data-open-first-accordion-initially={openFirstAccordionInitially}>
+<div class="accordion-group accordion-container w12" data-js="accordion-group" data-accordion-settings={accordionSettings}>
 
     <slot />
 
@@ -19,13 +19,7 @@ const {openFirstAccordionInitially = false} = Astro.props;
         vars: {
 
             moduleQuery:                                '*[data-js=accordion-group]',
-
-            openFirstAccordionInitiallyAttribute:       'openFirstAccordionInitially',
-
-            options: {
-                duration:                               400,
-                showMultiple:                           false
-            }
+            settingsAttribute:                          'data-accordion-settings'
 
         },
 
@@ -41,10 +35,12 @@ const {openFirstAccordionInitially = false} = Astro.props;
 
             for(const $accordionGroup of $accordionGroups){
 
-                const openFirstAccordionInitiallyAttribute = $accordionGroup.dataset[accordionGroup.vars.openFirstAccordionInitiallyAttribute];
-                const theAccordionGroup = new Accordion($accordionGroup, accordionGroup.vars.options);
+                let accordionOptions = $accordionGroup.getAttribute(accordionGroup.vars.settingsAttribute);
+                accordionOptions = JSON.parse(accordionOptions);
 
-                if(openFirstAccordionInitiallyAttribute){
+                const theAccordionGroup = new Accordion($accordionGroup, accordionOptions);
+
+                if(accordionOptions.openFirstAccordionInitially){
                     theAccordionGroup.open(0);
                 }
 
