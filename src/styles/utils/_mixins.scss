@@ -81,9 +81,10 @@
         -ms-flex-wrap: $wrap;
     }
     flex-wrap: $wrap;
-
 }
 
+
+// ADD SMOOTH FADING EFFECT
 @mixin smooth-fading-effect($transition-style: ease-in-out){
     display: block!important;
     visibility: hidden;
@@ -98,6 +99,7 @@
     }
 }
 
+// ADD SVH AS HEIGHT
 @mixin height-svh($height){
     height: #{$height}vh;
     height: #{$height}svh;

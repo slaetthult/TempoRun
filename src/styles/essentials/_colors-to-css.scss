@@ -1,8 +1,8 @@
 @use '@styles/utils' as *;
 
-/***
-    TRANSLATE SCSS COLOR VARIABLES TO CSS VARIABLES
- ***/
+/* -------------------------------------------------------- */
+/*    TRANSLATE SCSS COLOR VARIABLES TO CSS VARIABLES       */
+/* -------------------------------------------------------- */
 
 :root {
     @each $current-color, $current-color-value in map-get($colors, "light") {

@@ -13,6 +13,13 @@ body {
         display: none;
         content: "" + $viewports-string;
     }
+
+    @include viewport(mw){
+        font-size: $font-size-tablet;
+    }
+    @include viewport(lw){
+        font-size: $font-size-desktop;
+    }
 }
 
 .page-enter-active, .page-leave-active {
@@ -21,6 +28,13 @@ body {
 .page-enter, .page-leave-to {
     opacity: 0;
 }
+
+.site-main {
+    @include viewport(mw) {
+        margin-top: 105px;
+    }
+}
+
 
 /* -------------------------------------------------------- */
 /*                     FONT BASEMENT                        */
@@ -34,9 +48,11 @@ html {
     font-weight: $font-weight-normal;
     letter-spacing: $font-letter-spacing;
 
-    /* Hidden Element for Old Browsers */
-    .oldBrowserWarning {
-        display: none;
+    @include viewport(mw){
+        line-height: $font-line-height-default-tablet;
+    }
+    @include viewport(lw){
+        line-height: $font-line-height-default-desktop;
     }
 
 }
@@ -53,6 +69,13 @@ h6,.h6 {
     font-weight: $font-weight-bold;
     text-wrap: balance;
 
+    @include viewport(mw){
+        line-height: $headline-line-height-tablet;
+    }
+    @include viewport(lw){
+        line-height: $headline-line-height-desktop;
+    }
+
     a,
     strong {
         display: inline;
@@ -66,21 +89,57 @@ h6,.h6 {
 
 h1,.h1{
     font-size: $font-size-h1-mobile;
+    @include viewport(mw){
+        font-size: $font-size-h1-tablet;
+    }
+    @include viewport(lw){
+        font-size: $font-size-h1-desktop;
+    }
 }
 h2,.h2{
     font-size: $font-size-h2-mobile;
+    @include viewport(mw){
+        font-size: $font-size-h2-tablet;
+    }
+    @include viewport(lw){
+        font-size: $font-size-h2-desktop;
+    }
 }
 h3,.h3{
     font-size: $font-size-h3-mobile;
+    @include viewport(mw){
+        font-size: $font-size-h3-tablet;
+    }
+    @include viewport(lw){
+        font-size: $font-size-h3-desktop;
+    }
 }
 h4,.h4{
     font-size: $font-size-h4-mobile;
+    @include viewport(mw){
+        font-size: $font-size-h4-tablet;
+    }
+    @include viewport(lw){
+        font-size: $font-size-h4-desktop;
+    }
 }
 h5,.h5{
     font-size: $font-size-h5-mobile;
+    @include viewport(mw){
+        font-size: $font-size-h5-tablet;
+    }
+    @include viewport(lw){
+        font-size: $font-size-h5-desktop;
+    }
 }
 h6,.h6{
     font-size: $font-size-h6-mobile;
+    @include viewport(mw){
+        font-size: $font-size-h6-tablet;
+    }
+    @include viewport(lw){
+        font-size: $font-size-h5-desktop;
+    }
 }
 
 /* -------------------------------------------------------- */
@@ -94,6 +153,9 @@ a, .link {
     transition: all $transition-time ease;
     &:hover, &:active {
         color: var(--font-link-color-hover);
+    }
+    &[disabled]{
+        pointer-events: none;
     }
 }
 
@@ -117,6 +179,7 @@ button, .button {
 
     &[disabled]{
         opacity: 0.5;
+        pointer-events: none;
     }
 
     &:not([disabled]){
@@ -140,31 +203,12 @@ input[type="text"], input[type="password"], input[type="number"], input[type="em
     color: var(--color-black);
     border: 1px solid var(--color-border-grey);
     transition: all $transition-time ease;
+    font-size: get-rem(16px);
 
     &::placeholder {
         color: var(--color-font);
         opacity: 1;
     }
-
-    /* Error class for the form validation */
-    &.validation-error {
-        border: 1px solid var(--color-ui-red);
-        & ~ .validation-error-message {
-            display: block;
-        }
-    }
-
-    /* Success class for the form validation */
-    &.validation-success {
-        border: 1px solid var(--color-ui-green);
-    }
-
-    /* Error message class for the form validation */
-    & ~ .validation-error-message {
-        display: none;
-        color: var(--color-ui-red);
-    }
-
 }
 
 textarea {
@@ -186,13 +230,13 @@ strong, b {
 }
 
 sup {
-    font-size: .875rem;
+    font-size: .875em;
     vertical-align: super;
-    line-height: .875rem;
+    line-height: .875em;
 }
 
 small {
-    font-size: .875rem;
+    font-size: .875em;
 }
 
 strike, del {
@@ -224,6 +268,7 @@ hr {
     padding: 0;
     border: 0;
     background: var(--color-grey);
+    overflow: visible;
 }
 
 ul, ol {
@@ -251,96 +296,4 @@ ul, ol {
     background: var(--color-black);
     color: var(--color-white);
     opacity: 1;
-}
-
-/* -------------------------------------------------------- */
-/*                BASE MEDIAQUERYS MEDIUM                   */
-/* -------------------------------------------------------- */
-
-@include viewport(mw){
-    html {
-        line-height: $font-line-height-default-tablet;
-
-        body {
-            font-size: $font-size-tablet;
-        }
-
-    }
-
-    .site-main {
-        margin-top: 105px;
-    }
-
-    h1,.h1,
-    h2,.h2,
-    h3,.h3,
-    h4,.h4,
-    h5,.h5,
-    h6,.h6 {
-        line-height: $headline-line-height-tablet;
-    }
-
-    h1,.h1{
-        font-size: $font-size-h1-tablet;
-    }
-    h2,.h2{
-        font-size: $font-size-h2-tablet;
-    }
-    h3,.h3{
-        font-size: $font-size-h3-tablet;
-    }
-    h4,.h4{
-        font-size: $font-size-h4-tablet;
-    }
-    h5,.h5{
-        font-size: $font-size-h5-tablet;
-    }
-    h6,.h6{
-        font-size: $font-size-h6-tablet;
-    }
-
-}
-
-/* -------------------------------------------------------- */
-/*                BASE MEDIAQUERYS LARGE                    */
-/* -------------------------------------------------------- */
-
-@include viewport(lw){
-    html {
-        line-height: $font-line-height-default-desktop;
-
-        body {
-            font-size: $font-size-desktop;
-        }
-
-    }
-
-    h1,.h1,
-    h2,.h2,
-    h3,.h3,
-    h4,.h4,
-    h5,.h5,
-    h6,.h6 {
-        line-height: $headline-line-height-desktop;
-    }
-
-    h1,.h1{
-        font-size: $font-size-h1-desktop;
-    }
-    h2,.h2{
-        font-size: $font-size-h2-desktop;
-    }
-    h3,.h3{
-        font-size: $font-size-h3-desktop;
-    }
-    h4,.h4{
-        font-size: $font-size-h4-desktop;
-    }
-    h5,.h5{
-        font-size: $font-size-h5-desktop;
-    }
-    h6,.h6{
-        font-size: $font-size-h6-desktop;
-    }
-
 }

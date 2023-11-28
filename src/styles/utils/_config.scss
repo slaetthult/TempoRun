@@ -1,9 +1,9 @@
+@use "sass:list";
+@use "sass:math";
+
 /* -------------------------------------------------------- */
 /*        CONFIG DATA . FONTS, GENERALS and VARIABLES       */
 /* -------------------------------------------------------- */
-
-@use "sass:list";
-@use "sass:math";
 
 /* -------------------------------------------------------- */
 /*                   SET UP VIEWPORTS                       */
@@ -38,7 +38,7 @@ $grid-wrapper-outer-padding:    10px;
 $grid-absolute-site-width:	    1008px;
 
 $grid-margin:			        percentage(math.div($grid-absolute-box-margin,$grid-absolute-site-width));
-$grid-absolute-box-width:     math.div($grid-absolute-site-width,$grid) - $grid-absolute-box-margin - $grid-absolute-box-margin;
+$grid-absolute-box-width:       math.div($grid-absolute-site-width,$grid) - $grid-absolute-box-margin - $grid-absolute-box-margin;
 
 @function grid-size($size) {
     $qoutient: $size * 2 - 2;

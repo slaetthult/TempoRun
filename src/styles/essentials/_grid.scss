@@ -23,9 +23,9 @@
     }
 }
 
-@each $current-viewport,  $current-viewportwidth in $viewports {
+@each $current-viewport,  $current-viewport-width in $viewports {
 
-    @if $current-viewportwidth == 0px {
+    @if $current-viewport-width == 0px {
         @for $i from 1 through $grid {
             .#{$current-viewport}#{$i} {
                 width: grid-size($i);
@@ -61,7 +61,7 @@
 
     } @else {
 
-        @media screen and (min-width: $current-viewportwidth) {
+        @media screen and (min-width: $current-viewport-width) {
 
             @for $i from 1 through $grid {
                 .#{$current-viewport}#{$i} {
@@ -82,7 +82,6 @@
 
             .#{$current-viewport}-full {
                 width: 100%;
-
             }
 
             .#{$current-viewport}-left-0 {
