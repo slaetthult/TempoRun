@@ -16,12 +16,12 @@ const classNames = `selectbox ${classes}`;
                 <select data-validation-required autocomplete="off">
                     <slot />
                 </select>
+                <small class="validation-error-message">Required</small>
         :
                 <select autocomplete="off">
                     <slot />
                 </select>
         }
-        <small class="validation-error-message">Required</small>
     </label>
 </div>
 
