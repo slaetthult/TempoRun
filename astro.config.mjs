@@ -4,5 +4,11 @@ import partytown from '@astrojs/partytown';
 
 // https://astro.build/config
 export default defineConfig({
-    integrations: [alpine(), partytown()]
+    integrations: [alpine(), partytown()],
+    prefetch: {
+        prefetchAll: true
+    },
+    experimental: {
+        contentCollectionCache: true
+    }
 });
