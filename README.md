@@ -1,4 +1,4 @@
-# Astro Starter Kit: TempoRun
+# Astro 4 Starter Kit: TempoRun
 
 ## 🚀 Project Structure
 
