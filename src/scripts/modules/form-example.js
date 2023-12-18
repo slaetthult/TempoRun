@@ -1,4 +1,4 @@
-import { formValidation } from "@scripts/utils/formValidation";
+import { formValidation } from "@scripts/utils/form-validation.js";
 
 export const formExample = {
     init(){
