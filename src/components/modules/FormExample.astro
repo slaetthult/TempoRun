@@ -93,20 +93,7 @@ if (Astro.request.method === "POST") {
 </div>
 
 <script>
-    import { formValidation } from "@utils/formValidation";
+    import {formExample} from "@scripts/modules/formExample";
 
-    formValidation.init();
-
-    /**
-     The following code is only required, if you want to submit the form via js without page reload
-     */
-    const $form = document.querySelector('#form-example');
-
-    const submitHandler = (event) => {
-
-        alert('Your form submit function via js!');
-
-    }
-
-    formValidation.manualSubmit($form, submitHandler);
+    formExample.init();
 </script>
