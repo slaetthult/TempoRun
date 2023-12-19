@@ -8,12 +8,6 @@ body {
     background: var(--color-main-background);
     font-size: $font-size-mobile;
 
-    /* Hidden Element to transfer Mediaquerys in JS */
-    &::before {
-        display: none;
-        content: "" + $viewports-string;
-    }
-
     @include viewport(mw){
         font-size: $font-size-tablet;
     }

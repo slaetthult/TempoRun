@@ -8,6 +8,7 @@
     @each $current-color, $current-color-value in map-get($colors, "light") {
         --color-#{$current-color}: #{$current-color-value};
     }
+    --viewports: #{$viewports-string};
 }
 
 @media (prefers-color-scheme: dark){
