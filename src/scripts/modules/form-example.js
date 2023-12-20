@@ -5,11 +5,17 @@ export const formExample = {
         formQuery:          '#form-example'
     },
     init(){
+
         formValidation.init();
 
         /**
          The following code is only required, if you want to submit the form via js without html-form-element and page reload
          */
+        formExample.formSubmit();
+
+    },
+    formSubmit(){
+
         const $form = document.querySelector(formExample.vars.formQuery);
 
         const submitHandler = (event) => {
@@ -19,5 +25,6 @@ export const formExample = {
         }
 
         formValidation.manualSubmit($form, submitHandler);
+
     }
 }
