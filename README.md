@@ -1,6 +1,6 @@
 # Astro Starter Kit: TempoRun
 
-# ! Depricated Use Astro 4 branch !
+# ! Depricated: Use Astro 4 branch !
 
 ## 🚀 Project Structure
 
