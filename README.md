@@ -1,5 +1,7 @@
 # Astro Starter Kit: TempoRun
 
+# ! Depricated Use Astro 4 branch !
+
 ## 🚀 Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
