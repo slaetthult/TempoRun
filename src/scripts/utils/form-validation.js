@@ -138,7 +138,7 @@ export const formValidation = {
 
     },
 
-    manualSubmit($form, submitHandler){
+    manualSubmit($form = null, submitHandler){
 
         if(!$form){
             return false;

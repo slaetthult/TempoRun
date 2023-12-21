@@ -1,6 +1,5 @@
 import Swiper from 'swiper';
 import { Navigation, Pagination, Autoplay, Scrollbar } from 'swiper/modules';
-import { isInViewport } from '@scripts/utils/is-in-viewport.js';
 
 export const slider = {
 
@@ -41,16 +40,8 @@ export const slider = {
 
         for(const $slider of $sliders){
 
-            slider.checkIfInViewport($slider);
-
-        }
-
-    },
-
-    checkIfInViewport($slider){
-
-        if(isInViewport($slider)){
             slider.bind($slider);
+
         }
 
     },
