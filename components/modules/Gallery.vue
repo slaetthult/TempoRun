@@ -1,15 +1,15 @@
 <script setup>
 // Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from "swiper/vue";
+import {Swiper, SwiperSlide} from 'swiper/vue';
 
 // Import Swiper styles
-import "swiper/css";
-
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 // import required modules
-import { Navigation, Pagination } from "swiper";
+import { Navigation, Pagination, Autoplay, Scrollbar } from 'swiper/modules';
 
 const modules = [Navigation, Pagination];
 </script>
@@ -26,7 +26,7 @@ const modules = [Navigation, Pagination];
 							:space-between="0"
 							:modules="modules"
 							:navigation="true"
-							:threshold="5"
+                            :loop="true"
 							:pagination="{clickable:true}"
 							:breakpoints="{
 						  '768': {
@@ -49,7 +49,7 @@ const modules = [Navigation, Pagination];
 										<img src="https://via.placeholder.com/480x144" alt="alt" loading="lazy">
 									</picture>
 								</figure>
-								<h3>Headline</h3>
+								<h3>Headline 1</h3>
 								<p>
 									Text
 								</p>
@@ -61,7 +61,7 @@ const modules = [Navigation, Pagination];
 								<figure>
 									<NuxtPicture src="https://via.placeholder.com/482x144" sizes="sw:10px mw:100 lw:650px" loading="lazy" />
 								</figure>
-								<h3>Headline Ä</h3>
+								<h3>Headline 2</h3>
 								<p>
 									Text
 								</p>
@@ -73,7 +73,7 @@ const modules = [Navigation, Pagination];
 								<figure>
 									<NuxtPicture src="https://via.placeholder.com/482x144" sizes="sw:10px mw:100 lw:650px" loading="lazy" />
 								</figure>
-								<h3>Headline</h3>
+								<h3>Headline 3</h3>
 								<p>
 									Text
 								</p>
@@ -85,7 +85,7 @@ const modules = [Navigation, Pagination];
 								<figure>
 									<NuxtPicture src="https://via.placeholder.com/482x144" sizes="sw:10px mw:100 lw:650px" loading="lazy" />
 								</figure>
-								<h3>Headline</h3>
+								<h3>Headline 4</h3>
 								<p>
 									Text
 								</p>
