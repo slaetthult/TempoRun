@@ -242,6 +242,29 @@ import AccordionGroup from '@components/partials/AccordionGroup.astro';
 
 ```
 
+### Optimized Images
+
+Just use the Image Component "theImage" for improved images.<br>
+If you don't need lazy loading, omit the attribute.
+In "sizes" define all viewports (min-width) and its image sizes. <b>Important: Start with the tallest!</b><br>
+Retina (2x,3x) sizes will be automatically created.<br>
+For more info: https://docs.astro.build/en/guides/images/#picture-
+```
+---
+import TheImage from "@components/partials/TheImage.astro";
+---
+
+<TheImage
+    src="https://placehold.co/978x489"
+    width="978"
+    height="489"
+    sizes={'viewport:768, size:976 | viewport:450, size:738 | viewport:320, size:424'}
+    loading="lazy"
+    alt="A description of my image."
+/>
+                    
+```
+
 ### Slider/Swiper
 
 Just import the Slider component. <br>
