@@ -10,5 +10,8 @@ export default defineConfig({
     },
     experimental: {
         contentCollectionCache: true
+    },
+    image: {
+        remotePatterns: [{ protocol: "https" }],
     }
 });

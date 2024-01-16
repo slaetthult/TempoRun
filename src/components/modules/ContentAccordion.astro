@@ -2,6 +2,7 @@
 import '@styles/modules/_content-accordion.scss';
 import Accordion from '@components/partials/Accordion.astro';
 import AccordionGroup from '@components/partials/AccordionGroup.astro';
+import TheImage from "@components/partials/TheImage.astro";
 
 const accordionSettings = {
     duration:                               400,
@@ -21,11 +22,14 @@ const accordionSettingsJSON = JSON.stringify(accordionSettings);
                 </p>
                 <a href="/subpage">To subpage</a>
                 <figure>
-                    <picture>
-                        <source media="(min-width: 450px)" srcset="https://placehold.co/978x489">
-                        <source srcset="https://placehold.co/450x289">
-                        <img src="https://placehold.co/978x489" alt="alt" loading="lazy">
-                    </picture>
+                    <TheImage
+                        src="https://placehold.co/978x489"
+                        width="978"
+                        height="489"
+                        sizes={'viewport:768, size:1280 | viewport:450, size:738 | viewport:320, size:424'}
+                        loading="lazy"
+                        alt="A description of my image."
+                    />
                 </figure>
             </Accordion>
             <Accordion title="2. Title">

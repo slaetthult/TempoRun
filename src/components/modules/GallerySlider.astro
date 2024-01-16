@@ -2,6 +2,7 @@
 import '@styles/modules/_gallery-slider.scss';
 import Modalbox from "@components/partials/Modalbox.astro";
 import Slider from "@components/partials/Slider.astro";
+import TheImage from "@components/partials/TheImage.astro";
 
 const sliderSettings = {
     loop: true,
@@ -27,47 +28,62 @@ const sliderSettingsJSON = JSON.stringify(sliderSettings);
             <Slider sliderSettings={sliderSettingsJSON}>
                 <div class="swiper-slide">
                     <figure>
-                        <picture>
-                            <source media="(min-width: 450px)" srcset="https://placehold.co/978x489">
-                            <source srcset="https://placehold.co/450x289">
-                            <img src="https://placehold.co/978x489" alt="alt" loading="lazy">
-                        </picture>
+                        <TheImage
+                                src="https://placehold.co/1000x489"
+                                width="978"
+                                height="489"
+                                sizes={'viewport:450, size:489 | viewport:320, size:450'}
+                                loading="lazy"
+                                alt="A description of my image."
+                        />
                     </figure>
                 </div>
                 <div class="swiper-slide">
                     <figure>
-                        <picture>
-                            <source media="(min-width: 450px)" srcset="https://placehold.co/978x489">
-                            <source srcset="https://placehold.co/450x289">
-                            <img src="https://placehold.co/978x489" alt="alt" loading="lazy">
-                        </picture>
+                        <TheImage
+                                src="https://placehold.co/1000x489"
+                                width="978"
+                                height="489"
+                                sizes={'viewport:450, size:489 | viewport:320, size:450'}
+                                loading="lazy"
+                                alt="A description of my image."
+                        />
                     </figure>
                 </div>
                 <div class="swiper-slide">
                     <figure>
-                        <picture>
-                            <source media="(min-width: 450px)" srcset="https://placehold.co/978x489">
-                            <source srcset="https://placehold.co/450x289">
-                            <img src="https://placehold.co/978x489" alt="alt" loading="lazy">
-                        </picture>
+                        <TheImage
+                                src="https://placehold.co/1000x489"
+                                width="978"
+                                height="489"
+                                sizes={'viewport:450, size:489 | viewport:320, size:450'}
+                                loading="lazy"
+                                alt="A description of my image."
+                        />
                     </figure>
                 </div>
                 <div class="swiper-slide">
                     <figure>
-                        <picture>
-                            <source media="(min-width: 450px)" srcset="https://placehold.co/978x489">
-                            <source srcset="https://placehold.co/450x289">
-                            <img src="https://placehold.co/978x489" alt="alt" loading="lazy">
-                        </picture>
+                        <TheImage
+                                src="https://placehold.co/1000x489"
+                                width="978"
+                                height="489"
+                                sizes={'viewport:450, size:489 | viewport:320, size:450'}
+                                loading="lazy"
+                                alt="A description of my image."
+                        />
                     </figure>
                 </div>
                 <div class="swiper-slide">
                     <figure>
-                        <picture>
-                            <source media="(min-width: 450px)" srcset="https://placehold.co/978x489">
-                            <source srcset="https://placehold.co/450x289">
-                            <img src="https://placehold.co/978x489" alt="alt" loading="lazy">
-                        </picture>
+                        <TheImage
+                                src="https://placehold.co/1000x489"
+                                width="978"
+                                height="489"
+                                sizes={'viewport:450, size:489 | viewport:320, size:450'}
+                                loading="lazy"
+                                alt="A description of my image."
+                        />
                     </figure>
                 </div>
             </Slider>
