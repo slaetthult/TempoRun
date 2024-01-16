@@ -3,7 +3,7 @@ import {Picture} from 'astro:assets';
 
 const { src = '', width = null, height = null, sizes = '', alt = '', loading = 'eager' } = Astro.props;
 
-const sizesArray = sizes.replaceAll(' ', '').split('|').map(entry => {
+const sizesArray = sizes.replaceAll(' ', '').trim().split('|').map(entry => {
     const obj = entry.split(',').reduce((acc, pair) => {
         const [key, value] = pair.split(':');
         acc[key] = value;

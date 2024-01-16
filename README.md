@@ -258,7 +258,11 @@ import TheImage from "@components/partials/TheImage.astro";
     src="https://placehold.co/978x489"
     width="978"
     height="489"
-    sizes={'viewport:768, size:976 | viewport:450, size:738 | viewport:320, size:424'}
+    sizes={`
+    viewport:768, size:976 | 
+    viewport:450, size:738 | 
+    viewport:320, size:424
+    `}
     loading="lazy"
     alt="A description of my image."
 />
