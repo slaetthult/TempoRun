@@ -1,5 +1,6 @@
 ---
 import {Image} from "astro:assets";
+import { Picture } from 'astro:assets';
 
 const { src = '', width = null, height = null, sizes = '', alt = '', loading = 'eager' } = Astro.props;
 
@@ -27,8 +28,7 @@ for (const size of sizesArray){
 
 theSizes = theSizes.slice(0, -1);
 ---
-
-<Image
+<Picture
         src={src}
         width={width}
         height={height}
@@ -36,4 +36,5 @@ theSizes = theSizes.slice(0, -1);
         sizes={theSizes}
         alt={alt}
         loading={loading}
+        formats={['avif', 'webp']}
 />
