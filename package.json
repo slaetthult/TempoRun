@@ -20,6 +20,10 @@
     "swiper": "^11.0.5",
     "tom-select": "^2.3.1"
   },
+  "devDependencies": {
+    "astro-robots-txt": "^1.0.0",
+    "@astrojs/sitemap": "^3.0.5"
+  },
   "keywords": [
     "Astro",
     "Starter",
