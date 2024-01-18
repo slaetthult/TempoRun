@@ -362,6 +362,14 @@ https://alpinejs.dev/
 If you’re using third-party scripts for things like analytics or ads, Partytown is a great way to make sure that they don’t slow down your site. <br>
 https://docs.astro.build/de/guides/integrations-guide/partytown/
 
+### Sitemap
+
+https://docs.astro.build/en/guides/integrations-guide/sitemap/
+
+### Robots
+
+https://github.com/alextim/astro-lib/tree/main/packages/astro-robots-txt#readme
+
 ## Browser Support
 
 | Browser | Version         |
