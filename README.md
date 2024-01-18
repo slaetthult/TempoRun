@@ -48,6 +48,7 @@ All commands are run from the root of the project, from a terminal:
 
 ### Demo:
 https://tempo-run-astro4.netlify.app/
+
 ### Grid (Flexbox)
 
 The grid class contains the shortname of the viewport (defined in config.scss) and the amount of grids:
