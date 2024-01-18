@@ -214,14 +214,21 @@ import Modalbox from "@components/partials/Modalbox.astro";
 ### Accordions
 
 Just import the accordions components.<br>
-If you want the first accordion of be open, set openFirstAccordionInitially to "true".
 ```
 ---
 import Accordion from '@components/partials/Accordion.astro';
 import AccordionGroup from '@components/partials/AccordionGroup.astro';
+
+const accordionSettings = {
+    duration:                               400,
+    showMultiple:                           false,
+    openOnInit:                             [0]
+}
+
+const accordionSettingsJSON = JSON.stringify(accordionSettings);
 ---
 
-<AccordionGroup openFirstAccordionInitially="true">
+<AccordionGroup accordionSettings={accordionSettingsJSON}>
     <Accordion title="1. Title">
         <p>
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
@@ -247,8 +254,7 @@ import AccordionGroup from '@components/partials/AccordionGroup.astro';
 Just use the Image Component "theImage" for improved images.<br>
 If you don't need lazy loading, omit the attribute.
 In "sizes" define all viewports (min-width) and its image sizes. <b>Important: Start with the tallest!</b><br>
-Retina (2x,3x) sizes will be automatically created.<br>
-For more info: https://docs.astro.build/en/guides/images/#picture-
+Retina (2x,3x) sizes will be automatically created.
 ```
 ---
 import TheImage from "@components/partials/TheImage.astro";
@@ -342,6 +348,10 @@ https://tom-select.js.org/
 ### Google Maps
 
 https://developers.google.com/maps/documentation/javascript/overview
+
+### Astro Image/Picture
+
+https://docs.astro.build/en/guides/images/#picture-
 
 ### AlpineJs
 Alpine is a rugged, minimal tool for composing behavior directly in your markup. <br>
