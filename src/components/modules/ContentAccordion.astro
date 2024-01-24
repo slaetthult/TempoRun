@@ -16,32 +16,34 @@ const accordionSettingsJSON = encodeURIComponent(JSON.stringify(accordionSetting
 
 <div class="content-accordion">
     <div class="grid-wrap">
-        <AccordionGroup accordionSettings={accordionSettingsJSON}>
-            <Accordion title="1. Title">
-                <p>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                </p>
-                <a href="/subpage">To subpage</a>
-                <figure>
-                    <TheImage
-                        src="https://placehold.co/978x489"
-                        width="978"
-                        height="489"
-                        sizes={`
+        <div class="w12">
+            <AccordionGroup accordionSettings={accordionSettingsJSON}>
+                <Accordion title="1. Title">
+                    <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                    </p>
+                    <a href="/subpage">To subpage</a>
+                    <figure>
+                        <TheImage
+                                src="https://placehold.co/978x489"
+                                width="978"
+                                height="489"
+                                sizes={`
                         viewport:768, size:976 | 
                         viewport:450, size:738 | 
                         viewport:320, size:424
                         `}
-                        loading="lazy"
-                        alt="A description of my image."
-                    />
-                </figure>
-            </Accordion>
-            <Accordion title="2. Title">
-                <p>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                </p>
-            </Accordion>
-        </AccordionGroup>
+                                loading="lazy"
+                                alt="A description of my image."
+                        />
+                    </figure>
+                </Accordion>
+                <Accordion title="2. Title">
+                    <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                    </p>
+                </Accordion>
+            </AccordionGroup>
+        </div>
     </div>
 </div>
