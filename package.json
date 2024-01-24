@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "@astrojs/alpinejs": "^0.3.2",
-    "@astrojs/node": "^8.0.0",
     "@astrojs/partytown": "^2.0.4",
     "accordion-js": "^3.3.4",
     "astro": "^4.2.4",
