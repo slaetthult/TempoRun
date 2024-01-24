@@ -35,7 +35,7 @@ export const accordionGroup = {
         for(const $accordionGroup of $accordionGroups){
 
             let accordionOptions = $accordionGroup.getAttribute(accordionGroup.vars.settingsAttribute);
-            accordionOptions = JSON.parse(accordionOptions);
+            accordionOptions = JSON.parse(decodeURIComponent(accordionOptions));
 
             if(!accordionOptions.disableAdditionalGeneralOptions){
                 accordionOptions = {...accordionOptions, ...accordionGroup.vars.additionalGeneralOptions}

@@ -227,7 +227,7 @@ const accordionSettings = {
     disableAdditionalGeneralOptions:        false
 }
 
-const accordionSettingsJSON = JSON.stringify(accordionSettings);
+const accordionSettingsJSON = encodeURIComponent(JSON.stringify(accordionSettings));
 ---
 
 <AccordionGroup accordionSettings={accordionSettingsJSON}>
