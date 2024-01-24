@@ -223,7 +223,8 @@ import AccordionGroup from '@components/partials/AccordionGroup.astro';
 const accordionSettings = {
     duration:                               400,
     showMultiple:                           false,
-    openOnInit:                             [0]
+    openOnInit:                             [0],
+    disableAdditionalGeneralOptions:        false
 }
 
 const accordionSettingsJSON = JSON.stringify(accordionSettings);
