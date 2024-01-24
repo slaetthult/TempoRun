@@ -15,7 +15,7 @@
     "@astrojs/alpinejs": "^0.3.2",
     "@astrojs/partytown": "^2.0.4",
     "accordion-js": "^3.3.4",
-    "astro": "^4.2.0",
+    "astro": "^4.2.4",
     "sass": "^1.70.0",
     "swiper": "^11.0.5",
     "tom-select": "^2.3.1"
