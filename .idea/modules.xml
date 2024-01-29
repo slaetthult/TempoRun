@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Nuxt-Run.iml" filepath="$PROJECT_DIR$/.idea/Nuxt-Run.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/TempoRun.iml" filepath="$PROJECT_DIR$/.idea/TempoRun.iml" />
     </modules>
   </component>
 </project>
