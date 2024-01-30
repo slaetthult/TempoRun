@@ -104,3 +104,11 @@
     height: #{$height}vh;
     height: #{$height}svh;
 }
+
+// DEFINE MAX LINES OF TEXT
+@mixin max-lines($lines: 1){
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
