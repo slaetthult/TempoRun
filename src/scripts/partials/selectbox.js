@@ -3,10 +3,11 @@ import TomSelect from "tom-select";
 export const selectbox = {
 
     vars: {
-        wrapperQuery:           '*[data-js=selectbox]',
-        selectQuery:            'select',
+        wrapperQuery:                   '*[data-js=selectbox]',
+        selectQuery:                    'select',
 
-        maxSelectableAttribute: 'data-select-max-selectable',
+        maxSelectableAttribute:         'data-select-max-selectable',
+        redirectToValueAttribute:       'data-redirect-to-value',
 
         config: {
             maxItems: 1
@@ -26,16 +27,34 @@ export const selectbox = {
         for(const $select of $selects){
 
             selectbox.vars.config.maxItems = parseInt($select.getAttribute(selectbox.vars.maxSelectableAttribute));
+            const redirectToValue = $select.getAttribute(selectbox.vars.redirectToValueAttribute);
 
-            selectbox.bind($select.querySelector(selectbox.vars.selectQuery));
+            selectbox.bind($select.querySelector(selectbox.vars.selectQuery), redirectToValue);
 
         }
 
     },
 
-    bind($select){
+    bind($select, redirectToValue){
 
-        new TomSelect($select, selectbox.vars.config);
+        const $tomSelect = new TomSelect($select, selectbox.vars.config);
 
+        if(redirectToValue){
+            selectbox.addEvents.redirectToValue($tomSelect);
+        }
+
+    },
+
+    addEvents: {
+
+        redirectToValue($tomSelect){
+
+            $tomSelect.on('change', (value) => {
+
+                window.location.href = value;
+
+            });
+
+        }
     }
 }

@@ -76,7 +76,7 @@ Please note: <br>
 Inputs need the empty <b>value</b>-attribute.
 Inputs type checkbox and radiobox and textareas need the emtpy <b>data-value</b>-attribute.<br>
 Otherwise the form validation won't work properly.<br>
-Set <b>data-validation-required</b> on form fields if they are required.
+Set <b>data-validation-required</b> on form fields if they are required.<br>
 If you just need optional validation, just leave it away.
 
 ```
@@ -96,7 +96,7 @@ if (Astro.request.method === "POST") {
 
 <form method="POST" id="form-example" class="form" data-js="form-validation">
 
-    <Selectbox maxSelectable="2" dataValidationRequired classes="w12">
+    <Selectbox maxSelectable="2" dataValidationRequired redirectToValue="false" classes="w12">
         <option value="">Select a person...</option>
         <option value="4">Thomas Edison</option>
         <option value="1">Nikola</option>

@@ -3,7 +3,7 @@
   "description": "Starter Kit for Astro!",
   "main": "README.md",
   "type": "module",
-  "version": "1.0.6",
+  "version": "1.6.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
