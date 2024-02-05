@@ -142,7 +142,7 @@ h6,.h6{
 
 a, .link {
     color: var(--color-links);
-    text-decoration: $font-text-decoration;
+    text-decoration: $link-text-decoration;
     cursor: pointer;
     transition: all $transition-time ease;
     &:hover, &:active {
