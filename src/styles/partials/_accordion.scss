@@ -2,22 +2,66 @@
 
 .accordion {
     background: transparent;
+    border: 1px solid var(--color-border-grey);
+
+    &.js-enabled {
+        .accordion__content {
+            visibility: hidden;
+        }
+    }
+
+    &.is-active {
+        .accordion__header {
+            .accordion__header__trigger {
+                &::after {
+                    content: "–";
+                }
+            }
+        }
+        .accordion__content {
+            visibility: visible;
+        }
+    }
 
     &__header {
         font-size: get-rem(20px);
 
         &__trigger {
-            font-size: inherit!important;
-            color: inherit!important;
+            display: block;
+            position: relative;
+            width: 100%;
+            padding: 8px 32px 8px 8px;
+            text-decoration: none;
+            text-align: left;
+            transition: color 0.25s ease;
+            background: transparent;
+            color: var(--color-font);
+
+            &::after {
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                left: auto;
+                transform: translate(0, -50%);
+                width: 15px;
+                text-align: center;
+                content: "+";
+            }
 
             &:not([disabled]){
                 &:hover,
                 &:active {
-                    background: inherit!important;
-                    color: inherit!important;
+                    background: inherit;
+                    color: inherit;
                 }
             }
         }
+    }
+
+    &__content {
+        overflow: hidden;
+        transition-property: height, visibility;
+        transition-timing-function: ease;
     }
 
 }
