@@ -33,7 +33,7 @@
             padding: 8px 32px 8px 8px;
             text-decoration: none;
             text-align: left;
-            transition: color 0.25s ease;
+            transition: color $transition-time ease;
             background: transparent;
             color: var(--color-font);
 
