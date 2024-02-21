@@ -1,12 +1,12 @@
-import algoliasearch from 'algoliasearch/lite.js';
-import instantsearch from 'instantsearch.js';
-import { configure, infiniteHits, searchBox, hits, pagination, refinementList, menu, hierarchicalMenu, currentRefinements, clearRefinements, geoSearch } from 'instantsearch.js/es/widgets';
-import { history } from 'instantsearch.js/es/lib/routers';
-import { simple } from 'instantsearch.js/es/lib/stateMappings';
-import { algoliaConfig } from 'algolia-config.js';
-import { setSiteSearch, getSiteSearch } from 'store.js';
-import { createInfiniteHitsSessionStorageCache } from 'instantsearch.js/es/lib/infiniteHitsCache';
-import { Loader } from "@googlemaps/js-api-loader";
+import algoliasearch from '/node_modules/algoliasearch/lite.js';
+import instantsearch from '/node_modules/instantsearch.js';
+import { configure, infiniteHits, searchBox, hits, pagination, refinementList, menu, hierarchicalMenu, currentRefinements, clearRefinements, geoSearch } from '/node_modules/instantsearch.js/es/widgets';
+import { history } from '/node_modules/instantsearch.js/es/lib/routers';
+import { simple } from '/node_modules/instantsearch.js/es/lib/stateMappings';
+import { algoliaConfig } from '/algolia-config.js';
+import { setSiteSearch, getSiteSearch } from '/store.js';
+import { createInfiniteHitsSessionStorageCache } from '/node_modules/instantsearch.js/es/lib/infiniteHitsCache';
+import { Loader } from "/node_modules/@googlemaps/js-api-loader";
 
 export const algolia = {
 
@@ -307,3 +307,5 @@ export const algolia = {
     }
 
 }
+
+algolia.setup('categoryListing').start();

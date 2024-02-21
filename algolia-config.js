@@ -1,10 +1,10 @@
 export const algoliaConfig = {
-    applicationID:                      import.meta.env.PUBLIC_ALGOLIA_APPLICATION_ID,
-    searchOnlyAPIKey:                   import.meta.env.PUBLIC_ALGOLIA_SEARCH_ONLY_API_KEY,
-    googleMapsAPIKey:                   import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY,
+    applicationID:                      'XXX',
+    searchOnlyAPIKey:                   'XXX',
+    googleMapsAPIKey:                   'XXX',
 
     categoryListing: {
-        indexName:                      `${import.meta.env.PUBLIC_ALGOLIA_INDEX_PREFIX}${import.meta.env.PUBLIC_ALGOLIA_INDEX_NAME}`,
+        indexName:                      `XXX`,
         hitsPerPage:                    20,
         filters:                        'objectType:book',
         hitsQuery:                      '#algolia-listing',
@@ -23,7 +23,7 @@ export const algoliaConfig = {
         }
     },
     siteSearchListing: {
-        indexName:                      `${import.meta.env.PUBLIC_ALGOLIA_INDEX_PREFIX}${import.meta.env.PUBLIC_ALGOLIA_INDEX_NAME}`,
+        indexName:                      `XXX`,
         hitsPerPage:                    5,
         filters:                        '',
         refinements: [
@@ -76,7 +76,7 @@ export const algoliaConfig = {
         }
     },
     eventListing: {
-        indexName:                      `${import.meta.env.PUBLIC_ALGOLIA_INDEX_PREFIX}${import.meta.env.PUBLIC_ALGOLIA_INDEX_NAME}`,
+        indexName:                      `XXX`,
         hitsPerPage:                    20,
         filters:                        'objectType:event',
         hitsQuery:                      '#events-hits',
@@ -89,7 +89,7 @@ export const algoliaConfig = {
         geoSearchQuery:                 '#events-geo',
     },
     authorListing: {
-        indexName:                      `${import.meta.env.PUBLIC_ALGOLIA_INDEX_PREFIX}${import.meta.env.PUBLIC_ALGOLIA_INDEX_NAME}`,
+        indexName:                      `XXX`,
         hitsPerPage:                    20,
         filters:                        'objectType:author',
         hitsQuery:                      '#author-hits',
@@ -101,7 +101,7 @@ export const algoliaConfig = {
         }
     },
     magazineListing: {
-        indexName:                      `${import.meta.env.PUBLIC_ALGOLIA_INDEX_PREFIX}${import.meta.env.PUBLIC_ALGOLIA_INDEX_NAME}`,
+        indexName:                      `XXX`,
         hitsPerPage:                    20,
         filters:                        'objectType:magazine',
         hitsQuery:                      '',
