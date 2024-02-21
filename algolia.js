@@ -307,5 +307,3 @@ export const algolia = {
     }
 
 }
-
-algolia.setup('categoryList').start();

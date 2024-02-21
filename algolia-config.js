@@ -7,7 +7,7 @@ export const algoliaConfig = {
         indexName:                      `${import.meta.env.PUBLIC_ALGOLIA_INDEX_PREFIX}${import.meta.env.PUBLIC_ALGOLIA_INDEX_NAME}`,
         hitsPerPage:                    20,
         filters:                        'objectType:book',
-        hitsQuery:                      '#product-listing__hits',
+        hitsQuery:                      '#algolia-listing',
         searchBoxQuery:                 '',
         paginationQuery:                '',
         infiniteHits:                   true,
