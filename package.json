@@ -1,41 +1,15 @@
 {
-  "name": "tempo-run-astro",
-  "description": "Starter Kit for Astro!",
+  "name": "Instantsearch",
+  "description": "Complete Instantsearch for Vanilla Javascript",
   "main": "README.md",
   "type": "module",
-  "version": "1.6.0",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
+  "version": "1.0.0",
   "dependencies": {
-    "@astrojs/alpinejs": "^0.4.0",
-    "@astrojs/partytown": "^2.0.4",
     "@googlemaps/js-api-loader": "^1.16.6",
-    "accordion-js": "^3.3.4",
-    "astro": "4.4.0",
-    "sass": "^1.71.0",
-    "swiper": "^11.0.6",
-    "tom-select": "^2.3.1"
-  },
-  "devDependencies": {
-    "@astrojs/sitemap": "^3.0.5",
-    "astro-robots-txt": "^1.0.0",
-    "vite-plugin-mkcert": "^1.17.3"
-  },
-  "keywords": [
-    "Astro",
-    "Starter",
-    "Kit",
-    "Template"
-  ],
-  "author": "Marvin Schmidt",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/slaetthult/TempoRun/issues"
-  },
-  "homepage": "https://github.com/slaetthult/TempoRun#readme"
+    "@nanostores/persistent": "^0.9.1",
+    "algoliasearch": "^4.22.1",
+    "dotenv": "^16.4.1",
+    "instantsearch.js": "^4.64.3",
+    "nanostores": "^0.9.5"
+  }
 }
