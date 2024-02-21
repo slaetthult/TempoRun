@@ -14,9 +14,10 @@
   "dependencies": {
     "@astrojs/alpinejs": "^0.4.0",
     "@astrojs/partytown": "^2.0.4",
+    "@googlemaps/js-api-loader": "^1.16.6",
     "accordion-js": "^3.3.4",
     "astro": "4.4.0",
-    "sass": "^1.70.0",
+    "sass": "^1.71.0",
     "swiper": "^11.0.6",
     "tom-select": "^2.3.1"
   },
