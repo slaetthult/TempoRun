@@ -69,7 +69,11 @@ export const formValidation = {
 
                 } else {
 
-                    formValidation.showSubmitMessage($form);
+                    setTimeout(() => {
+
+                        formValidation.showSubmitMessage($form);
+
+                    }, 100);
 
                 }
 
@@ -130,8 +134,7 @@ export const formValidation = {
         const submitMessage = $form.getAttribute(formValidation.vars.submitMessageAttribute);
 
         if(submitMessage && submitMessage.length > 0){
-            const formHTML = $form.innerHTML;
-            $form.innerHTML = formHTML + `<p class="${formValidation.vars.submitMessageClass}">${submitMessage}</p>`;
+            $form.innerHTML = `<p class="${formValidation.vars.submitMessageClass}">${submitMessage}</p>`;
         }
 
         $form.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
