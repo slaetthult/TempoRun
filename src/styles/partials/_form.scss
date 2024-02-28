@@ -7,6 +7,7 @@
     margin-left: -$grid-margin;
 
     .input {
+        position: relative;
 
         input {
             &:invalid {
@@ -19,7 +20,23 @@
                 &:valid {
                     border: 1px solid var(--color-ui-green);
                 }
+                & ~ span {
+                    top: 0;
+                    left: 23px;
+                    font-size: get-rem(12px);
+                    font-weight: $font-weight-light;
+                }
             }
+        }
+        span {
+            display: block;
+            position: absolute;
+            top: 17px;
+            left: 22px;
+            font-weight: $font-weight-medium;
+            font-size: get-rem(14px);
+            line-height: 1.15;
+            transition: all ease $transition-time;
         }
         small {
             display: none;
@@ -58,6 +75,7 @@
         }
     }
     .textarea {
+        position: relative;
 
         textarea {
             &:invalid {
@@ -70,7 +88,23 @@
                 &:valid {
                     border: 1px solid var(--color-ui-green);
                 }
+                & ~ span {
+                    top: 0;
+                    left: 23px;
+                    font-size: get-rem(12px);
+                    font-weight: $font-weight-light;
+                }
             }
+        }
+        span {
+            display: block;
+            position: absolute;
+            top: 17px;
+            left: 22px;
+            font-weight: $font-weight-medium;
+            font-size: get-rem(14px);
+            line-height: 1.15;
+            transition: all ease $transition-time;
         }
         small {
             display: none;
