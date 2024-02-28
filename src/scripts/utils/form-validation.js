@@ -13,13 +13,20 @@ export const formValidation = {
         validationEvents:                   ['keyup', 'change', 'input'],
         submitEvent:                        'submit',
 
-        passwordErrorText:                  'Passwords are not matching!'
+        passwordErrorText:                  'Passwords are not matching!',
+
+        initialized:                        false
 
     },
 
     init(){
 
-        formValidation.addEventTrigger();
+        if(!formValidation.vars.initialized){
+
+            formValidation.addEventTrigger();
+            formValidation.vars.initialized = true;
+
+        }
 
     },
 
@@ -33,13 +40,13 @@ export const formValidation = {
 
         for(const $form of $forms){
 
+            const $passwordFields = $form.querySelectorAll(formValidation.vars.passwordQuery);
+
             const $formFields = new Set([
                 ...$form.querySelectorAll('input'),
                 ...$form.querySelectorAll('select'),
                 ...$form.querySelectorAll('textarea')
             ]);
-
-            const $passwordFields = document.querySelectorAll(formValidation.vars.passwordQuery);
 
             for(const $formField of $formFields){
 
@@ -65,6 +72,7 @@ export const formValidation = {
 
                 if(!$form.checkValidity()){
 
+                    $form.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
                     event.preventDefault();
 
                 } else {
