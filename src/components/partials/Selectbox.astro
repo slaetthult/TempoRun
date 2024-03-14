@@ -7,7 +7,7 @@ interface Props {
     redirectToValue: boolean;
 }
 
-const { maxSelectable = 1, classes = '', dataValidationRequired = false, redirectToValue = false } = Astro.props;
+const { maxSelectable = 1, name = '', classes = '', dataValidationRequired = false, redirectToValue = false } = Astro.props;
 
 const classNames = `selectbox ${classes}`;
 ---
@@ -15,12 +15,12 @@ const classNames = `selectbox ${classes}`;
 <div class={classNames} data-js="selectbox" data-select-max-selectable={maxSelectable} data-redirect-to-value={redirectToValue}>
     <label>
         {dataValidationRequired ?
-                <select data-validation-required autocomplete="off">
+                <select name={name} data-validation-required autocomplete="off">
                     <slot />
                 </select>
                 <small class="validation-error-message">Required</small>
         :
-                <select autocomplete="off">
+                <select name={name} autocomplete="off">
                     <slot />
                 </select>
         }
