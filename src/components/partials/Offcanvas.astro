@@ -1,0 +1,20 @@
+---
+const {title = '', id = '', orientation = 'right', className = '', titleAddition = '', scrollToTopOnChange = false, openInitially = false } = Astro.props;
+
+const offcanvasClass = `offcanvas offcanvas--${orientation} offcanvas--id-${id} ${className}`;
+---
+<div class={offcanvasClass} data-js="offcanvas" data-offcanvas-id={id} data-offcanvas-scroll-top-on-change={scrollToTopOnChange} data-offcanvas-open-initially={openInitially} aria-label="Offcanvas" role="dialog">
+    <div class="offcanvas__header">
+        <button data-offcanvas-close class="offcanvas__header__close" aria-label="Offcanvas schließen"></button>
+        <span class="offcanvas__header__title">{title}</span>
+        <span class="offcanvas__header__title-addition">{titleAddition}</span>
+    </div>
+    <div class="offcanvas__body" data-offcanvas-body>
+        <slot/>
+    </div>
+</div>
+
+<script>
+    import {offcanvas} from "@scripts/partials/offcanvas";
+    offcanvas.init();
+</script>

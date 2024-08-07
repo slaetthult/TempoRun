@@ -6,9 +6,13 @@ const className = `modalbox ${id} ${classes}`;
 <div class={className} data-js="modalbox" style="display: none;">
 
     <div class="modalbox__wrapper">
-
+        <div class="modalbox__header">
+            <slot name="modalbox-header"/>
+        </div>
         <slot/>
-
+        <div class="modalbox__footer">
+            <slot name="modalbox-footer"/>
+        </div>
     </div>
 
 </div>
@@ -16,6 +20,5 @@ const className = `modalbox ${id} ${classes}`;
 
 <script>
     import {modalbox} from "@scripts/partials/modalbox";
-
     modalbox.init();
 </script>

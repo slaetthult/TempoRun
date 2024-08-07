@@ -89,10 +89,12 @@ input, button, textarea {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+
+    border-radius: 0;
+
     &[disabled] {
         cursor: default;
     }
-    border-radius: 0;
     &:focus, &:active {
         outline: none;
     }

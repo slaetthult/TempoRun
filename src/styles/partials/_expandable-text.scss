@@ -1,0 +1,86 @@
+@use '@styles/utils' as *;
+
+.expandable-text {
+    margin-bottom: 10px;
+
+    &--expanded {
+        .expandable-text {
+            &__actions {
+                display: block;
+                
+                button {
+                    span {
+                        &:first-child {
+                            display: none;
+                        }
+                        &:last-child {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &--expandable {
+        .expandable-text {
+            &__actions {
+                display: block;
+            }
+        }
+    }
+
+    &__wrapper {
+        max-height: 167px;
+        overflow: hidden;
+        transition: all linear $transition-time;
+
+        @include viewport(mw){
+            max-height: 143px;
+        }
+
+        @include viewport(lw){
+            max-height: 157px;
+        }
+
+        @include styles-for-safari(){
+            /**
+                Fix mobile safari
+             */
+            margin-top: -5px;
+            padding-top: 5px;
+        }
+
+        p {
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
+    }
+    &__actions {
+        display: none;
+        margin-top: 11px;
+
+        @include viewport(mw){
+            margin-top: 13px;
+        }
+
+        button {
+            min-width: 0;
+            height: auto;
+            padding: 0;
+            line-height: inherit;
+            background: transparent!important;
+            color: var(--color-font)!important;
+            font-size: inherit;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            span {
+                &:last-child {
+                    display: none;
+                }
+            }
+        }
+    }
+
+}

@@ -10,7 +10,8 @@ export const selectbox = {
         redirectToValueAttribute:       'data-redirect-to-value',
 
         config: {
-            maxItems: 1
+            maxItems: 1,
+            searchField: null
         }
     },
 
@@ -24,12 +25,22 @@ export const selectbox = {
 
         const $selects = document.querySelectorAll(selectbox.vars.wrapperQuery);
 
+        if($selects.length === 0){
+            return false;
+        }
+
         for(const $select of $selects){
 
             selectbox.vars.config.maxItems = parseInt($select.getAttribute(selectbox.vars.maxSelectableAttribute));
             const redirectToValue = $select.getAttribute(selectbox.vars.redirectToValueAttribute);
 
             selectbox.bind($select.querySelector(selectbox.vars.selectQuery), redirectToValue);
+
+            const $input = $select.querySelector('input');
+
+            if($input){
+                $select.querySelector('input').readOnly = true;
+            }
 
         }
 
@@ -49,7 +60,9 @@ export const selectbox = {
 
         redirectToValue($tomSelect){
 
-            $tomSelect.on('change', (value) => {
+            $tomSelect.on('change', (value, event) => {
+
+                //event.preventDefault();
 
                 window.location.href = value;
 

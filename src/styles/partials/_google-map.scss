@@ -1,0 +1,25 @@
+@use '@styles/utils' as *;
+
+.google-map {
+    display: none;
+    width: 100%;
+    height: 300px;
+
+    &--show {
+        display: block!important;
+    }
+
+    button {
+        min-width: auto;
+        height: auto;
+    }
+
+    .gm-style-iw {
+        width: 300px!important;
+        max-height: 220px!important;
+
+        .gm-style-iw-d {
+            max-height: 220px!important;
+        }
+    }
+}

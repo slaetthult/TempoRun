@@ -28,15 +28,19 @@
 @use "partials/_radiobox";
 @use "partials/_selectbox";
 @use "partials/_form";
-
-/**
-        you may import styles for partials inside astro components if it is not global
- */
+@use "partials/_offcanvas";
+@use "partials/_audio-player";
+@use "partials/_expandable-text";
+@use "partials/_google-map";
+@use "partials/_to-top-button";
+@use "partials/_accordion";
+@use "partials/_cookie-consent";
 
 /* -------------------------------------------------------- */
 /*                     MODULES/SLICES                       */
 /* -------------------------------------------------------- */
 
-/**
-        import styles for modules inside astro components
- */
+@use "modules/_content-accordion";
+@use "modules/_form-example";
+@use "modules/_gallery-slider";
+@use "modules/_grid-example";

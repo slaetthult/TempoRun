@@ -11,13 +11,13 @@ const { title } = Astro.props;
 	<head>
 		<meta charset="UTF-8">
 		<meta name="description" content="Astro description">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1 viewport-fit=cover">
 		<meta name="generator" content={Astro.generator}>
 
         <meta property="og:title" content="Title">
         <meta property="og:description" content="Description">
         <meta property="og:type" content="website">
-        <meta property="og:url" content="https://tempo-run-astro3.netlify.app/">
+        <meta property="og:url" content="https://tempo-run-astro4.netlify.app/">
         <meta property="og:image" content="">
 
         <meta name="twitter:title" content="Title">
@@ -25,7 +25,12 @@ const { title } = Astro.props;
         <meta name="twitter:image" content="">
         <meta name="twitter:card" content="summary">
 
-        <link rel="canonical" href="https://tempo-run-astro3.netlify.app/">
+        <link rel="canonical" href="https://tempo-run-astro4.netlify.app/">
+
+        <link rel="preload" href="/fonts/barlow/Barlow-Regular.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/fonts/barlow/Barlow-500.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/fonts/barlow/Barlow-600.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/fonts/barlow/Barlow-700.woff2" as="font" type="font/woff2" crossorigin>
 
         <link rel="preload" href="/fonts/fonts.css" as="style">
         <link rel="stylesheet" href="/fonts/fonts.css">

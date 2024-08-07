@@ -1,6 +1,15 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import GoogleMaps from "@components/partials/GoogleMaps.astro";
+import GoogleMap from "@components/partials/GoogleMap.astro";
+
+export const gmapData = {
+    geoLocation: {
+        lat: 50.942091,
+        lng: 6.956872
+    },
+
+    zoom: 16
+}
 ---
 <Layout title="Subpage">
     <div class="grid-wrap">
@@ -8,7 +17,11 @@ import GoogleMaps from "@components/partials/GoogleMaps.astro";
             <h1>Subpage</h1>
         </div>
     </div>
-    <GoogleMaps/>
+    <GoogleMap geoLocation={gmapData.geoLocation} zoom={gmapData.zoom} markerHTML=`
+        <a target="_blank" href="https://www.google.com/maps?q=${gmapData.geoLocation.lat},${gmapData.geoLocation.lng}"> 
+            In Google Maps ansehen
+        </a>
+    `/>
 </Layout>
 
 

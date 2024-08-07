@@ -38,6 +38,10 @@ export const slider = {
 
         const $sliders = document.querySelectorAll(slider.vars.swiperQuery);
 
+        if($sliders.length === 0){
+            return false;
+        }
+
         for(const $slider of $sliders){
 
             slider.bind($slider);

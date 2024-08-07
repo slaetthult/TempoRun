@@ -1,0 +1,111 @@
+@use '@styles/utils' as *;
+
+.offcanvas {
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translate(100%,0);
+    width: calc(100% - 40px);
+    height: 100%;
+    padding: 14px 20px;
+    background: var(--color-white);
+    transition: all ease $transition-time;
+    z-index: $z-index-8;
+    box-shadow: 0 0 6000px 6000px rgba(0,0,0,0);
+    overflow: auto;
+
+    @include viewport(mw){
+        width: 430px;
+        max-width: 100%;
+        padding: 36px 50px;
+    }
+
+    @include viewport(lw){
+        width: 570px;
+        padding: 41px 80px;
+    }
+
+    &--left {
+        transform: translate(-100%,0);
+        left: 0;
+        right: auto;
+    }
+
+    &--top {
+        transform: translate(0,-100%);
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: auto;
+        padding: 0;
+
+        &.offcanvas {
+            &--show {
+                @include viewport(lw){
+                    top: 0;
+                }
+            }
+        }
+
+        .offcanvas__header__close {
+            top: 10px;
+            right: 0;
+        }
+
+    }
+
+    &--show {
+        transform: translate(0,0);
+        box-shadow: 0 0 6000px 6000px rgba(0,0,0,0.7);
+    }
+
+    &__header {
+        position: relative;
+
+        &__title {
+            font-size: get-rem(18px);
+            font-weight: $font-weight-bold;
+            color: var(--color-dark-grey);
+
+            @include viewport(lw){
+                font-size: get-rem(20px);
+            }
+        }
+        &__close {
+            position: absolute;
+            top: -14px;
+            right: -16px;
+            width: 50px;
+            min-width: 0;
+            height: 50px;
+            padding: 0;
+            background: transparent!important;
+            z-index: $z-index-2;
+
+            @include viewport(lw){
+                top: -11px;
+                right: -65px;
+            }
+
+            &::before,
+            &::after {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(45deg);
+                display: block;
+                width: 16px;
+                height: 2px;
+                background: var(--color-black);
+                content: "";
+            }
+            &::after {
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+        }
+    }
+    &__body {
+
+    }
+}

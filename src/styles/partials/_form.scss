@@ -60,12 +60,12 @@
             }
             &[data-value]{
                 &:valid {
+                    border: 1px solid var(--color-ui-green);
 
                     & + span::before {
                         border: 1px solid var(--color-ui-green);
                     }
 
-                    border: 1px solid var(--color-ui-green);
                 }
             }
         }

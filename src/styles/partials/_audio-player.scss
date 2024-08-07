@@ -1,0 +1,138 @@
+@use '@styles/utils' as *;
+
+.audio-player {
+    position: relative;
+    display: flex;
+    align-content: center;
+    align-items: center;
+
+    &--is-playing {
+        .audio-player{
+            &__controls {
+                &__play {
+                    display: none!important;
+                }
+                &__pause {
+                    display: flex!important;
+                }
+            }
+        }
+    }
+
+    &__controls {
+        margin-right: 10px;
+
+        @include viewport(lw){
+            margin-right: 20px;
+        }
+
+        button {
+            position: relative;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            min-width: 0;
+            height: 50px;
+            padding: 0;
+            background: var(--color-white)!important;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.24);
+
+
+            svg {
+                display: block;
+                top: 0;
+                width: 11px;
+                height: auto;
+                margin-right: 0;
+            }
+        }
+        &__play {
+
+        }
+        &__pause {
+            display: none!important;
+        }
+    }
+
+    &__progress-bar {
+        position: relative;
+        width: 100%;
+        min-width: 0;
+        height: 5px;
+        line-height: 1;
+        padding: 0;
+        border-radius: 5px;
+        background: var(--color-border-grey)!important;
+
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(0, -50%);
+            width: 100%;
+            height: 50px;
+            background: transparent;
+            content: "";
+        }
+
+        &__active {
+            position: relative;
+            display: block;
+            width: 0;
+            height: 100%;
+            background: var(--color-black)!important;
+            border-radius: 5px;
+            transition: width linear 0.1s;
+
+            &::after {
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translate(50%, -50%);
+                width: 18px;
+                height: 18px;
+                border: 2px solid var(--color-white);
+                border-radius: 50%;
+                background: var(--color-black);
+                content: "";
+            }
+        }
+    }
+
+    &__volume {
+        display: none;
+    }
+
+    &__time {
+        position: absolute;
+        right: 0;
+        bottom: -7px;
+        white-space: nowrap;
+        flex-shrink: 0;
+        font-size: get-rem(12px);
+
+        @include viewport(lw){
+            position: static;
+            width: 85px;
+            margin-left: 10px;
+            text-align: right;
+        }
+
+        &__current {
+
+        }
+        &__separator {
+
+        }
+        &__total {
+
+        }
+    }
+
+    audio {
+        display: none;
+    }
+}

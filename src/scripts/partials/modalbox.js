@@ -9,7 +9,7 @@ export const modalbox = {
 
         triggerAttribute:   'data-open-modal',
 
-        showClass:          'show'
+        showClass:          'modalbox--show'
 
     },
 
@@ -49,7 +49,9 @@ export const modalbox = {
 
             for(const $openTrigger of $openTriggers){
 
-                $openTrigger.addEventListener('click', () => {
+                $openTrigger.addEventListener('click', (event) => {
+
+                    event.preventDefault();
 
                     const modalQuery = '.' + $openTrigger.getAttribute(modalbox.vars.triggerAttribute);
                     const $modalbox = document.querySelector(modalQuery);
