@@ -11,8 +11,8 @@
     }
 
     &.is-active {
-        .accordion__header {
-            .accordion__header__trigger {
+        > .accordion__header {
+            > .accordion__header__trigger {
                 &::after {
                     content: "–";
                 }

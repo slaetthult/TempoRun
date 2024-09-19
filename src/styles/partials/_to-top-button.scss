@@ -12,8 +12,8 @@
     padding: 0;
     background: var(--color-theme-red);
     z-index: $z-index-8;
-    @include smooth-fading-effect();
     transition: all ease $transition-time;
+    @include smooth-fading-effect();
 
     @include viewport(lw){
         display: block!important;

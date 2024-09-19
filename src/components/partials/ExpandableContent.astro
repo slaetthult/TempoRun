@@ -1,0 +1,35 @@
+---
+const { forceIntoParagraph = false, textMore = 'Weiterlesen', textLess = 'Weniger', scrollAfterCollapse = 'true', classes = '' } = Astro.props;
+---
+<div class=`expandable-content ${classes}` data-js="expandable-content" data-expandable-content-scroll-after-collapse={scrollAfterCollapse}>
+    <div class="expandable-content__wrapper" data-expandable-content-wrapper>
+        {forceIntoParagraph ?
+            <p>
+                <slot/>
+            </p>
+            :
+            <slot/>
+        }
+    </div>
+    <div class="expandable-content__actions">
+        <button data-expandable-content-toggle>
+            <span>{textMore}</span>
+            <span>{textLess}</span>
+        </button>
+    </div>
+</div>
+
+<script>
+    const $expandableContents = document.querySelectorAll('*[data-js=expandable-content]');
+
+    if($expandableContents.length > 0){
+        import('@scripts/partials/expandable-content')
+            .then((module) => {
+                const { expandableContent } = module;
+                expandableContent.init();
+            })
+            .catch((error) => {
+                console.error('Error loading module:', error);
+            });
+    }
+</script>

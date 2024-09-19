@@ -1,10 +1,10 @@
 @use '@styles/utils' as *;
 
-.expandable-text {
+.expandable-content {
     margin-bottom: 10px;
 
     &--expanded {
-        .expandable-text {
+        .expandable-content {
             &__actions {
                 display: block;
                 
@@ -23,7 +23,7 @@
     }
 
     &--expandable {
-        .expandable-text {
+        .expandable-content {
             &__actions {
                 display: block;
             }

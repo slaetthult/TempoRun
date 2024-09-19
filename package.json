@@ -13,18 +13,18 @@
   },
   "dependencies": {
     "@astrojs/alpinejs": "^0.4.0",
-    "@astrojs/partytown": "^2.1.1",
+    "@astrojs/partytown": "^2.1.2",
     "@googlemaps/js-api-loader": "^1.16.8",
     "accordion-js": "^3.3.4",
-    "astro": "4.13.1",
-    "sass": "^1.77.8",
-    "swiper": "^11.1.9",
+    "astro": "4.15.7",
+    "sass": "^1.79.1",
+    "swiper": "^11.1.14",
     "tom-select": "^2.3.1"
   },
   "devDependencies": {
     "@astrojs/sitemap": "^3.1.6",
     "astro-robots-txt": "^1.0.0",
-    "vite-plugin-mkcert": "^1.17.5"
+    "vite-plugin-mkcert": "^1.17.6"
   },
   "keywords": [
     "Astro",
