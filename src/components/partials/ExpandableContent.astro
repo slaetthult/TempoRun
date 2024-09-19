@@ -22,7 +22,7 @@ const { forceIntoParagraph = false, textMore = 'Weiterlesen', textLess = 'Wenige
 <script>
     const $expandableContents = document.querySelectorAll('*[data-js=expandable-content]');
 
-
+    if($expandableContents.length > 0){
         import('@scripts/partials/expandable-content')
             .then((module) => {
                 const { expandableContent } = module;
@@ -31,5 +31,5 @@ const { forceIntoParagraph = false, textMore = 'Weiterlesen', textLess = 'Wenige
             .catch((error) => {
                 console.error('Error loading module:', error);
             });
-
+    }
 </script>

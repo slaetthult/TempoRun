@@ -9,7 +9,6 @@ import robotsConfig from './robots-txt.config';
 // https://astro.build/config
 export default defineConfig({
     site: 'https://tempo-run-astro4.netlify.app/',
-    output: 'server',
     vite: {
         plugins: [mkcert()],
         server: {
