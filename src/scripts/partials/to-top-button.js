@@ -8,20 +8,15 @@ export const toTopButton = {
 
         minScrolledPosition:        '100'
     },
-    init(){
+    init($toTopButton){
 
-        toTopButton.addEventTrigger();
+        toTopButton.addEventTrigger($toTopButton);
 
     },
-    addEventTrigger(){
+    addEventTrigger($toTopButton){
 
         let lastKnownScrollPosition = 0;
         let ticking = false;
-        const $toTopButton = document.querySelector(toTopButton.vars.componentQuery);
-
-        if(!$toTopButton){
-            return false;
-        }
 
         document.addEventListener('scroll', (event) => {
 

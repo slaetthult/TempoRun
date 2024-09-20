@@ -16,13 +16,13 @@ export const offcanvas = {
 
     },
 
-    init(){
+    init($offcanvasElement){
 
-        offcanvas.addEventTrigger();
+        offcanvas.addEventTrigger($offcanvasElement);
 
     },
 
-    addEventTrigger(){
+    addEventTrigger($offcanvasElement){
 
         const $body = document.body;
 
@@ -75,27 +75,21 @@ export const offcanvas = {
 
         }
 
-        const $offcanvasElements = document.querySelectorAll(offcanvas.vars.componentQuery);
+        let executed = 1;
+        const shouldScrollToTop = $offcanvasElement.getAttribute(offcanvas.vars.scrollToTopAttribute);
 
-        for(const $offcanvasElement of $offcanvasElements){
+        if(shouldScrollToTop === 'true'){
+            observeDOM( $offcanvasElement, () => {
+                if(executed % 2 === 0 && $offcanvasElement.classList.contains(offcanvas.vars.showClass)){
+                    window.scroll({top: 0, behavior: "smooth"});
+                }
+                executed++;
+            });
+        }
 
-            let executed = 1;
-            const shouldScrollToTop = $offcanvasElement.getAttribute(offcanvas.vars.scrollToTopAttribute);
-
-            if(shouldScrollToTop === 'true'){
-                observeDOM( $offcanvasElement, () => {
-                    if(executed % 2 === 0 && $offcanvasElement.classList.contains(offcanvas.vars.showClass)){
-                        window.scroll({top: 0, behavior: "smooth"});
-                    }
-                    executed++;
-                });
-            }
-
-            if($offcanvasElement.hasAttribute(offcanvas.vars.openInitially)){
-                const offcanvasId = $offcanvasElement.getAttribute(offcanvas.vars.idAttribute);
-                offcanvas.open(offcanvasId);
-            }
-
+        if($offcanvasElement.hasAttribute(offcanvas.vars.openInitially)){
+            const offcanvasId = $offcanvasElement.getAttribute(offcanvas.vars.idAttribute);
+            offcanvas.open(offcanvasId);
         }
 
     },

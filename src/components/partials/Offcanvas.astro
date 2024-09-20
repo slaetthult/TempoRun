@@ -3,7 +3,7 @@ const {title = '', id = '', orientation = 'right', className = '', titleAddition
 
 const offcanvasClass = `offcanvas offcanvas--${orientation} offcanvas--id-${id} ${className}`;
 ---
-<div class={offcanvasClass} data-js="offcanvas" data-offcanvas-id={id} data-offcanvas-scroll-top-on-change={scrollToTopOnChange} data-offcanvas-open-initially={openInitially} aria-label="Offcanvas" role="dialog">
+<partial-offcanvas class={offcanvasClass} data-js="offcanvas" data-offcanvas-id={id} data-offcanvas-scroll-top-on-change={scrollToTopOnChange} data-offcanvas-open-initially={openInitially} aria-label="Offcanvas" role="dialog">
     <div class="offcanvas__header">
         <button data-offcanvas-close class="offcanvas__header__close" aria-label="Offcanvas schließen"></button>
         <span class="offcanvas__header__title">{title}</span>
@@ -12,9 +12,25 @@ const offcanvasClass = `offcanvas offcanvas--${orientation} offcanvas--id-${id} 
     <div class="offcanvas__body" data-offcanvas-body>
         <slot/>
     </div>
-</div>
+</partial-offcanvas>
 
 <script>
-    import {offcanvas} from "@scripts/partials/offcanvas";
-    offcanvas.init();
+    class PartialOffcanvas extends HTMLElement {
+        constructor() {
+            super();
+        }
+        connectedCallback() {
+            import('@scripts/partials/offcanvas')
+                .then((module) => {
+                    const { offcanvas } = module;
+                    offcanvas.init(this);
+                })
+                .catch((error) => {
+                    console.error('Error loading module:', error);
+                });
+
+        }
+
+    }
+    customElements.define('partial-offcanvas', PartialOffcanvas);
 </script>

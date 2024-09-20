@@ -15,41 +15,29 @@ export const selectbox = {
         }
     },
 
-    init(){
+    init($selectbox){
 
-        selectbox.find();
-
-    },
-
-    find(){
-
-        const $selects = document.querySelectorAll(selectbox.vars.wrapperQuery);
-
-        if($selects.length === 0){
-            return false;
-        }
-
-        for(const $select of $selects){
-
-            selectbox.vars.config.maxItems = parseInt($select.getAttribute(selectbox.vars.maxSelectableAttribute));
-            const redirectToValue = $select.getAttribute(selectbox.vars.redirectToValueAttribute);
-
-            selectbox.bind($select.querySelector(selectbox.vars.selectQuery), redirectToValue);
-
-            const $input = $select.querySelector('input');
-
-            if($input){
-                $select.querySelector('input').readOnly = true;
-            }
-
-        }
+        selectbox.bind($selectbox);
 
     },
 
-    bind($select, redirectToValue){
+    bind($selectbox){
 
-        const $tomSelect = new TomSelect($select, selectbox.vars.config);
+        const config = selectbox.vars.config;
 
+        config.maxItems = parseInt($selectbox.getAttribute(selectbox.vars.maxSelectableAttribute));
+
+        const $input = $selectbox.querySelector('input');
+
+        if($input){
+            $selectbox.querySelector('input').readOnly = true;
+        }
+
+        const $select = $selectbox.querySelector(selectbox.vars.selectQuery);
+
+        const $tomSelect = new TomSelect($select, config);
+
+        const redirectToValue = $selectbox.getAttribute(selectbox.vars.redirectToValueAttribute);
         if(redirectToValue){
             selectbox.addEvents.redirectToValue($tomSelect);
         }

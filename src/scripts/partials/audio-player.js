@@ -15,26 +15,17 @@ export const audioPlayer = {
 
         isPlayingClass:                     'audio-player--is-playing'
     },
-    init(){
 
-        audioPlayer.find();
+    init($audioPlayer){
+
+        audioPlayer.find($audioPlayer);
 
     },
 
-    find(){
+    find($audioPlayer){
 
-        const $audioPlayers = document.querySelectorAll(audioPlayer.vars.componentQuery);
-
-        if($audioPlayers.length === 0){
-            return false;
-        }
-
-        for(const $audioPlayer of $audioPlayers){
-
-            audioPlayer.setInitialValues($audioPlayer);
-            audioPlayer.addEventTrigger($audioPlayer);
-
-        }
+        audioPlayer.setInitialValues($audioPlayer);
+        audioPlayer.addEventTrigger($audioPlayer);
 
     },
 

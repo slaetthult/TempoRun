@@ -4,19 +4,17 @@ export const formExample = {
     vars: {
         formQuery:          '#form-example'
     },
-    init(){
-
-        formValidation.init();
+    init($component){
 
         /**
          The following code is only required, if you want to submit the form via js without html-form-element and page reload
          */
-        formExample.formSubmit();
+        formExample.formSubmit($component);
 
     },
-    formSubmit(){
+    formSubmit($component){
 
-        const $form = document.querySelector(formExample.vars.formQuery);
+        const $form = $component.querySelector(formExample.vars.formQuery);
 
         const submitHandler = (event) => {
 

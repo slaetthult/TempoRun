@@ -2,19 +2,27 @@
 const { geoLocation, markerHTML, zoom = 8 } = Astro.props;
 ---
 
-<div class="google-map" data-js="google-map" data-google-zoom-factor={JSON.stringify(zoom)} data-google-map-geo-location={JSON.stringify(geoLocation)} data-google-marker-html={JSON.stringify(markerHTML)} style="display: none;"></div>
+<partial-google-map class="google-map" data-js="google-map" data-google-zoom-factor={JSON.stringify(zoom)} data-google-map-geo-location={JSON.stringify(geoLocation)} data-google-marker-html={JSON.stringify(markerHTML)} style="display: none;">
+
+</partial-google-map>
 
 <script>
-    const $googleMaps = document.querySelectorAll('*[data-js=google-map]');
+    class PartialGoogleMap extends HTMLElement {
+        constructor() {
+            super();
+        }
+        connectedCallback() {
+            import('@scripts/partials/google-map')
+                .then((module) => {
+                    const { googleMap } = module;
+                    googleMap.init(this);
+                })
+                .catch((error) => {
+                    console.error('Error loading module:', error);
+                });
 
-    if($googleMaps.length > 0){
-        import('@scripts/partials/google-map')
-            .then((module) => {
-                const { googleMap } = module;
-                googleMap.init();
-            })
-            .catch((error) => {
-                console.error('Error loading module:', error);
-            });
+        }
+
     }
+    customElements.define('partial-google-map', PartialGoogleMap);
 </script>

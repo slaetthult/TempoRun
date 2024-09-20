@@ -1,15 +1,28 @@
 ---
 const {accordionSettings = ''} = Astro.props;
 ---
-
-<div class="accordion-group accordion-container" data-js="accordion-group" data-accordion-settings={accordionSettings}>
-
+<partial-accordion-group class="accordion-group accordion-container" data-js="accordion-group" data-accordion-settings={accordionSettings}>
     <slot />
+</partial-accordion-group>
 
-</div>
 
 <script>
-    import {accordionGroup} from "@scripts/partials/accordion-group";
+    class PartialAccordionGroup extends HTMLElement {
+        constructor() {
+            super();
+        }
+        connectedCallback() {
+            import('@scripts/partials/accordion-group')
+                .then((module) => {
+                    const { accordionGroup } = module;
+                    accordionGroup.init(this);
+                })
+                .catch((error) => {
+                    console.error('Error loading module:', error);
+                });
 
-    accordionGroup.init();
+        }
+
+    }
+    customElements.define('partial-accordion-group', PartialAccordionGroup);
 </script>

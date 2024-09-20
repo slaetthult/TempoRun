@@ -1,32 +1,17 @@
 export const expandableContent = {
     vars: {
-        componentQuery:                     '*[data-js=expandable-content]',
-        contentWrapperQuery:                   '*[data-expandable-content-wrapper]',
-        toggleQuery:                        '*[data-expandable-content-toggle]',
 
-        scrollAfterCollapseAttribute:       'data-expandable-content-scroll-after-collapse',
+        contentWrapperQuery:                    '*[data-expandable-content-wrapper]',
+        toggleQuery:                            '*[data-expandable-content-toggle]',
 
-        activeClass:                        'expandable-content--expanded',
-        expandableClass:                    'expandable-content--expandable'
+        scrollAfterCollapseAttribute:           'data-expandable-content-scroll-after-collapse',
+
+        activeClass:                            'expandable-content--expanded',
+        expandableClass:                        'expandable-content--expandable'
     },
-    init(){
+    init($expandableContent){
 
-        expandableContent.find();
-
-    },
-    find(){
-
-        const $expandableContents = document.querySelectorAll(expandableContent.vars.componentQuery);
-
-        if($expandableContents.length === 0){
-            return false;
-        }
-
-        for(const $expandableContent of $expandableContents){
-
-            expandableContent.addEvenTrigger($expandableContent);
-
-        }
+        expandableContent.addEvenTrigger($expandableContent);
 
     },
 

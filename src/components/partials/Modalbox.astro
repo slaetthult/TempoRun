@@ -3,7 +3,7 @@ const {id = '', classes = ''} = Astro.props;
 const className = `modalbox ${id} ${classes}`;
 ---
 
-<div class={className} data-js="modalbox" style="display: none;">
+<partial-modalbox class={className} data-js="modalbox" style="display: none;">
 
     <div class="modalbox__wrapper">
         <div class="modalbox__header">
@@ -15,10 +15,26 @@ const className = `modalbox ${id} ${classes}`;
         </div>
     </div>
 
-</div>
+</partial-modalbox>
 
 
 <script>
-    import {modalbox} from "@scripts/partials/modalbox";
-    modalbox.init();
+    class PartialModalbox extends HTMLElement {
+        constructor() {
+            super();
+        }
+        connectedCallback() {
+            import('@scripts/partials/modalbox')
+                .then((module) => {
+                    const { modalbox } = module;
+                    modalbox.init(this);
+                })
+                .catch((error) => {
+                    console.error('Error loading module:', error);
+                });
+
+        }
+
+    }
+    customElements.define('partial-modalbox', PartialModalbox);
 </script>

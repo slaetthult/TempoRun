@@ -1,0 +1,36 @@
+---
+const {
+    name = '',
+    value = '',
+    type = 'text',
+    labelText = '',
+    required = false,
+    errorText = '',
+    className = '',
+    minlength = '',
+    maxlength = '',
+    pattern = '',
+    movingPlaceholder = false
+} = Astro.props;
+
+let requiredAttribute = required ? 'data-validation-required' : '';
+let minlengthAttribute = minlength ? `minlength="${minlength}"` : '';
+let maxlengthAttribute = maxlength ? `maxlength="${maxlength}"` : '';
+let patternAttribute = pattern ? `pattern="${pattern}"` : '';
+
+const inputHTML = `<input type="${type}" name="${name}" value="${value}" ${requiredAttribute} ${minlengthAttribute} ${maxlengthAttribute} ${patternAttribute}>`;
+---
+<div class=`input ${className}`>
+    <label>
+        {!movingPlaceholder &&
+            <Fragment>
+                {labelText}
+            </Fragment>
+        }
+        <Fragment set:html={inputHTML}/>
+        {movingPlaceholder &&
+            <span>{labelText}</span>
+        }
+        <small>{errorText}</small>
+    </label>
+</div>

@@ -13,31 +13,22 @@ export const modalbox = {
 
     },
 
-    init(){
+    init($modalbox){
 
-        modalbox.find();
+        if($modalbox.parentNode !== document.body){
+            modalbox.moveToBody($modalbox);
+        }
         modalbox.addEventTriggers.open();
         modalbox.addEventTriggers.clickOutside();
         modalbox.addEventTriggers.close();
 
     },
 
-    find(){
-
-        const $modalboxes = document.querySelectorAll((modalbox.vars.parentQuery));
-
-        for(const $modalbox of $modalboxes){
-
-            modalbox.moveToBody($modalbox);
-
-        }
-
-    },
-
     moveToBody($modalbox){
 
-        document.body.appendChild($modalbox.cloneNode(true));
+        const savedModalbox = $modalbox.cloneNode(true);
         $modalbox.remove();
+        document.body.appendChild(savedModalbox);
 
     },
 

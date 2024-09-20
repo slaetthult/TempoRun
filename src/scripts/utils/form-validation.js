@@ -2,7 +2,6 @@ export const formValidation = {
 
     vars: {
 
-        formQuery:                          '*[data-js=form-validation]',
         passwordQuery:                      '*[type=password]',
 
         validationRequiredAttribute:        'data-validation-required',
@@ -13,81 +12,64 @@ export const formValidation = {
         validationEvents:                   ['keyup', 'change', 'input'],
         submitEvent:                        'submit',
 
-        passwordErrorText:                  'Passwords are not matching!',
-
-        initialized:                        false
+        passwordErrorText:                  'Passwords are not matching!'
 
     },
 
-    init(){
+    init($form){
 
-        if(!formValidation.vars.initialized){
-
-            formValidation.addEventTrigger();
-            formValidation.vars.initialized = true;
-
-        }
+        formValidation.addEventTrigger($form);
 
     },
 
-    addEventTrigger(){
+    addEventTrigger($form){
 
-        const $forms = document.querySelectorAll(formValidation.vars.formQuery);
+        const $passwordFields = $form.querySelectorAll(formValidation.vars.passwordQuery);
 
-        if($forms.length === 0){
-            return false;
-        }
+        const $formFields = new Set([
+            ...$form.querySelectorAll('input'),
+            ...$form.querySelectorAll('select'),
+            ...$form.querySelectorAll('textarea')
+        ]);
 
-        for(const $form of $forms){
+        for(const $formField of $formFields){
 
-            const $passwordFields = $form.querySelectorAll(formValidation.vars.passwordQuery);
+            for(const eventName of formValidation.vars.validationEvents){
 
-            const $formFields = new Set([
-                ...$form.querySelectorAll('input'),
-                ...$form.querySelectorAll('select'),
-                ...$form.querySelectorAll('textarea')
-            ]);
-
-            for(const $formField of $formFields){
-
-                for(const eventName of formValidation.vars.validationEvents){
-
-                    $formField.addEventListener(eventName, (event) => {
-
-                        formValidation.addEventHandler($formField, $passwordFields);
-
-                    });
-
-                }
-
-            }
-
-            $form.addEventListener(formValidation.vars.submitEvent, (event) => {
-
-                for(const $formField of $formFields){
+                $formField.addEventListener(eventName, (event) => {
 
                     formValidation.addEventHandler($formField, $passwordFields);
 
-                }
+                });
 
-                if(!$form.checkValidity()){
-
-                    $form.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-                    event.preventDefault();
-
-                } else {
-
-                    setTimeout(() => {
-
-                        formValidation.showSubmitMessage($form);
-
-                    }, 100);
-
-                }
-
-            });
+            }
 
         }
+
+        $form.addEventListener(formValidation.vars.submitEvent, (event) => {
+
+            for(const $formField of $formFields){
+
+                formValidation.addEventHandler($formField, $passwordFields);
+
+            }
+
+            if(!$form.checkValidity()){
+
+                $form.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+                event.preventDefault();
+
+            } else {
+
+                setTimeout(() => {
+
+                    formValidation.showSubmitMessage($form);
+
+                }, 100);
+
+            }
+
+        });
 
     },
 
@@ -155,17 +137,21 @@ export const formValidation = {
             return false;
         }
 
-        $form.addEventListener(formValidation.vars.submitEvent, (event) => {
+        setTimeout(() => {
 
-            if($form.checkValidity()){
+            $form.addEventListener(formValidation.vars.submitEvent, (event) => {
 
-                submitHandler(event);
+                if($form.checkValidity()){
 
-            }
+                    submitHandler(event);
 
-            event.preventDefault();
+                }
 
-        });
+                event.preventDefault();
+
+            });
+
+        }, 10);
 
     }
 

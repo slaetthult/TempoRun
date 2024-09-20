@@ -5,8 +5,6 @@ export const accordionGroup = {
 
     vars: {
 
-        moduleQuery:                                '*[data-js=accordion-group]',
-
         settingsAttribute:                          'data-accordion-settings',
 
         additionalGeneralOptions: {
@@ -22,28 +20,22 @@ export const accordionGroup = {
 
     },
 
-    init(){
+    init($accordionGroup){
 
-        accordionGroup.startScript();
+        accordionGroup.startScript($accordionGroup);
 
     },
 
-    startScript(){
+    startScript($accordionGroup){
 
-        const $accordionGroups = document.querySelectorAll(accordionGroup.vars.moduleQuery);
+        let accordionOptions = $accordionGroup.getAttribute(accordionGroup.vars.settingsAttribute);
+        accordionOptions = JSON.parse(decodeURIComponent(accordionOptions));
 
-        for(const $accordionGroup of $accordionGroups){
-
-            let accordionOptions = $accordionGroup.getAttribute(accordionGroup.vars.settingsAttribute);
-            accordionOptions = JSON.parse(decodeURIComponent(accordionOptions));
-
-            if(!accordionOptions.disableAdditionalGeneralOptions){
-                accordionOptions = {...accordionOptions, ...accordionGroup.vars.additionalGeneralOptions}
-            }
-
-            const theAccordionGroup = new Accordion($accordionGroup, accordionOptions);
-
+        if(!accordionOptions.disableAdditionalGeneralOptions){
+            accordionOptions = {...accordionOptions, ...accordionGroup.vars.additionalGeneralOptions}
         }
+
+        const theAccordionGroup = new Accordion($accordionGroup, accordionOptions);
 
     }
 }

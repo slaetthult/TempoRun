@@ -1,7 +1,7 @@
 ---
 const {audioFile} = Astro.props;
 ---
-<div class="audio-player" data-js="audio-player">
+<partial-audio-player class="audio-player" data-js="audio-player">
 
     <div class="audio-player__controls">
         <button class="audio-player__controls__play" data-audio-player-trigger-play>
@@ -45,20 +45,25 @@ const {audioFile} = Astro.props;
         <source src={audioFile} type="audio/mpeg">
     </audio>
 
-</div>
+</partial-audio-player>
 
 <script>
-    const $audioPlayers = document.querySelectorAll('*[data-js=audio-player]');
+    class PartialAudioPlayer extends HTMLElement {
+        constructor() {
+            super();
+        }
+        connectedCallback() {
+            import('@scripts/partials/audio-player')
+                .then((module) => {
+                    const { audioPlayer } = module;
+                    audioPlayer.init(this);
+                })
+                .catch((error) => {
+                    console.error('Error loading module:', error);
+                });
 
-    if($audioPlayers.length > 0){
-        import('@scripts/partials/audio-player')
-            .then((module) => {
-                const { audioPlayer } = module;
+        }
 
-                audioPlayer.init();
-            })
-            .catch((error) => {
-                console.error('Error loading module:', error);
-            });
     }
+    customElements.define('partial-audio-player', PartialAudioPlayer);
 </script>

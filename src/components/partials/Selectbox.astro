@@ -12,7 +12,7 @@ const { maxSelectable = 1, name = '', classes = '', dataValidationRequired = fal
 const classNames = `selectbox ${classes}`;
 ---
 
-<div class={classNames} data-js="selectbox" data-select-max-selectable={maxSelectable} data-redirect-to-value={redirectToValue}>
+<partial-selectbox class={classNames} data-js="selectbox" data-select-max-selectable={maxSelectable} data-redirect-to-value={redirectToValue}>
     <label>
         {dataValidationRequired ?
                 <select name={name} data-validation-required autocomplete="off">
@@ -25,10 +25,25 @@ const classNames = `selectbox ${classes}`;
                 </select>
         }
     </label>
-</div>
+</partial-selectbox>
 
 <script>
-    import {selectbox} from "@scripts/partials/selectbox";
+    class PartialSelectbox extends HTMLElement {
+        constructor() {
+            super();
+        }
+        connectedCallback() {
+            import('@scripts/partials/selectbox')
+                .then((module) => {
+                    const { selectbox } = module;
+                    selectbox.init(this);
+                })
+                .catch((error) => {
+                    console.error('Error loading module:', error);
+                });
 
-    selectbox.init();
+        }
+
+    }
+    customElements.define('partial-selectbox', PartialSelectbox);
 </script>

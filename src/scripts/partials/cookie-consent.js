@@ -3,7 +3,6 @@ import { getCookieValueOf, setCookie, deleteCookie } from "@scripts/utils/cookie
 export const cookieConsent = {
     vars: {
 
-        parentQuery:                    '*[data-js=cookie-consent]',
         acceptAllQuery:                 '*[data-cookie-consent-accept-all]',
         acceptTechnicalQuery:           '*[data-cookie-consent-accept-technical]',
         rejectSettingsQuery:            '*[data-reject-cookie-settings]',
@@ -15,16 +14,14 @@ export const cookieConsent = {
 
     },
 
-    init(){
+    init($cookieLayer){
 
-        cookieConsent.addEventTrigger();
-        cookieConsent.toggleLayer();
+        cookieConsent.addEventTrigger($cookieLayer);
+        cookieConsent.toggleLayer($cookieLayer);
 
     },
 
-    toggleLayer(){
-
-        const $cookieLayer = document.querySelector(cookieConsent.vars.parentQuery);
+    toggleLayer($cookieLayer){
 
         if(!getCookieValueOf('cookiesAcceptedAll') && !getCookieValueOf('cookiesAcceptedTechnical')){
 
@@ -38,7 +35,7 @@ export const cookieConsent = {
 
     },
 
-    addEventTrigger(){
+    addEventTrigger($cookieLayer){
 
         const $acceptAllButton = document.querySelector(cookieConsent.vars.acceptAllQuery);
         const $acceptTechnicalButton = document.querySelector(cookieConsent.vars.acceptTechnicalQuery);
@@ -46,13 +43,13 @@ export const cookieConsent = {
 
         $acceptAllButton.addEventListener('click', (event) => {
 
-            cookieConsent.acceptAll();
+            cookieConsent.acceptAll($cookieLayer);
 
         });
 
         $acceptTechnicalButton.addEventListener('click', (event) => {
 
-            cookieConsent.acceptTechnical();
+            cookieConsent.acceptTechnical($cookieLayer);
 
         });
 
@@ -60,7 +57,7 @@ export const cookieConsent = {
 
             $rejectSettingsButton.addEventListener('click', (event) => {
 
-                cookieConsent.reset();
+                cookieConsent.reset($cookieLayer);
 
             });
 
@@ -68,29 +65,29 @@ export const cookieConsent = {
 
     },
 
-    acceptAll(){
+    acceptAll($cookieLayer){
 
         deleteCookie(cookieConsent.vars.acceptTechnicalCookieName);
         setCookie(cookieConsent.vars.acceptAllCookieName, 'true');
-        cookieConsent.toggleLayer();
+        cookieConsent.toggleLayer($cookieLayer);
         document.location.reload();
 
     },
 
-    acceptTechnical(){
+    acceptTechnical($cookieLayer){
 
         deleteCookie(cookieConsent.vars.acceptAllCookieName);
         setCookie(cookieConsent.vars.acceptTechnicalCookieName, 'true');
-        cookieConsent.toggleLayer();
+        cookieConsent.toggleLayer($cookieLayer);
         document.location.reload();
 
     },
 
-    reset(){
+    reset($cookieLayer){
 
         deleteCookie(cookieConsent.vars.acceptAllCookieName);
         deleteCookie(cookieConsent.vars.acceptTechnicalCookieName);
-        cookieConsent.toggleLayer();
+        cookieConsent.toggleLayer($cookieLayer);
 
     }
 

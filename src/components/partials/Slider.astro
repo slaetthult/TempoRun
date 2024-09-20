@@ -6,7 +6,7 @@ import 'swiper/css/scrollbar';
 
 const {sliderSettings = ''} = Astro.props;
 ---
-<div class="swiper" data-js="slider" data-slider-settings={sliderSettings}>
+<partial-slider class="swiper" data-js="slider" data-slider-settings={sliderSettings}>
 
     <div class="swiper-wrapper">
 
@@ -21,10 +21,24 @@ const {sliderSettings = ''} = Astro.props;
 
     <div class="swiper-scrollbar"></div>
 
-</div>
+</partial-slider>
 
 <script>
-    import {slider} from "@scripts/partials/slider";
+    class PartialSlider extends HTMLElement {
+        constructor() {
+            super();
+        }
+        connectedCallback() {
+            import('@scripts/partials/slider')
+                .then((module) => {
+                    const { slider } = module;
+                    slider.init(this);
+                })
+                .catch((error) => {
+                    console.error('Error loading module:', error);
+                });
+        }
 
-    slider.init();
+    }
+    customElements.define('partial-slider', PartialSlider);
 </script>

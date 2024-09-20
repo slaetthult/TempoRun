@@ -1,7 +1,7 @@
 ---
 const { forceIntoParagraph = false, textMore = 'Weiterlesen', textLess = 'Weniger', scrollAfterCollapse = 'true', classes = '' } = Astro.props;
 ---
-<div class=`expandable-content ${classes}` data-js="expandable-content" data-expandable-content-scroll-after-collapse={scrollAfterCollapse}>
+<partial-expandable-content class=`expandable-content ${classes}` data-js="expandable-content" data-expandable-content-scroll-after-collapse={scrollAfterCollapse}>
     <div class="expandable-content__wrapper" data-expandable-content-wrapper>
         {forceIntoParagraph ?
             <p>
@@ -17,19 +17,25 @@ const { forceIntoParagraph = false, textMore = 'Weiterlesen', textLess = 'Wenige
             <span>{textLess}</span>
         </button>
     </div>
-</div>
+</partial-expandable-content>
 
 <script>
-    const $expandableContents = document.querySelectorAll('*[data-js=expandable-content]');
+    class PartialExpandableContent extends HTMLElement {
+        constructor() {
+            super();
+        }
+        connectedCallback() {
+            import('@scripts/partials/expandable-content')
+                .then((module) => {
+                    const { expandableContent } = module;
+                    expandableContent.init(this);
+                })
+                .catch((error) => {
+                    console.error('Error loading module:', error);
+                });
 
-    if($expandableContents.length > 0){
-        import('@scripts/partials/expandable-content')
-            .then((module) => {
-                const { expandableContent } = module;
-                expandableContent.init();
-            })
-            .catch((error) => {
-                console.error('Error loading module:', error);
-            });
+        }
+
     }
+    customElements.define('partial-expandable-content', PartialExpandableContent);
 </script>

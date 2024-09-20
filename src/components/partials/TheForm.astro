@@ -1,0 +1,41 @@
+---
+const {method = 'POST', action = '', id = '', validation = true, validationSubmitMessage = 'Form submitted!' } = Astro.props;
+
+
+---
+{validation ?
+    <util-form-validation>
+        <form method={method} action={action} id={id} class="form" data-js="form-validation" data-validation-submit-message={validationSubmitMessage}>
+
+            <slot/>
+
+        </form>
+    </util-form-validation>
+    :
+    <form method={method} action={action} id={id} class="form">
+
+        <slot/>
+
+    </form>
+}
+
+
+<script>
+    class UtilFormValidation extends HTMLElement {
+        constructor() {
+            super();
+        }
+        connectedCallback() {
+            import('@scripts/utils/form-validation.js')
+                .then((module) => {
+                    const { formValidation } = module;
+                    formValidation.init(this.querySelector('form'));
+                })
+                .catch((error) => {
+                    console.error('Error loading module:', error);
+                });
+        }
+
+    }
+    customElements.define('util-form-validation', UtilFormValidation);
+</script>

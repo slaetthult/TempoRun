@@ -1,0 +1,16 @@
+---
+const {name = '', value = '', text = '', required = false, errorText= '', className = ''} = Astro.props;
+---
+<div class=`checkbox ${className}`>
+    <label>
+        {required ?
+            <input type="checkbox" name={name} value={value} data-validation-required>
+        :
+            <input type="checkbox" name={name} value={value}>
+        }
+        <span>{text}</span>
+        {errorText &&
+            <small>{errorText}</small>
+        }
+    </label>
+</div>

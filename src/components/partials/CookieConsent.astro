@@ -2,7 +2,7 @@
 
 ---
 
-<div class="cookie-consent" data-js="cookie-consent" style="display: none;">
+<partial-cookie-consent class="cookie-consent" data-js="cookie-consent" style="display: none;">
     <div class="grid-wrap">
         <div class="cookie-consent__wrapper w12">
             Cookie
@@ -12,10 +12,25 @@
 
         </div>
     </div>
-</div>
+</partial-cookie-consent>
 
 <script>
-    import {cookieConsent} from "@scripts/partials/cookie-consent";
+    class PartialCookieConsent extends HTMLElement {
+        constructor() {
+            super();
+        }
+        connectedCallback() {
+            import('@scripts/partials/cookie-consent')
+                .then((module) => {
+                    const { cookieConsent } = module;
+                    cookieConsent.init(this);
+                })
+                .catch((error) => {
+                    console.error('Error loading module:', error);
+                });
 
-    cookieConsent.init();
+        }
+
+    }
+    customElements.define('partial-cookie-consent', PartialCookieConsent);
 </script>

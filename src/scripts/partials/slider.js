@@ -5,8 +5,6 @@ export const slider = {
 
     vars: {
 
-        swiperQuery:            '*[data-js=slider]',
-
         settingsAttribute:      'data-slider-settings',
 
         mainOptions: {
@@ -28,25 +26,9 @@ export const slider = {
 
     },
 
-    init(){
+    init($slider){
 
-        slider.find();
-
-    },
-
-    find(){
-
-        const $sliders = document.querySelectorAll(slider.vars.swiperQuery);
-
-        if($sliders.length === 0){
-            return false;
-        }
-
-        for(const $slider of $sliders){
-
-            slider.bind($slider);
-
-        }
+        slider.bind($slider);
 
     },
 

@@ -4,13 +4,11 @@ export const googleMap = {
 
     vars: {
 
-        moduleQuery:            '*[data-js=google-map]',
+        geoLocationAttribute:       'data-google-map-geo-location',
+        markerHTMLAttribute:        'data-google-marker-html',
+        zoomFactorAttribute:        'data-google-zoom-factor',
 
-        geoLocationAttribute:   'data-google-map-geo-location',
-        markerHTMLAttribute:    'data-google-marker-html',
-        zoomFactorAttribute:    'data-google-zoom-factor',
-
-        key:                    import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY,
+        key:                        import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY,
 
         options: {
             center: {
@@ -25,21 +23,9 @@ export const googleMap = {
 
     },
 
-    init(){
+    init($map){
 
-        googleMap.find();
-
-    },
-
-    find(){
-
-        const $maps = document.querySelectorAll(googleMap.vars.moduleQuery);
-
-        for(const $map of $maps){
-
-            googleMap.bind($map);
-
-        }
+        googleMap.bind($map);
 
     },
 
