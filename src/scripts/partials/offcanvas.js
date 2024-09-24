@@ -94,9 +94,7 @@ export const offcanvas = {
         }
 
         for(const $offcanvasElement of $offcanvasElements){
-
-            offcanvas.moveToBody($offcanvasElement);
-
+            
             let executed = 1;
             const shouldScrollToTop = $offcanvasElement.getAttribute(offcanvas.vars.scrollToTopAttribute);
 
