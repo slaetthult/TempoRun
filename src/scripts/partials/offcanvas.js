@@ -18,11 +18,29 @@ export const offcanvas = {
 
     init(){
 
-        offcanvas.addEventTrigger();
+        offcanvas.find();
 
     },
 
-    addEventTrigger(){
+    find(){
+
+        const $offcanvasElements = document.querySelectorAll(offcanvas.vars.componentQuery);
+
+        if($offcanvasElements.length === 0){
+            return false;
+        }
+
+        for(const $offcanvasElement of $offcanvasElements) {
+
+            offcanvas.moveToBody($offcanvasElement);
+
+        }
+
+        offcanvas.addEventTrigger($offcanvasElements);
+
+    },
+
+    addEventTrigger($offcanvasElements){
 
         const $body = document.body;
 
@@ -75,9 +93,9 @@ export const offcanvas = {
 
         }
 
-        const $offcanvasElements = document.querySelectorAll(offcanvas.vars.componentQuery);
-
         for(const $offcanvasElement of $offcanvasElements){
+
+            offcanvas.moveToBody($offcanvasElement);
 
             let executed = 1;
             const shouldScrollToTop = $offcanvasElement.getAttribute(offcanvas.vars.scrollToTopAttribute);
@@ -139,6 +157,13 @@ export const offcanvas = {
 
         $offcanvas.classList.add(offcanvas.vars.showClass);
 
-    }
+    },
+
+    moveToBody($offcanvasElement){
+
+        document.body.appendChild($offcanvasElement.cloneNode(true));
+        $offcanvasElement.remove();
+
+    },
 
 }

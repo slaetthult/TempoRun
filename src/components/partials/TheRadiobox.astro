@@ -1,0 +1,23 @@
+---
+const {
+    name = '',
+    value = '',
+    text = '',
+    required = false,
+    errorText= '',
+    className = ''
+} = Astro.props;
+---
+<div class=`radiobox ${className}`>
+    <label>
+        {required ?
+            <input type="radio" name={name} value={value} data-validation-required>
+        :
+            <input type="radio" name={name} value={value}>
+        }
+        <span>{text}</span>
+        {errorText &&
+            <small>{errorText}</small>
+        }
+    </label>
+</div>

@@ -16,8 +16,8 @@
     "@astrojs/partytown": "^2.1.2",
     "@googlemaps/js-api-loader": "^1.16.8",
     "accordion-js": "^3.3.4",
-    "astro": "4.15.7",
-    "sass": "^1.79.1",
+    "astro": "4.15.9",
+    "sass": "^1.79.3",
     "swiper": "^11.1.14",
     "tom-select": "^2.3.1"
   },

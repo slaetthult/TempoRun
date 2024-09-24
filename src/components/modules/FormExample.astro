@@ -1,5 +1,10 @@
 ---
 import Selectbox from "@components/partials/Selectbox.astro";
+import TheRadiobox from "@components/partials/TheRadiobox.astro";
+import TheInput from "@components/partials/TheInput.astro";
+import TheTextarea from "@components/partials/TheTextarea.astro";
+import TheCheckbox from "@components/partials/TheCheckbox.astro";
+import TheButton from "@components/partials/TheButton.astro";
 
 if (Astro.request.method === "POST") {
     try {
@@ -28,63 +33,98 @@ if (Astro.request.method === "POST") {
                     <option value="5">Arnold Schwarzenegger</option>
                 </Selectbox>
 
-                <div class="input w6">
-                    <label>
-                        First Name:
-                        <input type="text" value="" data-validation-required minlength="4">
-                        <small>Required</small>
-                    </label>
-                </div>
-                <div class="input w6">
-                    <label>
-                        Last Name:
-                        <input type="text" value="" minlength="4">
-                        <small>Required</small>
-                    </label>
-                </div>
-                <div class="input w12">
-                    <label>
-                        <input type="email" value="" data-validation-required>
-                        <span>E-mail:</span>
-                        <small>Required</small>
-                    </label>
-                </div>
-                <div class="input w12">
-                    <label>
-                        Phone:
-                        <input type="tel" value="" data-validation-required>
-                        <small>Required</small>
-                    </label>
-                </div>
-                <div class="input w12">
-                    <label>
-                        Password:
-                        <input type="password" value="" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,8}$" data-validation-required>
-                        <small>Must contain at least one number and one letter, and at least 8 or more characters</small>
-                    </label>
-                </div>
-                <div class="input w12">
-                    <label>
-                        Confirm password:
-                        <input type="password" value="" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,8}$" data-validation-required>
-                    </label>
-                </div>
-                <div class="textarea w12">
-                    <label>
-                        <textarea data-value="" minlength="4" maxlength="10"></textarea>
-                        <span>Message:</span>
-                        <small>Please type in at least 4 and maximum 10 letters</small>
-                    </label>
-                </div>
-                <div class="checkbox w12">
-                    <label>
-                        <input type="checkbox" name="tos" value="checkbox2" data-validation-required>
-                        <span>I accept</span>
-                        <small>Required</small>
-                    </label>
-                </div>
-                <button type="submit">Submit</button>
+                <TheRadiobox
+                        className="w6"
+                        name="gender"
+                        text="Mr."
+                        value="1"
+                        required={true}
+                        errorText="Required"
+                />
+                <TheRadiobox
+                        className="w6"
+                        name="gender"
+                        text="Mrs."
+                        value="1"
+                        required={true}
+                />
+                <TheInput
+                        type="text"
+                        name="firstName"
+                        className="w6"
+                        labelText="First name:"
+                        value=""
+                        required={true}
+                        errorText="Required"
+                        minlength="4"
+                />
+                <TheInput
+                        type="text"
+                        name="lastName"
+                        className="w6"
+                        labelText="Last name:"
+                        value=""
+                        required={true}
+                        errorText="Required"
+                        minlength="4"
+                />
+                <TheInput
+                        type="email"
+                        name="email"
+                        className="w12"
+                        labelText="E-mail:"
+                        value=""
+                        required={true}
+                        errorText="Required"
+                />
+                <TheInput
+                        type="tel"
+                        name="tel"
+                        className="w12"
+                        labelText="Phone:"
+                        value=""
+                        required={true}
+                        errorText="Required"
+                />
+                <TheInput
+                        type="password"
+                        name="password"
+                        className="w12"
+                        labelText="Password:"
+                        value=""
+                        required={true}
+                        errorText="Must contain at least 8 or more characters"
+                        minlength="8"
 
+                />
+                <TheInput
+                        type="password"
+                        name="passwordConfirm"
+                        className="w12"
+                        labelText="Confirm password:"
+                        value=""
+                        required={true}
+                        errorText=""
+                        minlength="8"
+                />
+                <TheTextarea
+                        name="message"
+                        className="w12"
+                        labelText="Message:"
+                        value=""
+                        errorText="Please type in at least 4 and maximum 10 letters"
+                        minlength="4"
+                        maxlength="10"
+                />
+                <TheCheckbox
+                        className="w12"
+                        name="tos"
+                        value="1"
+                        text="I accept"
+                        required={true}
+                        errorText="Required"
+                />
+                <TheButton type="submit">Submit</TheButton>
             </form>
 
         </div>
