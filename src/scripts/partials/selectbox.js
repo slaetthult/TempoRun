@@ -48,6 +48,10 @@ export const selectbox = {
 
     bind($select, redirectToValue){
 
+        if($select.classList.contains('tomselected')){
+            return false;
+        }
+
         const $tomSelect = new TomSelect($select, selectbox.vars.config);
 
         if(redirectToValue){
