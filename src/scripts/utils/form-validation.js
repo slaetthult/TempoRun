@@ -14,6 +14,9 @@ export const formValidation = {
         submitEvent:                        'submit',
 
         passwordErrorText:                  'Passwords are not matching!',
+        passwordRegexErrorText:             'Passwords is not valid!',
+
+        passwordRegex:                      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{9,}$/,
 
         initialized:                        false
 
@@ -122,6 +125,13 @@ export const formValidation = {
 
             const $password = $passwordFields[0];
             const $passwordConfirm = $passwordFields[1];
+            const regex = formValidation.vars.passwordRegex;
+
+            if(!regex.test($password.value)){
+                $password.setCustomValidity(formValidation.vars.passwordRegexErrorText);
+            } else {
+                $password.setCustomValidity('');
+            }
 
             if($password.value !== $passwordConfirm.value){
 
