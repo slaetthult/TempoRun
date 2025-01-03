@@ -19,9 +19,6 @@ export default defineConfig({
     prefetch: {
         prefetchAll: true
     },
-    experimental: {
-        contentCollectionCache: true
-    },
     image: {
         remotePatterns: [{ protocol: "https" }],
     }

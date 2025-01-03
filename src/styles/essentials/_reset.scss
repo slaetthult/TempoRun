@@ -1,4 +1,4 @@
-@use '@styles/utils' as *;
+@use "@styles/utils" as *;
 
 /* -------------------------------------------------------- */
 /*        RESET . JUST DELETE SHITI BROWSER THINGS          */
@@ -6,14 +6,13 @@
 
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, button, p, a, input, textarea, hr, svg, blockquote, main, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, form, fieldset, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, menu, nav, section, summary, time, mark, audio, video {
 
-    /* ADD THE BASE, DELETE SHITI BROWSER STYLES  */
+    /* ADD THE BASE, DELETE BAD BROWSER STYLES  */
+    margin: 0;
+    padding: 0;
     background: transparent;
     vertical-align: baseline;
     border: 0;
     outline: 0;
-    margin: 0;
-    padding: 0;
-
     font-size: inherit;
     color: inherit;
     font-family: inherit;
@@ -39,11 +38,6 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, button, p, a, inp
 
 }
 
-main, section, aside, footer, nav, header {
-    /* Correct `block` display not defined in IE 11.*/
-    display: block;
-}
-
 html {
     /* SET THE RIGHT FONT SIZE  */
     -webkit-text-size-adjust: 100%;
@@ -66,8 +60,6 @@ html {
 /* -------------------------------------------------------- */
 
 audio, canvas, progress, video {
-    /* Correct `inline-block` display not defined in IE 8/9.*/
-    display: inline-block;
     /* Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.*/
     vertical-align: baseline;
 }
@@ -75,8 +67,6 @@ audio, canvas, progress, video {
 audio:not([controls]) {
     /* Prevent modern browsers from displaying `audio` without controls.*/
     display: none;
-    /* Remove excess height in iOS 5 devices.*/
-    height: 0;
 }
 
 input, button, textarea {
@@ -107,17 +97,17 @@ input {
 }
 
 button::-moz-focus-inner,
-[type='button']::-moz-focus-inner,
-[type='reset']::-moz-focus-inner,
-[type='submit']::-moz-focus-inner {
-    border-style: none;
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
     padding: 0;
+    border-style: none;
 }
 
 button:-moz-focusring,
-[type='button']:-moz-focusring,
-[type='reset']:-moz-focusring,
-[type='submit']:-moz-focusring {
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
     outline: 1px dotted ButtonText;
 }
 
@@ -136,9 +126,9 @@ input {
     &[type="checkbox"],
     &[type="radio"] {
         /* NOW SET THIS TO TRUE TO SHOW CHECKBOXES */
+        padding: 0;
         -webkit-appearance:checkbox;
         box-sizing: border-box;
-        padding: 0;
     }
     &[type="number"] {
         -moz-appearance:textfield;
@@ -149,38 +139,10 @@ input {
     }
 }
 
-/* Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.*/
-template {
-    display: none;
-}
 
 /* -------------------------------------------------------- */
 /*              OTHER RESETS - A, SVG, ELEMENTS             */
 /* -------------------------------------------------------- */
-
-/* Remove the gray background color from active links in IE 10.*/
-a {
-    background: transparent;
-    text-decoration: none;
-    &:active,
-    &:hover {
-        outline: 0;
-    }
-    img {
-        border: 0 none;
-    }
-}
-
-svg:not(:root) {
-    /* Correct overflow not hidden in IE 9/10/11.*/
-    overflow: hidden;
-}
-
-textarea {
-    /* NO SCROLLBARS IN IE .*/
-    overflow: auto;
-    resize: none;
-}
 
 table {
     border-collapse: collapse;

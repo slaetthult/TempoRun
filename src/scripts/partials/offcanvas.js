@@ -10,7 +10,7 @@ export const offcanvas = {
         idAttribute:                            'data-offcanvas-id',
         triggerOpenIdAttribute:                 'data-offcanvas-trigger-open-id',
         scrollToTopAttribute:                   'data-offcanvas-scroll-top-on-change',
-        openInitially:                          'data-offcanvas-open-initially',
+        openInitiallyAttribute:                 'data-offcanvas-open-initially',
 
         showClass:                              'offcanvas--show'
 
@@ -107,7 +107,7 @@ export const offcanvas = {
                 });
             }
 
-            if($offcanvasElement.hasAttribute(offcanvas.vars.openInitially)){
+            if($offcanvasElement.getAttribute(offcanvas.vars.openInitiallyAttribute) === 'true'){
                 const offcanvasId = $offcanvasElement.getAttribute(offcanvas.vars.idAttribute);
                 offcanvas.open(offcanvasId);
             }

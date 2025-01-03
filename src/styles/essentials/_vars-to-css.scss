@@ -1,11 +1,12 @@
-@use '@styles/utils' as *;
+@use "@styles/utils" as *;
+@use "sass:map";
 
 /* -------------------------------------------------------- */
 /*    TRANSLATE SCSS COLOR VARIABLES TO CSS VARIABLES       */
 /* -------------------------------------------------------- */
 
 :root {
-    @each $current-color, $current-color-value in map-get($colors, "light") {
+    @each $current-color, $current-color-value in map.get($colors, "light") {
         --color-#{$current-color}: #{$current-color-value};
     }
     --viewports: #{$viewports-string};
@@ -16,7 +17,7 @@
         color-scheme: dark;
     }
     :root {
-        @each $current-color, $current-color-value in map-get($colors, "dark") {
+        @each $current-color, $current-color-value in map.get($colors, "dark") {
             --color-#{$current-color}: #{$current-color-value};
         }
     }

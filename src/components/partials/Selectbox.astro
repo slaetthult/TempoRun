@@ -1,5 +1,7 @@
 ---
 import 'tom-select/dist/css/tom-select.css';
+import '@styles/partials/_selectbox.scss';
+
 interface Props {
     maxSelectable: number;
     classes: string;
@@ -28,7 +30,17 @@ const classNames = `selectbox ${classes}`;
 </div>
 
 <script>
-    import {selectbox} from "@scripts/partials/selectbox";
+    const $selectboxes = document.querySelectorAll('*[data-js=selectbox]');
 
-    selectbox.init();
+    if($selectboxes.length > 0){
+        import('@scripts/partials/selectbox')
+            .then((module) => {
+                const { selectbox } = module;
+
+                selectbox.init();
+            })
+            .catch((error) => {
+                console.error('Error loading module:', error);
+            });
+    }
 </script>

@@ -24,7 +24,17 @@ const {sliderSettings = ''} = Astro.props;
 </div>
 
 <script>
-    import {slider} from "@scripts/partials/slider";
+    const $sliders = document.querySelectorAll('*[data-js=slider]');
 
-    slider.init();
+    if($sliders.length > 0){
+        import('@scripts/partials/slider')
+            .then((module) => {
+                const { slider } = module;
+
+                slider.init();
+            })
+            .catch((error) => {
+                console.error('Error loading module:', error);
+            });
+    }
 </script>

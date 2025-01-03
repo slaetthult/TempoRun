@@ -1,17 +1,18 @@
 ---
-import Selectbox from "@components/partials/Selectbox.astro";
-import TheRadiobox from "@components/partials/TheRadiobox.astro";
-import TheInput from "@components/partials/TheInput.astro";
-import TheTextarea from "@components/partials/TheTextarea.astro";
-import TheCheckbox from "@components/partials/TheCheckbox.astro";
-import TheButton from "@components/partials/TheButton.astro";
+import Selectbox from '@components/partials/Selectbox.astro';
+import TheRadiobox from '@components/partials/TheRadiobox.astro';
+import TheInput from '@components/partials/TheInput.astro';
+import TheTextarea from '@components/partials/TheTextarea.astro';
+import TheCheckbox from '@components/partials/TheCheckbox.astro';
+import TheButton from '@components/partials/TheButton.astro';
+import '@styles/modules/_form-example.scss';
 
-if (Astro.request.method === "POST") {
+if (Astro.request.method === 'POST') {
     try {
-        console.error("form sent");
+        console.error('form sent');
     } catch (error) {
         if (error instanceof Error) {
-            console.error("form not sent");
+            console.error('form not sent');
         }
     }
 }

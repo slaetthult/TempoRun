@@ -1,4 +1,5 @@
 ---
+import '@styles/partials/_modalbox.scss';
 const {id = '', classes = ''} = Astro.props;
 const className = `modalbox ${id} ${classes}`;
 ---
@@ -17,8 +18,18 @@ const className = `modalbox ${id} ${classes}`;
 
 </div>
 
-
 <script>
-    import {modalbox} from "@scripts/partials/modalbox";
-    modalbox.init();
+    const $modalboxes = document.querySelectorAll('*[data-js=modalbox]');
+
+    if($modalboxes.length > 0){
+        import('@scripts/partials/modalbox')
+            .then((module) => {
+                const { modalbox } = module;
+
+                modalbox.init();
+            })
+            .catch((error) => {
+                console.error('Error loading module:', error);
+            });
+    }
 </script>

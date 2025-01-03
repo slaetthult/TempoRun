@@ -23,24 +23,16 @@
 /*                       PARTIALS                           */
 /* -------------------------------------------------------- */
 
-@use "partials/_modalbox";
-@use "partials/_checkbox";
-@use "partials/_radiobox";
-@use "partials/_selectbox";
 @use "partials/_form";
-@use "partials/_offcanvas";
-@use "partials/_audio-player";
-@use "partials/expandable-content";
-@use "partials/_google-map";
-@use "partials/_to-top-button";
-@use "partials/_accordion";
-@use "partials/_cookie-consent";
+
+/**
+    Import inside astro component!
+ */
 
 /* -------------------------------------------------------- */
 /*                     MODULES/SLICES                       */
 /* -------------------------------------------------------- */
 
-@use "modules/_content-accordion";
-@use "modules/_form-example";
-@use "modules/_gallery-slider";
-@use "modules/_grid-example";
+/**
+    Import inside astro component!
+ */

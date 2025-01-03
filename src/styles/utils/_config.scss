@@ -1,5 +1,6 @@
 @use "sass:list";
 @use "sass:math";
+@use "sass:map";
 
 /* -------------------------------------------------------- */
 /*        CONFIG DATA . FONTS, GENERALS and VARIABLES       */
@@ -37,12 +38,12 @@ $grid-absolute-box-margin:      5px;
 $grid-wrapper-outer-padding:    10px;
 $grid-absolute-site-width:	    1008px;
 
-$grid-margin:			        percentage(math.div($grid-absolute-box-margin,$grid-absolute-site-width));
+$grid-margin:			        math.percentage(math.div($grid-absolute-box-margin,$grid-absolute-site-width));
 $grid-absolute-box-width:       math.div($grid-absolute-site-width,$grid) - $grid-absolute-box-margin - $grid-absolute-box-margin;
 
 @function grid-size($size) {
     $qoutient: $size * 2 - 2;
-    @return percentage(math.div(($grid-absolute-box-width * $size + $grid-absolute-box-margin * $qoutient),$grid-absolute-site-width));
+    @return math.percentage(math.div(($grid-absolute-box-width * $size + $grid-absolute-box-margin * $qoutient),$grid-absolute-site-width));
 }
 
 /* -------------------------------------------------------- */
@@ -118,7 +119,7 @@ $colors: (
 );
 
 @function color($mode: "light", $color) {
-    @return map-get(map-get($colors, $mode), $color);
+    @return map.get(map.get($colors, $mode), $color);
 }
 
 
@@ -168,7 +169,7 @@ $font-weight-medium:		                500;
 $font-weight-semibold:		                600;
 $font-weight-bold:			                700;
 
-$font-family:			                    'Barlow', Arial, sans-serif;
+$font-family:			                    "Barlow", Arial, sans-serif;
 $font-family-monospace:		                Consolas, "Lucida Console", Monaco, monospace;
 
 $link-text-decoration:		                none;

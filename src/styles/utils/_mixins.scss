@@ -1,4 +1,5 @@
-@use '@styles/utils/_config' as *;
+@use "@styles/utils/_config" as *;
+@use "sass:map";
 
 /* -------------------------------------------------------- */
 /*                PLUG AND PLAY STYLE MIXINS                */
@@ -6,7 +7,7 @@
 
 // DEFINING THE MEDIA VIEWPORT
 @mixin viewport($viewportName) {
-    @media screen and (min-width: map-get($viewports, $viewportName)) {
+    @media screen and (min-width: map.get($viewports, $viewportName)) {
         @content;
     }
 }
