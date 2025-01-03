@@ -1,4 +1,4 @@
-# Astro 4 Starter Kit: TempoRun
+# Astro 5 Starter Kit: TempoRun
 
 ## 🚀 Project Structure
 
@@ -204,11 +204,97 @@ import Modalbox from "@components/partials/Modalbox.astro";
     <button data-close-modal>close it</button>
 </Modalbox>
 
-<button data-open-modal="test2" classes="my-modal">Modalbox 2</button>
+<button data-open-modal="test2">Modalbox 2</button>
 <Modalbox id="test2">
     <h1>Modalbox 2</h1>
     <button data-close-modal>close it</button>
 </Modalbox>
+
+```
+
+### Offcanvases
+
+Just import the Offcanvas component. Offcanvas ids have to be unique. <br>
+All Offcanvases are moved to HTML-Body to prevent any styling issues.
+
+```
+---
+import Offcanvas from '@components/partials/Offcanvas.astro';
+---
+
+<button data-offcanvas-trigger-open-id="offcanvas1">Open Offcanvas 1</button>
+<button data-offcanvas-trigger-open-id="offcanvas2">Open Offcanvas 2</button>
+
+<Offcanvas id="offcanvas1" orientation="right">
+    <div class="h2">I'm an offcanvas 1</div>
+</Offcanvas>
+<Offcanvas id="offcanvas2" orientation="left">
+    <div class="h2">I'm an offcanvas 2</div>
+</Offcanvas>
+
+```
+
+### Audio players
+
+Just import the AudioPlayer component.
+
+```
+---
+import AudioPlayer from '@components/partials/AudioPlayer.astro';
+---
+
+<AudioPlayer audioFile="https://ia600409.us.archive.org/12/items/01AbsoluteSamplerDEMOnTEST/01%20-%20Absolute%20Sampler%20DEMO%27n%27TEST.mp3"/>
+<AudioPlayer audioFile="https://ia600409.us.archive.org/12/items/01AbsoluteSamplerDEMOnTEST/01%20-%20Absolute%20Sampler%20DEMO%27n%27TEST.mp3"/>
+
+```
+
+### Google Map
+
+Just import the GoogleMap component.
+
+```
+---
+import GoogleMap from "@components/partials/GoogleMap.astro";
+
+export const gmapData = {
+    geoLocation: {
+        lat: 50.942091,
+        lng: 6.956872
+    },
+
+    zoom: 16
+}
+---
+
+<GoogleMap geoLocation={gmapData.geoLocation} zoom={gmapData.zoom} markerHTML=`
+    <a target="_blank" href="https://www.google.com/maps?q=${gmapData.geoLocation.lat},${gmapData.geoLocation.lng}"> 
+        In Google Maps ansehen
+    </a>
+`/>
+    
+```
+
+### Expandable content
+
+Just import the ExpandableContent component. Define max visible part via CSS
+
+```
+---
+import ExpandableContent from '@components/partials/ExpandableContent.astro';
+---
+
+<ExpandableContent>
+    <p>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    </p>
+</ExpandableContent>
+<ExpandableContent>
+    <p>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    </p>
+</ExpandableContent>
 
 ```
 

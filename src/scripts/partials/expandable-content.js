@@ -1,7 +1,7 @@
 export const expandableContent = {
     vars: {
         componentQuery:                     '*[data-js=expandable-content]',
-        contentWrapperQuery:                   '*[data-expandable-content-wrapper]',
+        contentWrapperQuery:                '*[data-expandable-content-wrapper]',
         toggleQuery:                        '*[data-expandable-content-toggle]',
 
         scrollAfterCollapseAttribute:       'data-expandable-content-scroll-after-collapse',
