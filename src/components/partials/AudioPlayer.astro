@@ -5,15 +5,15 @@ const {audioFile} = Astro.props;
 <div class="audio-player" data-js="audio-player">
 
     <div class="audio-player__controls">
-        <button class="audio-player__controls__play" data-audio-player-trigger-play>
+        <button class="audio-player__controls__play" data-audio-player-trigger-play aria-label="play audio">
             <svg  height="11" viewBox="0 0 494.942 494.942" width="11" xmlns="http://www.w3.org/2000/svg"><path d="m35.353 0 424.236 247.471-424.236 247.471z"></path></svg>
         </button>
-        <button class="audio-player__controls__pause" data-audio-player-trigger-pause>
+        <button class="audio-player__controls__pause" data-audio-player-trigger-pause aria-label="pause audio">
             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="11" height="11" viewBox="0 0 298.667 298.667" style="enable-background:new 0 0 298.667 298.667;" xml:space="preserve"><rect x="192" y="0" width="85.333" height="298.667"></rect><rect x="21.333" y="0" width="85.333" height="298.667"></rect></svg>
         </button>
     </div>
 
-    <button class="audio-player__progress-bar" data-audio-player-progress-bar>
+    <button class="audio-player__progress-bar" data-audio-player-progress-bar aria-label="go to audio position">
         <span class="audio-player__progress-bar__active" data-audio-player-progress-bar-active></span>
     </button>
 
