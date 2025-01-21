@@ -1,6 +1,12 @@
 ---
 import '@styles/partials/_expandable-content.scss';
-const { forceIntoParagraph = false, textMore = 'Weiterlesen', textLess = 'Weniger', scrollAfterCollapse = 'true', classes = '' } = Astro.props;
+const {
+    forceIntoParagraph = false,
+    textMore = 'Weiterlesen',
+    textLess = 'Weniger',
+    scrollAfterCollapse = 'true',
+    classes = ''
+} = Astro.props;
 ---
 <div class=`expandable-content ${classes}` data-js="expandable-content" data-expandable-content-scroll-after-collapse={scrollAfterCollapse}>
     <div class="expandable-content__wrapper" data-expandable-content-wrapper>

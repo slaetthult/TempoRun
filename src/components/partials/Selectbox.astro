@@ -2,14 +2,13 @@
 import 'tom-select/dist/css/tom-select.css';
 import '@styles/partials/_selectbox.scss';
 
-interface Props {
-    maxSelectable: number;
-    classes: string;
-    dataValidationRequired: boolean;
-    redirectToValue: boolean;
-}
-
-const { maxSelectable = 1, name = '', classes = '', dataValidationRequired = false, redirectToValue = false } = Astro.props;
+const {
+    maxSelectable = 1,
+    name = '',
+    classes = '',
+    dataValidationRequired = false,
+    redirectToValue = false
+} = Astro.props;
 
 const classNames = `selectbox ${classes}`;
 ---

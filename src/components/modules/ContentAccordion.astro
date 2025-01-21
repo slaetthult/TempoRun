@@ -1,7 +1,7 @@
 ---
 import Accordion from '@components/partials/Accordion.astro';
 import AccordionGroup from '@components/partials/AccordionGroup.astro';
-import TheImage from '@components/partials/TheImage.astro';
+import Image from '@components/partials/Image.astro';
 import '@styles/modules/_content-accordion.scss';
 
 const accordionSettings = {
@@ -24,7 +24,7 @@ const accordionSettingsJSON = encodeURIComponent(JSON.stringify(accordionSetting
                     </p>
                     <a href="/subpage">To subpage</a>
                     <figure>
-                        <TheImage
+                        <Image
                             src="https://placehold.co/978x489"
                             width="978"
                             height="489"
@@ -49,7 +49,7 @@ const accordionSettingsJSON = encodeURIComponent(JSON.stringify(accordionSetting
                             </p>
                             <a href="/subpage">To subpage</a>
                             <figure>
-                                <TheImage
+                                <Image
                                     src="https://placehold.co/978x489"
                                     width="978"
                                     height="489"

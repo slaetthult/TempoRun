@@ -1,6 +1,10 @@
 ---
 import '@styles/partials/_google-map.scss';
-const { geoLocation, markerHTML, zoom = 8 } = Astro.props;
+const {
+    geoLocation,
+    markerHTML,
+    zoom = 8
+} = Astro.props;
 ---
 
 <div class="google-map" data-js="google-map" data-google-zoom-factor={JSON.stringify(zoom)} data-google-map-geo-location={JSON.stringify(geoLocation)} data-google-marker-html={JSON.stringify(markerHTML)} style="display: none;"></div>
