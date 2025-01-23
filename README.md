@@ -462,10 +462,15 @@ https://github.com/alextim/astro-lib/tree/main/packages/astro-robots-txt#readme
 | Browser | Version         |
 |:--------|:----------------|
 | IE      | Not supported   |
-| Edge    | 90 and higher   |
+| Edge    | 85 and higher   |
 | Firefox | 80 and higher   |
-| Safari  | 14.1 and higher |
+| Safari  | 13.1 and higher |
 | Chrome  | 85 and higher   |
 | Opera   | 80 and higher   |
-| iOS     | 14 and higher   |
-| Android | 9 and higher    |
+
+## Mobile OS Support
+
+| OS      | Version         |
+|:--------|:----------------|
+| iOS     | 13 and higher   |
+| Android | 10 and higher   |
