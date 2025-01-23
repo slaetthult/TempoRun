@@ -12,8 +12,11 @@ export default defineConfig({
     vite: {
         plugins: [mkcert()],
         server: {
-            https: true,
+            https: true
         },
+        build: {
+            target: 'es2019'
+        }
     },
     integrations: [alpine(), partytown(), sitemap(), robotsTxt(robotsConfig)],
     prefetch: {
