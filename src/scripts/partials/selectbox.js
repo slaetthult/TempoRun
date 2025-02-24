@@ -10,8 +10,7 @@ export const selectbox = {
         redirectToValueAttribute:       'data-redirect-to-value',
 
         config: {
-            maxItems: 1,
-            searchField: null
+            maxItems: 1
         }
     },
 
@@ -39,7 +38,7 @@ export const selectbox = {
             const $input = $select.querySelector('input');
 
             if($input){
-                $select.querySelector('input').readOnly = true;
+                $select.querySelector('input').readOnly = false;
             }
 
         }
@@ -54,7 +53,7 @@ export const selectbox = {
 
         const $tomSelect = new TomSelect($select, selectbox.vars.config);
 
-        if(redirectToValue){
+        if(redirectToValue ==  true){
             selectbox.addEvents.redirectToValue($tomSelect);
         }
 
