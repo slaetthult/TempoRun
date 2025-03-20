@@ -3,15 +3,21 @@ import { getCookieValueOf, setCookie, deleteCookie } from "@scripts/utils/cookie
 export const cookieConsent = {
     vars: {
 
-        parentQuery:                    '*[data-js=cookie-consent]',
-        acceptAllQuery:                 '*[data-cookie-consent-accept-all]',
-        acceptTechnicalQuery:           '*[data-cookie-consent-accept-technical]',
-        rejectSettingsQuery:            '*[data-reject-cookie-settings]',
+        queries: {
+            parent:                     '*[data-js=cookie-consent]',
+            acceptAll:                  '*[data-cookie-consent-accept-all]',
+            acceptTechnical:            '*[data-cookie-consent-accept-technical]',
+            rejectSettings:             '*[data-reject-cookie-settings]',
+        },
 
-        acceptAllCookieName:            'cookiesAcceptedAll',
-        acceptTechnicalCookieName:      'cookiesAcceptedTechnical',
+        names: {
+            acceptAllCookie:            'cookiesAcceptedAll',
+            acceptTechnicalCookie:      'cookiesAcceptedTechnical',
+        },
 
-        showClass:                      'cookie-consent--show'
+        classes: {
+            show:                       'cookie-consent--show'
+        }
 
     },
 
@@ -24,15 +30,15 @@ export const cookieConsent = {
 
     toggleLayer(){
 
-        const $cookieLayer = document.querySelector(cookieConsent.vars.parentQuery);
+        const $cookieLayer = document.querySelector(cookieConsent.vars.queries.parent);
 
         if(!getCookieValueOf('cookiesAcceptedAll') && !getCookieValueOf('cookiesAcceptedTechnical')){
 
-            $cookieLayer.classList.add(cookieConsent.vars.showClass);
+            $cookieLayer.classList.add(cookieConsent.vars.classes.show);
 
         } else {
 
-            $cookieLayer.classList.remove(cookieConsent.vars.showClass);
+            $cookieLayer.classList.remove(cookieConsent.vars.classes.show);
 
         }
 
@@ -40,9 +46,9 @@ export const cookieConsent = {
 
     addEventTrigger(){
 
-        const $acceptAllButton = document.querySelector(cookieConsent.vars.acceptAllQuery);
-        const $acceptTechnicalButton = document.querySelector(cookieConsent.vars.acceptTechnicalQuery);
-        const $rejectSettingsButtons = document.querySelectorAll(cookieConsent.vars.rejectSettingsQuery);
+        const $acceptAllButton = document.querySelector(cookieConsent.vars.queries.acceptAll);
+        const $acceptTechnicalButton = document.querySelector(cookieConsent.vars.queries.acceptTechnical);
+        const $rejectSettingsButtons = document.querySelectorAll(cookieConsent.vars.queries.rejectSettings);
 
         $acceptAllButton.addEventListener('click', (event) => {
 
@@ -70,8 +76,8 @@ export const cookieConsent = {
 
     acceptAll(){
 
-        deleteCookie(cookieConsent.vars.acceptTechnicalCookieName);
-        setCookie(cookieConsent.vars.acceptAllCookieName, 'true');
+        deleteCookie(cookieConsent.vars.names.acceptTechnicalCookie);
+        setCookie(cookieConsent.vars.names.acceptAllCookie, 'true');
         cookieConsent.toggleLayer();
         document.location.reload();
 
@@ -79,8 +85,8 @@ export const cookieConsent = {
 
     acceptTechnical(){
 
-        deleteCookie(cookieConsent.vars.acceptAllCookieName);
-        setCookie(cookieConsent.vars.acceptTechnicalCookieName, 'true');
+        deleteCookie(cookieConsent.vars.names.acceptAllCookie);
+        setCookie(cookieConsent.vars.names.acceptTechnicalCookie, 'true');
         cookieConsent.toggleLayer();
         document.location.reload();
 
@@ -88,8 +94,8 @@ export const cookieConsent = {
 
     reset(){
 
-        deleteCookie(cookieConsent.vars.acceptAllCookieName);
-        deleteCookie(cookieConsent.vars.acceptTechnicalCookieName);
+        deleteCookie(cookieConsent.vars.names.acceptAllCookie);
+        deleteCookie(cookieConsent.vars.names.acceptTechnicalCookie);
         cookieConsent.toggleLayer();
 
     }

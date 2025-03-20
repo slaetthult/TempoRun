@@ -2,32 +2,46 @@ export const formValidation = {
 
     vars: {
 
-        formQuery:                          '*[data-js=form-validation]',
-        passwordQuery:                      '*[type=password]',
+        queries: {
+            form:                           '*[data-js=form-validation]',
+            password:                       '*[type=password]',
+        },
 
-        validationRequiredAttribute:        'data-validation-required',
-        submitMessageAttribute:             'data-validation-submit-message',
+        attributes: {
+            validationRequired:             'data-validation-required',
+            submitMessage:                  'data-validation-submit-message',
+        },
 
-        submitMessageClass:                 'form__submit-message w12',
+        classes: {
+            submitMessage:                  'form__submit-message w12',
+        },
 
-        validationEvents:                   ['keyup', 'change', 'input'],
-        submitEvent:                        'submit',
+        events: {
+            validation:                     ['keyup', 'change', 'input'],
+            submit:                         'submit',
+        },
 
-        passwordErrorText:                  'Passwords are not matching!',
-        passwordRegexErrorText:             'Passwords is not valid!',
+        texts: {
+            passwordError:                  'Passwords are not matching!',
+            passwordRegexError:             'Passwords is not valid!',
+        },
 
-        passwordRegex:                      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{9,}$/,
+        regexes: {
+            password:                       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{9,}$/,
+        },
 
-        initialized:                        false
+        states: {
+            initialized:                    false
+        }
 
     },
 
     init(){
 
-        if(!formValidation.vars.initialized){
+        if(!formValidation.vars.states.initialized){
 
             formValidation.addEventTrigger();
-            formValidation.vars.initialized = true;
+            formValidation.vars.states.initialized = true;
 
         }
 
@@ -35,7 +49,7 @@ export const formValidation = {
 
     addEventTrigger(){
 
-        const $forms = document.querySelectorAll(formValidation.vars.formQuery);
+        const $forms = document.querySelectorAll(formValidation.vars.queries.form);
 
         if($forms.length === 0){
             return false;
@@ -43,7 +57,7 @@ export const formValidation = {
 
         for(const $form of $forms){
 
-            const $passwordFields = $form.querySelectorAll(formValidation.vars.passwordQuery);
+            const $passwordFields = $form.querySelectorAll(formValidation.vars.queries.password);
 
             const $formFields = new Set([
                 ...$form.querySelectorAll('input'),
@@ -53,7 +67,7 @@ export const formValidation = {
 
             for(const $formField of $formFields){
 
-                for(const eventName of formValidation.vars.validationEvents){
+                for(const eventName of formValidation.vars.events.validation){
 
                     $formField.addEventListener(eventName, (event) => {
 
@@ -65,7 +79,7 @@ export const formValidation = {
 
             }
 
-            $form.addEventListener(formValidation.vars.submitEvent, (event) => {
+            $form.addEventListener(formValidation.vars.events.submit, (event) => {
 
                 for(const $formField of $formFields){
 
@@ -104,7 +118,7 @@ export const formValidation = {
 
     setRequiredAttribute($formField){
 
-        if($formField.hasAttribute(formValidation.vars.validationRequiredAttribute)){
+        if($formField.hasAttribute(formValidation.vars.attributes.validationRequired)){
 
             $formField.setAttribute('required', '');
 
@@ -125,17 +139,17 @@ export const formValidation = {
 
             const $password = $passwordFields[0];
             const $passwordConfirm = $passwordFields[1];
-            const regex = formValidation.vars.passwordRegex;
+            const regex = formValidation.vars.regexes.password;
 
             if(!regex.test($password.value)){
-                $password.setCustomValidity(formValidation.vars.passwordRegexErrorText);
+                $password.setCustomValidity(formValidation.vars.texts.passwordRegexError);
             } else {
                 $password.setCustomValidity('');
             }
 
             if($password.value !== $passwordConfirm.value){
 
-                $passwordConfirm.setCustomValidity(formValidation.vars.passwordErrorText);
+                $passwordConfirm.setCustomValidity(formValidation.vars.texts.passwordError);
 
             } else {
 
@@ -149,10 +163,10 @@ export const formValidation = {
 
     showSubmitMessage($form){
 
-        const submitMessage = $form.getAttribute(formValidation.vars.submitMessageAttribute);
+        const submitMessage = $form.getAttribute(formValidation.vars.attributes.submitMessage);
 
         if(submitMessage && submitMessage.length > 0){
-            $form.innerHTML = `<p class="${formValidation.vars.submitMessageClass}">${submitMessage}</p>`;
+            $form.innerHTML = `<p class="${formValidation.vars.classes.submitMessage}">${submitMessage}</p>`;
         }
 
         $form.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
@@ -165,7 +179,7 @@ export const formValidation = {
             return false;
         }
 
-        $form.addEventListener(formValidation.vars.submitEvent, (event) => {
+        $form.addEventListener(formValidation.vars.events.submit, (event) => {
 
             if($form.checkValidity()){
 

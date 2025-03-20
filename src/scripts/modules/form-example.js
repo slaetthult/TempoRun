@@ -2,7 +2,11 @@ import { formValidation } from "@scripts/utils/form-validation.js";
 
 export const formExample = {
     vars: {
-        formQuery:          '#form-example'
+
+        queries: {
+            form:          '#form-example'
+        }
+
     },
     init(){
 
@@ -16,7 +20,7 @@ export const formExample = {
     },
     formSubmit(){
 
-        const $form = document.querySelector(formExample.vars.formQuery);
+        const $form = document.querySelector(formExample.vars.queries.form);
 
         const submitHandler = (event) => {
 

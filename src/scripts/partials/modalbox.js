@@ -2,14 +2,20 @@ export const modalbox = {
 
     vars: {
 
-        parentQuery:        '*[data-js=modalbox]',
-        wrapperQuery:       '.modalbox__wrapper',
-        triggerQuery:       '*[data-open-modal]',
-        closeTriggerQuery:  '*[data-close-modal]',
+        queries: {
+            parent:             '*[data-js=modalbox]',
+            wrapper:            '.modalbox__wrapper',
+            trigger:            '*[data-open-modal]',
+            closeTrigger:       '*[data-close-modal]',
+        },
 
-        triggerAttribute:   'data-open-modal',
+        attributes: {
+            trigger:            'data-open-modal',
+        },
 
-        showClass:          'modalbox--show'
+        classes: {
+            show:               'modalbox--show'
+        }
 
     },
 
@@ -24,7 +30,7 @@ export const modalbox = {
 
     find(){
 
-        const $modalboxes = document.querySelectorAll((modalbox.vars.parentQuery));
+        const $modalboxes = document.querySelectorAll((modalbox.vars.queries.parent));
 
         for(const $modalbox of $modalboxes){
 
@@ -45,7 +51,7 @@ export const modalbox = {
 
         open(){
 
-            const $openTriggers = document.querySelectorAll(modalbox.vars.triggerQuery);
+            const $openTriggers = document.querySelectorAll(modalbox.vars.queries.trigger);
 
             for(const $openTrigger of $openTriggers){
 
@@ -53,7 +59,7 @@ export const modalbox = {
 
                     event.preventDefault();
 
-                    const modalQuery = '.' + $openTrigger.getAttribute(modalbox.vars.triggerAttribute);
+                    const modalQuery = '.' + $openTrigger.getAttribute(modalbox.vars.attributes.trigger);
                     const $modalbox = document.querySelector(modalQuery);
 
                     modalbox.show($modalbox);
@@ -66,7 +72,7 @@ export const modalbox = {
 
         clickOutside(){
 
-            const $modalboxes = document.querySelectorAll(modalbox.vars.parentQuery);
+            const $modalboxes = document.querySelectorAll(modalbox.vars.queries.parent);
 
             for(const $modalbox of $modalboxes){
 
@@ -74,7 +80,7 @@ export const modalbox = {
 
                     const $target = event.target;
 
-                    if(!$target.closest(modalbox.vars.wrapperQuery)){
+                    if(!$target.closest(modalbox.vars.queries.wrapper)){
 
                         modalbox.hide($modalbox);
 
@@ -88,13 +94,13 @@ export const modalbox = {
 
         close(){
 
-            const $closeTriggers = document.querySelectorAll(modalbox.vars.closeTriggerQuery);
+            const $closeTriggers = document.querySelectorAll(modalbox.vars.queries.closeTrigger);
 
             for(const $closeTrigger of $closeTriggers){
 
                 $closeTrigger.addEventListener('click', (event) => {
 
-                    const $modalbox = (event.target).closest(modalbox.vars.parentQuery);
+                    const $modalbox = (event.target).closest(modalbox.vars.queries.parent);
 
                     modalbox.hide($modalbox);
 
@@ -108,13 +114,13 @@ export const modalbox = {
 
     show($modalbox){
 
-        $modalbox.classList.add(modalbox.vars.showClass);
+        $modalbox.classList.add(modalbox.vars.classes.show);
 
     },
 
     hide($modalbox){
 
-        $modalbox.classList.remove(modalbox.vars.showClass);
+        $modalbox.classList.remove(modalbox.vars.classes.show);
 
     }
 

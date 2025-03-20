@@ -3,14 +3,20 @@ import TomSelect from "tom-select";
 export const selectbox = {
 
     vars: {
-        wrapperQuery:                   '*[data-js=selectbox]',
-        selectQuery:                    'select',
 
-        maxSelectableAttribute:         'data-select-max-selectable',
-        redirectToValueAttribute:       'data-redirect-to-value',
+        queries: {
+            wrapper:                   '*[data-js=selectbox]',
+            select:                    'select',
+        },
+
+        attributes: {
+            maxSelectable:         'data-select-max-selectable',
+            redirectToValue:       'data-redirect-to-value',
+        },
 
         config: {
-            maxItems: 1
+            maxItems: 1,
+            plugins: ['clear_button']
         }
     },
 
@@ -22,7 +28,7 @@ export const selectbox = {
 
     find(){
 
-        const $selects = document.querySelectorAll(selectbox.vars.wrapperQuery);
+        const $selects = document.querySelectorAll(selectbox.vars.queries.wrapper);
 
         if($selects.length === 0){
             return false;
@@ -30,10 +36,10 @@ export const selectbox = {
 
         for(const $select of $selects){
 
-            selectbox.vars.config.maxItems = parseInt($select.getAttribute(selectbox.vars.maxSelectableAttribute));
-            const redirectToValue = $select.getAttribute(selectbox.vars.redirectToValueAttribute);
+            selectbox.vars.config.maxItems = parseInt($select.getAttribute(selectbox.vars.attributes.maxSelectable));
+            const redirectToValue = $select.getAttribute(selectbox.vars.attributes.redirectToValue);
 
-            selectbox.bind($select.querySelector(selectbox.vars.selectQuery), redirectToValue);
+            selectbox.bind($select.querySelector(selectbox.vars.queries.select), redirectToValue);
 
             const $input = $select.querySelector('input');
 

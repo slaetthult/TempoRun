@@ -2,18 +2,22 @@ import {toHHMMSS} from '@scripts/utils/toHHMMSS.js';
 
 export const audioPlayer = {
     vars: {
-        componentQuery:                     '*[data-js=audio-player]',
-        playQuery:                          '*[data-audio-player-trigger-play]',
-        pauseQuery:                         '*[data-audio-player-trigger-pause]',
-        progressBarQuery:                   '*[data-audio-player-progress-bar]',
-        progressBarActiveQuery:             '*[data-audio-player-progress-bar-active]',
-        audioQuery:                         '*[data-audio-player-toggle-audio]',
-        currentTimeQuery:                   '*[data-audio-player-current-time]',
-        totalTimeQuery:                     '*[data-audio-player-total-time]',
-
-        intervalProgress:                   '',
-
-        isPlayingClass:                     'audio-player--is-playing'
+        queries: {
+            component:                     '*[data-js=audio-player]',
+            play:                          '*[data-audio-player-trigger-play]',
+            pause:                         '*[data-audio-player-trigger-pause]',
+            progressBar:                   '*[data-audio-player-progress-bar]',
+            progressBarActive:             '*[data-audio-player-progress-bar-active]',
+            audio:                         '*[data-audio-player-toggle-audio]',
+            currentTime:                   '*[data-audio-player-current-time]',
+            totalTime:                     '*[data-audio-player-total-time]',
+        },
+        classes: {
+            isPlaying:                     'audio-player--is-playing'
+        },
+        states: {
+            intervalProgress:               '',
+        }
     },
     init(){
 
@@ -23,7 +27,7 @@ export const audioPlayer = {
 
     find(){
 
-        const $audioPlayers = document.querySelectorAll(audioPlayer.vars.componentQuery);
+        const $audioPlayers = document.querySelectorAll(audioPlayer.vars.queries.component);
 
         if($audioPlayers.length === 0){
             return false;
@@ -41,7 +45,7 @@ export const audioPlayer = {
     setInitialValues($audioPlayer){
 
         const $audio = $audioPlayer.querySelector('audio');
-        const $totalTime = $audioPlayer.querySelector(audioPlayer.vars.totalTimeQuery);
+        const $totalTime = $audioPlayer.querySelector(audioPlayer.vars.queries.totalTime);
 
         $totalTime.innerHTML = toHHMMSS($audio.duration, false);
 
@@ -54,19 +58,19 @@ export const audioPlayer = {
 
     addEventTrigger($audioPlayer){
 
-        const $playButton = $audioPlayer.querySelector(audioPlayer.vars.playQuery);
+        const $playButton = $audioPlayer.querySelector(audioPlayer.vars.queries.play);
 
         $playButton.addEventListener('click', () => {
             audioPlayer.play($audioPlayer);
         });
 
-        const $pauseButton = $audioPlayer.querySelector(audioPlayer.vars.pauseQuery);
+        const $pauseButton = $audioPlayer.querySelector(audioPlayer.vars.queries.pause);
 
         $pauseButton.addEventListener('click', () => {
             audioPlayer.pause($audioPlayer);
         });
 
-        const $progress = $audioPlayer.querySelector(audioPlayer.vars.progressBarQuery);
+        const $progress = $audioPlayer.querySelector(audioPlayer.vars.queries.progressBar);
 
         $progress.addEventListener('click', (event) => {
             audioPlayer.goToTime($audioPlayer, event);
@@ -76,14 +80,14 @@ export const audioPlayer = {
 
     play($audioPlayer){
 
-        const $audioPlayers = document.querySelectorAll(audioPlayer.vars.componentQuery);
+        const $audioPlayers = document.querySelectorAll(audioPlayer.vars.queries.component);
 
         for(const $audioPlayer of $audioPlayers){
             audioPlayer.pause($audioPlayer);
         }
 
         const $audio = $audioPlayer.querySelector('audio');
-        $audioPlayer.classList.add(audioPlayer.vars.isPlayingClass);
+        $audioPlayer.classList.add(audioPlayer.vars.classes.isPlaying);
         $audio.play();
         audioPlayer.updatePercentagePlayed($audioPlayer);
 
@@ -92,19 +96,19 @@ export const audioPlayer = {
     pause($audioPlayer){
 
         const $audio = $audioPlayer.querySelector('audio');
-        $audioPlayer.classList.remove(audioPlayer.vars.isPlayingClass);
+        $audioPlayer.classList.remove(audioPlayer.vars.classes.isPlaying);
         $audio.pause();
-        clearInterval(audioPlayer.vars.intervalProgress);
+        clearInterval(audioPlayer.vars.states.intervalProgress);
 
     },
 
     updatePercentagePlayed($audioPlayer){
 
         const $audio = $audioPlayer.querySelector('audio');
-        const $progressBarActive = $audioPlayer.querySelector(audioPlayer.vars.progressBarActiveQuery);
-        const $currentTime = $audioPlayer.querySelector(audioPlayer.vars.currentTimeQuery);
+        const $progressBarActive = $audioPlayer.querySelector(audioPlayer.vars.queries.progressBarActive);
+        const $currentTime = $audioPlayer.querySelector(audioPlayer.vars.queries.currentTime);
 
-        audioPlayer.vars.intervalProgress = setInterval(() => {
+        audioPlayer.vars.states.intervalProgress = setInterval(() => {
 
             const duration = $audio.duration;
             const currentTime = $audio.currentTime;
@@ -124,10 +128,10 @@ export const audioPlayer = {
     goToTime($audioPlayer, event){
 
         const $audio = $audioPlayer.querySelector('audio');
-        const $component = $audioPlayer.closest(audioPlayer.vars.componentQuery);
+        const $component = $audioPlayer.closest(audioPlayer.vars.queries.component);
 
         const $gridWrap = $component.closest('.grid-wrap');
-        const $progress = $component.querySelector(audioPlayer.vars.progressBarQuery);
+        const $progress = $component.querySelector(audioPlayer.vars.queries.progressBar);
 
 
         const progressWidth = $progress.offsetWidth;

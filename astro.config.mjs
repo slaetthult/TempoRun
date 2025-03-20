@@ -8,7 +8,7 @@ import robotsConfig from './robots-txt.config';
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://tempo-run-astro4.netlify.app/',
+    site: 'https://tempo-run-astro5.netlify.app/',
     vite: {
         plugins: [mkcert()],
         server: {
@@ -20,7 +20,8 @@ export default defineConfig({
     },
     integrations: [alpine(), partytown(), sitemap(), robotsTxt(robotsConfig)],
     prefetch: {
-        prefetchAll: true
+        prefetchAll: true,
+        defaultStrategy: 'viewport'
     },
     image: {
         remotePatterns: [{ protocol: "https" }],

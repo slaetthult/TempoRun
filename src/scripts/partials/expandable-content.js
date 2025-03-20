@@ -1,13 +1,21 @@
 export const expandableContent = {
     vars: {
-        componentQuery:                     '*[data-js=expandable-content]',
-        contentWrapperQuery:                '*[data-expandable-content-wrapper]',
-        toggleQuery:                        '*[data-expandable-content-toggle]',
 
-        scrollAfterCollapseAttribute:       'data-expandable-content-scroll-after-collapse',
+        queries: {
+            component:                      '*[data-js=expandable-content]',
+            contentWrapper:                 '*[data-expandable-content-wrapper]',
+            toggle:                         '*[data-expandable-content-toggle]',
+        },
 
-        activeClass:                        'expandable-content--expanded',
-        expandableClass:                    'expandable-content--expandable'
+        attributes: {
+            scrollAfterCollapse:            'data-expandable-content-scroll-after-collapse',
+        },
+
+        classes: {
+            active:                         'expandable-content--expanded',
+            expandable:                     'expandable-content--expandable'
+        }
+
     },
     init(){
 
@@ -16,7 +24,7 @@ export const expandableContent = {
     },
     find(){
 
-        const $expandableContents = document.querySelectorAll(expandableContent.vars.componentQuery);
+        const $expandableContents = document.querySelectorAll(expandableContent.vars.queries.component);
 
         if($expandableContents.length === 0){
             return false;
@@ -32,7 +40,7 @@ export const expandableContent = {
 
     addEvenTrigger($expandableContent){
 
-        const $toggleButton = $expandableContent.querySelector(expandableContent.vars.toggleQuery);
+        const $toggleButton = $expandableContent.querySelector(expandableContent.vars.queries.toggle);
 
         if(!$toggleButton){
             return false;
@@ -55,15 +63,15 @@ export const expandableContent = {
 
     addEventHandler($expandableContent){
 
-        const $contentWrapper = $expandableContent.querySelector(expandableContent.vars.contentWrapperQuery);
+        const $contentWrapper = $expandableContent.querySelector(expandableContent.vars.queries.contentWrapper);
 
         if(!$contentWrapper){
             return false;
         }
 
-        if($expandableContent.classList.contains(expandableContent.vars.activeClass)){
+        if($expandableContent.classList.contains(expandableContent.vars.classes.active)){
 
-            const scrollAfterCollapse = $expandableContent.getAttribute(expandableContent.vars.scrollAfterCollapseAttribute);
+            const scrollAfterCollapse = $expandableContent.getAttribute(expandableContent.vars.attributes.scrollAfterCollapse);
 
             expandableContent.collapse($expandableContent, $contentWrapper, scrollAfterCollapse);
 
@@ -77,7 +85,7 @@ export const expandableContent = {
 
     collapse($expandableContent, $contentWrapper, scrollAfterCollapse){
 
-        $expandableContent.classList.remove(expandableContent.vars.activeClass);
+        $expandableContent.classList.remove(expandableContent.vars.classes.active);
         $contentWrapper.style.maxHeight = '';
 
         if(scrollAfterCollapse === 'true'){
@@ -88,7 +96,7 @@ export const expandableContent = {
 
     expand($expandableContent){
 
-        const $contentWrapper = $expandableContent.querySelector(expandableContent.vars.contentWrapperQuery);
+        const $contentWrapper = $expandableContent.querySelector(expandableContent.vars.queries.contentWrapper);
 
         if(!$contentWrapper){
             return false;
@@ -96,19 +104,19 @@ export const expandableContent = {
 
         const contentWrapperHeight = $contentWrapper.scrollHeight;
 
-        $expandableContent.classList.add(expandableContent.vars.activeClass);
+        $expandableContent.classList.add(expandableContent.vars.classes.active);
         $contentWrapper.style.maxHeight = `${contentWrapperHeight}px`;
 
     },
 
     checkIfExpandable($expandableContent){
 
-        const $contentWrapper = $expandableContent.querySelector(expandableContent.vars.contentWrapperQuery);
+        const $contentWrapper = $expandableContent.querySelector(expandableContent.vars.queries.contentWrapper);
 
         if($contentWrapper.scrollHeight > $contentWrapper.offsetHeight){
-            $expandableContent.classList.add(expandableContent.vars.expandableClass);
+            $expandableContent.classList.add(expandableContent.vars.classes.expandable);
         } else {
-            $expandableContent.classList.remove(expandableContent.vars.expandableClass);
+            $expandableContent.classList.remove(expandableContent.vars.classes.expandable);
         }
 
     }

@@ -1,12 +1,19 @@
 export const toTopButton = {
     vars: {
-        componentQuery:             '*[data-js=to-top-button]',
 
-        showClass:                  'to-top-button--show',
+        queries: {
+            component:                      '*[data-js=to-top-button]',
+        },
 
-        requiredViewportWidth:      '1280',
+        classes: {
+            show:                           'to-top-button--show',
+        },
 
-        minScrolledPosition:        '100'
+        values: {
+            requiredViewportWidth:          '1280',
+            minScrolledPosition:            '100'
+        }
+
     },
     init(){
 
@@ -17,7 +24,7 @@ export const toTopButton = {
 
         let lastKnownScrollPosition = 0;
         let ticking = false;
-        const $toTopButton = document.querySelector(toTopButton.vars.componentQuery);
+        const $toTopButton = document.querySelector(toTopButton.vars.queries.component);
 
         if(!$toTopButton){
             return false;
@@ -27,7 +34,7 @@ export const toTopButton = {
 
             lastKnownScrollPosition = window.scrollY;
 
-            if (!ticking && window.innerWidth >= toTopButton.vars.requiredViewportWidth) {
+            if (!ticking && window.innerWidth >= toTopButton.vars.values.requiredViewportWidth) {
                 window.requestAnimationFrame(() => {
 
                     toTopButton.eventHandler($toTopButton, lastKnownScrollPosition);
@@ -48,7 +55,7 @@ export const toTopButton = {
 
     eventHandler($toTopButton, lastKnownScrollPosition){
 
-        if(lastKnownScrollPosition > toTopButton.vars.minScrolledPosition){
+        if(lastKnownScrollPosition > toTopButton.vars.values.minScrolledPosition){
 
             toTopButton.show($toTopButton);
 
@@ -61,10 +68,10 @@ export const toTopButton = {
     },
 
     show($toTopButton){
-        $toTopButton.classList.add(toTopButton.vars.showClass);
+        $toTopButton.classList.add(toTopButton.vars.classes.show);
     },
 
     hide($toTopButton){
-        $toTopButton.classList.remove(toTopButton.vars.showClass);
+        $toTopButton.classList.remove(toTopButton.vars.classes.show);
     }
 }

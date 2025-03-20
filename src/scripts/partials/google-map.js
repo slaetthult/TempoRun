@@ -4,13 +4,23 @@ export const googleMap = {
 
     vars: {
 
-        moduleQuery:            '*[data-js=google-map]',
+        queries: {
+            module:             '*[data-js=google-map]',
+        },
 
-        geoLocationAttribute:   'data-google-map-geo-location',
-        markerHTMLAttribute:    'data-google-marker-html',
-        zoomFactorAttribute:    'data-google-zoom-factor',
+        attributes: {
+            geoLocation:        'data-google-map-geo-location',
+            markerHTML:         'data-google-marker-html',
+            zoomFactor:         'data-google-zoom-factor',
+        },
 
-        key:                    import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY,
+        classes: {
+            show:               'google-map--show'
+        },
+
+        keys: {
+            googleMaps:         import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY
+        },
 
         options: {
             center: {
@@ -19,9 +29,7 @@ export const googleMap = {
             zoom: 8
         },
 
-        markers: [],
-
-        showClass:                  'google-map--show'
+        markers: []
 
     },
 
@@ -33,7 +41,7 @@ export const googleMap = {
 
     find(){
 
-        const $maps = document.querySelectorAll(googleMap.vars.moduleQuery);
+        const $maps = document.querySelectorAll(googleMap.vars.queries.module);
 
         for(const $map of $maps){
 
@@ -45,11 +53,11 @@ export const googleMap = {
 
     bind($map){
 
-        $map.classList.add(googleMap.vars.showClass);
+        $map.classList.add(googleMap.vars.classes.show);
 
-        const geoLocation = JSON.parse($map.getAttribute(googleMap.vars.geoLocationAttribute));
-        const markerHTML = JSON.parse($map.getAttribute(googleMap.vars.markerHTMLAttribute));
-        const zoomFactor = parseInt(JSON.parse($map.getAttribute(googleMap.vars.zoomFactorAttribute)));
+        const geoLocation = JSON.parse($map.getAttribute(googleMap.vars.attributes.geoLocation));
+        const markerHTML = JSON.parse($map.getAttribute(googleMap.vars.attributes.markerHTML));
+        const zoomFactor = parseInt(JSON.parse($map.getAttribute(googleMap.vars.attributes.zoomFactor)));
 
         googleMap.vars.options.center = {
             lat: geoLocation.lat,
@@ -67,7 +75,7 @@ export const googleMap = {
         );
 
         const loader = new Loader({
-            apiKey: googleMap.vars.key,
+            apiKey: googleMap.vars.keys.googleMaps,
             version: "weekly"
         });
 

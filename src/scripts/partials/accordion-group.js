@@ -5,9 +5,13 @@ export const accordionGroup = {
 
     vars: {
 
-        moduleQuery:                                '*[data-js=accordion-group]',
+        queries: {
+            module:                                 '*[data-js=accordion-group]',
+        },
 
-        settingsAttribute:                          'data-accordion-settings',
+        attributes: {
+            settings:                               'data-accordion-settings',
+        },
 
         additionalGeneralOptions: {
 
@@ -30,11 +34,11 @@ export const accordionGroup = {
 
     startScript(){
 
-        const $accordionGroups = document.querySelectorAll(accordionGroup.vars.moduleQuery);
+        const $accordionGroups = document.querySelectorAll(accordionGroup.vars.queries.module);
 
         for(const $accordionGroup of $accordionGroups){
 
-            let accordionOptions = $accordionGroup.getAttribute(accordionGroup.vars.settingsAttribute);
+            let accordionOptions = $accordionGroup.getAttribute(accordionGroup.vars.attributes.settings);
             accordionOptions = JSON.parse(decodeURIComponent(accordionOptions));
 
             if(!accordionOptions.disableAdditionalGeneralOptions){

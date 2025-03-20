@@ -3,16 +3,22 @@ export const offcanvas = {
 
     vars: {
 
-        componentQuery:                         '*[data-js=offcanvas]',
-        bodyQuery:                              '*[data-offcanvas-body]',
-        closeQuery:                             '*[data-offcanvas-close]',
+        queries: {
+            component:                         '*[data-js=offcanvas]',
+            body:                              '*[data-offcanvas-body]',
+            close:                             '*[data-offcanvas-close]',
+        },
 
-        idAttribute:                            'data-offcanvas-id',
-        triggerOpenIdAttribute:                 'data-offcanvas-trigger-open-id',
-        scrollToTopAttribute:                   'data-offcanvas-scroll-top-on-change',
-        openInitiallyAttribute:                 'data-offcanvas-open-initially',
+        attributes: {
+            id:                                 'data-offcanvas-id',
+            triggerOpenId:                      'data-offcanvas-trigger-open-id',
+            scrollToTop:                        'data-offcanvas-scroll-top-on-change',
+            openInitially:                      'data-offcanvas-open-initially',
+        },
 
-        showClass:                              'offcanvas--show'
+        classes: {
+            show:                               'offcanvas--show'
+        }
 
     },
 
@@ -24,7 +30,7 @@ export const offcanvas = {
 
     find(){
 
-        const $offcanvasElements = document.querySelectorAll(offcanvas.vars.componentQuery);
+        const $offcanvasElements = document.querySelectorAll(offcanvas.vars.queries.component);
 
         if($offcanvasElements.length === 0){
             return false;
@@ -56,7 +62,7 @@ export const offcanvas = {
 
         });
 
-        const $openOffcanvasTriggers = document.querySelectorAll(`*[${offcanvas.vars.triggerOpenIdAttribute}]`);
+        const $openOffcanvasTriggers = document.querySelectorAll(`*[${offcanvas.vars.attributes.triggerOpenId}]`);
 
         if($openOffcanvasTriggers.length === 0){
             return false;
@@ -68,7 +74,7 @@ export const offcanvas = {
 
                 event.preventDefault();
 
-                const offcanvasId = $openOffcanvasTrigger.getAttribute(offcanvas.vars.triggerOpenIdAttribute)
+                const offcanvasId = $openOffcanvasTrigger.getAttribute(offcanvas.vars.attributes.triggerOpenId)
 
                 offcanvas.closeAll();
                 offcanvas.open(offcanvasId);
@@ -77,7 +83,7 @@ export const offcanvas = {
 
         }
 
-        const $closeOffcanvasTriggers = document.querySelectorAll(offcanvas.vars.closeQuery);
+        const $closeOffcanvasTriggers = document.querySelectorAll(offcanvas.vars.queries.close);
 
         if($closeOffcanvasTriggers.length === 0){
             return false;
@@ -96,19 +102,19 @@ export const offcanvas = {
         for(const $offcanvasElement of $offcanvasElements){
 
             let executed = 1;
-            const shouldScrollToTop = $offcanvasElement.getAttribute(offcanvas.vars.scrollToTopAttribute);
+            const shouldScrollToTop = $offcanvasElement.getAttribute(offcanvas.vars.attributes.scrollToTop);
 
             if(shouldScrollToTop === 'true'){
                 observeDOM( $offcanvasElement, () => {
-                    if(executed % 2 === 0 && $offcanvasElement.classList.contains(offcanvas.vars.showClass)){
+                    if(executed % 2 === 0 && $offcanvasElement.classList.contains(offcanvas.vars.classes.show)){
                         window.scroll({top: 0, behavior: "smooth"});
                     }
                     executed++;
                 });
             }
 
-            if($offcanvasElement.getAttribute(offcanvas.vars.openInitiallyAttribute) === 'true'){
-                const offcanvasId = $offcanvasElement.getAttribute(offcanvas.vars.idAttribute);
+            if($offcanvasElement.getAttribute(offcanvas.vars.attributes.openInitially) === 'true'){
+                const offcanvasId = $offcanvasElement.getAttribute(offcanvas.vars.attributes.id);
                 offcanvas.open(offcanvasId);
             }
 
@@ -118,8 +124,8 @@ export const offcanvas = {
 
     clickOutside($clickTarget){
 
-        const $clickedOffcanvas = $clickTarget.closest(offcanvas.vars.componentQuery);
-        const $clickedOpenOffcanvasTrigger = $clickTarget.closest(`*[${offcanvas.vars.triggerOpenIdAttribute}]`);
+        const $clickedOffcanvas = $clickTarget.closest(offcanvas.vars.queries.component);
+        const $clickedOpenOffcanvasTrigger = $clickTarget.closest(`*[${offcanvas.vars.attributes.triggerOpenId}]`);
 
         if(!$clickedOffcanvas && !$clickedOpenOffcanvasTrigger){
 
@@ -131,7 +137,7 @@ export const offcanvas = {
 
     closeAll(){
 
-        const $offcanvasLayers = document.querySelectorAll(offcanvas.vars.componentQuery);
+        const $offcanvasLayers = document.querySelectorAll(offcanvas.vars.queries.component);
 
         if($offcanvasLayers.length === 0){
             return false;
@@ -139,7 +145,7 @@ export const offcanvas = {
 
         for(const $offcanvas of $offcanvasLayers){
 
-            $offcanvas.classList.remove(offcanvas.vars.showClass);
+            $offcanvas.classList.remove(offcanvas.vars.classes.show);
 
         }
 
@@ -147,13 +153,13 @@ export const offcanvas = {
 
     open(id = ''){
 
-        const $offcanvas = document.querySelector(`*[${offcanvas.vars.idAttribute}="${id}"]`);
+        const $offcanvas = document.querySelector(`*[${offcanvas.vars.attributes.id}="${id}"]`);
 
         if(!$offcanvas){
             return false;
         }
 
-        $offcanvas.classList.add(offcanvas.vars.showClass);
+        $offcanvas.classList.add(offcanvas.vars.classes.show);
 
     },
 

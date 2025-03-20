@@ -24,8 +24,8 @@ $viewports: (
 
 $viewports-string: "";
 
-@each $current-viewport,  $current-viewportwidth in $viewports {
-    $viewports-string: $viewports-string + $current-viewport + ":" + $current-viewportwidth + ",";
+@each $current-viewport,  $current-viewport-width in $viewports {
+    $viewports-string: $viewports-string + $current-viewport + ":" + $current-viewport-width + ",";
 }
 
 

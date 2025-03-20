@@ -1,13 +1,151 @@
-@use "@styles/utils" as *;
+@use '@styles/utils' as *;
 
 .selectbox {
+    position: relative;
+
+    &--is-disabled {
+        .selectbox {
+            &__label-text {
+                opacity: 0.5;
+            }
+        }
+    }
+
+    &__label-text {
+        display: block;
+        font-size: get-rem(12px);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
 
     .ts-control {
-        background: transparent;
+        padding: 11px 15px 10px 15px;
+        background-color: transparent;
         border: 1px solid var(--color-border-grey);
-        border-radius: 0;
+        border-radius: 3px;
+        transition: background ease $transition-time;
+
+        &::after {
+            position: absolute;
+            top: 12px;
+            right: 15px;
+            transform: rotate(90deg);
+            width: 9px;
+            height: 13px;
+            background-size: cover;
+            transition: all linear $transition-time;
+            content: "";
+        }
+
+        input,
+        .item {
+            font-size: get-rem(16px);
+            letter-spacing: 0.5px;
+
+
+            &::placeholder {
+
+            }
+        }
+
+        .item {
+
+            & + input {
+                position: absolute;
+                top: 11px;
+                left: 15px;
+                width: calc(100% - 30px);
+                margin-left: 0;
+                opacity: 0;
+            }
+        }
+
+        input {
+            transition: none;
+        }
+    }
+    .ts-wrapper {
+
+        &:not(.disabled){
+            &:not(.dropdown-active){
+                .ts-control {
+                    &:hover {
+
+                    }
+                }
+            }
+        }
+
+        &.dropdown-active {
+
+            .ts-control {
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+
+                &::after {
+                    transform: rotate(-90deg);
+                }
+
+                input,
+                .item {
+
+                }
+            }
+        }
+
+        &.invalid {
+            input {
+                &::placeholder {
+                    color: var(--color-ui-red);
+                }
+            }
+            .ts-control {
+                &::after {
+
+                }
+            }
+        }
     }
     .ts-dropdown {
         margin: 0;
+        border-top: 0;
+        z-index: $z-index-3;
+
+        .option {
+            padding: 11.5px 14px 10.5px 14px;
+            font-size: get-rem(16px);
+            letter-spacing: 0.5px;
+            color: var(--color-font);
+
+            &.active {
+
+            }
+
+            &:first-child {
+                border-top-left-radius: 4px;
+                border-top-right-radius: 4px;
+            }
+
+            &:last-child {
+                border-bottom-left-radius: 4px;
+                border-bottom-right-radius: 4px;
+            }
+        }
+    }
+
+    label {
+        display: flex;
+        flex-wrap: wrap;
+
+        select,
+        .ts-wrapper,
+        small,
+        .selectbox__label-text {
+            width: 100%;
+        }
+
+        .selectbox__label-text {
+            order: -1;
+        }
     }
 }

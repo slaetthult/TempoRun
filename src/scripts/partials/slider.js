@@ -5,9 +5,13 @@ export const slider = {
 
     vars: {
 
-        swiperQuery:            '*[data-js=slider]',
+        queries: {
+            swiper:             '*[data-js=slider]',
+        },
 
-        settingsAttribute:      'data-slider-settings',
+        attributes: {
+            settings:           'data-slider-settings',
+        },
 
         mainOptions: {
             modules: [Navigation, Pagination, Autoplay, Scrollbar],
@@ -36,7 +40,7 @@ export const slider = {
 
     find(){
 
-        const $sliders = document.querySelectorAll(slider.vars.swiperQuery);
+        const $sliders = document.querySelectorAll(slider.vars.queries.swiper);
 
         if($sliders.length === 0){
             return false;
@@ -52,7 +56,7 @@ export const slider = {
 
     bind($slider){
 
-        let additionalOptions = $slider.getAttribute(slider.vars.settingsAttribute);
+        let additionalOptions = $slider.getAttribute(slider.vars.attributes.settings);
         additionalOptions = additionalOptions && additionalOptions.length > 0 ? JSON.parse(additionalOptions) : null;
         const options = slider.vars.mainOptions;
 
