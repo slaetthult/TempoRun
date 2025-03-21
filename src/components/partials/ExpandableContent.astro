@@ -27,6 +27,16 @@ const {
 </div>
 
 <script>
-    import {scriptLoader} from "@scripts/base/script-loader";
-    scriptLoader('*[data-js=expandable-content]', 'scripts/partials/expandable-content');
+    const $expandableContents = document.querySelectorAll('*[data-js=expandable-content]');
+
+    if($expandableContents.length > 0){
+        import('@scripts/partials/expandable-content')
+            .then((module) => {
+                const { expandableContent } = module;
+                expandableContent.init();
+            })
+            .catch((error) => {
+                console.error('Error loading module:', error);
+            });
+    }
 </script>

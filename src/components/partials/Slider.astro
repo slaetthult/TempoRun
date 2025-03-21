@@ -26,6 +26,17 @@ const {
 </div>
 
 <script>
-    import {scriptLoader} from "@scripts/base/script-loader";
-    scriptLoader('*[data-js=slider]', 'scripts/partials/slider');
+    const $sliders = document.querySelectorAll('*[data-js=slider]');
+
+    if($sliders.length > 0){
+        import('@scripts/partials/slider')
+            .then((module) => {
+                const { slider } = module;
+
+                slider.init();
+            })
+            .catch((error) => {
+                console.error('Error loading module:', error);
+            });
+    }
 </script>
