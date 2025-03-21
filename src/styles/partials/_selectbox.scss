@@ -27,11 +27,12 @@
 
         &::after {
             position: absolute;
-            top: 12px;
+            top: 8px;
             right: 15px;
-            transform: rotate(90deg);
-            width: 9px;
-            height: 13px;
+            transform: rotate(0deg);
+            width: 24px;
+            height: 24px;
+            background-image: url(/images/icons/chevron-down.svg);
             background-size: cover;
             transition: all linear $transition-time;
             content: "";
@@ -63,6 +64,20 @@
         input {
             transition: none;
         }
+
+        .clear-button {
+            top: 50%;
+            left: auto;
+            right: 7px!important;
+            width: 40px;
+            height: 40px;
+            line-height: 28px;
+            text-align: center;
+            font-size: get-rem(34px);
+            background: var(--color-white)!important;
+            pointer-events: none;
+            z-index: 333;
+        }
     }
     .ts-wrapper {
 
@@ -83,7 +98,7 @@
                 border-bottom-right-radius: 0;
 
                 &::after {
-                    transform: rotate(-90deg);
+                    transform: rotate(180deg);
                 }
 
                 input,
@@ -147,5 +162,10 @@
         .selectbox__label-text {
             order: -1;
         }
+    }
+
+    .plugin-clear_button:not(.disabled):hover.has-items .clear-button {
+        opacity: 1;
+        pointer-events: auto;
     }
 }

@@ -76,7 +76,8 @@ export const googleMap = {
 
         const loader = new Loader({
             apiKey: googleMap.vars.keys.googleMaps,
-            version: "weekly"
+            version: "weekly",
+            libraries: []
         });
 
         loader.importLibrary('maps')
