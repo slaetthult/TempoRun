@@ -29,17 +29,6 @@ const classNames = `selectbox ${classes}`;
 </div>
 
 <script>
-    const $selectboxes = document.querySelectorAll('*[data-js=selectbox]');
-
-    if($selectboxes.length > 0){
-        import('@scripts/partials/selectbox')
-            .then((module) => {
-                const { selectbox } = module;
-
-                selectbox.init();
-            })
-            .catch((error) => {
-                console.error('Error loading module:', error);
-            });
-    }
+    import {scriptLoader} from "@scripts/base/script-loader";
+    scriptLoader('*[data-js=selectbox]', 'scripts/partials/selectbox');
 </script>

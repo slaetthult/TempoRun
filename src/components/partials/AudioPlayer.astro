@@ -51,17 +51,6 @@ const {
 </div>
 
 <script>
-    const $audioPlayers = document.querySelectorAll('*[data-js=audio-player]');
-
-    if($audioPlayers.length > 0){
-        import('@scripts/partials/audio-player')
-            .then((module) => {
-                const { audioPlayer } = module;
-
-                audioPlayer.init();
-            })
-            .catch((error) => {
-                console.error('Error loading module:', error);
-            });
-    }
+    import {scriptLoader} from "@scripts/base/script-loader";
+    scriptLoader('*[data-js=audio-player]', 'scripts/partials/audio-player');
 </script>

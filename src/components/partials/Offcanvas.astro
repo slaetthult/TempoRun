@@ -24,17 +24,6 @@ const offcanvasClass = `offcanvas offcanvas--${orientation} offcanvas--id-${id} 
 </div>
 
 <script>
-    const $offcanvases = document.querySelectorAll('*[data-js=offcanvas]');
-
-    if($offcanvases.length > 0){
-        import('@scripts/partials/offcanvas')
-            .then((module) => {
-                const { offcanvas } = module;
-
-                offcanvas.init();
-            })
-            .catch((error) => {
-                console.error('Error loading module:', error);
-            });
-    }
+    import {scriptLoader} from "@scripts/base/script-loader";
+    scriptLoader('*[data-js=offcanvas]', 'scripts/partials/offcanvas');
 </script>

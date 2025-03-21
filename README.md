@@ -336,7 +336,16 @@ const accordionSettingsJSON = encodeURIComponent(JSON.stringify(accordionSetting
 </AccordionGroup>
 
 ```
+### Dynamic script import
 
+If you want to import a (client-side) script only when needed, depending on the presence of a specific DOM element, use this approach:
+
+```
+<script>
+    import {scriptLoader} from "@scripts/base/script-loader";
+    scriptLoader('*[data-js=accordion-group]', 'scripts/partials/accordion-group');
+</script>
+```
 ### Optimized Images
 
 Just use the Image Component "theImage" for improved images.<br>

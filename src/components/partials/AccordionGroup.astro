@@ -11,17 +11,6 @@ const {
 </div>
 
 <script>
-    const $accordionGroups = document.querySelectorAll('*[data-js=accordion-group]');
-
-    if($accordionGroups.length > 0){
-        import('@scripts/partials/accordion-group')
-            .then((module) => {
-                const { accordionGroup } = module;
-
-                accordionGroup.init();
-            })
-            .catch((error) => {
-                console.error('Error loading module:', error);
-            });
-    }
+    import {scriptLoader} from "@scripts/base/script-loader";
+    scriptLoader('*[data-js=accordion-group]', 'scripts/partials/accordion-group');
 </script>

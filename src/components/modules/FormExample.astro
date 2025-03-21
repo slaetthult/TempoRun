@@ -18,7 +18,7 @@ if (Astro.request.method === 'POST') {
 }
 ---
 
-<div class="form-example grid-wrap">
+<div class="form-example grid-wrap" data-js="form-example">
     <div class="w12">
 
             <h2>Form example</h2>
@@ -131,7 +131,6 @@ if (Astro.request.method === 'POST') {
 </div>
 
 <script>
-    import {formExample} from "@scripts/modules/form-example";
-
-    formExample.init();
+    import {scriptLoader} from "@scripts/base/script-loader";
+    scriptLoader('*[data-js=form-example]', 'scripts/modules/form-example');
 </script>

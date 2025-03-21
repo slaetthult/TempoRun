@@ -6,17 +6,6 @@ import '@styles/partials/_to-top-button.scss';
 </button>
 
 <script>
-    const $toTopButtons = document.querySelectorAll('*[data-js=to-top-button]');
-
-    if($toTopButtons.length > 0){
-        import('@scripts/partials/to-top-button')
-            .then((module) => {
-                const { toTopButton } = module;
-
-                toTopButton.init();
-            })
-            .catch((error) => {
-                console.error('Error loading module:', error);
-            });
-    }
+    import {scriptLoader} from "@scripts/base/script-loader";
+    scriptLoader('*[data-js=to-top-button]', 'scripts/partials/to-top-button');
 </script>
