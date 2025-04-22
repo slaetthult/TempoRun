@@ -9,20 +9,23 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "frontend-test": "npx playwright test index.spec.ts"
   },
   "dependencies": {
-    "@astrojs/alpinejs": "^0.4.3",
+    "@astrojs/alpinejs": "^0.4.6",
     "@astrojs/partytown": "^2.1.4",
     "@googlemaps/js-api-loader": "^1.16.8",
     "accordion-js": "^3.4.0",
-    "astro": "5.5.3",
-    "sass": "^1.86.0",
+    "astro": "5.7.4",
+    "sass": "^1.87.0",
     "swiper": "^11.2.6",
     "tom-select": "^2.4.3"
   },
   "devDependencies": {
     "@astrojs/sitemap": "^3.3.0",
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.14.1",
     "astro-robots-txt": "^1.0.0",
     "vite-plugin-mkcert": "^1.17.8"
   },
