@@ -24,7 +24,7 @@ export default defineConfig({
         safelist: [  // Specify classes that you want to keep
             // Add any classes that you want to explicitly keep
         ],
-        defaultExtractor: (content) => {
+        extractors: (content) => {
             // Match classes starting with mw- or w-
             const regex = /(?:class|className)\s*=\s*"([^"]*)"/g;
             const matches = [];
