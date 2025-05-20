@@ -19,7 +19,24 @@ export default defineConfig({
             target: 'es2019'
         }
     },
-    integrations: [alpine(), partytown(), purgecss(), sitemap(), robotsTxt(robotsConfig)],
+    integrations: [alpine(), partytown(), purgecss({
+        content: ['./src/**/*.{astro,html,js,jsx,ts,tsx}'],  // Ensure all your source files are scanned
+        safelist: [  // Specify classes that you want to keep
+            // Add any classes that you want to explicitly keep
+        ],
+        defaultExtractor: (content) => {
+            // Match classes starting with mw- or w-
+            const regex = /(?:class|className)\s*=\s*"([^"]*)"/g;
+            const matches = [];
+            let match;
+
+            while ((match = regex.exec(content)) !== null) {
+                matches.push(...match[1].split(/\s+/));
+            }
+
+            return matches.filter((cls) => cls.startsWith('mw-') || cls.startsWith('w-') || cls.startsWith('lw-') || cls.startsWith('sw-') || cls.startsWith('xlw-'));
+        }
+    }), sitemap(), robotsTxt(robotsConfig)],
     prefetch: {
         prefetchAll: true,
         defaultStrategy: 'viewport'
