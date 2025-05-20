@@ -34,7 +34,7 @@ export default defineConfig({
                 matches.push(...match[1].split(/\s+/));
             }
 
-            return matches.filter((cls) => cls.startsWith('mw-') || cls.startsWith('w-') || cls.startsWith('lw-') || cls.startsWith('sw-') || cls.startsWith('xlw-'));
+            return matches.filter((cls) => cls.startsWith('mw') || cls.startsWith('w') || cls.startsWith('lw') || cls.startsWith('sw') || cls.startsWith('xlw'));
         }
     }), sitemap(), robotsTxt(robotsConfig)],
     prefetch: {
