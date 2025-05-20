@@ -24,17 +24,10 @@ export default defineConfig({
         safelist: [  // Specify classes that you want to keep
             // Add any classes that you want to explicitly keep
         ],
-        extractors: (content) => {
-            // Match classes starting with mw- or w-
-            const regex = /(?:class|className)\s*=\s*"([^"]*)"/g;
-            const matches = [];
-            let match;
-
-            while ((match = regex.exec(content)) !== null) {
-                matches.push(...match[1].split(/\s+/));
-            }
-
-            return matches.filter((cls) => cls.startsWith('mw') || cls.startsWith('w') || cls.startsWith('lw') || cls.startsWith('sw') || cls.startsWith('xlw'));
+        defaultExtractor: content => {
+            const matches = content.match(/(?:class=|className=)["'`]([^"'`]+)["'`]/g) || [];
+            return matches
+            .flatMap(match => match.match(/(?:lw|mw)[a-zA-Z0-9-_:/]+/g) || []);
         }
     }), sitemap(), robotsTxt(robotsConfig)],
     prefetch: {
