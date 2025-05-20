@@ -18,6 +18,7 @@
     "@googlemaps/js-api-loader": "^1.16.8",
     "accordion-js": "^3.4.1",
     "astro": "5.7.13",
+    "astro-purgecss": "^5.2.2",
     "sass": "^1.89.0",
     "swiper": "^11.2.7",
     "tom-select": "^2.4.3"

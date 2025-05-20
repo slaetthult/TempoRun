@@ -5,6 +5,7 @@ import mkcert from 'vite-plugin-mkcert'
 import sitemap from '@astrojs/sitemap';
 import robotsTxt from 'astro-robots-txt';
 import robotsConfig from './robots-txt.config';
+import purgecss from 'astro-purgecss';
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,7 +19,7 @@ export default defineConfig({
             target: 'es2019'
         }
     },
-    integrations: [alpine(), partytown(), sitemap(), robotsTxt(robotsConfig)],
+    integrations: [alpine(), partytown(), purgecss(), sitemap(), robotsTxt(robotsConfig)],
     prefetch: {
         prefetchAll: true,
         defaultStrategy: 'viewport'
