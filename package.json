@@ -15,17 +15,17 @@
   "dependencies": {
     "@astrojs/alpinejs": "^0.4.8",
     "@astrojs/partytown": "^2.1.4",
-    "@googlemaps/js-api-loader": "^1.16.8",
+    "@googlemaps/js-api-loader": "^1.16.10",
     "accordion-js": "^3.4.1",
-    "astro": "5.8.0",
-    "sass": "^1.89.0",
-    "swiper": "^11.2.8",
+    "astro": "5.13.3",
+    "sass": "^1.91.0",
+    "swiper": "^11.2.10",
     "tom-select": "^2.4.3"
   },
   "devDependencies": {
-    "@astrojs/sitemap": "^3.4.0",
-    "@playwright/test": "^1.52.0",
-    "@types/node": "^22.15.21",
+    "@astrojs/sitemap": "^3.5.1",
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^24.3.0",
     "astro-robots-txt": "^1.0.0",
     "vite-plugin-mkcert": "^1.17.8"
   },
